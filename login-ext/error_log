@@ -1,0 +1,13 @@
+[22-Dec-2015 13:08:48 America/Denver] PHP Warning:  require_once(login-ext/autoload.php): failed to open stream: No such file or directory in /home4/iphrases/public_html/login-ext/fbconfig.php on line 5
+[22-Dec-2015 13:08:48 America/Denver] PHP Fatal error:  require_once(): Failed opening required 'login-ext/autoload.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home4/iphrases/public_html/login-ext/fbconfig.php on line 5
+[22-Dec-2015 13:08:48 America/Denver] PHP Warning:  require_once(login-ext/autoload.php): failed to open stream: No such file or directory in /home4/iphrases/public_html/login-ext/fbconfig.php on line 5
+[22-Dec-2015 13:08:48 America/Denver] PHP Fatal error:  require_once(): Failed opening required 'login-ext/autoload.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home4/iphrases/public_html/login-ext/fbconfig.php on line 5
+[22-Dec-2015 13:09:27 America/Denver] PHP Fatal error:  Undefined class constant 'GRAPH_API_VERSION' in /home4/iphrases/public_html/login-ext/src/Facebook/FacebookRedirectLoginHelper.php on line 93
+[22-Dec-2015 13:09:27 America/Denver] PHP Fatal error:  Undefined class constant 'GRAPH_API_VERSION' in /home4/iphrases/public_html/login-ext/src/Facebook/FacebookRedirectLoginHelper.php on line 93
+[22-Dec-2015 13:10:43 America/Denver] PHP Warning:  require_once(login-ext/autoload.php): failed to open stream: No such file or directory in /home4/iphrases/public_html/login-ext/fbconfig.php on line 5
+[22-Dec-2015 13:10:43 America/Denver] PHP Fatal error:  require_once(): Failed opening required 'login-ext/autoload.php' (include_path='.:/usr/php/54/usr/lib64:/usr/php/54/usr/share/pear') in /home4/iphrases/public_html/login-ext/fbconfig.php on line 5
+[22-Dec-2015 13:11:12 America/Denver] PHP Fatal error:  Class 'FacebookJavaScriptLoginHelper' not found in /home4/iphrases/public_html/login-ext/fbconfig.php on line 38
+[22-Dec-2015 13:11:50 America/Denver] PHP Fatal error:  Class 'FacebookJavaScriptLoginHelper' not found in /home4/iphrases/public_html/login-ext/fbconfig.php on line 38
+[22-Dec-2015 14:15:53 America/Denver] PHP Fatal error:  Class 'FacebookRedirectLoginHelper' not found in /home4/iphrases/public_html/login-ext/fbconfig.php on line 27
+[22-Dec-2015 14:42:14 America/Denver] PHP Fatal error:  Cannot use object of type Facebook\FacebookJavaScriptLoginHelper as array in /home4/iphrases/public_html/login-ext/fbconfig.php on line 40
+[22-Dec-2015 14:43:07 America/Denver] PHP Catchable fatal error:  Object of class Facebook\FacebookJavaScriptLoginHelper could not be converted to string in /home4/iphrases/public_html/login-ext/fbconfig.php on line 40

@@ -1,0 +1,41 @@
+/*  COLORES *****************************************************************  */
+.purpura-sambil
+{
+color: #B52465;
+}
+.purpura-oscuro-sambil
+{
+color: #692266;
+}
+.morado-sambil
+{
+color: #5051A1;
+}
+.amarillo-sambil
+{
+color: #FDB628;
+}
+.azul-sambil
+{
+ color:#0E9ED7;	
+}
+.naranja-sambil
+{
+color:#F47B20;
+}
+.naranja-oscuro-sambil
+{
+color:#EA2225;	
+}
+
+/*  COLORES *****************************************************************  */
+
+
+
+
+
+
+
+
+
+

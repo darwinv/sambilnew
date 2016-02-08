@@ -1,0 +1,410 @@
+[28-Dec-2015 16:44:23 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[28-Dec-2015 16:47:36 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[28-Dec-2015 16:51:13 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[28-Dec-2015 17:00:36 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[28-Dec-2015 17:02:32 America/Denver] PHP Warning:  Illegal string offset 'bandera' in /home1/apreciod/public_html/clases/usuarios.php on line 119
+[28-Dec-2015 17:02:32 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 121
+[28-Dec-2015 17:02:32 America/Denver] PHP Warning:  Illegal string offset 'seudonimo' in /home1/apreciod/public_html/clases/usuarios.php on line 122
+[28-Dec-2015 17:02:32 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 123
+[28-Dec-2015 17:02:32 America/Denver] PHP Warning:  Illegal string offset 'ruta' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:02:32 America/Denver] PHP Warning:  Illegal string offset 'id' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:02:32 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 124
+[28-Dec-2015 17:08:21 America/Denver] PHP Warning:  Illegal string offset 'bandera' in /home1/apreciod/public_html/clases/usuarios.php on line 119
+[28-Dec-2015 17:08:21 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 121
+[28-Dec-2015 17:08:21 America/Denver] PHP Warning:  Illegal string offset 'seudonimo' in /home1/apreciod/public_html/clases/usuarios.php on line 122
+[28-Dec-2015 17:08:21 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 123
+[28-Dec-2015 17:08:21 America/Denver] PHP Warning:  Illegal string offset 'ruta' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:08:21 America/Denver] PHP Warning:  Illegal string offset 'id' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:08:21 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 124
+[28-Dec-2015 17:20:36 America/Denver] PHP Warning:  Illegal string offset 'bandera' in /home1/apreciod/public_html/clases/usuarios.php on line 119
+[28-Dec-2015 17:20:36 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 121
+[28-Dec-2015 17:20:36 America/Denver] PHP Warning:  Illegal string offset 'seudonimo' in /home1/apreciod/public_html/clases/usuarios.php on line 122
+[28-Dec-2015 17:20:36 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 123
+[28-Dec-2015 17:20:36 America/Denver] PHP Warning:  Illegal string offset 'ruta' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:20:36 America/Denver] PHP Warning:  Illegal string offset 'id' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:20:36 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 124
+[28-Dec-2015 17:20:38 America/Denver] PHP Warning:  Illegal string offset 'bandera' in /home1/apreciod/public_html/clases/usuarios.php on line 119
+[28-Dec-2015 17:20:38 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 121
+[28-Dec-2015 17:20:38 America/Denver] PHP Warning:  Illegal string offset 'seudonimo' in /home1/apreciod/public_html/clases/usuarios.php on line 122
+[28-Dec-2015 17:20:38 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 123
+[28-Dec-2015 17:20:38 America/Denver] PHP Warning:  Illegal string offset 'ruta' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:20:38 America/Denver] PHP Warning:  Illegal string offset 'id' in /home1/apreciod/public_html/clases/fotos.php on line 27
+[28-Dec-2015 17:20:38 America/Denver] PHP Warning:  Illegal string offset 'usuarios_id' in /home1/apreciod/public_html/clases/usuarios.php on line 124
+[28-Dec-2015 17:24:52 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[28-Dec-2015 17:25:12 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[28-Dec-2015 17:26:09 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[28-Dec-2015 17:36:07 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[28-Dec-2015 17:44:20 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[28-Dec-2015 17:44:33 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[28-Dec-2015 17:46:08 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[28-Dec-2015 17:55:58 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[28-Dec-2015 18:04:06 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[28-Dec-2015 18:15:18 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[29-Dec-2015 05:03:34 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[29-Dec-2015 05:04:28 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[29-Dec-2015 05:04:45 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[29-Dec-2015 05:25:20 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[29-Dec-2015 05:25:46 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[29-Dec-2015 08:33:29 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[29-Dec-2015 08:33:50 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[29-Dec-2015 08:34:09 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[29-Dec-2015 08:35:16 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[29-Dec-2015 08:35:57 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[29-Dec-2015 08:36:12 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[29-Dec-2015 10:20:13 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[29-Dec-2015 10:20:47 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[29-Dec-2015 10:21:15 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[29-Dec-2015 10:21:48 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[29-Dec-2015 12:41:14 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[30-Dec-2015 12:40:39 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[30-Dec-2015 15:44:14 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[30-Dec-2015 15:44:24 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[30-Dec-2015 15:44:31 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[30-Dec-2015 15:44:56 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[30-Dec-2015 16:43:39 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[31-Dec-2015 06:06:21 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[01-Jan-2016 09:41:50 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[01-Jan-2016 09:48:55 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[01-Jan-2016 15:33:58 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[02-Jan-2016 05:19:10 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[02-Jan-2016 06:20:33 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[02-Jan-2016 06:21:00 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[02-Jan-2016 10:46:27 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[02-Jan-2016 10:50:11 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[02-Jan-2016 13:32:31 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[02-Jan-2016 14:59:21 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[02-Jan-2016 15:32:52 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[02-Jan-2016 16:48:11 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[02-Jan-2016 16:48:24 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[02-Jan-2016 18:30:21 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[02-Jan-2016 19:10:26 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[03-Jan-2016 11:38:49 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[03-Jan-2016 16:12:26 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[03-Jan-2016 18:59:58 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[03-Jan-2016 21:14:58 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 06:01:39 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 08:48:47 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 09:24:13 America/Denver] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1' in /home1/apreciod/public_html/fcn/f_usuarios.php:193
+Stack trace:
+#0 /home1/apreciod/public_html/fcn/f_usuarios.php(193): PDO->query('delete from usu...')
+#1 /home1/apreciod/public_html/fcn/f_usuarios.php(26): actJur()
+#2 {main}
+  thrown in /home1/apreciod/public_html/fcn/f_usuarios.php on line 193
+[04-Jan-2016 13:18:19 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 13:19:07 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 15:16:03 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 15:33:20 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 15:41:17 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 321
+[04-Jan-2016 15:41:30 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 321
+[04-Jan-2016 15:41:51 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 321
+[04-Jan-2016 15:42:50 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 321
+[04-Jan-2016 15:43:52 America/Denver] PHP Fatal error:  Call to a member function doInsert() on a non-object in /home1/apreciod/public_html/clases/fotos.php on line 64
+[04-Jan-2016 16:00:40 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 16:00:58 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 16:07:56 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:08:01 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:08:52 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:09:20 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:09:47 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:10:06 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:10:10 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:10:19 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:10:19 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:10:21 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:10:30 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:10:51 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:11:26 America/Denver] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home1/apreciod/public_html/clases/usuarios.php on line 133
+[04-Jan-2016 16:19:54 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 16:19:54 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 16:19:54 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 16:47:00 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 16:47:00 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 16:47:00 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 16:51:50 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 16:52:33 America/Denver] PHP Fatal error:  Call to a member function valueExist() on a non-object in /home1/apreciod/public_html/fcn/f_usuarios.php on line 276
+[04-Jan-2016 16:52:37 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 16:52:37 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 16:52:38 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 16:54:25 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 16:54:25 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 16:54:25 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 16:56:21 America/Denver] PHP Fatal error:  Call to a member function doSingleSelect() on a non-object in /home1/apreciod/public_html/clases/fotos.php on line 25
+[04-Jan-2016 17:04:31 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 17:05:01 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 17:07:44 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:07:44 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 17:07:44 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 17:08:30 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:08:30 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 17:08:30 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 17:10:57 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 17:11:11 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:11:11 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 17:11:11 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 17:11:41 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 17:13:17 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 17:21:55 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:21:55 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 17:26:12 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:26:12 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 17:26:12 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 17:31:12 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:31:12 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 17:31:12 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 17:49:02 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:49:02 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 17:49:02 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 17:58:08 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 17:58:08 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 17:58:08 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 18:04:36 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 18:04:36 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 18:08:39 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 18:08:39 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 18:08:39 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 18:13:05 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 18:13:05 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 18:13:05 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 18:31:46 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 18:47:48 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 18:49:06 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 18:49:06 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 18:49:06 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 18:51:49 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 18:51:49 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 18:51:49 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 18:53:03 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 18:53:03 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 18:53:03 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 18:53:43 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 18:53:43 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 18:53:43 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:16:34 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 19:17:09 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 19:27:01 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:27:01 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:27:01 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:27:53 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:27:53 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:27:53 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:32:55 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:32:55 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:32:55 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:36:04 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:36:04 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:36:05 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:36:16 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 19:37:00 America/Denver] PHP Fatal error:  Call to a member function doSingleSelect() on a non-object in /home1/apreciod/public_html/clases/publicaciones.php on line 75
+[04-Jan-2016 19:37:37 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:37:37 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:37:37 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:38:37 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:38:37 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:38:38 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:40:01 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 19:41:29 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:41:29 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:41:29 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:42:11 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:42:11 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:42:11 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:46:57 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:46:57 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:46:57 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:52:13 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 19:52:13 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 19:52:13 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 19:53:05 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 20:00:45 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 20:00:45 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 20:00:45 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 20:03:20 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 20:03:20 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 20:03:20 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 20:27:19 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 20:27:19 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 20:30:17 America/Denver] PHP Notice:  Undefined index: metodo in /home1/apreciod/public_html/fcn/f_index.php on line 5
+[04-Jan-2016 20:31:42 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 20:31:42 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 20:31:42 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 20:46:05 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 20:46:22 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 20:46:22 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 20:46:22 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 20:48:09 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 20:48:09 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 20:48:09 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 20:59:19 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 20:59:19 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 20:59:20 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 21:03:24 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 21:03:24 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 21:03:25 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 21:09:14 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 21:09:14 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 21:09:14 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 21:10:47 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 21:13:02 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 21:27:30 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[04-Jan-2016 21:28:38 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 21:28:38 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 21:28:38 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 21:32:32 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 21:32:32 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 21:32:32 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 21:38:29 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[04-Jan-2016 21:41:51 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 21:41:51 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 21:41:51 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[04-Jan-2016 23:11:36 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[04-Jan-2016 23:11:36 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[04-Jan-2016 23:11:37 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 03:18:24 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 03:18:24 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 03:18:24 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 04:09:29 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 04:09:29 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 04:09:29 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 04:15:02 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 04:33:19 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 04:33:19 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 04:33:19 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 05:05:52 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 05:14:42 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 05:14:42 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 05:14:42 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 06:15:43 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 06:30:27 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 06:35:46 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 06:36:33 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 06:36:33 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 06:36:33 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 06:37:14 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[05-Jan-2016 06:41:08 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[05-Jan-2016 06:43:27 America/Denver] PHP Warning:  json_encode(): Invalid UTF-8 sequence in argument in /home1/apreciod/public_html/fcn/f_usuarios.php on line 70
+[05-Jan-2016 06:44:17 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 06:44:17 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 06:44:18 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 06:46:52 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 06:46:52 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 07:07:31 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 07:07:31 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 07:07:31 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 224
+[05-Jan-2016 07:37:28 America/Denver] PHP Fatal error:  Class 'usuario' not found in /home1/apreciod/public_html/fcn/f_usuarios.php on line 270
+[05-Jan-2016 07:37:39 America/Denver] PHP Fatal error:  Class 'usuario' not found in /home1/apreciod/public_html/fcn/f_usuarios.php on line 270
+[05-Jan-2016 07:38:02 America/Denver] PHP Fatal error:  Class 'usuario' not found in /home1/apreciod/public_html/fcn/f_usuarios.php on line 270
+[05-Jan-2016 07:39:34 America/Denver] PHP Fatal error:  Class 'usuario' not found in /home1/apreciod/public_html/fcn/f_usuarios.php on line 270
+[05-Jan-2016 08:10:00 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 08:10:00 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 08:10:01 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 221
+[05-Jan-2016 08:10:34 America/Denver] PHP Parse error:  syntax error, unexpected end of file in /home1/apreciod/public_html/clases/usuarios.php on line 432
+[05-Jan-2016 08:11:15 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 08:11:36 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 08:11:54 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 08:13:08 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 08:50:32 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[05-Jan-2016 09:19:08 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 09:19:08 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 09:45:59 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 09:45:59 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 10:43:09 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 10:43:09 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 10:43:09 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 11:42:24 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 11:42:24 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 11:48:41 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 11:48:41 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 11:48:41 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 11:51:43 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 11:51:43 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 12:06:00 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 12:06:00 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 12:13:04 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 12:13:04 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 12:13:04 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 12:43:02 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 12:43:02 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 12:43:02 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 12:43:02 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 12:43:02 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 12:43:02 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 12:43:02 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 12:43:02 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 12:43:03 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 13:00:10 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 13:00:10 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 13:00:11 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 13:26:15 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 13:26:15 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 13:26:15 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[05-Jan-2016 13:33:54 America/Denver] PHP Notice:  Undefined index: method in /home1/apreciod/public_html/fcn/f_usuarios.php on line 6
+[05-Jan-2016 13:34:29 America/Denver] PHP Notice:  Undefined variable: id in /home1/apreciod/public_html/fcn/f_usuarios.php on line 293
+[05-Jan-2016 13:39:46 America/Denver] /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php
+[05-Jan-2016 13:39:46 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home1/apreciod/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[05-Jan-2016 13:39:46 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home1/apreciod/public_html/clases/usuarios.php on line 223
+[21-Jan-2016 09:34:17 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[21-Jan-2016 09:34:17 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[21-Jan-2016 09:34:17 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[21-Jan-2016 10:30:22 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[21-Jan-2016 10:30:22 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[21-Jan-2016 10:30:22 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[21-Jan-2016 14:20:03 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[21-Jan-2016 14:20:03 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[21-Jan-2016 14:20:03 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[21-Jan-2016 19:24:14 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[21-Jan-2016 19:24:32 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[21-Jan-2016 19:25:06 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[21-Jan-2016 19:25:39 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[21-Jan-2016 19:25:39 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[21-Jan-2016 19:25:39 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[22-Jan-2016 05:22:15 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 05:24:08 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[22-Jan-2016 05:24:08 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[22-Jan-2016 05:24:08 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[22-Jan-2016 05:24:57 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 05:27:10 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[22-Jan-2016 05:27:10 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[22-Jan-2016 05:27:10 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[22-Jan-2016 05:53:19 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[22-Jan-2016 05:53:19 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[22-Jan-2016 05:53:19 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[22-Jan-2016 05:54:38 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 05:54:51 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 06:38:43 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 07:42:53 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[22-Jan-2016 07:42:53 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[22-Jan-2016 07:42:53 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[22-Jan-2016 08:00:22 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[22-Jan-2016 08:00:22 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[22-Jan-2016 08:00:22 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[22-Jan-2016 08:24:20 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 08:25:51 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 08:29:40 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 08:51:36 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[22-Jan-2016 08:51:36 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[22-Jan-2016 08:51:36 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 228
+[22-Jan-2016 08:59:37 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 09:00:23 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[22-Jan-2016 09:06:27 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 331
+[01-Feb-2016 06:12:09 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 06:12:09 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 06:12:23 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 06:12:23 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 06:23:50 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 06:23:50 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 06:23:55 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 06:23:55 America/Denver] PHP Notice:  Undefined variable: resultado in /home4/iphrases/public_html/clases/usuarios.php on line 296
+[01-Feb-2016 08:16:06 America/Denver] PHP Fatal error:  Call to undefined method usuario::setNewPassword() in /home4/iphrases/public_html/fcn/f_usuarios.php on line 503
+[01-Feb-2016 08:26:00 America/Denver] PHP Notice:  Undefined variable: condition in /home4/iphrases/public_html/clases/usuarios.php on line 740
+[01-Feb-2016 08:26:00 America/Denver] PHP Warning:  array_keys() expects parameter 1 to be array, string given in /home4/iphrases/public_html/clases/bd.php on line 98
+[01-Feb-2016 08:26:00 America/Denver] PHP Warning:  end() expects parameter 1 to be array, null given in /home4/iphrases/public_html/clases/bd.php on line 99
+[01-Feb-2016 08:26:00 America/Denver] PHP Warning:  Invalid argument supplied for foreach() in /home4/iphrases/public_html/clases/bd.php on line 101
+[01-Feb-2016 08:26:00 America/Denver] PHP Notice:  Undefined variable: values in /home4/iphrases/public_html/clases/bd.php on line 110
+[01-Feb-2016 11:01:02 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 337
+[01-Feb-2016 11:02:53 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[01-Feb-2016 11:02:53 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[01-Feb-2016 11:02:53 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 236
+[01-Feb-2016 13:48:15 America/Denver] PHP Notice:  Undefined variable: id in /home4/iphrases/public_html/fcn/f_usuarios.php on line 337
+[01-Feb-2016 15:00:20 America/Denver] /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php
+[01-Feb-2016 15:00:20 America/Denver] PHP Notice:  Undefined index: OneAManager_type in /home4/iphrases/public_html/clases/manager/Handler_NewSocialConnection.php on line 51
+[01-Feb-2016 15:00:20 America/Denver] PHP Notice:  A session had already been started - ignoring session_start() in /home4/iphrases/public_html/clases/usuarios.php on line 236

@@ -1,0 +1,21 @@
+$(document).ready(function(){
+	$("#orden #filtro").change(function(e){
+		var parametros="";
+		if($("#principal").data("est")!=100){
+			parametros+="&id_est=" + $("#principal").data("est");
+			parametros+="&nombre_est=" + $("#principal").data("nomest");			
+		}
+//		if($("#principal").data("cla")!=-1){
+			parametros+="&id_cla=" + $("#principal").data("cla");
+//		}
+		if($("#principal").data("can")!=0){
+			parametros+="&cantidadAnt=" + $("#principal").data("can");
+		}
+		parametros+="&pagina="+$("#principal").data("pag");
+		parametros+="&palabra="+$("#principal").data("pal");	
+        window.open("listado.php?orden=" + $("#orden #filtro").val() + parametros,"_self");
+	});
+	$(".imagen").click(function(){
+		window.open("detalle.php?id=" + $(this).data("id"),"_self");
+	});
+});

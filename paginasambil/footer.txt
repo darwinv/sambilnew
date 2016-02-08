@@ -1,0 +1,52 @@
+<footer class="pad5 " style="color:#999;" >
+<center>
+<div class="ancho85 t12 ">
+
+	
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<ul class="list-unstyled listas-footer text-left">
+					<h4 class="text-left">Ciudades</h4> 
+	 			     <li> <a href="#"> Caracas </a></li> 
+	 			     <li> <a href="#">Valencia</a></li> 
+	 			     <li> <a href="#"> Margarita </a></li> 
+	 			     <li> <a href="#">Maracaibo </a> </li> 
+	 			     <li> <a href="#"> San Cristobal </a> </li>
+	 			     <li>  <a href="#"> Barquisimeto</a> </li> 
+	 			     <li> <a href="#"> Paraguana </a> </li>
+	 			</ul>
+			</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<ul class="list-unstyled listas-footer text-left">
+					<h4 class="text-left">Constructora Sambil</h4> 
+	 			     <li> <a href="#"> Quienes Somos </a></li> 
+	 			     <li> <a href="#">Proyecto</a></li> 
+	 			     <li> <a href="#"> Contacto</a></li> 
+	 			</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<ul class="list-unstyled listas-footer text-left">
+					<h4 class="text-left">Responsabilidad Social</h4> 
+	 			     <li> <a href="#"> Inicio</a></li> 
+	 			     <li> <a href="#">Educaci&oacute;n</a></li> 
+	 			     <li> <a href="#"> Familia</a></li> 
+	 			     <li> <a href="#"> Deporte</a></li> 
+	 			     <li> <a href="#"> Salud</a></li> 
+	 			     <li> <a href="#"> Cultura</a></li> 
+	 			     <li> <a href="#"> Comunidad</a></li> 
+	 			     <li> <a href="#"> Contacto</a></li>
+	 			</ul>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<ul class="list-unstyled listas-footer text-left">
+					<h4 class="text-left">Revista Sambil</h4> 
+	 			     <li> <a href="#"> &Uacute;ltima Edici&oacute;n </a></li> 
+	 			     <li> <a href="#">Inscripciones</a></li> 
+	 			</ul>
+			</div>
+		</div>
+
+		
+	</div>
+</center>
+</footer>
