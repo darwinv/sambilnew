@@ -5,7 +5,7 @@ if(file_exists('../../clases/usuarios.php')){
 	$vienedeAjax=true;
 }else{
 	$vienedeAjax=false;
-	include "clases/publicaciones.php";
+	include_once "clases/publicaciones.php";
 }
 if (! isset ( $_SESSION )) {
 	session_start ();

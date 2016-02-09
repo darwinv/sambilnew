@@ -1,7 +1,7 @@
 <?php
 	$usr = new usuario($_SESSION["id"]);										
 	$usr_publicaciones = $usr -> getAllPublicaciones(1);	
-	$cant_preg_usr = $usr -> getCantPreguntasActivas();
+	$cant_preg_usr = $usr -> getCantPreguntasActivas(); 
 ?>
 
 <div class="contenedor">
@@ -63,6 +63,8 @@ foreach ($p_preguntas as $pp => $valor2) {
 		     	 		<br>
 		      					<p class="t14 marL20 marR20 bor <?php if($cont!=1){ $cont++;?>borBD<?php }?>" id="eti-p<?php echo $id_pregunta;?>"  >
 										<i class="fa fa-comment blueO-apdp " style="border-bottom: #ccc 1px dashed;" ></i> 
+										<span class="t12 blueO-apdp comprador" style="z-index:1000; " data-id="<?php echo $id_usr;?>">	<?php echo $valor2["nombre"]; ?> </span>&nbsp;<span class="opacity t12"> Hace <?php echo $valor2["tiempo"]; ?></span>
+										<br>
 										<span class="marL5 point toggleResponder"  data-id="<?php echo $id_pregunta; ?>">
 											<?php echo $valor2["pregunta"]; ?></span>
 										<br>

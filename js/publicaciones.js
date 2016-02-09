@@ -111,9 +111,11 @@ $(document).ready(function() {
 				$("#imagentipo").attr("src", laimagen);
 				$("#txtPrecio").autoNumeric({aSep: '.', aDec: ','});
 				//Inicializacion del editor HTML				
-					$('#editor').trumbowyg({
-						lang : 'es'
-					});				
+		$('#editor').trumbowyg({
+						lang : 'es',	  
+					});	
+										
+								
 				if($("#cmbCondicion").val()==3){
 					$("#txtCantidad").attr("readonly","true");
 				}else{
@@ -272,7 +274,7 @@ $(document).ready(function() {
 	
 
 	/*
-	 * Navegacion de las pestañas
+	 * Navegacion de las pestaï¿½as
 	 */
 	$("#ajaxContainer2").on("click","#volverClasificado",function(){
 		$("#pesta1").click();

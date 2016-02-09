@@ -25,10 +25,8 @@ function actualizaFavoritos(){
 }
 function guardaPregunta(){
 	$publi=new publicaciones($_POST["id"]);
-	$publi->setPreguntas(utf8_decode($_POST["pregunta"]));	
-	$bd = new bd();
- 	$nuevoid = $bd -> lastInsertId();
-	$not = $publi->setNotificacion($_POST["id"],$_POST["tipo"],$_POST["usr"],$nuevoid);
+	$inse = $publi->setPreguntas(utf8_decode(htmlspecialchars(strip_tags($_POST["pregunta"]))));	
+	$not = $publi->setNotificacion($_POST["id"],$_POST["tipo"],$_POST["usr"],$inse);
 	$preguntas=$publi->getPreguntasPublicacion();
 	?>
 	<div style="background: #FFF; margin-top: -10px; width: 140px;" class="marR20 text-center pull-right"> <span>Ultimas Preguntas</span></div>

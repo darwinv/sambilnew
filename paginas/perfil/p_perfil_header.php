@@ -113,7 +113,7 @@ endif;?>
 			<div class="  btn-group  mar-me-gusta  pull-right-me-gusta "
 				role="group">
 				<button type="button" style="padding-top: 5px; padding-bottom: 5px; font-size: 12px;" data-count="<?php echo isset($contador)?$contador:$megustan;?>"
-					class="btn2 btn-default2 <?php echo isset($oculto)?$oculto:'';?>" id="btn-megusta"  <?php echo isset($datamegusta)?$datamegusta:"";?> >
+					data-usr="<?php if(isset($_SESSION["id"])) echo $_SESSION ["id"]; ?>" class="btn2 btn-default2 <?php echo isset($oculto)?$oculto:'';?>" id="btn-megusta"  <?php echo isset($datamegusta)?$datamegusta:"";?> >
 					<i class="fa <?php echo isset($iconomegusta)?$iconomegusta:"fa-thumbs-up";?>"></i> <?php echo isset($yamegusta)?$yamegusta:"Siguiendo";?>
 				</button>
 				<!-- Boton de compartir 

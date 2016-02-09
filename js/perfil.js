@@ -92,10 +92,11 @@ $(document).ready(function(){
 		html = $("#btn-megusta").html();
 		count = $("#btn-megusta").data("count");
 		$("#btn-megusta").prop("disabled",true);
-		$("#btn-megusta").html("...Cargando");		
+		$("#btn-megusta").html("...Cargando");
+		seguidor = $(this).data("usr");
 		$.ajax({
             url: "paginas/perfil/fcn/f_favoritos.php",
-            data: { id : getQuerystringValue("id"), action: $(this).data("action")},
+            data: { id : getQuerystringValue("id"), action: $(this).data("action"),seguidor:seguidor},
             type: 'GET',
             dataType: 'json',
             success: function (data) {

@@ -1458,7 +1458,11 @@ div.vertical-line {
 	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 	box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
-
+.alertas {
+	overflow-y: auto;
+	max-height: 400px;
+	width: 300px;
+}
 /* ************* Fin login  ************* */
 
 /* Categorias*/

@@ -19,6 +19,7 @@ use OneAManager\Handler_Soat;
  * @property int condiciones_publicaciones_id;
  * @property double monto;
  */
+ 
 class publicaciones{
 	protected $table="publicaciones";
 	private $id;
@@ -197,7 +198,6 @@ class publicaciones{
 		$not = $bd->doInsert("notificaciones",$notificacion);	
 		
 	}
-	
 
 	
 	public function getMonto($admin=0){
@@ -251,13 +251,9 @@ class publicaciones{
 		}
 	}
 	
-	public function getTiempoPublicacion(){
-		$bd=new bd();
-		$strCondicion="publicaciones_id=$this->id";
-		$result=$bd->doSingleSelect("publicacionesxstatus"," $strCondicion ","fecha");
-		$segundos=strtotime('now')-strtotime($result["fecha"]);
+	public function getTiempo($segundos){
 		$dias=intval($segundos/60/60/24);
-		if($dias<1){
+			if($dias<1){
 			$dias = intval($segundos/60/60);
 			if($dias<1){
 				$dias= intval($segundos/60);
@@ -290,6 +286,14 @@ class publicaciones{
 			else
 				return " $dias d";	
 		}	
+	}
+	
+	public function getTiempoPublicacion(){
+		$bd=new bd();
+		$strCondicion="publicaciones_id=$this->id";
+		$result=$bd->doSingleSelect("publicacionesxstatus"," $strCondicion ","fecha");
+		$segundos=strtotime('now')-strtotime($result["fecha"]);
+		return $this -> getTiempo($segundos);
 	}
 	
 	public function getFotos(){
@@ -330,41 +334,7 @@ class publicaciones{
         $condicion="preguntas_publicaciones_id=$id_pregunta";
 		$result=$bd->doSingleSelect("preguntas_publicaciones",$condicion,"contenido,fecha");
 		$segundos=strtotime('now') - strtotime($result["fecha"]);
-		$dias=intval($segundos/60/60/24);
-		if($dias<1){
-			$dias = intval($segundos/60/60);
-			if($dias<1){
-				$dias= intval($segundos/60);
-					if($dias<1){
-						$dias = $segundos;
-						if($dias<60){
-							if($dias==1){
-								$tiempo = "		1 s";
-							}else{
-							$tiempo = "		$segundos s";
-							}
-						}
-					}elseif($dias<60){
-						if($dias==1){
-							$tiempo = "		1 m";
-						}else{
-							$tiempo = " 	$dias m";
-						}
-					}
-			}elseif($dias<24){
-				if($dias==1)
-					$tiempo = " 	1 h";
-				else{
-					$tiempo = " 	$dias h";
-				}
-			}
-		}elseif($dias<=30){
-			if($dias==1)
-				$tiempo = "		Ayer";
-			else
-			$tiempo = " 	$dias d";	
-		}
-		
+		$tiempo = $this -> getTiempo($segundos);
 				
 		if(!empty($result)){
 			$devolver[0]=$result["contenido"];
@@ -393,7 +363,7 @@ class publicaciones{
 					$resultado[$i]["preguntas"][]=array("pregunta"=>$row["contenido"],"usuario"=>$usuario["seudonimo"]);
 				}
 			}else{	
-				$resultado[]="id de publicaci&oacute;n:" . $r["id"] . " Titulo:" . $r["titulo"] . "Pregunta por responder ninguna";
+				$resultado[]="id de publicaci&oacuten:" . $r["id"] . " Titulo:" . $r["titulo"] . "Pregunta por responder ninguna";
 			}
 		}
 		return $resultado;
@@ -420,9 +390,12 @@ class publicaciones{
 		$bd=new bd();
 		$preguntas=array();
 		$condicion="publicaciones_id=$id AND preguntas_publicaciones_id IS NULL";
-        $result=$bd->query("SELECT * FROM preguntas_publicaciones WHERE preguntas_publicaciones_id IS NULL and publicaciones_id=$id and usuarios_id=$usr_id order by fecha desc");	
+        $result=$bd->query("SELECT * FROM preguntas_publicaciones pp, usuarios_accesos u  
+        WHERE u.usuarios_id=pp.usuarios_id and preguntas_publicaciones_id IS NULL and publicaciones_id=$id and pp.usuarios_id=$usr_id order by fecha desc");	
         foreach ($result as $r){
-        	$preguntas[]=array("id"=>$r["id"],"pregunta"=>$r["contenido"],"pre_pub_id"=>$r["preguntas_publicaciones_id"],"usr_id"=>$r["usuarios_id"]);
+		        $segundos=strtotime('now') - strtotime($r["fecha"]);
+				$tiempo = $this -> getTiempo($segundos);		
+	        $preguntas[]=array("id"=>$r["id"],"pregunta"=>$r["contenido"],"pre_pub_id"=>$r["preguntas_publicaciones_id"],"usr_id"=>$r["usuarios_id"],"tiempo"=>$tiempo,"nombre"=>$r["seudonimo"]);
   		}
 		return $preguntas;
 	}
@@ -434,11 +407,13 @@ class publicaciones{
 		$bd=new bd();
 		$preguntas=array();
 		$condicion="publicaciones_id=$id AND preguntas_publicaciones_id IS NULL";
-        $result=$bd->query("select * from preguntas_publicaciones where id not in (SELECT preguntas_publicaciones_id 
-        FROM `preguntas_publicaciones` WHERE preguntas_publicaciones_id is not null) and preguntas_publicaciones_id is NULL 
-        and publicaciones_id=$id order by fecha");	
+        $result=$bd->query("select * from preguntas_publicaciones pp, usuarios_accesos u where pp.usuarios_id=u.usuarios_id and 
+        id not in (SELECT preguntas_publicaciones_id FROM `preguntas_publicaciones` WHERE preguntas_publicaciones_id is not null) 
+        and pp.preguntas_publicaciones_id is NULL and pp.publicaciones_id=$id order by fecha");	
         foreach ($result as $r){
-        	$preguntas[]=array("id"=>$r["id"],"pregunta"=>$r["contenido"],"pre_pub_id"=>$r["preguntas_publicaciones_id"],"usr_id"=>$r["usuarios_id"]);
+        $segundos=strtotime('now') - strtotime($r["fecha"]);
+		$tiempo = $this -> getTiempo($segundos);			
+        	$preguntas[]=array("id"=>$r["id"],"pregunta"=>$r["contenido"],"pre_pub_id"=>$r["preguntas_publicaciones_id"],"usr_id"=>$r["usuarios_id"],'nombre'=>$r["seudonimo"],'tiempo'=>$tiempo);
   		}
 		return $preguntas;
 	}
@@ -633,6 +608,44 @@ class publicaciones{
 			return $result;
 		}
 	}
-
-
+	public function setPanaPublicacion($id=NULL,$tipo=NULL,$id_usr=NULL){
+		if($id==null)
+			$id=$this->id;
+		$bd=new bd();
+		if(!isset($_SESSION["id"]))
+		session_start();
+		if($id_usr==null){
+			$id_usr = $_SESSION["id"];
+		}
+		
+		$tiempo = date("Y-m-d H:i:s",time());
+		$notificacion=array(
+			"fecha"=>$tiempo,
+			"tipos_notificaciones_id"=>$tipo,
+			"usuarios_id"=>$id_usr,
+			"publicaciones_id"=>$id
+		);
+		$not = $bd->doInsert("notificaciones",$notificacion);	
+		
 	}
+	
+	public function setDenuncia($id=null, $tipo=null, $id_pub=null){
+		if($id_pub==null)
+			$id_pub=$this->id;
+		$bd=new bd();
+		if(!isset($_SESSION["id"]))
+		session_start();
+			if($id_usr==null){
+			$id = $_SESSION["id"];
+			}
+		$tiempo = date("Y-m-d H:i:s",time());
+		$denuncia = array (
+			"fecha"=>$tiempo,
+			"tipo"=>$tipo,
+			"usuarios_id"=>$id,
+			"publicaciones_id"=>$id_pub
+		);
+		$bd -> doInsert("denuncia",$denuncia);
+		
+	}
+}

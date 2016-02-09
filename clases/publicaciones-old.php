@@ -3,7 +3,6 @@ include_once 'bd.php';
 include_once 'fotos.php';
 require_once __DIR__ .'/manager/autoload.php';
 use OneAManager\Handler_Soat;
-
 /**
  * @property string table
  * @property int id

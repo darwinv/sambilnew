@@ -1,5 +1,24 @@
-<?php  		
-						include_once 'clases/usuarios.php';
+<?php 
+
+/***CODIGO PARA NOTIFICACIONES****/
+if(!isset($_SESSION)){
+    session_start();	
+} 
+	$usr = new usuario($_SESSION["id"]);
+	$bd = new bd();
+	$cant_compras = $usr->getCantRespuestas();
+	$cant_ventas = $usr -> getCantNotificacionPregunta();
+	$cant_panas = $usr -> getCantPanas();
+	$cant_pub = $usr -> getCantNotiPublicaciones();
+	
+	$status = $usr -> s_status_usuarios_id;
+	$alerts = $usr -> getAllNotificaciones($_SESSION["id"]);
+	$visto=0;
+	include_once "clases/publicaciones.php";
+ 
+/***FIN*****/
+ 
+ 
 						include_once 'clases/bd.php';
 						include_once 'clases/fotos.php';
 						include_once 'clases/sedes.php';
@@ -14,7 +33,7 @@
 						}
 						
 						
-						
+						//**BUSCAMOS FOTO DE USUARIO**** (DEBE CARGARSE POR EL ID DE LA SESSION)
 						if (isset ( $_SESSION ["id"] )){							
 							$foto_obj = new fotos();							  
 							$foto_perfil =$foto_obj->buscarFotoUsuario($_SESSION ["id"]);
@@ -22,15 +41,9 @@
 							$foto_perfil ="galeria/img/logos/silueta-bill.png";
 						}
 	
-	/*$usua=new usuario($_SESSION ["id"]);
-	$sede_obj = new bd ();
-	$id_sede	=$usua->u_id_sede;
-	$row=array('indice' => 'id','value' => $id_sede);
-	$valsede=$sede_obj->getAllDatos ( "sedes", $row);
-	if($valsede)
-		$_SESSION['code_sambil']=$valsede[0]['nombre'];*/
+	 
 
-	
+						//****BUSCAMOS DATOS DE LA SEDE*********
 					  if(isset($_GET['code_sambil'])){
 								$ciudad_sambil=$_GET['code_sambil'];
 		 						$_SESSION['code_sambil']=$ciudad_sambil;
@@ -52,7 +65,10 @@
 						 $telf_sambil=			$result_sede[2];
 						 $email_sambil=			$result_sede[3];
 						 $sede_sambil=			$result_sede[4];
-/*****Codigo para Visualizacion de las opciones del menu ******/
+				
+						 
+//*****Codigo para Visualizacion de las opciones del menu ******
+
 switch ($_SESSION['id_rol']) {
 	case '1':
 		$rol='admin';
@@ -169,8 +185,80 @@ switch ($_SESSION['id_rol']) {
 				<li><div class="vertical-line" style="height: 25px; margin-top: 20px;"></div></li>
 				
 			<?php if($rol=="tienda" or $rol=="comprador"){?>	
-						<li><a href="#" data-toggle="" data-target="" class="marT15"><i
-								class="fa fa-bell"></i> </a></li>	
+						<?php 
+$alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["cant"] + $cant_pub[0]["cant"];
+ 
+?>
+			 		
+		
+				<li id="notificacion" data-id="<?php echo $_SESSION["id"];?>" class="dropdown"><a href="#" data-toggle="dropdown" role="button" class="dropdown-toggle marT15" onclick="<?php echo $visto=1; ?>" aria-expanded="false"
+					style=""><?php if($alertas!=0){ echo '<span id="alerta" class="badge blanco" style="background: red; position: absolute; top: -2px; left: -1px;">'; echo $alertas; }?></span><i class="fa fa-bell"></i>  </a>
+					<ul class="dropdown-menu blanco alertas" role="menu"> 
+						<?php 
+						
+						foreach ($alerts as $a => $val) {
+							$fecha = $val["fecha"];
+							$tipo = $val["tipo"];
+							$id_pana = $val["pana"];
+							$id_pub = $val["pub"];
+							$id_pre = $val["pregunta"];
+							$pub = new publicaciones($id_pub);
+							$segundos = strtotime('now')-strtotime($fecha);
+							$tiempo = $pub -> getTiempo($segundos);
+							if($tipo==1){//Pregunta
+								$foto = $pub -> getFotoPrincipal();
+								$title= $pub -> tituloFormateado();
+								$id   = 1;
+								$tema = "Te Preguntaron";
+								$link = "preguntas";
+							}
+							if($tipo==2){//Repuesta
+								$foto = $pub -> getFotoPrincipal();
+								$title= $pub -> tituloFormateado();
+								$id   = 2;
+								$tema = "Te Respondieron";
+								$link = "respuestas";
+							}
+							if($tipo==3){//Panas
+								$foto = $usr -> buscarFotoUsuario($id_pana);
+								$id   = $id_pana;
+								$title= $usr -> getPana($id_pana);
+								$tema = "Ahora te sigue";	
+								$link = "perfil";
+							}
+							if($tipo==4){//Publicacion
+								$foto = $pub -> getFotoPrincipal();
+								$title= $pub -> tituloFormateado();
+								$tema = "Nuevos Articulos";
+								$id   = $id_pub;
+								$link = "detalle";
+							}
+						?>
+						<li data-id="<?php echo $id; ?>"  class="<?php echo $link; ?> noti-hover ">
+							<a class="" style="overflow: hidden;">
+								<div style="display: inline-block;   ">
+									<div style="padding-bottom: 5px;"><img src="<?php echo $foto; ?>" width="50px" height="50px"></div>
+								</div>
+								<div style="display:inline-block;    width: 145px; " >
+									<div class="marL10" >						
+										<b ><?php echo $title; ?></b>
+									</span>
+										<br>
+										<span class="grisC t12"><?php echo $tema; ?></span>							
+									</div>									
+								</div>
+								
+								<div style="display: inline-block;  ">
+									<!--<i class="fa fa-times" style="float: right; top: 5px;"></i>-->
+									<div class="marL10"><p><span class="grisC opacity t10"><?php echo $tiempo; ?></span></p></div>
+								</div>															
+								
+
+							</a>
+						</li>
+				<?php }?>
+						 </ul>
+				</li>		
 				<?php } ?>
 					
 				<?php if($rol=='comprador'){  ?>						
@@ -199,8 +287,7 @@ switch ($_SESSION['id_rol']) {
 					  </button>
 					   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					   	<?php  
-					   	/**mostramos las sedes, en el codigo previo se define dependiendo del diseño de la APP */
-					   	
+					   	/**mostramos las sedes, en el codigo previo se define dependiendo del diseï¿½o de la APP */ 
 						   	foreach ($sedes as $key => $value) {  ?>
 								<li><a href="principal.php?code_sambil=<?php echo $value['codigo'] ?>"> <?php echo $value['nombre'] ?></a></li>
 						    	<li role="separator" class="divider"></li>	   
@@ -219,40 +306,7 @@ switch ($_SESSION['id_rol']) {
 					  	</div>
 					</li>
 					<?php } ?>	
-					<!--<li ><a href="#" class="marT10 alert-reg" data-toggle='modal' data-target='#actualizar2'> Inscribete <span
-							class="glyphicon glyphicon-log-in"></span></a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle marT10"
-						data-toggle="dropdown" role="button" aria-expanded="false"
-						style=""> Ingresa <span class="glyphicon glyphicon-user"></span>
-					</a>
-						<ul class="dropdown-menu dropdown-menu-log " role="menu">
-							<li style="padding: 12px;">Inicia Sessi&oacute;n</li>
-							<li style="padding: 10px;">
-							<div class="form-group">
-							<input type="text"
-								placeholder=" Seudonimo / Correo" name="log_usuario" class=" form-input"
-								id="log_usuario">
-								</div></li>
-							<li style="padding: 10px;"><div class="form-group"><input type="password"
-								placeholder=" Contrase&#241;a" name="log_password" class=" form-input" id="log_password"></div>
-								<p class="text-right t10 marR5 vin-blue">
-									<a>&#191;Olvidaste la Contrase&#241;a?</a>
-								</p></li>
-							<li style="padding: 10px; margin-top: -20px"><button id="usr-log-submit" type="submit" 
-									class="btn2 btn-primary2 btn-group-justified">Ingresar</button>
-									<br>
-									<button id="fb_log_button"
-									class="btn2 btn-facebook btn-group-justified marT5 t12">Ingresar con Facebook</button>
-									
-									<button id="tw_log_button"
-									class="btn2 btn-twitter btn-group-justified marT5 t12">Ingresar con Twitter</button>
-									
-									</li>
-							<li class="divider"></li>
-							<li style="padding: 10px;"><p class="t12 text-center">&#191;Eres
-									nuevo en Apreciodepana?</p>
-								<button class="btn2 btn-default btn-group-justified " data-toggle="modal" data-target="#actualizar2">Inscribete</button></li>
-						</ul></li>-->
+					 
 				</ul>
 			</div>
 		

@@ -53,7 +53,7 @@ foreach ($p_preguntas as $pp => $valor2) {
 	
 	     							
 									<p class="t14 marL20 marR20" id="preguntas<?php echo $id_pub;?>" style="border-bottom: #ccc 1px dashed;">
-										<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor2["pregunta"]; ?></span>
+										<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor2["pregunta"]; ?>&nbsp;&nbsp; <span class="opacity t12"> Hace <?php echo $valor2["tiempo"]; ?></span></span>
 										<br>
 										<br>
 									<?php if($r[0] != null) {?>

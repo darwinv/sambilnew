@@ -5,6 +5,7 @@ if (!headers_sent()) {
 include_once "../../../clases/clasificados.php";
 include_once "../../../clases/bd.php";
 include_once "../../../clases/publicaciones.php";
+include_once "../../../clases/amigos.php";
 switch($_POST["metodo"]){
 	case "traerClasificados":
 		traerClasificados();
@@ -45,6 +46,7 @@ function guardarPublicacion(){
 	//publicaciones	
 	session_start();
 	$publicacion = new publicaciones();
+	$amigos = new amigos();
 	$listaValores=array(			
 			"titulo"=>$_POST["txtTitulo"],
 			"descripcion"=>$_POST["editor"],
@@ -62,14 +64,18 @@ function guardarPublicacion(){
 			"publicar_grupo"=>$_POST["gr"]);
 	$monto = $_POST["monto"];
 	$fecha = date("Y-m-d H:i:s",time());;
-	$listaValores["dias_garantia"]=str_replace("gn", "ñ", $listaValores["dias_garantia"]);
+	$listaValores["dias_garantia"]=str_replace("gn", "ï¿½", $listaValores["dias_garantia"]);
 	for ($i=0; $i < 6 ; $i++) {
 		if(isset($_POST["foto-".$i])){
 			$fotos[] = $_POST["foto-".$i];
-		}		
+		}
 	}
 	$listaValores["titulo"]=utf8_decode($listaValores["titulo"]);
-	$idPub = $publicacion->nuevaPublicacion($listaValores,$monto,$fecha,$fotos);
+	$idPub = $publicacion->nuevaPublicacion($listaValores,$monto,$fecha,$fotos);	
+	$seguidores = $amigos -> getAmigos($_SESSION["id"]);
+	foreach ($seguidores as $p => $value) {
+		$publicacion -> setPanaPublicacion($idPub,4,$value["amigos_id"]);
+	}
 	if($idPub){
 		echo json_encode(array("result" => "OK", "id" => $idPub));
 	}else{

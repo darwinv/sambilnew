@@ -232,6 +232,26 @@ class usuario {
 			return false;
 		}
 	}
+	public function buscarFotoUsuario($id){
+		$bd = new bd();
+		$table = "fotos, fotos_usuarios";
+		$condicion = "usuarios_id = $id AND fotos_id = id";
+		$result = $bd->doSingleSelect($table,$condicion);
+		if(!empty($result)){
+			return $result["ruta"].$result["id"].".png";
+		}else{
+			return "galeria/img/logos/silueta-bill.png";
+		}
+	} 
+	public function getPana($id=null){
+		if(is_null($id)){
+			$id = $this -> $id;	
+		}
+		$bd = new bd();
+		$result = $bd -> query("SELECT seudonimo FROM `usuarios_accesos` where usuarios_id = $id ");
+		$pana = $result->fetch();
+		return $pana["seudonimo"];
+	}
 	
 	public function ingresoUsuario($login, $password, $url){
 		$bd= new bd();
@@ -636,7 +656,28 @@ function comprobarToken($token){
   		}
 		return $panas;
 	}
-	
+	public function getCantNotiPublicaciones($id = NULL){
+		if(is_null($id)){
+			$id=$this->id;
+		}
+		$bd=new bd();
+		$panas=array();
+        $result=$bd->query("select count(*) as cant from notificaciones where leida=0 and usuarios_id=$id and tipos_notificaciones_id=4 ");	
+        foreach ($result as $r){
+        	$panas[]=array("cant"=>$r["cant"]);
+  		}
+		return $panas;
+	}
+	public function getAllNotificaciones($id=null){
+		if(is_null($id)){
+			$id=$this->id;
+		}
+			$bd = new bd();
+			$consulta = "select fecha, tipos_notificaciones_id tipo, usuarios_id usr, publicaciones_id pub, preguntas_publicaciones_id pregunta, 
+			pana_id pana from notificaciones where usuarios_id=$id ORDER BY `notificaciones`.`fecha`  DESC limit 25";
+			$result =$bd->query($consulta);
+			return $result;	
+	}
 	public function getAllPublicaciones($status=1,$id=NULL){
 		if(is_null($id)){
 			$id=$this->id;
@@ -703,8 +744,8 @@ function comprobarToken($token){
 		$bd=new bd();
 		$preguntas=array();
 		$consulta=" select count(*) as cant from preguntas_publicaciones where id in (select preguntas_publicaciones_id from notificaciones 
-		where leida=0 and usuarios_id=$id) and preguntas_publicaciones_id is null ";
-        $result=$bd->query($consulta);	
+		where leida=0 and usuarios_id=$id) and preguntas_publicaciones_id is null "; 
+        $result=$bd->query($consulta);	 
         foreach ($result as $r){
         	$preguntas[]=array("cant"=>$r["cant"]);
   		}
@@ -877,7 +918,8 @@ function comprobarToken($token){
 		$condicion="usuarios_id=$user";
 		$result=$bd->doUpdate($this->a_table, $actualizar, $condicion);
 		return $result;
-	}
+	} 
+	  
 	
 	
 

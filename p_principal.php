@@ -24,11 +24,7 @@ function buscaDerecha(){
 			x++;
 			$("#"+x).hide("swing",function(){
 				$("#"+(siguiente+x)).show("swing");
-			});			
-			//elDiv.toggle("fast","easeOutQuad",function(){
-				//elDiv.html(data);
-				//elDiv.show( "slide",{direction:'down'});
-				//elDiv.toggle("easeinSine");	
+			});			 
 //	}	
 	Pagina++;
 	$("#listaPublicaciones").data("pagina",Pagina);
@@ -124,11 +120,11 @@ border-bottom-left-radius: 10px;" >
 
     <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-2">
       <p class="text-left mar20 " style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> públicaciones</span>
+        <span class="negro t26 ">Ultimas <br> pï¿½blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones más recientes.</span>
+        <span class="">echale un vistazo a las publicaciones mï¿½s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver más...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver mï¿½s...</a></span>
          <br>
         <br>
         <br>
@@ -140,11 +136,11 @@ border-bottom-left-radius: 10px;" >
     
     <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> públicaciones</span>
+        <span class="negro t26 ">Ultimas <br> pï¿½blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones más recientes.</span>
+        <span class="">echale un vistazo a las publicaciones mï¿½s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver más...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver mï¿½s...</a></span>
          <br>
         <br>
         <br>
@@ -195,11 +191,11 @@ foreach ($resultTotal as $r => $valor) {
 
 	<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> públicaciones</span>
+        <span class="negro t26 ">Ultimas <br> pï¿½blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones más recientes.</span>
+        <span class="">echale un vistazo a las publicaciones mï¿½s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver más...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver mï¿½s...</a></span>
          <br>
         <br>
         <br>
@@ -229,11 +225,11 @@ foreach ($resultTotal as $r => $valor) {
 
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2">
       <p class="text-left mar20" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Top 5 <br> Más Visitados</span>
+        <span class="negro t26 ">Top 5 <br> Mï¿½s Visitados</span>
         <br><br>
-        <span>Echale un vistazo a las publicaciones más populares.</span>
+        <span>Echale un vistazo a las publicaciones mï¿½s populares.</span>
         <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline;"><a href="#">Ver más...</a></span>
+        <span class="vin-blue t18" style="text-decoration:underline;"><a href="#">Ver mï¿½s...</a></span>
         <br>
         <br>
       
@@ -311,11 +307,11 @@ border-bottom-left-radius: 10px; " >
 
 <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> públicaciones</span>
+        <span class="negro t26 ">Ultimas <br> pï¿½blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones más recientes.</span>
+        <span class="">echale un vistazo a las publicaciones mï¿½s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver más...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver mï¿½s...</a></span>
          <br>
         <br>
         <br>
@@ -327,9 +323,9 @@ border-bottom-left-radius: 10px; " >
       <p class="text-left mar20" style="border-right: 1px solid #ccc;">
         <span class="negro t26 ">Top 5 <br> Vendedores</span>
         <br><br>
-        <span>Echale un vistazo a los vendedores más destacados.</span>
+        <span>Echale un vistazo a los vendedores mï¿½s destacados.</span>
         <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline; visibility: hidden;"><a href="#">Ver más...</a></span>
+        <span class="vin-blue t18" style="text-decoration:underline; visibility: hidden;"><a href="#">Ver mï¿½s...</a></span>
         <br>
         <br>
         <br>
@@ -452,11 +448,11 @@ border-bottom-left-radius: 10px; " >
    
    <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> públicaciones</span>
+        <span class="negro t26 ">Ultimas <br> pï¿½blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones más recientes.</span>
+        <span class="">echale un vistazo a las publicaciones mï¿½s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver más...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver mï¿½s...</a></span>
          <br>
         <br>
         <br>
