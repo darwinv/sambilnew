@@ -67,7 +67,7 @@ switch($tipo){
  		 $("#btn-social-act").data("id",$("#b" + b).data('id'));
  		 $("#btn-social-act").data("descripcion",$("#b" + b).data('descripcion'));
  		 $("#btn-social-act").data("metodo","actualizar");
- 		 $("#tituloVentana").html("Editar Publicación");
+ 		 $("#tituloVentana").html("Editar Publicaciï¿½n");
          $("#masDetalles").css("display","block");
          $("#comando").text("Actualizar");         
 	}
@@ -263,7 +263,7 @@ switch($tipo){
 					<button type="button" class="btn btn-default">
 						Filtrar
 					</button>
-					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button type="button" class="btn btn-default dropdown-toggle hidden" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<span class="caret"></span>
 						<span class="sr-only">Toggle Dropdown</span>
 					</button>
@@ -335,7 +335,7 @@ switch($tipo){
 			<br>
 			<br>
 			<div class='alert alert-warning2  text-center' role='alert'  >                                        	
-	              	<span class="t16  "><i class="fa fa-info-circle"></i> No se encontraron publicaciones favoritas.</span>
+	              	<span class="t16  "><i class="fa fa-info-circle"></i> No se encontraron publicaciones.</span>
 	         </div>
 	         <br>  
 	        </div>				

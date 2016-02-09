@@ -1,6 +1,6 @@
 	<ul id="accordion" class="accordion vin-listados show-menu-left" data-id_rol="<?php echo $_SESSION["id_rol"]; ?>">
 		<li class="hidden resumen">
-			<div class="link"  ><a href="resumen.php"><i class="fa fa-list-ul" ></i><b>Resumen</b></a></div>
+			<a href="resumen.php"><div class="link"  ><i class="fa fa-list-ul" ></i><b>Resumen</b></div></a>
 			
 		</li>
 		<!--<li class="hidden reputacion">
@@ -8,7 +8,7 @@
 			
 		</li>-->
 		<li class="hidden admin-usuarios">
-			<div class="link"> <a href="admin-usr.php" class=""><i class="fa fa-user "></i>Administraci&oacute;n de Tiendas</a></div>			 
+			<a href="admin-usr.php" class=""><div class="link"> <i class="fa fa-user "></i>Administraci&oacute;n de Tiendas</div></a>			 
 		</li>
 		
 		<li class="hidden venta">

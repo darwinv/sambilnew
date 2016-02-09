@@ -87,7 +87,7 @@ $(document).ready(function(){
 	
 	
 	/*
-	 * Controlas la pestañas de mis publicaciones (activas, pausadas, inactivas)
+	 * Controlas la pestaï¿½as de mis publicaciones (activas, pausadas, inactivas)
 	*/
 	
 	$(".pesta").click(function(){
@@ -112,20 +112,23 @@ $(document).ready(function(){
 			    
 			    var tipo=3;
 				break;
-		}	
+		}
+		
+		 
 		loadingAjax(true);
 		$.ajax({
 			url:"paginas/venta/fcn/f_ventas.php",
-			data:{metodo:"buscarPublicaciones",tipo:tipo},
+			data:{metodo:"buscarPublicaciones",tipo:tipo,order:order},
 			type:"POST",
 			dataType:"html",
 			success:function(data){
 				console.log(data);
-				$("#publicaciones").html(data);
+				$("#publicaciones").html(data); 
 				loadingAjax(false);
 			}
 		});
 	});
+	
 	$("#verMas").click(function(e){
 		montoFormateado=$("#monto").val();
 	//	montoFormateado=montoFormateado.replace(".",",");

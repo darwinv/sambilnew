@@ -89,7 +89,7 @@ $(document).ready(function(){
 	
 	
 	/*
-	 * Controlas la pestañas de mis publicaciones (activas, pausadas, inactivas)
+	 * Controlas la pestaï¿½as de mis publicaciones (activas, pausadas, inactivas)
 	*/
 	
 	$(".pesta").click(function(){
@@ -115,10 +115,36 @@ $(document).ready(function(){
 			    var tipo=3;
 				break;
 		}	
+		var order= "id "+$("#filtro").val();
 		loadingAjax(true);
 		$.ajax({
 			url:"paginas/venta/fcn/f_ventas.php",
-			data:{metodo:"buscarPublicaciones",tipo:tipo},
+			data:{metodo:"buscarPublicaciones",tipo:tipo,order:order},
+			type:"POST",
+			dataType:"html",
+			success:function(data){
+				console.log(data);
+				$("#publicaciones").html(data);
+				loadingAjax(false);
+			}
+		});
+	});
+	$("#filtro").change(function(){
+	 
+		var tipo;
+		
+		if($("#irActivas").hasClass('active')){
+			tipo=1; 
+		}else if($("#irPausadas").hasClass('active')){
+			tipo=2;
+		}else if($("#irFinalizadas").hasClass('active')){
+			tipo=3;
+		}  
+		var order= "id "+$("#filtro").val();
+		loadingAjax(true);
+		$.ajax({
+			url:"paginas/venta/fcn/f_ventas.php",
+			data:{metodo:"buscarPublicaciones",tipo:tipo,order:order},
 			type:"POST",
 			dataType:"html",
 			success:function(data){
@@ -130,7 +156,6 @@ $(document).ready(function(){
 	});
 	$("#verMas").click(function(e){
 		montoFormateado=$("#monto").val();
-	//	montoFormateado=montoFormateado.replace(".",",");
 		$("#txtTitulo").attr("value",$("#titulo").val());
 		$("#txtCantidad").attr("value",$("#stock").val());
 		$("#txtPrecio").attr("value",parseInt(montoFormateado));

@@ -24,7 +24,7 @@ switch($_POST["metodo"]){
 function buscaPublicaciones(){
 		session_start();
 	    $usua2=new usuario($_SESSION["id"]);
-		$hijos2=$usua2->getPublicaciones($_POST["tipo"]);
+		$hijos2=$usua2->getPublicaciones($_POST["tipo"], 1, NULL, $_POST["order"]);
 		$contador=0;
 		$des=$_POST["tipo"]==1?"":"disabled";
 		foreach ($hijos2 as $key => $valor) {
@@ -182,7 +182,7 @@ function actualizaPub(){
 			$fotos[] = $_POST["foto-".$i];
 		}
 	} 	
-	$listaValores["dias_garantia"]=str_replace("gn", "ñ", $listaValores["dias_garantia"]);
+	$listaValores["dias_garantia"]=str_replace("gn", "ï¿½", $listaValores["dias_garantia"]);
 	$listaValores["titulo"]=utf8_decode($listaValores["titulo"]);
 	$publi->actualizarPublicacion($listaValores,$monto,$fotos);
 	echo "OK";

@@ -601,14 +601,21 @@ function comprobarToken($token){
 		usuarios_id=$id and id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=$status and fecha_fin is null))";
 		$bd -> query($consulta);
 	}
-	public function getPublicaciones($status=1,$pagina=1,$id=NULL){
+	public function getPublicaciones($status=1,$pagina=1,$id=NULL, $order=NULL){
 		if(is_null($id)){
 			$id=$this->id;
 		}
+		if(empty($order)){
+			$order='id desc';
+		} 
+		
 		$bd=new bd();
 		$limite = ($pagina-1) * 25;
 		$consulta="select * from publicaciones where 
-		usuarios_id=$id and id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=$status and fecha_fin is null) order by id desc";
+		usuarios_id=$id and id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=$status and fecha_fin is null) ";
+		
+		$consulta.=" order by $order";
+		
 		$consulta.=" LIMIT 25 OFFSET $limite";
 		$result=$bd->query($consulta);
 		if(!empty($result)){
