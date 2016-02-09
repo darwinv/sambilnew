@@ -37,12 +37,12 @@
 			 
 			 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 "><!-- Titulo de Preguntas -->
 			 	<div class="pad10 pad-left-20  t18  " style="background: #F2F2F2;"> 
-			 		<i class="fa fa-shopping-cart marL10"></i> Preguntas
+			 		<i class="fa fa-question-circle marL10"></i> Preguntas
 			 	</div>
 			 </div ><!-- Fin Titulo de Publicaciones -->
 			 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">
 			 	<hr>
-			 	<div class=" pad-left-20  t16"><span class="marL20"><span class="badge badge-publicar "><?php echo $cant_preguntas; ?></span> <a href="ventas.php"><span class="marL10 " >Sin Responder</span></span></a></div>
+			 	<div class=" pad-left-20  t16"><span class="marL20"><span class="badge badge-publicar "><?php echo $cant_preguntas; ?></span> <a href="preguntas.php?tipo=1"><span class="marL10 " >Sin Responder</span></span></a></div>
 			 </div>
 			 
 			 
