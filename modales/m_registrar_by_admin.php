@@ -19,7 +19,7 @@
 			 <input type="hidden" id="type_admin" name="type_admin"/>
 				<div class="modal-body marL20 marR20 ">
 					<br>
-					<section class="form-apdp" data-title="Informaci�&iquest;�n Empresarial" data-step="1" data-type="e"  >
+					<section class="form-apdp" data-title="Informaci&oacute;presarial" data-step="1" data-type="e"  >
 						<div class="row">
 							<div class="col-xs-12 ">
 								<span class="marL10"><i class="fa fa-list-alt"></i>

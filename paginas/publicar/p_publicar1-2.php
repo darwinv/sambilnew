@@ -1,6 +1,6 @@
 <?php 
 if (!headers_sent()) {
-	header('Content-Type: text/html; charset=ISO-8859-15');
+	header('Content-Type: text/html; charset=UTF-8');
 }
 ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
@@ -46,7 +46,7 @@ if (!headers_sent()) {
           <i class="fa fa-thumbs-up fa-stack-1x fa-inverse "></i>
         </span>
 					<br>
-					<h2>¡Listo!</h2>
+					<h2>&iexcl;Listo!</h2>
 					<br>
 					<button class="btn btn-primary2 t20" type="button" id="btnOk">Continuar</button>
 					</div>

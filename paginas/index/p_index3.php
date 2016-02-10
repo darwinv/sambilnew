@@ -4,7 +4,7 @@
  		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 "> 
  			<div class="pos-right-center" >
 	 				<img class="logo" src="galeria/logo sambil PRINCIPAL.png"> 
-					<h3 class="text-center" >¡Bienvenidos!</h3>
+					<h3 class="text-center" >&iexcl;ienvenidos!</h3>
  			</div>
  		</div>
  		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 "> 

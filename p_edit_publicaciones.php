@@ -1,6 +1,6 @@
 <?php
 if (!headers_sent()) {
-	header('Content-Type: text/html; charset=ISO-8859-15');
+	header('Content-Type: text/html; charset=UTF-8');
 }
 include_once '../../clases/publicaciones.php';
 $publi=new publicaciones($_POST["id"]);
@@ -29,7 +29,7 @@ $foto6=$publi->getFotoN(6);
 						Fotos de tu producto
 						<div class="alert alert-info " role="alert"
 						style="width: 80%; margin: 0px; padding: 2px; font-size: 11px;">
-							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendación: </b>Procura que la imagen sea de buena calidad y obtendras mejores
+							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendaci&oacute;n: </b>Procura que la imagen sea de buena calidad y obtendras mejores
 								resultados en tus ventas.</span>
 						</div>
 					</div>
@@ -129,37 +129,37 @@ $foto6=$publi->getFotoN(6);
 						<br>
 						<div class="alert alert-warning " role="alert"
 						style="width: 80%; margin: 0px; padding: 2px; font-size: 11px;">
-							<span class="marL5"><i class="fa fa-exclamation-triangle"></i> <b>Advertencia: </b>no debes de ingresar ninguna información de contacto, de lo
-								contrario tu publicación sera excluida de las listas.</span>
+							<span class="marL5"><i class="fa fa-exclamation-triangle"></i> <b>Advertencia: </b>no debes de ingresar ninguna informaci&oacute;n de contacto, de lo
+								contrario tu publicaci&oacute;n sera excluida de las listas.</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT10">
 					<div class="form-group input-group" style="width: 60%">
-						<input type="text" placeholder="Titulo de la publicación" name="txtTitulo" id="txtTitulo"
-						class=" form-control " value="<?php echo utf8_decode($_POST['titulo']);?>">
+						<input type="text" placeholder="Titulo de la publicaci&oacute;n" name="txtTitulo" id="txtTitulo"
+						class=" form-control " value="<?php echo  ($_POST['titulo']);?>">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class=""  style="width: 100%; ">
 						<div class="t16">
-							Detalle de la publicación:
+							Detalle de la publicaci&oacute;n:
 						</div>
 						<div class="alert alert-info " role="alert"
 						style="width: 80%; margin: 0px; margin-left:0px; margin-bottom:5px; padding: 2px; font-size: 11px;">
-							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendación: </b> para mejor exposición utiliza mas imagenes que tenxto en el detalle de tu publicación.</span>
+							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendaci&oacute;n: </b> para mejor exposici&oacute;n utiliza mas imagenes que tenxto en el detalle de tu publicaci&oacute;n.</span>
 						</div>
 						<div id="editor" name="editor"><?php echo $_POST["descripcion"]; ?></div>					
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20 marB10">
 					<div class="t16">
-						Más especificaciones
+						M&aacute;s especificaciones
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
 					<div class="input-group marB10">
-						<span class="input-group-addon">Condición</span>
+						<span class="input-group-addon">Condici&oacute;n</span>
 						<select
 						name="cmbCondicion" class="form-control" id="cmbCondicion">
 						       <?php
@@ -219,7 +219,7 @@ $foto6=$publi->getFotoN(6);
 								</div></td>
 								<td valign="middle">
 								<div class="t12 marR10" style="margin-top:22px">
-									¿Tu producto cuenta con
+									&iquest;Tu producto cuenta con
 									garantia?
 								</div></td>
 								<td valign="bottom">
@@ -232,10 +232,10 @@ $foto6=$publi->getFotoN(6);
 									$cadena.=$publi->dias_garantia=='3 meses de '?"<option value='3 meses de ' selected>3 Meses</option>":"<option value='3 meses de '>3 Meses</option>";
 									$cadena.=$publi->dias_garantia=='6 meses de '?"<option value='6 meses de ' selected>6 Meses</option>":"<option value='6 meses de '>6 Meses</option>";
 									$cadena.=$publi->dias_garantia=='9 meses de '?"<option value='9 meses de ' selected>9 Meses</option>":"<option value='9 meses de '>9 Meses</option>";
-									$cadena.=$publi->dias_garantia=='1 año de '?"<option value='1 agno de ' selected>1 Año</option>":"<option value='1 agno de '>1 Año</option>";
-									$cadena.=$publi->dias_garantia=='2 años de '?"<option value='2 agnos de ' selected>2 Años</option>":"<option value='2 agnos de '>2 Años</option>";
-									$cadena.=$publi->dias_garantia=='3 años de '?"<option value='3 agnos de ' selected>3 Años</option>":"<option value='3 agnos de '>3 Años</option>";
-									$cadena.=$publi->dias_garantia=='5 años de '?"<option value='5 agnos de ' selected>5 Años</option>":"<option value='5 agnos de '>5 Años</option>";
+									$cadena.=$publi->dias_garantia=='1 a&ntilde;o de '?"<option value='1 agno de ' selected>1 A&ntilde;o</option>":"<option value='1 agno de '>1 A&ntilde;o</option>";
+									$cadena.=$publi->dias_garantia=='2 a&ntilde;os de '?"<option value='2 agnos de ' selected>2 A&ntilde;os</option>":"<option value='2 agnos de '>2 A&ntilde;os</option>";
+									$cadena.=$publi->dias_garantia=='3 a&ntilde;os de '?"<option value='3 agnos de ' selected>3 A&ntilde;os</option>":"<option value='3 agnos de '>3 A&ntilde;os</option>";
+									$cadena.=$publi->dias_garantia=='5 a&ntilde;os de '?"<option value='5 agnos de ' selected>5 A&ntilde;os</option>":"<option value='5 agnos de '>5 A&ntilde;os</option>";
 								    $cadena.="</select></td>";
 								echo $cadena;
 								?>
@@ -259,7 +259,7 @@ $foto6=$publi->getFotoN(6);
 									}
 								?>
 								</div></td>
-								<td valign="bottom"><span class="t12">¿Entregas factura fiscal?</span></td>
+								<td valign="bottom"><span class="t12">&iquest;Entregas factura fiscal?</span></td>
 							</tr>
 						</table>
 					</div>
@@ -282,7 +282,7 @@ $foto6=$publi->getFotoN(6);
 									</div>
 								</td>
 								<td valign="bottom">
-									<span class="t12">¿Eres tienda fisica?</span>
+									<span class="t12">&iquest;Eres tienda fisica?</span>
 								</td>
 							</tr>
 						</table>

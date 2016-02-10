@@ -533,7 +533,7 @@ function comprobarToken($token){
 				return $resultado["nombre"];
 			}
 		}else{
-			throw new Exception("No se encontro informaciï¿½n del estado", 1);
+			throw new Exception("No se encontro informaci&oacute;n del estado", 1);
 			return false;
 		}
 	}
@@ -564,9 +564,9 @@ function comprobarToken($token){
 				}else{
 					$agnos=round($meses / 12,0,PHP_ROUND_HALF_DOWN);
 					if($agnos==1){
-						return "<span class='t18'>" . $agnos . "</span> Aï¿½o ";
+						return "<span class='t18'>" . $agnos . "</span> A&ntilde;o ";
 					}else{
-						return "<span class='t18'>" . $agnos . " </span> Aï¿½os ";
+						return "<span class='t18'>" . $agnos . " </span> A&ntilde;os ";
 					}
 				}
 			}
@@ -637,7 +637,7 @@ function comprobarToken($token){
 		$consulta.=" order by $order";
 		
 		$consulta.=" LIMIT 25 OFFSET $limite";
-		$result=$bd->query($consulta);
+		$result=$bd->query($consulta); 
 		if(!empty($result)){
 			return $result;
 		}else{
@@ -781,7 +781,7 @@ function comprobarToken($token){
 		if(!is_null($pagina)){
 			$limite=($pagina - 1) * 25;
 			$consulta.=" LIMIT 25 OFFSET $limite";
-		}
+		} 
 		$result=$bd->query($consulta);
 		if(!empty($result)){
 			return $result;
@@ -899,7 +899,7 @@ function comprobarToken($token){
 	public function updateUserGeneral($usuarios_id, $seudonimo=NULL, $email=NULL,$password=NULL){
 		$bd=new bd();		
 		$actualizar=array( 'seudonimo'=>$seudonimo,'email'=>$email,'id_rol'=>2);
-		//si cambiaron la contraseï¿½a	
+		//si cambiaron la contraseña	
 		if(!empty($password)){
 			$password = hash ( "sha256", $password );
 			$actualizar['password']=$password;

@@ -39,7 +39,7 @@ foreach ($usr_publicaciones as $up => $valor) {
 				<a href="detalle.php?id=<?php echo $id_pub ?>" >							
 					<span class="marL10" href="detalle.php?id=<?php echo $id_pub ?>" data-id="<?php echo $id_pub; ?>"> <?php echo $valor["titulo"]; ?>  </span> 
         		</a>
-        <span class="red t14 marL10"><b> <?php $valor["monto"] ?> </b></span> <span class="opacity t12"><?php echo "x ".$valor["stock"]. " Und"; ?></span>
+        <span class="red t14 marL10"><b><?php echo $valor["monto"] ?> Bs </b></span> <span class="opacity t12"><?php echo "x ".$valor["stock"]. " Und"; ?></span>
       </h4>
     </div>
 		<div id="collapse<?php echo $id_pub;?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?php echo $id_pub;?>">

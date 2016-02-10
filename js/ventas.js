@@ -89,7 +89,7 @@ $(document).ready(function(){
 	
 	
 	/*
-	 * Controlas la pesta�as de mis publicaciones (activas, pausadas, inactivas)
+	 * Controlas la pesta&oacute;as de mis publicaciones (activas, pausadas, inactivas)
 	*/
 	
 	$(".pesta").click(function(){
@@ -115,11 +115,12 @@ $(document).ready(function(){
 			    var tipo=3;
 				break;
 		}	
-		var order= "id "+$("#filtro").val();
+		var order= "id "+$("#filtro").val(); 
+		var pagina=1;
 		loadingAjax(true);
 		$.ajax({
 			url:"paginas/venta/fcn/f_ventas.php",
-			data:{metodo:"buscarPublicaciones",tipo:tipo,order:order},
+			data:{metodo:"buscarPublicaciones",tipo:tipo,pagina:pagina,order:order},
 			type:"POST",
 			dataType:"html",
 			success:function(data){
@@ -165,7 +166,8 @@ $(document).ready(function(){
 		var precio=$("#monto").val();
 		var precio=montoFormateado;
 		var titulo=$("#titulo").val();
-		var descripcion=$("#btn-social-act").data("descripcion");
+		//var descripcion=$("#btn-social-act").data("descripcion");
+		var descripcion = $('#descripcion_'+id).val();
 		$.ajax({
 			url:"paginas/venta/p_edit_publicaciones.php",
 			data:{id:id,cantidad:cantidad,precio:precio,titulo:titulo,descripcion:descripcion},
@@ -338,6 +340,31 @@ $(document).ready(function(){
 	});
 	$("#publicaciones").on("click",".imagen",function(){
 		window.open("detalle.php?id=" + $(this).data("id"),"_self");
+	});
+	$(document).on("click",".botonPagina",function(){
+		var orden=$("#filter").val();
+		var pagina=$(this).data("pagina");
+		var palabra=$("#txtBusqueda").val();
+		var metodo=$("#paginas").data("metodo");
+		var id=$("#paginas").data("id");
+		var tipo=$("#paginas").data("tipo");
+		var order= "id "+$("#filtro").val();
+		$(".pagination li").removeClass("active");
+		$(this).parent().addClass("active");
+		loadingAjax(true);
+		$.ajax({
+			url:"paginas/venta/fcn/f_ventas.php",
+			data:{metodo:metodo,orden:orden,palabra:palabra,pagina:pagina,id:id,tipo:tipo,order:order},
+			type:"POST",
+			dataType:"html",
+			success:function(data){
+				$("#publicaciones").html(data);
+				loadingAjax(false);
+			},
+			error:function(xhr,status){
+				loadingAjax(false);
+			}
+		});
 	});
 	$("#ventas").css("display","block");
 	$("#uno1").addClass("active");

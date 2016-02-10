@@ -96,7 +96,7 @@ $(document).ready(function(){
 					$("#cantP").text(cantP);
 					$("#" + pub_id).css("display","none");
 					$("#Preguntar"+pub_id).text("Hacer otra Pregunta");
-						$.ajax({									// Segundo ajax envia notifiacion al correo de usuario dueño de la publicacion
+						$.ajax({									// Segundo ajax envia notifiacion al correo de usuario due&ntilde;o de la publicacion
 						url: "paginas/preguntas/fcn/f_pregunta.php",
 						data: {metodo:"enviarPregunta",pub_id:pub_id,usr_id:usr_id,pregunta:pregunta,id_poster:id_poster},
 						type: "POST",

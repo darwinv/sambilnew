@@ -8,7 +8,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-top25">
 			<?php 
 				include "paginas/listado/p_listado2.php"; 				
-			;?>
+			?>
 		</div>
 	</div>
 <?php 

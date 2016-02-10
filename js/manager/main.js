@@ -180,13 +180,13 @@ $(document).ready(function(){
 					}
 				}).fail(function(a,b,d){
 					doing_fb_log=false;
-					//mostrar mensaje de error de conexión correspondiente
+					//mostrar mensaje de error de conexi&oacute;n correspondiente
 				});
 			} else if (response.status === 'not_authorized') {
-				//mostrar error de autorización
+				//mostrar error de autorizaci&oacute;n
 				doing_fb_log=false;
 			} else {
-				//mostrar error de conexión a fb
+				//mostrar error de conexi&oacute;n a fb
 				doing_fb_log=false;
 			}
 		},{auth_type:'reauthenticate',scope:scopes});
@@ -272,13 +272,13 @@ $(document).ready(function(){
 					}
 				}).fail(function(a,b,d){
 					doing_fb=false;
-					//mostrar mensaje de error de conexión correspondiente
+					//mostrar mensaje de error de conexi&oacute;n correspondiente
 				});
 			} else if (response.status === 'not_authorized') {
-				//mostrar error de autorización
+				//mostrar error de autorizaci&oacute;n
 				doing_fb=false;
 			} else {
-				//mostrar error de conexión a fb
+				//mostrar error de conexi&oacute;n a fb
 				doing_fb=false;
 			}
 		},{auth_type:'reauthenticate',scope:scopes});

@@ -9,7 +9,7 @@
 				</button>
 				<h3 class="modal-title " >
 					<img src="galeria/img/logos/mascota.png"   height="51"><span id="usr-reg-title"
-						class="marL15">Editar Información Personal</span>
+						class="marL15">Editar Informaci&oacute;n Personal</span>
 				</h3>
 			</div>
 			<input type="hidden" id="p_id" name="p_id"></input>
@@ -21,7 +21,7 @@
 						<div class="row">
 							<div class="col-xs-12 ">
 								<div class="marL10"><i class="fa fa-list-alt"></i>
-									Identificación</div>
+									Identificaci&oacute;n</div>
 							</div>
 							<div  class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3 input" >
 								<select class="form-select" id="p_tipo" name="p_tipo">

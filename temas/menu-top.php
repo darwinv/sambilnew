@@ -137,7 +137,7 @@ $obj_sede = new sede();
 					  </button>
 					   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					   	<?php  
-					   	/**mostramos las sedes, en el codigo previo se define dependiendo del diseño de la APP */
+					   	/**mostramos las sedes, en el codigo previo se define dependiendo del dise&ntilde;o de la APP */
 					   	
 					   	foreach ($sedes as $key => $value) {  ?>
 							<li><a href="principal.php?code_sambil=<?php echo $value['codigo'] ?>"> <?php echo $value['nombre'] ?></a></li>

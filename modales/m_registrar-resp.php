@@ -20,11 +20,11 @@
 				<div class="modal-body marL20 marR20 ">
 					<br>
 					<section class="form-apdp" style="display: none"
-						data-title="Información Personal" data-step="1" data-type="p" >
+						data-title="Informaci&oacute;n Personal" data-step="1" data-type="p" >
 						<div class="row">
 							<div class="col-xs-12 ">
 								<div class="marL10"><i class="fa fa-list-alt"></i>
-									Identificación</div>
+									Identificaci&oacute;n</div>
 							</div>
 							<div  class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3 input" >
 								<select class="form-select" id="p_tipo" name="p_tipo">
@@ -84,7 +84,7 @@
 						<div class="row">
 							<div class="col-xs-12 ">
 								<span class="marL10"><i class="fa fa-list-alt"></i>
-									Identificaciónn</span>
+									Identificaci&oacute;nn</span>
 							</div>
 							<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3 input" >
 								<select class=" form-select" id="e_tipo" name="e_tipo">
@@ -150,7 +150,7 @@ ciudades_sambil.nombre ASC") as $estado ) :
 							</div>
 						</div>
 					</section>				
-					<section class="form-apdp" style="display: none" data-title="Información de acceso"
+					<section class="form-apdp" style="display: none" data-title="Informaci&oacute;n de acceso"
 						data-step="2" >
 						<div class="row">
 
@@ -169,15 +169,15 @@ ciudades_sambil.nombre ASC") as $estado ) :
 									placeholder=" Ingresa tu correo electronico..." oncontextmenu="return false"/>
 							</div>
 							<div class="col-xs-12 ">
-								<span class="marL10"><i class="fa fa-lock"></i> Contraseña</span>
+								<span class="marL10"><i class="fa fa-lock"></i> Contrase&ntilde;a</span>
 							</div>
 							<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 input">
 								<input type="password" class="form-input noseleccionable" id="password" name="password"
-									placeholder=" Ingresa tu contraseña..." oncontextmenu="return false"/>
+									placeholder=" Ingresa tu contrase&ntilde;a..." oncontextmenu="return false"/>
 							</div>
 							<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 input">
 								<input type="password" class="form-input noseleccionable" id="password_val" name="password_val"
-									placeholder=" Repite tu contraseña..." oncontextmenu="return false"/>
+									placeholder=" Repite tu contrase&ntilde;a..." oncontextmenu="return false"/>
 							</div>
 						</div>
 				</section> -->	

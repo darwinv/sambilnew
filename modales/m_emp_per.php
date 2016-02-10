@@ -14,7 +14,7 @@
 				<br>
 				<img alt="" src="galeria/img/logo-sambil.png"
 					class="center-block img-responsive" width="200px" height="200px">
-				<h2 class="text-center me-p_contenido" style="color: #000;">¡Cu&eacute;ntanos</h2>
+				<h2 class="text-center me-p_contenido" style="color: #000;">&iexcl;Cu&eacute;ntanos</h2>
 				<br>
 				<p class="text-center t20">Necesitamos saber si eres </p>
 				<br>

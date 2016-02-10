@@ -210,21 +210,21 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 								$title= $pub -> tituloFormateado();
 								$id   = 1;
 								$tema = "Te Preguntaron";
-								$link = "preguntas";
+								$link = "pre_pub";
 							}
 							if($tipo==2){//Repuesta
 								$foto = $pub -> getFotoPrincipal();
 								$title= $pub -> tituloFormateado();
 								$id   = 2;
 								$tema = "Te Respondieron";
-								$link = "respuestas";
+								$link = "resp_pub";
 							}
 							if($tipo==3){//Panas
 								$foto = $usr -> buscarFotoUsuario($id_pana);
 								$id   = $id_pana;
 								$title= $usr -> getPana($id_pana);
 								$tema = "Ahora te sigue";	
-								$link = "perfil";
+								$link = "ver-noti-seguidor";
 							}
 							if($tipo==4){//Publicacion
 								$foto = $pub -> getFotoPrincipal();
@@ -287,7 +287,7 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 					  </button>
 					   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					   	<?php  
-					   	/**mostramos las sedes, en el codigo previo se define dependiendo del dise�o de la APP */ 
+					   	/**mostramos las sedes, en el codigo previo se define dependiendo del diseñde la APP */ 
 						   	foreach ($sedes as $key => $value) {  ?>
 								<li><a href="principal.php?code_sambil=<?php echo $value['codigo'] ?>"> <?php echo $value['nombre'] ?></a></li>
 						    	<li role="separator" class="divider"></li>	   

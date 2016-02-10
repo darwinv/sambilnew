@@ -125,12 +125,12 @@ $(document).ready(function(){
 	/* ============================----- Actualizar info social -----=========================*/
 	$(document).on('click','#btn-info-social',function() {		
 		$.ajax({			
-			url: "fcn/f_usuarios.php", // la URL para la petición
-            data: {method:"get"}, // la información a enviar
-            type: 'POST', // especifica si será una petición POST o GET
-            dataType: 'json', // el tipo de información que se espera de respuesta
+			url: "fcn/f_usuarios.php", // la URL para la petici&oacute;n
+            data: {method:"get"}, // la informaci&oacute;n a enviar
+            type: 'POST', // especifica si ser&aacute; una petici&oacute;n POST o GET
+            dataType: 'json', // el tipo de informaci&oacute;n que se espera de respuesta
             success: function (data) {            	
-            	// código a ejecutar si la petición es satisfactoria;
+            	// c&oacute;digo a ejecutar si la petici&oacute;n es satisfactoria;
             	//console.log(JSON.stringify(data.result));
 	            if (data.result === 'OK') {
 	            	$("#descripcion").val(data.campos.u_descripcion);
@@ -138,7 +138,7 @@ $(document).ready(function(){
 	            	$("#twitter").val(data.campos.u_twitter);
 	            	$("#website").val(data.campos.u_website);
 	            }
-          	},// código a ejecutar si la petición falla;
+          	},// c&oacute;digo a ejecutar si la petici&oacute;n falla;
             error: function (xhr, status) {
             	SweetError(status);
             }
@@ -149,12 +149,12 @@ $(document).ready(function(){
 		var fv = form.data('formValidation');
 		var method = "&method=act-social";
 		$.ajax({
-			url: form.attr('action'), // la URL para la petición
-            data: form.serialize() + method, // la información a enviar
-            type: 'POST', // especifica si será una petición POST o GET
-            dataType: 'html', // el tipo de información que se espera de respuesta
+			url: form.attr('action'), // la URL para la petici&oacute;n
+            data: form.serialize() + method, // la informaci&oacute;n a enviar
+            type: 'POST', // especifica si ser&aacute; una petici&oacute;n POST o GET
+            dataType: 'html', // el tipo de informaci&oacute;n que se espera de respuesta
             success: function (data) {
-            	// código a ejecutar si la petición es satisfactoria;
+            	// c&oacute;digo a ejecutar si la petici&oacute;n es satisfactoria;
             	console.log(data);
 	            if (data == 'OK') {
 	            	swal({
@@ -167,7 +167,7 @@ $(document).ready(function(){
 							location.reload();
 						});
 	            }
-          	},// código a ejecutar si la petición falla;
+          	},// c&oacute;digo a ejecutar si la petici&oacute;n falla;
             error: function (xhr, status) {
             	SweetError(status);
             }
@@ -203,12 +203,12 @@ $(document).ready(function(){
         id=$("#img-perfil").data("id");
 		loadingAjax(true);
 		$.ajax({
-			url: "fcn/f_usuarios.php", // la URL para la petición
-            data: {ruta: $("#img-perfil").attr("src") ,foto: $('.image-editor').cropit('export'), method: "fot"}, // la información a enviar
-            type: 'POST', // especifica si será una petición POST o GET
-            dataType: 'json', // el tipo de información que se espera de respuesta
+			url: "fcn/f_usuarios.php", // la URL para la petici&oacute;n
+            data: {ruta: $("#img-perfil").attr("src") ,foto: $('.image-editor').cropit('export'), method: "fot"}, // la informaci&oacute;n a enviar
+            type: 'POST', // especifica si ser&aacute; una petici&oacute;n POST o GET
+            dataType: 'json', // el tipo de informaci&oacute;n que se espera de respuesta
             success: function (data) {
-            	// código a ejecutar si la petición es satisfactoria;
+            	// c&oacute;digo a ejecutar si la petici&oacute;n es satisfactoria;
             	console.log(data);
 	            if (data.result !== 'error') {
 	            	//location.reload();
@@ -217,7 +217,7 @@ $(document).ready(function(){
 	            	// $("#img-perfil").attr("src",$('.image-editor').cropit('export'));
 	            	// $("#fotoperfilm").attr("src",$('.image-editor').cropit('export'));
 	            }
-          	},// código a ejecutar si la petición falla;
+          	},// c&oacute;digo a ejecutar si la petici&oacute;n falla;
             error: function (xhr, status) {
             	SweetError(status);
             }

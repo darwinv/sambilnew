@@ -17,7 +17,7 @@
 				<div class="modal-body marL20 marR20 ">
 					<br>
 					<section class="form-apdp"
-						data-title="Información Personal" data-step="1" data-type="p" >
+						data-title="Informaci&oacute;n Personal" data-step="1" data-type="p" >
 						<div class="row">
 							
 							<div class="col-xs-12">
@@ -28,17 +28,17 @@
 									class=" form-input " id="usuario">
 							</div>
 							<div class="col-xs-12">
-								<span class="marL10"><i class="fa fa-lock"></i> Contraseña</span>
+								<span class="marL10"><i class="fa fa-lock"></i> Contrase&ntilde;a</span>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 input" >
-								<input type="password" placeholder="Ingresa tu contraseña" name="password"
+								<input type="password" placeholder="Ingresa tu contrase&ntilde;a" name="password"
 									class=" form-input " id="password">
 							</div>
 						</div>
 					</section>	
 				</div>
 				<div class="modal-footer">
-					<a href="#">¿Olvidaste la contraseña?</a><button type="submit" class="btn btn-primary2 marL30">Continuar</button>
+					<a href="#">&iquest;Olvidaste la contrase&ntilde;a?</a><button type="submit" class="btn btn-primary2 marL30">Continuar</button>
 				</div>
 			</form>
 		</div>

@@ -15,7 +15,7 @@
 						Fotos de tu producto
 						<div class="alert alert-info " role="alert"
 						style="width: 80%; margin: 0px; padding: 2px; font-size: 11px;">
-							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendación: </b>Procura que la imagen sea de buena calidad y obtendras mejores
+							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendaci&oacute;n: </b>Procura que la imagen sea de buena calidad y obtendras mejores
 								resultados en tus ventas.</span>
 						</div>
 					</div>
@@ -59,37 +59,37 @@
 						<br>
 						<div class="alert alert-warning " role="alert"
 						style="width: 80%; margin: 0px; padding: 2px; font-size: 11px;">
-							<span class="marL5"><i class="fa fa-exclamation-triangle"></i> <b>Advertencia: </b>no debes de ingresar ninguna información de contacto, de lo
-								contrario tu publicación sera excluida de las listas.</span>
+							<span class="marL5"><i class="fa fa-exclamation-triangle"></i> <b>Advertencia: </b>no debes de ingresar ninguna informaci&oacute;n de contacto, de lo
+								contrario tu publicaci&oacute;n sera excluida de las listas.</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT10">
 					<div class="form-group input-group" style="width: 60%">
-						<input type="text" placeholder="Titulo de la publicación" name="txtTitulo" id="txtTitulo"
+						<input type="text" placeholder="Titulo de la publicaci&oacute;n" name="txtTitulo" id="txtTitulo"
 						class=" form-control " value="Gjnytujdty6udhth">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class=""  style="width: 100%; ">
 						<div class="t16">
-							Detalle de la publicación:
+							Detalle de la publicaci&oacute;n:
 						</div>
 						<div class="alert alert-info " role="alert"
 						style="width: 80%; margin: 0px; margin-left:0px; margin-bottom:5px; padding: 2px; font-size: 11px;">
-							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendación: </b> para mejor exposición utiliza mas imagenes que tenxto en el detalle de tu publicación.</span>
+							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendaci&oacute;n: </b> para mejor exposici&oacute;n utiliza mas imagenes que tenxto en el detalle de tu publicaci&oacute;n.</span>
 						</div>
 						<div id="editor" name="editor"></div>					
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20 marB10">
 					<div class="t16">
-						Más especificaciones
+						M&aacute;s especificaciones
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
 					<div class="input-group marB10">
-						<span class="input-group-addon">Condición</span>
+						<span class="input-group-addon">Condici&oacute;n</span>
 						<select
 						name="cmbCondicion" class="form-control" id="cmbCondicion">
 						       <option value='1' selected>Nuevo</option>
@@ -128,11 +128,11 @@
 								</div></td>
 								<td valign="middle">
 								<div class="t12 marR10" style="margin-top:22px">
-									¿Tu producto cuenta con
+									&iquest;Tu producto cuenta con
 									garantia?
 								</div></td>
 								<td valign="bottom">
-									<select class='form-select ' style='margin-top:20px;display:none;' id='cmbGarantia' name='cmbGarantia'><option value='A consultar'>A consultar</option><option value='15 dias de '>15 Dias</option><option value='1 mes de '>1 Mes</option><option value='2 meses de '>2 Meses</option><option value='3 meses de '>3 Meses</option><option value='6 meses de '>6 Meses</option><option value='9 meses de '>9 Meses</option><option value='1 agno de '>1 Año</option><option value='2 agnos de '>2 Años</option><option value='3 agnos de '>3 Años</option><option value='5 agnos de '>5 Años</option></select></td>							</tr>
+									<select class='form-select ' style='margin-top:20px;display:none;' id='cmbGarantia' name='cmbGarantia'><option value='A consultar'>A consultar</option><option value='15 dias de '>15 Dias</option><option value='1 mes de '>1 Mes</option><option value='2 meses de '>2 Meses</option><option value='3 meses de '>3 Meses</option><option value='6 meses de '>6 Meses</option><option value='9 meses de '>9 Meses</option><option value='1 agno de '>1 A&ntilde;o</option><option value='2 agnos de '>2 A&ntilde;os</option><option value='3 agnos de '>3 A&ntilde;os</option><option value='5 agnos de '>5 A&ntilde;os</option></select></td>							</tr>
 						</table>
 					</div>
 				</div>
@@ -145,7 +145,7 @@
 								<div class="marR10"
 								style="width: 20px; height: 20px; border: 0px; float: left;">
 								<input type='checkbox' id='chkEntregaFactura' name='chkEntregaFactura'	style='width:100%; height:100%;'>								</div></td>
-								<td valign="bottom"><span class="t12">¿Entregas factura fiscal?</span></td>
+								<td valign="bottom"><span class="t12">&iquest;Entregas factura fiscal?</span></td>
 							</tr>
 						</table>
 					</div>
@@ -161,7 +161,7 @@
 									<input name='chkEresTienda' id='chkEresTienda' type='checkbox' style='width: 100%; height: 100%;'>									</div>
 								</td>
 								<td valign="bottom">
-									<span class="t12">¿Eres tienda fisica?</span>
+									<span class="t12">&iquest;Eres tienda fisica?</span>
 								</td>
 							</tr>
 						</table>

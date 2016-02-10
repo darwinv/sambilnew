@@ -1,6 +1,6 @@
 <?php
 if (!headers_sent()) {
-	header('Content-Type: text/html; charset=ISO-8859-15');
+	header('Content-Type: text/html; charset=UTF-8');
 }
 include_once "../../../clases/clasificados.php";
 include_once "../../../clases/bd.php";
@@ -64,13 +64,13 @@ function guardarPublicacion(){
 			"publicar_grupo"=>$_POST["gr"]);
 	$monto = $_POST["monto"];
 	$fecha = date("Y-m-d H:i:s",time());;
-	$listaValores["dias_garantia"]=str_replace("gn", "�", $listaValores["dias_garantia"]);
+	$listaValores["dias_garantia"]=str_replace("gn", "&ntilde;", $listaValores["dias_garantia"]);
 	for ($i=0; $i < 6 ; $i++) {
 		if(isset($_POST["foto-".$i])){
 			$fotos[] = $_POST["foto-".$i];
 		}
 	}
-	$listaValores["titulo"]=utf8_decode($listaValores["titulo"]);
+	$listaValores["titulo"]= ($listaValores["titulo"]);
 	$idPub = $publicacion->nuevaPublicacion($listaValores,$monto,$fecha,$fotos);	
 	$seguidores = $amigos -> getAmigos($_SESSION["id"]);
 	foreach ($seguidores as $p => $value) {

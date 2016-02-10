@@ -88,7 +88,7 @@
 				<div class='col-xs-12 col-sm-12 col-md-4 col-lg-5  text-right '>
 					<button type='button' class='btn2 btn-default boton hidden' data-toggle='modal' data-target='#info-publicacion' 
 						data-id='$publicacion->id' data-titulo='$publicacion->titulo' data-stock='$publicacion->stock' data-monto='$publicacion->monto' data-id='b" . $publicacion->id . "' >
-						<i class="fa fa-plus-square"></i> Agregar Descripción
+						<i class="fa fa-plus-square"></i> Agregar Descripci&oacute;n
 						</button> 
 
 					
@@ -134,7 +134,7 @@
 				<div class='col-xs-12 col-sm-12 col-md-4 col-lg-5  text-right '>
 					<button type='button' class='btn2 btn-default boton hidden' data-toggle='modal' data-target='#info-publicacion' 
 						data-id='$publicacion->id' data-titulo='$publicacion->titulo' data-stock='$publicacion->stock' data-monto='$publicacion->monto' data-id='b" . $publicacion->id . "' >
-						<i class="fa fa-plus-square"></i> Agregar Descripción
+						<i class="fa fa-plus-square"></i> Agregar Descripci&oacute;n
 						</button> 
 
 					
@@ -180,7 +180,7 @@
 				<div class='col-xs-12 col-sm-12 col-md-4 col-lg-5  text-right '>
 					<button type='button' class='btn2 btn-default hidden' data-toggle='modal' data-target='#info-publicacion' 
 						data-id='$publicacion->id' data-titulo='$publicacion->titulo' data-stock='$publicacion->stock' data-monto='$publicacion->monto' data-id='b" . $publicacion->id . "' >
-						<i class="fa fa-plus-square"></i> Agregar Descripción
+						<i class="fa fa-plus-square"></i> Agregar Descripci&oacute;n
 						</button> 
 
 					

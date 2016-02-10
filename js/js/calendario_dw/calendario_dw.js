@@ -4,23 +4,23 @@ jQuery.fn.calendarioDW = function() {
 		var mostrando = false;
 		//variable con el calendario
 		var calendario;
-		//variable con los días del mes
+		//variable con los d&iacute;as del mes
 		var capaDiasMes;
-		//variable para mostrar el mes y ano que se está viendo
+		//variable para mostrar el mes y ano que se est&aacute; viendo
 		var capaTextoMesAnoActual = $('<div class="visualmesano"></div>');
-		//iniciales de los días de la semana
+		//iniciales de los d&iacute;as de la semana
 		var dias = ["l", "m", "x", "j", "v", "s", "d"];
 		//nombres de los meses
 		var nombresMes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
 		
 		//elemento input
 		var elem = $(this);
-		//creo un enlace-botón para activar el calendario
+		//creo un enlace-bot&oacute;n para activar el calendario
 		var boton = $("<a class='botoncal' href='#'><span></span></a>");
-		//inserto el enlace-botón después del campo input
+		//inserto el enlace-bot&oacute;n despu&eacute;s del campo input
 		elem.after(boton);
 		
-		//evento para clic en el botón
+		//evento para clic en el bot&oacute;n
 		boton.click(function(e){
 			e.preventDefault();
 			mostrarCalendario();
@@ -31,7 +31,7 @@ jQuery.fn.calendarioDW = function() {
 			mostrarCalendario();
 		});
 		
-		//función para mostrar el calendario
+		//funci&oacute;n para mostrar el calendario
 		function mostrarCalendario(){
 			if(!mostrando){
 				mostrando = true;
@@ -51,7 +51,7 @@ jQuery.fn.calendarioDW = function() {
 					capaDiasSemana.append(codigoInsertar);
 				});
 				
-				//capa con los días del mes
+				//capa con los d&iacute;as del mes
 				capaDiasMes = $('<div class="diasmes"></div>');
 				
 				//un objeto de la clase date para calculo de fechas
@@ -61,7 +61,7 @@ jQuery.fn.calendarioDW = function() {
 				if (textoFechaEscrita!= ""){
 					if (validarFechaEscrita(textoFechaEscrita)){
 						var arrayFechaEscrita = textoFechaEscrita.split("/");
-						//hago comprobación sobre si el año tiene dos cifras
+						//hago comprobaci&oacute;n sobre si el a&ntilde;o tiene dos cifras
 						if(arrayFechaEscrita[2].length == 2){
 							if (arrayFechaEscrita[2].charAt(0)=="0"){
 								arrayFechaEscrita[2] = arrayFechaEscrita[2].substring(1);
@@ -74,10 +74,10 @@ jQuery.fn.calendarioDW = function() {
 					}
 				}
 				
-				//mes y año actuales
+				//mes y a&ntilde;o actuales
 				var mes = objFecha.getMonth();
 				var ano = objFecha.getFullYear();
-				//muestro los días del mes y año dados
+				//muestro los d&iacute;as del mes y a&ntilde;o dados
 				muestraDiasMes(mes, ano);
 				
 				//control para ocultar el calendario
@@ -114,9 +114,9 @@ jQuery.fn.calendarioDW = function() {
 				botonCambioAno.click(function(e){
 					e.preventDefault();
 					var botonActivoSelAnos = $(this);
-					//creo una capa con una serie de años para elegir
+					//creo una capa con una serie de a&ntilde;os para elegir
 					var capaAnos = $('<div class="capaselanos"></div>');
-					//genero 10 años antes y 10 después
+					//genero 10 a&ntilde;os antes y 10 despu&eacute;s
 					for (var i=ano-10; i<=ano+10; i++){
 						var codigoEnlace = '<a href="#"';
 						if (i==ano)
@@ -135,7 +135,7 @@ jQuery.fn.calendarioDW = function() {
 						})
 						capaAnos.append(opcionAno);
 					}
-					//coloco la capa en la página
+					//coloco la capa en la p&aacute;gina
 					$(document.body).append(capaAnos);
 					//posiciono la capa
 					capaAnos.css({
@@ -187,12 +187,12 @@ jQuery.fn.calendarioDW = function() {
 			//muestro en la capaTextoMesAno el mes y ano que voy a dibujar
 			capaTextoMesAnoActual.text(nombresMes[mes] + " " + ano);
 			
-			//muestro los días del mes
+			//muestro los d&iacute;as del mes
 			var contadorDias = 1;
 			
-			//calculo la fecha del primer día de este mes
+			//calculo la fecha del primer d&iacute;a de este mes
 			var primerDia = calculaNumeroDiaSemana(1, mes, ano);
-			//calculo el último día del mes
+			//calculo el &uacute;ltimo d&iacute;a del mes
 			var ultimoDiaMes = ultimoDia(mes,ano);
 			
 			//escribo la primera fila de la semana
@@ -216,7 +216,7 @@ jQuery.fn.calendarioDW = function() {
 				capaDiasMes.append(diaActual);
 			}
 			
-			//recorro todos los demás días hasta el final del mes
+			//recorro todos los dem&aacute;s d&iacute;as hasta el final del mes
 			var diaActualSemana = 1;
 			while (contadorDias <= ultimoDiaMes){
 				var codigoDia = '<span';
@@ -233,7 +233,7 @@ jQuery.fn.calendarioDW = function() {
 				capaDiasMes.append(diaActual);
 			}
 			
-			//compruebo que celdas me faltan por escribir vacias de la última semana del mes
+			//compruebo que celdas me faltan por escribir vacias de la &uacute;ltima semana del mes
 			diaActualSemana--;
 			if (diaActualSemana%7!=0){
 				//console.log("dia actual semana ", diaActualSemana, " -- %7=", diaActualSemana%7)
@@ -247,7 +247,7 @@ jQuery.fn.calendarioDW = function() {
 				}
 			}
 			
-			//crear el evento para cuando se pulsa un día de mes
+			//crear el evento para cuando se pulsa un d&iacute;a de mes
 			//console.log(capaDiasMes.children());
 			capaDiasMes.children().click(function(e){
 				var numDiaPulsado = $(this).text();
@@ -257,7 +257,7 @@ jQuery.fn.calendarioDW = function() {
 				}
 			})
 		}
-		//función para calcular el número de un día de la semana
+		//funci&oacute;n para calcular el n&uacute;mero de un d&iacute;a de la semana
 		function calculaNumeroDiaSemana(dia,mes,ano){
 			var objFecha = new Date(ano, mes, dia);
 			var numDia = objFecha.getDay();
@@ -268,14 +268,14 @@ jQuery.fn.calendarioDW = function() {
 			return numDia;
 		}
 		
-		//función para ver si una fecha es correcta
+		//funci&oacute;n para ver si una fecha es correcta
 		function checkdate ( m, d, y ) {
-			// función por http://kevin.vanzonneveld.net
-			// extraida de las librerías phpjs.org manual en http://www.desarrolloweb.com/manuales/manual-librerias-phpjs.html
+			// funci&oacute;n por http://kevin.vanzonneveld.net
+			// extraida de las librer&iacute;as phpjs.org manual en http://www.desarrolloweb.com/manuales/manual-librerias-phpjs.html
 			return m > 0 && m < 13 && y > 0 && y < 32768 && d > 0 && d <= (new Date(y, m, 0)).getDate();
 		}
 		
-		//funcion que devuelve el último día de un mes y año dados
+		//funcion que devuelve el &uacute;ltimo d&iacute;a de un mes y a&ntilde;o dados
 		function ultimoDia(mes,ano){ 
 			var ultimo_dia=28; 
 			while (checkdate(mes+1,ultimo_dia + 1,ano)){ 

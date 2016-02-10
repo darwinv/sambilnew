@@ -22,8 +22,8 @@ $subject = "Recuperar Password";
 		        <title>Restablece tu contrase&ntilde;a</title>
 		     </head>
 		     <body>
-		       <p>Hemos recibido una petición para restablecer la contrase&ntilde;a de tu cuenta.</p>
-		       <p>Si hiciste esta petición, haz clic en el siguiente enlace, si no hiciste esta petición puedes ignorar este correo.</p>
+		       <p>Hemos recibido una petici&oacute;n para restablecer la contrase&ntilde;a de tu cuenta.</p>
+		       <p>Si hiciste esta petici&oacute;n, haz clic en el siguiente enlace, si no hiciste esta petici&oacute;n puedes ignorar este correo.</p>
 		       <p>
 		         <strong>Enlace para restablecer tu contrase&ntilde;a</strong><br>
 		         <a href="'.$link.'"> Restablecer contrase&ntilde;a </a>

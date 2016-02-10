@@ -90,7 +90,7 @@ function buscaRuta(){
                          	</span>
                          		<br>
 							<span class="t12 marL30 grisO">	
-								<i class="fa fa-caret-right marR10"></i> Utiliza palabras m�s estandares.
+								<i class="fa fa-caret-right marR10"></i> Utiliza palabras m&aacute;s estandares.
 							</span>	
 							<br>
 							<span class="t12 marL30 grisO">	
@@ -98,7 +98,7 @@ function buscaRuta(){
 							</span>	
 							<br>	
 							<span class="t12 marL30 grisO">	
-								<i class="fa fa-caret-right marR10"></i> No se hallaron publicaciones relacionadas a tu selecci�n.
+								<i class="fa fa-caret-right marR10"></i> No se hallaron publicaciones relacionadas a tu selecci&oacute;n.
 							</span>	
                          </div>  
                          <br>
@@ -164,7 +164,7 @@ function buscaRuta(){
 									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin' href='prueba'></a></span></div></li>
 									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin' href='prueba'></a></span></div></li>
 							</ul>
-							<div id="ubicacion">
+						<!--	<div id="ubicacion">
 									<h5 class="negro" ><b>Ubicaci&oacute;n</b></h5>							
 									<hr class="marR5">
 									<ul class="nav marR5 t11  marT10 marB20 ">
@@ -178,7 +178,7 @@ function buscaRuta(){
 											endforeach;
 											?>
 									</ul>
-							</div>
+						</div> -->
 							<div id="condicion" style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
 								<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 								<hr class="marR5">
@@ -269,7 +269,7 @@ function buscaRuta(){
 												    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 													<br>
 													<span class=' grisO '> 		
-													<span class="t12"><?php echo utf8_decode($usua->getEstado());?></span>
+													<!-- <span class="t12"><?php echo  ($usua->getEstado());?></span> -->
 													<br>
 													<i class='fa fa-thumbs-o-up opacity '></i>
 													<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>
@@ -283,7 +283,7 @@ function buscaRuta(){
 											    </div>
 											    <br>
 											    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'><div class='marR20'>
-												<span class='vin-blue t16'><a href='perfil.php?id=<?php echo $usua->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
+												<span class='vin-blue t16'><a href='perfil.php?id=<?php echo $usua->id;?>' style='text-decoration:underline;'>Ver M&aacute;s</a></span >
 												</div></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-2'><br></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-10'><hr class='marR10'><br></div>						
 											<?php
 											else:
@@ -294,7 +294,7 @@ function buscaRuta(){
 													$miTitulo=str_ireplace($palabra, "<span style='background:#ccc'><b>$palabra</b></span>", $miTitulo);
 												}												
 											?>
-									            <!--publicaci�n-->
+									            <!--publicaci&oacute;n-->
 												<div class=' col-xs-12 col-sm-6 col-md-2 col-lg-2'>
 											    	<div class='marco-foto-conf  point marL20  ' style='height:130px; width: 130px;'  >
 											    		<div style='position:absolute; left:40px; top:10px; ' class='f-condicion'><?php echo $publi->getCondicion();?> </div>			 

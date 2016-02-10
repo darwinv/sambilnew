@@ -256,7 +256,7 @@ $(document).ready(function() {
 		  
 	});
 	/*
-	 * Navegacion de las pestañas
+	 * Navegacion de las pesta&ntilde;as
 	 */
 	$("#ajaxContainer2").on("click","#volverClasificado",function(){
 		$("#pesta1").click();

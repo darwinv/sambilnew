@@ -24,9 +24,10 @@ switch($_POST["metodo"]){
 function buscaPublicaciones(){
 		session_start();
 	    $usua2=new usuario($_SESSION["id"]);
-		$hijos2=$usua2->getPublicaciones($_POST["tipo"], 1, NULL, $_POST["order"]);
+		$hijos2=$usua2->getPublicaciones($_POST["tipo"],$_POST["pagina"], NULL, $_POST["order"]);		
 		$contador=0;
 		$des=$_POST["tipo"]==1?"":"disabled";
+		$pagina=$_POST["pagina"];
 		foreach ($hijos2 as $key => $valor) {
 			$contador++;
 			$publicacion=new publicaciones($valor["id"]);
@@ -108,27 +109,42 @@ function buscaPublicaciones(){
 		echo "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10'>
 			<nav class='text-center'>
 			  <ul class='pagination'>";
-			$totalPaginas=floor($contador/25);
-			$restantes=$contador-($totalPaginas*25);
-			if($restantes>0){
-				$totalPaginas++;
-			}
-			if($totalPaginas>0){
-			  echo "<li>
-			      <a href='#' aria-label='Previous'>
-			        <span aria-hidden='true'>&laquo;</span>
-			      </a>
-			    </li>";
-			}
-			  for($i=1;$i<=$totalPaginas;$i++){
-			  	echo "<li><a href='#'>$i</a></li>";
-			 }
-			 if($totalPaginas>0){
-			 echo "<li>
-			      <a href='#' aria-label='Next'>
-			        <span aria-hidden='true'>&raquo;</span>
-			      </a>
-			    </li>			    
+								$ac=$usua2->getCantidadPub($_POST["tipo"]);
+								$totalPaginas=floor($ac/25);
+								$restantes=$ac-($totalPaginas*25);
+								if($restantes>0){
+									$totalPaginas++;
+								}
+								echo"</div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' id='paginas' name='paginas' data-metodo='buscarPublicaciones' data-tipo='" . $_POST["tipo"] . "' data-id='" . $usua2->id . "' > <center><nav><ul class='pagination'>";
+								$contador=0;
+								if($pagina<=10){
+									$inicio=1;
+								}else{
+									$inicio=floor($pagina/10);
+									if($pagina % 10!=0){
+										$inicio=($inicio*10)+1;
+									}else{
+										$inicio=($inicio*10)-9;
+									}									
+								}
+								 								 
+								for($i=$inicio;$i<=$totalPaginas;$i++){
+									$contador++;
+									if($i==$_POST["pagina"]){
+										echo "<li class='active' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";
+									}else{
+										echo "<li class='' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";
+									}
+									if($contador==10){
+										break;
+									}
+								}
+				 if($totalPaginas>0){
+				 echo "<li>
+				      <a href='#' aria-label='Next'>
+				        <span aria-hidden='true'>&raquo;</span>
+				      </a>
+				    </li>
 			  </ul>
 			</nav>
 			</div>	";
@@ -154,7 +170,7 @@ function actualiza(){
 	$publi=new publicaciones($_POST["id"]);
 	$monto=$_POST["monto"];
 	$publi->setMonto($monto);
-	$bd->doUpdate("publicaciones", array("titulo"=>utf8_decode($_POST["titulo"]),"stock"=>$_POST["stock"],"monto"=>$monto), "id={$_POST["id"]}");
+	$bd->doUpdate("publicaciones", array("titulo"=> ($_POST["titulo"]),"stock"=>$_POST["stock"],"monto"=>$monto), "id={$_POST["id"]}");
 }
 function cambiaStatus(){
 	$publi=new publicaciones($_POST["id"]);
@@ -182,8 +198,8 @@ function actualizaPub(){
 			$fotos[] = $_POST["foto-".$i];
 		}
 	} 	
-	$listaValores["dias_garantia"]=str_replace("gn", "�", $listaValores["dias_garantia"]);
-	$listaValores["titulo"]=utf8_decode($listaValores["titulo"]);
+	$listaValores["dias_garantia"]=str_replace("gn", "&ntilde;", $listaValores["dias_garantia"]);
+	$listaValores["titulo"]= ($listaValores["titulo"]);
 	$publi->actualizarPublicacion($listaValores,$monto,$fotos);
 	echo "OK";
 }

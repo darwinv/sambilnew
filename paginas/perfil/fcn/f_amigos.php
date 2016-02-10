@@ -1,6 +1,6 @@
 <?php
 if (! headers_sent ()) {
-	header ( 'Content-Type: text/html; charset=ISO-8859-1' );
+	header ( 'Content-Type: text/html; charset=UTF-8' );
 }
 // Incluimos las clases a usar.
 if (file_exists ( '../../../clases/usuarios.php' )) {

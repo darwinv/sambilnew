@@ -1145,9 +1145,7 @@
 		/*******************************************************/
 		if (! isset ( $_SESSION )) {
 			session_start ();
-		}
-		var_dump($_SESSION);
-		 
+		}		 
 		$result=$bd->query($consulta);
 		foreach($result as $r=>$valor){
 			if($valor["tipo"]=="U"):
@@ -1314,7 +1312,7 @@
 		    </div>
 		    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'>
 		    	<div class='marR20'><span class='red t20'><b> <?php echo $publi->getMonto();?></b></span >
-						<br><span class=' t12'> <?php echo $usua->getEstado();?> </span><br><span class='vin-blue t16'><a href='detalle.php?id=<?php echo $publi->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
+						<!--<br><span class='t12'> <?php echo $usua->getEstado();?> </span>--><br><span class='vin-blue t16'><a href='detalle.php?id=<?php echo $publi->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
 				</div>
 			</div>
 			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-2'><br></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-10'><hr class='marR10'><br></div>		
@@ -1719,7 +1717,7 @@
 									    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 										<br>
 										<span class=' grisO '> 		
-										<span class="t12"><?php echo utf8_encode($usua->getEstado());?></span>
+										<!-- <span class="t12"><?php echo utf8_encode($usua->getEstado());?></span> -->
 										<br>
 										<i class='fa fa-thumbs-o-up opacity '></i>
 										<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>												

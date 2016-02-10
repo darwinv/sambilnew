@@ -78,16 +78,6 @@ if (isset($_SESSION["id"])) {
                                                 <span class="t16"><?php echo $publicacion -> getTiempoGarantia(); ?></span>
                                             </span>
                                             <br>
-                                            <span >
-                                                <i class="fa fa-university t22 grisC" style="width:30px;"></i>
-                                                <span class="t16"><?php echo $publicacion -> getTienda(); ?> <span class="negro">Tienda F&iacute;sica</span></span>
-                                            </span>
-                                            <br>
-                                            <span>
-                                                <i class="fa fa-file-text-o t22 grisC" style="width:30px;"></i>
-                                                <span class="t16"><?php echo $publicacion -> getFactura(); ?> <span class="negro">Factura Fiscal</span></span>
-                                            </span>
-
                                         </p>
                                         <br>
                                         <div class="text-left marL30">
@@ -135,7 +125,7 @@ if (isset($_SESSION["id"])) {
                               </div>
                                <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">  
                         <div class="marB10 marT10 text-center"> 
-                            <span class="t30 negro">Informaci&oacute;n del vendedor</span> 
+                            <span class="t30 negro">Informaci&oacute;n de la tienda</span> 
                             <br> 
                             <span class="t16"></span>  
                         </div>
@@ -215,16 +205,16 @@ if (isset($_SESSION["id"])) {
                         <div class=" contenedor pad20  t16 text-justify" style="margin: 20px;">
                         	<!--
                         	<p class=" opacity t14">
-                        		 A Precio De Pana, C.A. no asume ninguna responsabilidad por la información contenida en este anuncio, 
-                        		 ya que ha sido suministrada en su totalidad por el usuario aquí identificado. A Precio De Pana, C.A. no es el propietario
-                        		 ni vende los artículos aquí ofrecidos y no participa en ninguna negociación, venta o perfeccionamiento de operaciones, 
-                        		 sino que sólo se limita a la publicación y/o alojamiento de anuncios de sus usuarios. A Precio De Pana, C.A. no asume 
-                        		 responsabilidad por daños o perjuicios que pudiere sufrir el usuario o visitante por operaciones sobre anuncios publicados en el sitio.
+                        		 A Precio De Pana, C.A. no asume ninguna responsabilidad por la informaci&oacute;n contenida en este anuncio, 
+                        		 ya que ha sido suministrada en su totalidad por el usuario aqu&oacute; identificado. A Precio De Pana, C.A. no es el propietario
+                        		 ni vende los art&oacute;culos aqu&oacute; ofrecidos y no participa en ninguna negociaci&oacute;n, venta o perfeccionamiento de operaciones, 
+                        		 sino que s&oacute;lo se limita a la publicaci&oacute;n y/o alojamiento de anuncios de sus usuarios. A Precio De Pana, C.A. no asume 
+                        		 responsabilidad por da&oacute;os o perjuicios que pudiere sufrir el usuario o visitante por operaciones sobre anuncios publicados en el sitio.
                         		 </p>
                         		 <hr>
                         		 <br> 
 								--> </br>
-							<?php echo utf8_decode($publicacion -> descripcion); ?>
+							<?php echo  ($publicacion -> descripcion); ?>
 
                         </div>
 
@@ -233,7 +223,7 @@ if (isset($_SESSION["id"])) {
                     <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12  marB10 "   >  
   
                         	<div class="marB10 marT10 text-center"> 
-                            <span class="t30 negro">Preguntas al vendedor</span> 
+                            <span class="t30 negro">Preguntas sobre la publicaci&oacute;n</span> 
 
                         </div>
                         

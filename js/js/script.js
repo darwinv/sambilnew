@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-/* Considerar borrar este cï¿½digo y llamar a configuracion-js*>*/
+/* Considerar borrar este código y llamar a configuracion-js*>*/
 	$('#usr-act-form-nat').formValidation({
 		locale: 'es_ES',
 		framework : 'bootstrap',
@@ -269,7 +269,7 @@ $( document ).ready(function() {
 	            }else{  	
 		        	swal({
 						title: "Bienvenido", 
-						text: "ï¿½Compra y vende lo que quieras!",
+						text: "&oacute;Compra y vende lo que quieras!",
 						imageUrl: "galeria/img/logos/bill-ok.png",
 						timer: 2000, 
 						showConfirmButton: true
@@ -424,7 +424,7 @@ $( document ).ready(function() {
 	            } else{
 	            	swal({
 						title: "Bienvenido", 
-						text: "ï¿½Compra y vende lo que quieras!",
+						text: "&oacute;Compra y vende lo que quieras!",
 						imageUrl: "galeria/img/logos/bill-ok.png",
 						timer: 2000, 
 						showConfirmButton: true
@@ -526,6 +526,19 @@ $( document ).ready(function() {
 	});
 	$(".vendedores").click(function(e){
 		window.open("perfil.php?id=" + $(this).attr("id"),"_self");
+	});
+	$(".preguntas").click(function(e){
+		window.open("preguntas.php?tipo=1","_self");
+	});	
+	$(".respuestas").click(function(e){
+		window.open("preguntas.php?tipo=2","_self");
+	});
+	
+	$(".detalle").click(function(e){
+		window.open("detalle.php?id=" + $(this).data("id"),"_self"); 
+	});
+	$(".perfil").click(function(e){
+		window.open("perfil.php?id=" + $(this).data("id"),"_self");
 	});	
 	function pararCarga(){
 		loadingAjax();

@@ -44,7 +44,7 @@ aria-labelledby="myLargeModalLabel" id="red-social">
 							 
 						</div>
 						<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" style="border-left: 1px dashed #CCC; ">
-						<textarea id="descripcion" name="descripcion"   cols="" placeholder=" Agregar descripción"
+						<textarea id="descripcion" name="descripcion"   cols="" placeholder=" Agregar descripci&oacute;n"
 										class="form-textarea-msj " ></textarea>
 										<div style="background:#FFF; width:100%; " class="text-right  pad10">
 						<span id="restante" name="restante" class="t12 grisO"> 140 </span>

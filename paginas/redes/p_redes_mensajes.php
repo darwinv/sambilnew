@@ -8,7 +8,7 @@
 			<!-- inicio contenido conte1-1 -->
 
 			<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10   "><!-- inicio titulo   -->
-				<h4 class=" marL20 marR20 t20 negro" style="padding:10px;"><span class="marL10">Campaña Publicitaria</span></h4>
+				<h4 class=" marL20 marR20 t20 negro" style="padding:10px;"><span class="marL10">Campa&ntilde;a Publicitaria</span></h4>
 				<center>
 					<hr class='ancho95'>
 				</center>

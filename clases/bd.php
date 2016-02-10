@@ -12,13 +12,14 @@
 class bd extends PDO {
 	private $driver = "mysql";
 	private $host = "localhost";
-	private $bd_name = "sambil";
-	private $bd_charset = "latin1";
+	private $bd_name = "sambilnew";
+	private $bd_charset = "utf8";
 	private $user = "root";
 	private $password = "";
 	private $options = array (
 			PDO::ATTR_EMULATE_PREPARES => true,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+			PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
 			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC 
 	);
 	private $rowcount;

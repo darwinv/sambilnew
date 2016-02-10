@@ -11,5 +11,5 @@
   </body>
 </html>
 
-<?php //echo mb_detect_encoding($_GET["CODIGO"])." - ".$_GET["CODIGO"]."  ñandu";  ?> 
+<?php //echo mb_detect_encoding($_GET["CODIGO"])." - ".$_GET["CODIGO"]."  &ntilde;andu";  ?> 
  

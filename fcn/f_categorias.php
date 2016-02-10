@@ -33,7 +33,7 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
       		<a href="listado.php?id_cla=1051"><div><img src="galeria/img/iconos_cat/4.png" width="auto" height="40"><span class="marL5 ">Celulares y tel&eacute;fonos </span></div></a>
     	</div>
     	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
-       		<a href="listado.php?id_cla=1648"><div><img src="galeria/img/iconos_cat/5.png" width="auto" height="40"><span class="marL5 ">Computación </span></div></a>     
+       		<a href="listado.php?id_cla=1648"><div><img src="galeria/img/iconos_cat/5.png" width="auto" height="40"><span class="marL5 ">Computaci&oacute;n </span></div></a>     
     	</div>
     	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
       		<a href="listado.php?id_cla=1276"><div><img src="galeria/img/iconos_cat/6.png" width="auto" height="40"><span class="marL5 ">Deportes y fitness </span></div></a>
@@ -92,7 +92,7 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
 	    	<a href="listado.php?id_cla=1763"><div ><div>Motos</div></div></a>
     	</div>  
 	    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
-    		<a href="listado.php?id_cla=6112"><div ><div>Náutica</div></div></a>
+    		<a href="listado.php?id_cla=6112"><div ><div>N&aacute;utica</div></div></a>
 	    </div> 
     	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
         	<a href="listado.php?id_cla=1907"><div ><div>Otros</div></div></a>
@@ -118,7 +118,7 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
       		<a href="listado.php?id_cla=56666"><div ><div>Imprenta</div></div></a>
     	</div>  
      	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
-      		<a href="listado.php?id_cla=92403"><div ><div>Mantenimiento de Vehículos</div></div></a>
+      		<a href="listado.php?id_cla=92403"><div ><div>Mantenimiento de Veh&iacute;culos</div></div></a>
     	</div> 
      	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
       		<a href="listado.php?id_cla=116749"><div ><div>Oficios</div></div></a>
@@ -127,7 +127,7 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
       		<a href="listado.php?id_cla=1541"><div ><div >Profesionales </div></div></a>
     	</div>
      	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
-      		<a href="listado.php?id_cla=9056"><div ><div>Servicios Médicos</div></div></a>
+      		<a href="listado.php?id_cla=9056"><div ><div>Servicios M&eacute;dicos</div></div></a>
     	</div>  
      	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
       		<a href="listado.php?id_cla=9004"><div ><div>Reparaciones e Instalaciones</div></div></a>
@@ -202,7 +202,7 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
       			<p class="text-left mar20 " style="border-right: 1px solid #ccc;">
         		<span class="negro t26 ">Tiendas <br> certificadas</span>       		
         		<br><br>
-        		<span class="vin-blue t18" style="text-decoration:underline;"><a href="listado.php">Ver más...</a></span>
+        		<span class="vin-blue t18" style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
          		<br>
         		<br>
       			</p>
@@ -236,7 +236,7 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
         <br><br>
         <span>Puedes confiar libremente<br> en estas tiendas.</span>
         <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline;"><a href="#">Ver más...</a></span>
+        <span class="vin-blue t18" style="text-decoration:underline;"><a href="#">Ver m&aacute;s...</a></span>
         <br>
       </p>
     </div>

@@ -120,11 +120,11 @@ border-bottom-left-radius: 10px;" >
 
     <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-2">
       <p class="text-left mar20 " style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p�blicaciones</span>
+        <span class="negro t26 ">Ultimas <br> p&oacute;blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones m�s recientes.</span>
+        <span class="">echale un vistazo a las publicaciones m&oacute;s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m�s...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&oacute;s...</a></span>
          <br>
         <br>
         <br>
@@ -136,11 +136,11 @@ border-bottom-left-radius: 10px;" >
     
     <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p�blicaciones</span>
+        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones m�s recientes.</span>
+        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m�s...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
          <br>
         <br>
         <br>
@@ -191,11 +191,11 @@ foreach ($resultTotal as $r => $valor) {
 
 	<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p�blicaciones</span>
+        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones m�s recientes.</span>
+        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m�s...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
          <br>
         <br>
         <br>
@@ -225,11 +225,11 @@ foreach ($resultTotal as $r => $valor) {
 
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2">
       <p class="text-left mar20" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Top 5 <br> M�s Visitados</span>
+        <span class="negro t26 ">Top 5 <br> M&aacute;s Visitados</span>
         <br><br>
-        <span>Echale un vistazo a las publicaciones m�s populares.</span>
+        <span>Echale un vistazo a las publicaciones m&aacute;s populares.</span>
         <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline;"><a href="#">Ver m�s...</a></span>
+        <span class="vin-blue t18" style="text-decoration:underline;"><a href="#">Ver m&aacute;s...</a></span>
         <br>
         <br>
       
@@ -307,11 +307,11 @@ border-bottom-left-radius: 10px; " >
 
 <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p�blicaciones</span>
+        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones m�s recientes.</span>
+        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m�s...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
          <br>
         <br>
         <br>
@@ -323,9 +323,9 @@ border-bottom-left-radius: 10px; " >
       <p class="text-left mar20" style="border-right: 1px solid #ccc;">
         <span class="negro t26 ">Top 5 <br> Vendedores</span>
         <br><br>
-        <span>Echale un vistazo a los vendedores m�s destacados.</span>
+        <span>Echale un vistazo a los vendedores m&oacute;s destacados.</span>
         <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline; visibility: hidden;"><a href="#">Ver m�s...</a></span>
+        <span class="vin-blue t18" style="text-decoration:underline; visibility: hidden;"><a href="#">Ver m&oacute;s...</a></span>
         <br>
         <br>
         <br>
@@ -355,7 +355,7 @@ border-bottom-left-radius: 10px; " >
 						<br>
 						<span class='grisO t14'>" . $nombre . "</span>
 						<br>
-						<span class='t12 grisC'>" . utf8_decode($usua->getEstado()) . "</span> &nbsp;&nbsp; <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'> {$r["tota"]}  </span>
+						<span class='t12 grisC'>" .  ($usua->getEstado()) . "</span> &nbsp;&nbsp; <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'> {$r["tota"]}  </span>
 						<br>
 						<br>
 					</div>
@@ -448,11 +448,11 @@ border-bottom-left-radius: 10px; " >
    
    <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p�blicaciones</span>
+        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
         <br><br>
-        <span class="">echale un vistazo a las publicaciones m�s recientes.</span>
+        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
         <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m�s...</a></span>
+        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
          <br>
         <br>
         <br>

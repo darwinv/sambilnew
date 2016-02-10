@@ -4387,7 +4387,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-   /* tamaño de informacion derecha del header*/
+   /* tama&ntilde;o de informacion derecha del header*/
     
   }
 
@@ -4399,7 +4399,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
 
-     /* tamaño de buscador del header*/
+     /* tama&ntilde;o de buscador del header*/
   
 }
 @media (min-width: 768px) {

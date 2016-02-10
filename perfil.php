@@ -9,14 +9,13 @@ include 'clases/amigos.php';
 $foto=new fotos();
 if(!isset($_SESSION["id"])){
 	session_start();
-	$act_usu="";	
+	$act_usu="";
 }else{
 	$act_usu=$_SESSION["id"];
 	$usua=new usuario($act_usu);
 }
 if(isset($_GET["new"])){
 	$_SESSION["fotoperfil"]=$foto->buscarFotoUsuario($_SESSION["id"]);
-//	var_dump($_SESSION["fotoperfil"]);
 }
 ?>
 <!DOCTYPE html>

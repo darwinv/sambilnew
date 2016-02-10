@@ -109,7 +109,7 @@
 						</div>
 					</section>	
 				<!--	<section class="form-apdp" style="display: none"
-						data-title="Informaci�&iquest;�n Empresarial" data-step="1" data-type="e"  >
+						data-title="Informaci&oacute;&iquest;&oacute;n Empresarial" data-step="1" data-type="e"  >
 						<div class="row">
 							<div class="col-xs-12 ">
 								<span class="marL10"><i class="fa fa-list-alt"></i>

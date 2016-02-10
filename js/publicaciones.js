@@ -110,10 +110,22 @@ $(document).ready(function() {
 				$("#ajaxContainer").css("display", "none");
 				$("#imagentipo").attr("src", laimagen);
 				$("#txtPrecio").autoNumeric({aSep: '.', aDec: ','});
-				//Inicializacion del editor HTML				
-		$('#editor').trumbowyg({
+								
+		/*$('#editor').trumbowyg({
 						lang : 'es',	  
-					});	
+					});*/
+		//Inicializacion del editor TinyMce HTML			
+	tinymce.init({ 
+  	selector:'#editor',
+  	language:'es_MX',
+  	default_link_target: "_blank",
+  	plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
+  	toolbar:[
+  	 'newdocument, bold, italic,underline, strikethrough, alignleft  aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste',
+  	 'charmap, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript, hr, searchreplace, table, link, media, image, visualblocks forecolor backcolor, preview' 	
+  		]
+     });
+   				
 										
 								
 				if($("#cmbCondicion").val()==3){
@@ -274,7 +286,7 @@ $(document).ready(function() {
 	
 
 	/*
-	 * Navegacion de las pesta�as
+	 * Navegacion de las pestañ
 	 */
 	$("#ajaxContainer2").on("click","#volverClasificado",function(){
 		$("#pesta1").click();

@@ -34,7 +34,7 @@
 
 				   <div class="text-left marT5 t10 link-foot ">
 	 			     <div> <a href="http://www.sambil.com/ResponsabilidadSocial">Inicio </a></div> 
-	 			     <div> <a href="http://www.sambil.com/ResponsabilidadSocial/Seccion/7/Educacion/Page1">Educación</a></div> 
+	 			     <div> <a href="http://www.sambil.com/ResponsabilidadSocial/Seccion/7/Educacion/Page1">Educaci&oacute;n</a></div> 
 	 			     <div> <a href="http://www.sambil.com/ResponsabilidadSocial/Seccion/6/Familia/Page1">Familia </a></div> 
 	 			     <div> <a href="http://www.sambil.com/ResponsabilidadSocial/Seccion/5/Deporte/Page1">Deporte </a></div>
 	 			     <div> <a href="http://www.sambil.com/ResponsabilidadSocial/Seccion/4/Salud/Page1">Salud </a></div>
@@ -48,7 +48,7 @@
 					<div class="text-left show-footer" data-indice='4' >Revista Sambil</div>
 					
 				 	<div class="text-left marT5 t10 link-foot ">
-	 			     <div> <a href="http://www.sambil.com/Revista">Última Edición </a></div> 
+	 			     <div> <a href="http://www.sambil.com/Revista">&Uacute;ltima Edici&oacute;n </a></div> 
 	 			     <div> <a href="http://www.sambil.com/Revista/Contacto">Contacto</a></div> 	 		
 	 		</div>  
 			</div>
@@ -56,7 +56,7 @@
 					<div class="text-left show-footer" data-indice='5' >Sambil Model</div>
 					
 				 	<div class="text-left marT5 t10 link-foot ">
-	 			     <div> <a href="http://www.sambil.com/Model">Última Edición </a></div> 
+	 			     <div> <a href="http://www.sambil.com/Model">&Uacute;ltima Edici&oacute;n </a></div> 
 	 			     <div> <a href="http://www.sambil.com/Model">Inscripciones</a></div> 	 		
 	 				</div>  
 			</div>

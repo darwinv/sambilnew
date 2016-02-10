@@ -1,6 +1,6 @@
 $(document ).ready(function() {
 	
-/* Validador de Formulario de recuperar contraseña */	
+/* Validador de Formulario de recuperar contrase&ntilde;a */	
 $('#rec-clave-submit').click(function(){ 
 		$("#restablecer-password").data('formValidation').validate();
 });

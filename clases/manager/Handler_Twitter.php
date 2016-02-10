@@ -62,22 +62,22 @@ class Handler_Twitter{
 				//No hay conexion SSL
 				break;
 			case 130:
-				//Error de Twitter, intentarlo más tarde
+				//Error de Twitter, intentarlo m&aacute;s tarde
 				break;
 			case 131:
 				//Error del servidor de twitter
 				break;
 			case 135:
-				//Error de autenticación relacionado con pais que utilicen oauth_timestamp
+				//Error de autenticaci&oacute;n relacionado con pais que utilicen oauth_timestamp
 				break;
 			case 161:
-				//El usuari no puede seguir a nadie más
+				//El usuari no puede seguir a nadie m&aacute;s
 				break;
 			case 179:
 				//Se intendo acceder a un Tweet privado
 				break;
 			case 185:
-				//No se puede postear más en el dia, bien sea porque el usuario ha publicado muchos tweets, o por el bot
+				//No se puede postear m&aacute;s en el dia, bien sea porque el usuario ha publicado muchos tweets, o por el bot
 				break;
 			case 187:
 				//Tweet duplicado, intentarlo con otro tweet
@@ -92,7 +92,7 @@ class Handler_Twitter{
 				//Twitter se dio cuenta que el sistema era un bot
 				break;
 			case 231:
-				//La cuenta del usuario debe generar una nueva contraseña y el sistema debe conseguir access tokens otra vez
+				//La cuenta del usuario debe generar una nueva contrase&ntilde;a y el sistema debe conseguir access tokens otra vez
 				break;
 			case 251:
 				//Esta api ya no existe

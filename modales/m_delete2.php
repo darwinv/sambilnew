@@ -13,7 +13,7 @@ aria-labelledby="myLargeModalLabel" id="msj-eliminar">
 
 			<div class="modal-body marL20 marR20 ">		
 				<br>	
-				<p class="t16 text-center">¿Estas seguro de continuar con la operación?</p>
+				<p class="t16 text-center">&iquest;Estas seguro de continuar con la operaci&oacute;n?</p>
 						</div>				
 				
 				

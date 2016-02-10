@@ -25,7 +25,7 @@ function actualizaFavoritos(){
 }
 function guardaPregunta(){
 	$publi=new publicaciones($_POST["id"]);
-	$inse = $publi->setPreguntas(utf8_decode(htmlspecialchars(strip_tags($_POST["pregunta"]))));	
+	$inse = $publi->setPreguntas( (htmlspecialchars(strip_tags($_POST["pregunta"]))));	
 	$not = $publi->setNotificacion($_POST["id"],$_POST["tipo"],$_POST["usr"],$inse);
 	$preguntas=$publi->getPreguntasPublicacion();
 	?>

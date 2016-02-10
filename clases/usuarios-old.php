@@ -397,7 +397,7 @@ class usuario {
 				return $resultado["nombre"];
 			}
 		}else{
-			throw new Exception("No se encontro información del estado", 1);
+			throw new Exception("No se encontro informaci&oacute;n del estado", 1);
 			return false;
 		}
 	}
@@ -428,9 +428,9 @@ class usuario {
 				}else{
 					$agnos=round($meses / 12,0,PHP_ROUND_HALF_DOWN);
 					if($agnos==1){
-						return "<span class='t18'>" . $agnos . "</span> Año ";
+						return "<span class='t18'>" . $agnos . "</span> A&ntilde;o ";
 					}else{
-						return "<span class='t18'>" . $agnos . " </span> Años ";
+						return "<span class='t18'>" . $agnos . " </span> A&ntilde;os ";
 					}
 				}
 			}

@@ -1,5 +1,5 @@
 $(document ).ready(function() {
-/* Considerar borrar este c�digo y llamar a configuracion-js*>*/
+/* Considerar borrar este c&oacute;digo y llamar a configuracion-js*>*/
 
 		/********SCRIPT PARA FONDOS TEMPORALMENTE**************************/
         $('body').css("background-image", "url(galeria/img/fondos/F1.jpg)");  
@@ -557,11 +557,26 @@ $(document ).ready(function() {
 	$(".vendedores").click(function(e){
 		window.open("perfil.php?id=" + $(this).attr("id"),"_self");
 	});	
+	$(".pre_pub").click(function(e){
+		window.open("preguntas.php?tipo=1","_self");
+	});
+	
+	$(".resp_pub").click(function(e){
+		window.open("preguntas.php?tipo=2","_self");
+	});
+	
+	$(".detalle").click(function(e){
+		window.open("detalle.php?id=" + $(this).data("id"),"_self");
+	//	window.open("pub_" + $(this).attr("id"),"_self");
+	});
+	$(".perfil").click(function(e){
+		window.open("perfil.php?id=" + $(this).data("id"),"_self");
+	});	
 	function pararCarga(){
 		loadingAjax();
 	}
 	
-/* Validador de Formulario de recuperar contrase�a */	
+/* Validador de Formulario de recuperar contrase&oacute;a */	
 $('#recover-password').formValidation({
 		locale: 'es_ES',
 		excluded: ':disabled',
@@ -769,7 +784,7 @@ $("#enviar").click(function(e){
 			}
 		}
 	});	
-	//$('.modal-conf').on('show.bs.modal', function (e) {	
+	
 	$("#btnEmpresa").click(function(e){
 		e.preventDefault();
 		$.ajax({
@@ -870,7 +885,44 @@ $("#enviar").click(function(e){
 			}
 		});
 	});
+	 
 	
+	$("body").on('click', '.ver-noti-seguidor', function(e) {	
+		$("#info-seguidor").modal('show');
+	 	var usuarios_id= $(this).data("id");
+		usuarios_id = parseInt(usuarios_id);
+		  
+		if(usuarios_id>0){
+			$.ajax({
+				url: "fcn/f_usuarios.php", // la URL para la petici&oacute;n
+	            data: {method:"get", id:usuarios_id}, // la informaci&oacute;n a enviar
+	            type: 'POST', // especifica si ser&aacute; una petici&oacute;n POST o GET
+	            dataType: 'json', // el tipo de informaci&oacute;n que se espera de respuesta
+	            success: function (data) {
+	            	// c&oacute;digo a ejecutar si la petici&oacute;n es satisfactoria; 
+	            	if (data.result === 'OK') {  
+	            				$('.modal-info-seguidor .fotoperfil').attr("src", data.campos.ruta);				            	
+				            	$('.modal-info-seguidor .seudonimo').html(data.campos.a_seudonimo);
+				            	$('.modal-info-seguidor .telefono').html(data.campos.u_telefono);
+				            	$('.modal-info-seguidor .correo').html(data.campos.a_email);
+				            	
+				            	
+				            	if(data.campos.n_nombre==""){
+				            		$('.modal-info-seguidor .nombres').html(data.campos.j_razon_social); 
+				            	}else{
+				            		$('.modal-info-seguidor .nombres').html(data.campos.n_nombre); 
+				            	}
+				            	
+		            }
+	          	},// c&oacute;digo a ejecutar si la petici&oacute;n falla;
+	            error: function (xhr, status) {
+	            	SweetError(status);
+	            }
+	        });
+	    } 
+	 	 
+	 	
+	});	
  
 	/* $(".show-footer").click(function(){
 		var id=$(this).data("indice");

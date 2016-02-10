@@ -106,7 +106,7 @@ class clasificados{
         $cadena = "{$inicioHtml} {$row["nombre"]} {$finHtml}$cadena";		
 		return $cadena;
 	}
-	//Buscar las publicaciones y por estado en una sola función, devolviendo un arreglo con dos conjuntos
+	//Buscar las publicaciones y por estado en una sola funci&oacute;n, devolviendo un arreglo con dos conjuntos
 	//el primer conjunto las categorias y el segundo los estados
 	
 	public function getHijosCondicionado($id=NULL,$criterioOrden=NULL,$pagina=NULL,$id_est=NULL,$condicion=NULL){			
@@ -244,7 +244,7 @@ class clasificados{
 		$rowServicios=$servicios->fetch();
 		return array("categorias"=>$devolverCat,"estados"=>$devolver,"publicaciones"=>$publicaciones,"nuevos"=>$rowNuevos["tota"],"usados"=>$rowUsados["tota"],"servicios"=>$rowServicios["tota"]); 	
     }
-//Esta pendiente simplificar el código de esta función despues que funcione bien
+//Esta pendiente simplificar el c&oacute;digo de esta funci&oacute;n despues que funcione bien
 	public function getHijosPorPalabras($palabra=NULL,$criterioOrden=NULL,$pagina=NULL,$id_est=NULL,$id_cla=NULL,$condicion=NULL){
 		if(is_null($pagina)){
 			$pagina=1;

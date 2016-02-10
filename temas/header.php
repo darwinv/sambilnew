@@ -20,9 +20,16 @@ if (isset ( $_SESSION ["id"] )) {
 
 ?>
 </header>
-<?php 
+<?php
+
 include"modales/m_contacto.php";
 include"modales/m_tipo_usuario.php";
-include"modales/m_inscribir_redes.php";
+include"modales/m_inscribir_redes.php"; 
+ 
+if (isset ( $_SESSION ["id"] )) {
+	  include_once "modales/m_info_seguidor.php";
+} else {
+	 
+} 
 
 ?>

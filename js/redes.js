@@ -26,7 +26,7 @@ $(document).ready(function(){
 		$("#btn-ok").text("Modificar");		
 	});
 	$(".eliminar").click(function(){
-		alert("Código de eliminar");
+		alert("C&oacute;digo de eliminar");
 	});
 	$("#btnLimpiar").click(function(){
 		$("#descripcion").val("");

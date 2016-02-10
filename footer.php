@@ -34,7 +34,7 @@
 
 				   <div class="text-left marT5 t10 link-foot ">
 	 			     <div> <a href="#">Inicio </a></div> 
-	 			     <div> <a href="#">Educación</a></div> 
+	 			     <div> <a href="#">Educaci&oacute;n</a></div> 
 	 			     <div> <a href="#">Familia </a></div> 
 	 			     <div> <a href="#">Deporte </a></div>
 	 			     <div> <a href="#">Salud </a></div>
@@ -48,7 +48,7 @@
 					<div class="text-left show-footer" data-indice='4' >Revista Sambil</div>
 					
 				 	<div class="text-left marT5 t10 link-foot ">
-	 			     <div> <a href="#">Última Edición </a></div> 
+	 			     <div> <a href="#">&Uacute;ltima Edici&oacute;n </a></div> 
 	 			     <div> <a href="#">Contacto</a></div> 	 		
 	 		</div>  
 			</div>
@@ -56,7 +56,7 @@
 					<div class="text-left show-footer" data-indice='5' >Sambil Model</div>
 					
 				 	<div class="text-left marT5 t10 link-foot ">
-	 			     <div> <a href="#">Última Edición </a></div> 
+	 			     <div> <a href="#">&Uacute;ltima Edici&oacute;n </a></div> 
 	 			     <div> <a href="#">Inscripciones</a></div> 	 		
 	 				</div>  
 			</div>

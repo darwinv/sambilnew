@@ -1,6 +1,6 @@
 <?php 
 if (!headers_sent()) {
-    header('Content-Type: text/html; charset=ISO-8859-15');
+    header('Content-Type: text/html; charset=UTF-8');
 } 
 /*
  * Pagina de Perfil
@@ -40,7 +40,7 @@ if(isset($_SESSION["id"])){
 			<div
 				style="background: #f5f5f5; padding-top: 15px; padding-bottom: 15px; border: solid 1px #ccc;">
 				<h3 class="titulo-perfil">
-					<i class="fa fa-user"></i> Información
+					<i class="fa fa-user"></i> Informaci&oacute;n
 				</h3>
 			</div>
 		</div>
@@ -153,7 +153,7 @@ if(isset($_SESSION["id"])){
 				</div>
 				<div  class="contenedor hidden sombra-div mar10 mar-perfil-informacion "
 					style="padding: 10px;">
-					<b>Reputación</b>
+					<b>Reputaci&oacute;n</b>
 					<div class="progress">
 						<div
 							class="progress-bar progress-bar-success progress-bar-striped active"

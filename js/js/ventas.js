@@ -87,7 +87,7 @@ $(document).ready(function(){
 	
 	
 	/*
-	 * Controlas la pesta�as de mis publicaciones (activas, pausadas, inactivas)
+	 * Controlas la pesta&oacute;as de mis publicaciones (activas, pausadas, inactivas)
 	*/
 	
 	$(".pesta").click(function(){

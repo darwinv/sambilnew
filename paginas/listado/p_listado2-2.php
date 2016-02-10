@@ -10,7 +10,7 @@
                          	</span>
                          		<br>
 							<span class="t12 marL30 grisO">	
-								<i class="fa fa-caret-right marR10"></i> Utiliza palabras más estandares.
+								<i class="fa fa-caret-right marR10"></i> Utiliza palabras m&aacute;s estandares.
 							</span>	
 							<br>
 							<span class="t12 marL30 grisO">	
@@ -18,7 +18,7 @@
 							</span>	
 							<br>	
 							<span class="t12 marL30 grisO">	
-								<i class="fa fa-caret-right marR10"></i> No se hallaron publicaciones relacionadas a tu selección.
+								<i class="fa fa-caret-right marR10"></i> No se hallaron publicaciones relacionadas a tu selecci&oacute;n.
 							</span>	
                          </div>  
                          <br>
@@ -49,11 +49,11 @@
 
 							<div id="ubicacion">
 								
-							<h5 class="negro" ><b>Ubicación</b></h5>
+							<h5 class="negro" ><b>Ubicaci&oacute;n</b></h5>
 							<hr class="marR5">
 							</div>
 							<ul class="nav marR5 marT10 marB20 t11  ">
-								<!-- Llamar al método de la clase publicaciones que lista la cantidad de publicaciones por estado -->
+								<!-- Llamar al m&eacute;todo de la clase publicaciones que lista la cantidad de publicaciones por estado -->
 																
 									<li class='marB10 t11'><div  class='h-gris'><div style='background:#F1F1F1; padding:2px; '><a class='grisO' href='prueba'>
 									
@@ -68,11 +68,11 @@
 										<span class='grisO'>prueba</span></a></div></li>";
 										
 									
-<!--							<li class="marB10 t11"><div  class="h-gris"><span ><a class="grisO" href="listado.php">Táchira<b class="grisO">(19)</b></a></span></div></li> -->
+<!--							<li class="marB10 t11"><div  class="h-gris"><span ><a class="grisO" href="listado.php">T&aacute;chira<b class="grisO">(19)</b></a></span></div></li> -->
 							</ul>
 							<div id="condicion">
 								
-							<h5 class="negro" ><b>Condición</b></h5>
+							<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 							<hr class="marR5">
 							
 							</div>
@@ -181,7 +181,7 @@
 									</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span>
 								    </p></div>
 								    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'><div class='marR20'><span class='red t20'><b> <?php echo $publi->getMonto();?></b></span >
-									<br><span class=' t12'> <?php echo utf8_decode($usua->getEstado()); ?> </span><br><span class='vin-blue t16'><a href='detalle.php?id=<?php echo $valor["id"];?>' style='text-decoration:underline;'>Ver Mas</a></span >
+									<br><span class=' t12'> <?php echo  ($usua->getEstado()); ?> </span><br><span class='vin-blue t16'><a href='detalle.php?id=<?php echo $valor["id"];?>' style='text-decoration:underline;'>Ver Mas</a></span >
 									</div></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-2'><br></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-10'><hr class='marR10'><br></div>
 								<?php
 								endforeach;

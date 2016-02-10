@@ -1,6 +1,6 @@
 <?php
 if (!headers_sent()) {
-	header('Content-Type: text/html; charset=ISO-8859-15');
+	header('Content-Type: text/html; charset=UTF-8');
 }
 include_once "../../clases/clasificados.php";
 $clasificado = new clasificados($_POST["id"]);
@@ -116,7 +116,7 @@ $clasificado = new clasificados($_POST["id"]);
 							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendaci&oacute;n: </b> para mejor exposici&oacute;n utiliza m&aacute;s im&aacute;genes que texto en el detalle de tu publicaci&oacute;n.</span>
 						</div>
 						</div>
-						<div id="editor" ></div>
+						<div id="editor" style="height: 500px;"></div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20 marB10">
@@ -173,7 +173,7 @@ $clasificado = new clasificados($_POST["id"]);
 								</div></td>
 								<td valign="middle">
 								<div class="t12 marR10" style="margin-top:22px">
-									¿Tu producto cuenta con
+									&iquest;Tu producto cuenta con
 									garant&iacute;a?
 								</div></td>
 								<td valign="bottom">
@@ -185,10 +185,10 @@ $clasificado = new clasificados($_POST["id"]);
 									<option value="3 meses de ">3 Meses</option>
 									<option value="6 meses de ">6 Meses</option>
 									<option value="9 meses de ">9 Meses</option>
-									<option value="1 agno de ">1 Año</option>
-									<option value="2 agnos de ">2 Años</option>
-									<option value="3 agnos de ">3 Años</option>
-									<option value="5 agnos de ">5 Años</option>
+									<option value="1 agno de ">1 A&ntilde;o</option>
+									<option value="2 agnos de ">2 A&ntilde;os</option>
+									<option value="3 agnos de ">3 A&ntilde;os</option>
+									<option value="5 agnos de ">5 A&ntilde;os</option>
 								</select></td>
 							</tr>
 						</table>
@@ -205,7 +205,7 @@ $clasificado = new clasificados($_POST["id"]);
 									<input type="checkbox" id="chkEntregaFactura" name="chkEntregaFactura"
 									style="width:100%; height:100%;" checked="checked">
 								</div></td>
-								<td valign="bottom"><span class="t12">¿Entregas factura fiscal?</span></td>
+								<td valign="bottom"><span class="t12">&iquest;Entregas factura fiscal?</span></td>
 							</tr>
 						</table>
 					</div>
@@ -223,7 +223,7 @@ $clasificado = new clasificados($_POST["id"]);
 									</div>
 								</td>
 								<td valign="bottom">
-									<span class="t12">¿Eres tienda fisica?</span>
+									<span class="t12">&iquest;Eres tienda fisica?</span>
 								</td>
 							</tr>
 						</table>

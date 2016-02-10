@@ -17,7 +17,7 @@
 		<div class="btn-group" role="group">
 			<button type="button" class="btn btn-default2 t14 " id="pesta3"
 				style="border-right: 1px solid #ccc" disabled>
-				<span class="badge badge-publicar-antes ">3</span><b> Confirma tu publicación </b>
+				<span class="badge badge-publicar-antes ">3</span><b> Confirma tu publicaci&oacute;n </b>
 			</button>
 		</div>
 	</div>

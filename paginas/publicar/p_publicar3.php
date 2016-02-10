@@ -1,6 +1,6 @@
 <?php
 if (!headers_sent()) {
-	header('Content-Type: text/html; charset=ISO-8859-15');
+	header('Content-Type: text/html; charset=UTF-8');
 }
 ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
@@ -11,7 +11,7 @@ if (!headers_sent()) {
 				<div
 				style="padding: 10px; width: 100%; background: #FAFAFA; -webkit-box-shadow: 0px 5px 21px -2px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0px 5px 21px -2px rgba(0, 0, 0, 0.5); box-shadow: 0px 5px 21px -2px rgba(0, 0, 0, 0.5); border: 1px solid #ccc; border-bottom: none;"
 				class="t16 ">
-					<i class="fa fa-tags marL20"></i> Tu Publicación
+					<i class="fa fa-tags marL20"></i> Tu Publicaci&oacute;n
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 vin-blue t14">

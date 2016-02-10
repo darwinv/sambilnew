@@ -494,7 +494,7 @@ function newUser() {
 
 		$email_subject = $_POST ['nombre']." te ha contactado!";
 		$email_message = $_POST ['mensaje']."\n\n";		
-		// Ahora se envía el e-mail usando la función mail() de PHP
+		// Ahora se env&iacute;a el e-mail usando la funci&oacute;n mail() de PHP
 		$headers = 'From: ' . $_POST ['email'] . "\r\n" . 'Reply-To: ' . $_POST ['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion ();
 		mail ( $email_to, $email_subject, $email_message, $headers );//
 		echo json_encode(array("estado"=>"OK"));		

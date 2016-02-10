@@ -355,7 +355,7 @@ class publicaciones{
 					$resultado[$i]["preguntas"][]=array("pregunta"=>$row["contenido"],"usuario"=>$usuario["seudonimo"]);
 				}
 			}else{	
-				$resultado[]="id de publicaci�n:" . $r["id"] . " Titulo:" . $r["titulo"] . "Pregunta por responder ninguna";
+				$resultado[]="id de publicaci&oacute;" . $r["id"] . " Titulo:" . $r["titulo"] . "Pregunta por responder ninguna";
 			}
 		}
 		return $resultado;

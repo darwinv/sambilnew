@@ -17,7 +17,7 @@ if(isset($_GET["usuario"])){
 if(isset($_GET["usuario"])){
 	echo "Eliminado el usuario id=$id_usuario <br>";
 }else{
-	echo "No especificó que usuario desea eliminar<br>";
+	echo "No especific&oacute; que usuario desea eliminar<br>";
 }
 if(isset($_GET["publicacion"])){
 	$id_publicacion=$_GET["publicacion"];
@@ -39,6 +39,6 @@ if(isset($_GET["publicacion"])){
 if(isset($_GET["publicacion"])){
 	echo "Eliminada la publicacion id=$id_publicacion <br>";
 }else{
-	echo "No especificó que publicacion desea eliminar<br>";
+	echo "No especific&oacute; que publicacion desea eliminar<br>";
 }
 ?>

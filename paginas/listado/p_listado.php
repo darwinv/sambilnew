@@ -1,6 +1,6 @@
 <?php 
 if (!headers_sent()) {
-	header('Content-Type: text/html; charset=ISO-8859-15');
+	header('Content-Type: text/html; charset=UTF-8');
 }
 ?>
 <?php
@@ -91,7 +91,7 @@ $ultimo=$pagina * 25;
                          	</span>
                          		<br>
 							<span class="t12 marL30 grisO">	
-								<i class="fa fa-caret-right marR10"></i> Utiliza palabras más estandares.
+								<i class="fa fa-caret-right marR10"></i> Utiliza palabras m&aacute;s estandares.
 							</span>	
 							<br>
 							<span class="t12 marL30 grisO">	
@@ -99,7 +99,7 @@ $ultimo=$pagina * 25;
 							</span>	
 							<br>	
 							<span class="t12 marL30 grisO">	
-								<i class="fa fa-caret-right marR10"></i> No se hallaron publicaciones relacionadas a tu selección.
+								<i class="fa fa-caret-right marR10"></i> No se hallaron publicaciones relacionadas a tu selecci&oacute;n.
 							</span>	
                          </div>  
                          <br>
@@ -189,11 +189,11 @@ $ultimo=$pagina * 25;
 
 						<!--	<div id="ubicacion">
 								
-							<h5 class="negro" ><b>Ubicación</b></h5>
+							<h5 class="negro" ><b>Ubicaci&oacute;n</b></h5>
 							<hr class="marR5">
 							</div>
 							<ul class="nav marR5 marT10 marB20 t11  ">
-								<!-- Llamar al método de la clase publicaciones que lista la cantidad de publicaciones por estado 
+								<!-- Llamar al m&eacute;todo de la clase publicaciones que lista la cantidad de publicaciones por estado 
 								<?php
 								if($act_est!=100){
 									if($ac==0){   //No hubo categorias
@@ -210,7 +210,7 @@ $ultimo=$pagina * 25;
 								}else{
 									$elEstado="";
 									$estados=$hijos["estados"];
-									//Buscarle otra solución para no repetir el ciclo
+									//Buscarle otra soluci&oacute;n para no repetir el ciclo
 									if($ac==0){
 										foreach ($estados as $l=>$valor) {
 											$ac+=$valor["cantidad"];
@@ -226,11 +226,11 @@ $ultimo=$pagina * 25;
 									}
 								}
 								?>
-<!--							<li class="marB10 t11"><div  class="h-gris"><span ><a class="grisO" href="listado.php">Táchira<b class="grisO">(19)</b></a></span></div></li>
+<!--							<li class="marB10 t11"><div  class="h-gris"><span ><a class="grisO" href="listado.php">T&aacute;chira<b class="grisO">(19)</b></a></span></div></li>
 							</ul> -->
 						<!--	<div id="condicion">
 								
-							<h5 class="negro" ><b>Condición</b></h5>
+							<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 							<hr class="marR5">
 							
 						</div> -->
@@ -295,7 +295,7 @@ $ultimo=$pagina * 25;
 							<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 ">
 							<div class=" marR20" style="margin-top:10px;" id="orden">
 							<select id="filtro"  class="form-control  input-sm " style="width:auto;"  >
-							<?php if($orden=="id_desc"){ echo "<option value='id_desc' selected>Más Recientes</option>";}else{echo "<option value='id_desc'>Mas Recientes</option>";}?>
+							<?php if($orden=="id_desc"){ echo "<option value='id_desc' selected>M&aacute;s Recientes</option>";}else{echo "<option value='id_desc'>Mas Recientes</option>";}?>
 							<?php if($orden=="id_asc"){ echo "<option value='id_asc' selected>Menos Recientes</option>";}else{echo "<option value='id_asc'>Menos Recientes</option>";}?>
 							<?php if($orden=="monto_desc"){ echo "<option value='monto_desc' selected>Mayor Precio</option>";}else{echo "<option value='monto_desc'>Mayor Precio</option>";}?>							
 							<?php if($orden=="monto_asc"){ echo "<option value='monto_asc' selected>Menor Precio</option>";}else{echo "<option value='monto_asc'>Menor Precio</option>";}?>	
