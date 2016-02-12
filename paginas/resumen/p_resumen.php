@@ -37,7 +37,7 @@
 			 
 			 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 "><!-- Titulo de Preguntas -->
 			 	<div class="pad10 pad-left-20  t18  " style="background: #F2F2F2;"> 
-			 		<i class="fa fa-question-circle marL10"></i> Preguntas
+			 		<i class="fa fa-commenting-o marL10"></i> Preguntas
 			 	</div>
 			 </div ><!-- Fin Titulo de Publicaciones -->
 			 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">

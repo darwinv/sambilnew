@@ -118,6 +118,7 @@ $(document).ready(function() {
 	tinymce.init({ 
   	selector:'#editor',
   	language:'es_MX',
+  	width: 300,
   	default_link_target: "_blank",
   	plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
   	toolbar:[

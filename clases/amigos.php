@@ -4,6 +4,7 @@ class amigos {
 	// Amigos (f)
 	protected $table = "usuarios_amigos";
 	protected $table_fav = "usuarios_favoritos";
+	protected $table_bloq = "usuarios_bloqueados";
 	private $fecha;
 	private $usuarios_id;
 	private $amigos_id;
@@ -39,11 +40,13 @@ class amigos {
 	}
 	public function borrarSeguidor($amigos_id , $usuarios_id){  
 		$bd = new bd();
-		$sql = $bd->query("DELETE FROM usuarios_amigos WHERE usuarios_id = $usuarios_id AND amigos_id = $amigos_id");
+		//$ques="DELETE FROM usuarios_amigos WHERE usuarios_id = $usuarios_id AND amigos_id = $amigos_id";
+	    $sql = $bd->query("DELETE FROM usuarios_amigos WHERE usuarios_id = $usuarios_id AND amigos_id = $amigos_id");
 		if($sql->rowCount()>0){
 			return true;
 		}else{
 			return false;
+			//return array("resultado"=>false, "query"=>$ques);
 		}
 	}
 	public function getAmigos($id) {
@@ -195,5 +198,24 @@ class amigos {
 		} catch ( PDOException $ex ) {
 			return $bd->showError ( $ex );
 		}
+	}
+
+	public function nuevoBloqueo($usuario,$usuario_bloqueado){
+		$fecha=date("Y-m-d",time());	
+		$bd = new bd ();
+		$result=$bd->doInsert ( $this->table_bloq, array (
+				"fecha" => $fecha,
+				"usuarios_id" => $usuario,
+				"bloqueados_id" => $usuario_bloqueado
+		) );
+	return $result;
+	}
+
+	public function verificarBloqueado($bloqueado,$usuario_bloqueador){
+		$sql = new bd();
+		$condicion="usuarios_id=$usuario_bloqueador and bloqueados_id=$bloqueado";
+	    $result=$sql->doSingleSelect($this->table_bloq,$condicion);
+	    if($result)
+	    return true;
 	}
 }

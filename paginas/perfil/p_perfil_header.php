@@ -25,6 +25,13 @@ if (isset ( $_GET ["id"] )) {
 	
 if (isset ( $_SESSION ["id"] )) { 
 	$usuarioActual = new usuario ( $_SESSION ["id"] );
+	
+	if($amigos->verificarBloqueado($_SESSION ["id"], $_GET ["id"]))
+		$estaBloqueado=true;
+	else
+		$estaBloqueado=false;
+	
+	
 	if($amigos->yamegusta( $_GET ["id"], $_SESSION ["id"])){
 		$yamegusta = "Siguiendo";
 		$iconomegusta = "fa-thumbs-up";
@@ -110,19 +117,14 @@ endif;?>
 					</span>
 					</div>
 			</div>			
-			<div class="  btn-group  mar-me-gusta  pull-right-me-gusta "
+			<?php if(!$estaBloqueado) { ?> <div class="  btn-group  mar-me-gusta  pull-right-me-gusta "
 				role="group">
 				<button type="button" style="padding-top: 5px; padding-bottom: 5px; font-size: 12px;" data-count="<?php echo isset($contador)?$contador:$megustan;?>"
 					data-usr="<?php if(isset($_SESSION["id"])) echo $_SESSION ["id"]; ?>" class="btn2 btn-default2 <?php echo isset($oculto)?$oculto:'';?>" id="btn-megusta"  <?php echo isset($datamegusta)?$datamegusta:"";?> >
 					<i class="fa <?php echo isset($iconomegusta)?$iconomegusta:"fa-thumbs-up";?>"></i> <?php echo isset($yamegusta)?$yamegusta:"Siguiendo";?>
 				</button>
-				<!-- Boton de compartir 
-					<button type="button" style="padding-top: 5px; padding-bottom: 5px; font-size: 12px;"
-					class="btn2 btn-default2">
-					<i class="fa fa-share-alt "></i> 0 Compartido
-				</button>
-				-->
-			</div>
+					</div>
+			<?php }?>
 		</div>
 	</div>
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">

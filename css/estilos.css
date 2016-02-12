@@ -1379,6 +1379,12 @@ select::-webkit-scrollbar-thumb {
   padding: 20px 0;
   /*border-bottom: 1px solid #ccc;*/
 }
+#datospersona div:first-child , #datosempresa > div:first-child {
+    margin-bottom: 5px;
+}
+#datospersona > div.input, #datosempresa > div.input {
+    margin-bottom: 10px;
+}
 .formulario label {
   display: inline-block;
   cursor: pointer;

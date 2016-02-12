@@ -34,7 +34,7 @@ endif;
 				style="background: #f5f5f5; padding-top: 15px; padding-bottom: 15px; border: solid 1px #ccc;">
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 					<div>
-						<h3 class="  titulo-perfil ">
+						<h3 class=" titulo-perfil ">
 							<i class="fa fa-users"></i> Seguidores
 						</h3>
 					</div>

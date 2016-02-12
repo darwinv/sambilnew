@@ -191,12 +191,22 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 ?>
 			 		
 		
-				<li id="notificacion" data-id="<?php echo $_SESSION["id"];?>" class="dropdown"><a href="#" data-toggle="dropdown" role="button" class="dropdown-toggle marT15" onclick="<?php echo $visto=1; ?>" aria-expanded="false"
+				<li id="notificacion" data-id="<?php echo $_SESSION["id"];?>" class="dropdown">
+					<a href="#" data-toggle="dropdown" role="button" class="dropdown-toggle marT15" onclick="<?php echo $visto=1; ?>" aria-expanded="false"
 					style="">
-					<?php if($alertas!=0){ echo '<span id="alerta" class="badge blanco" style="background: red; position: absolute; top: -2px; left: -1px;">'; echo $alertas; }?></span><i class="fa fa-bell"></i>  </a>
+					<?php if($alertas!=0){
+						 echo '<span id="alerta" class="badge blanco" style="background: red; position: absolute; top: -2px; left: -1px;">';
+						  echo $alertas; 
+					}?>
+
+					
+					<i class="fa fa-bell"></i>  
+					</a>
+						  
+			        <?php if($alerts->rowCount()>0){ ?>
 					<ul class="dropdown-menu blanco alertas" role="menu"> 
 						<?php 
-						
+						 
 						foreach ($alerts as $a => $val) {
 							$fecha = $val["fecha"];
 							$tipo = $val["tipo"];
@@ -259,6 +269,8 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 						</li>
 				<?php }?>
 						 </ul>
+						 
+						 <?php } ?>
 				</li>		
 				<?php } ?>
 					

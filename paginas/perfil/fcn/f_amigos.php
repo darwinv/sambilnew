@@ -31,7 +31,7 @@ if (! empty ( $resultamigos )) :
     foreach ( $resultamigos as $row ) :
 		
 		?>
-<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" id="<?php echo $row["numero"]?>">
 	<div class="contenedor sombra-div" style="margin: 10px;">
 		<div class="marco-foto-amigos center-block marT20" style="width: 50%">
 			<a class="vin-blue" href="#"><img src="<?php echo $foto->buscarFotoUsuario($row["numero"])?>"

@@ -92,14 +92,30 @@ $foto=new fotos();
    	  <?php include_once "fcn/f_categorias.php"; ?>
    </div>
 
-<br>
-<br>
+
 
 
 
 
 <!--Ultimas publicaciones --------------------------------------------------------------------------------------------------------------- -->
+<?php
+	$bd=new bd(); 
 
+	$consulta="select * from publicaciones where 
+	usuarios_id in (SELECT
+	usuarios.id
+	FROM
+	usuarios where
+	usuarios.id_sede ='".$_SESSION['id_sede']."' )
+	and
+	id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) order by id desc limit 25";
+	$result=$bd->query($consulta);
+	$total_publicaciones=$result->rowCount();
+	
+	if($total_publicaciones>0){
+?>
+<br>
+<br>
 <div  class="anchoC   marB5 ">
 <div class="row  " style="background:#666;  -webkit-border-top-left-radius: 50px;
 -webkit-border-top-right-radius: 10px;
@@ -121,23 +137,7 @@ border-top-right-radius: 10px;" >
 -moz-border-radius-bottomleft: 10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;" >
-
-    <!--<div class="col-xs-12 col-sm-12 col-md-6 col-lg-2">
-      <p class="text-left mar20 " style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
-        <br><br>
-        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
-        <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
-         <br>
-        <br>
-        <br>
-        <br>
-      </p>
-    </div>
-    <div id="listaPublicaciones" data-pagina="1">
-    <!--desde aqui -->
-    
+ 
     <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
       <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
         <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
@@ -153,19 +153,12 @@ border-bottom-left-radius: 10px;" >
     </div>
     
 <?php
-$bd=new bd();
-$consulta="select * from publicaciones where id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) order by id desc limit 25";
-$result=$bd->query($consulta);
-$resultTotal=$bd->query("select count(*) as tota from publicaciones where id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL)");
-foreach ($resultTotal as $r => $valor) {
-		$total=$valor["tota"];
-}
+ 
 	$i=0;
     foreach($result as $r){
     	$i++;
     	$publicacion=new publicaciones($r["id"]);
 		$usua=new usuario($publicacion->usuarios_id);
-
 		?>
     	<div id="<?php echo $i; ?>" class='col-xs-12 col-sm-12 col-md-6 col-lg-2' <?php if($i<=5){?> style="display:block;" <?php } else {?> style="display:none"<?php } ?>>
 	    <?php if($i==6 or $i== 11 or $i==16 or $i==21){ ?>
@@ -189,7 +182,6 @@ foreach ($resultTotal as $r => $valor) {
 			<?php } ?>
 		</div>
 		<?php
-
 	}
 ?>
 
@@ -216,7 +208,9 @@ foreach ($resultTotal as $r => $valor) {
     <!-- Hasta aqui -->
     </div>
   
-
+<?php 
+}
+?>
 
 
 
@@ -281,11 +275,35 @@ foreach ($resultTotal as $r => $valor) {
    ?>
    </div></div>
    <!-- Hasta aqui -->
-   <br><br> 
+   
    
    <!-- 5 vendedores --------------------------------------------------------------------------------------------------------------- -->
+  <?php
+//	$result=$bd->query("select count(*) as tota,usuarios_id from publicaciones where id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) group by usuarios_id order by tota desc limit 5");
+//	$result=$bd->query("select count(*) as tota from usuarios_favoritos  group by favoritos_id order by tota desc limit 5");	
 
-
+$result=$bd->query("SELECT
+					usuarios.id AS id_tienda ,
+					(select  count(*) as tota from usuarios_amigos where usuarios_id=usuarios.id ) AS cantLikes,
+					(select  count(*) as tota from publicaciones where usuarios_id=usuarios.id ) AS cantPub
+					FROM
+					usuarios
+					Inner Join usuarios_accesos ON usuarios.id = usuarios_accesos.usuarios_id
+					WHERE
+					usuarios_accesos.id_rol =  '2' AND
+					usuarios_accesos.status_usuarios_id =  '1' AND
+					usuarios.id_sede =  '".$_SESSION['id_sede']."'
+					ORDER BY
+					cantLikes DESC,
+					cantPub DESC
+					limit 5"); 
+					
+	$total_tiendas=$result->rowCount();
+	
+	if($total_tiendas>0){
+					?>
+					
+<br><br> 
    <br>
 <div  class="anchoC   marB5 " style="">
 <div class="row  " style="background:#666; -webkit-border-top-left-radius: 50px;
@@ -339,133 +357,43 @@ border-bottom-left-radius: 10px; " >
  
     <!-- Desde aqui -->
     <?php
-//	$result=$bd->query("select count(*) as tota,usuarios_id from publicaciones where id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) group by usuarios_id order by tota desc limit 5");
-	/*$result=$bd->query("select count(*) as tota,favoritos_id from usuarios_favoritos  group by favoritos_id order by tota desc limit 5");	
+ 
+
 	$i=0;
     foreach($result as $r){
     	$i++;
-		$usua=new usuario($r["favoritos_id"]);
+		$usua=new usuario($r["id_tienda"]);
 		$nombre=$usua->getNombre(1);
-    	$cadena="
-	    	<div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
-	    			<div class='text-center mar10 vendedores' style='relative;width:70%;'  id='$usua->id'>
+    	$cadena="<div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
+	    		 <div class='text-center mar10 vendedores' id='$usua->id' style='relative;width:70%;' >
 				    	<br>
-				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
-					<span class=' badge2 sombra-div2'STYLE='position:absolute; top:6%; left:8%;  '>$i</span> 
-						<img src='" . $foto->buscarFotoUsuario($usua->id) . "' class=' img-responsive center-block img-apdp'>
+				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >					
+							<img src='" . $foto->buscarFotoUsuario($usua->id) . "' class=' img-responsive center-block img-apdp'>
 						</div>
 						<br>
-						<span class='blue-vin t16'>" . $usua->a_seudonimo . $usua->j_categorias_juridicos_id . "</span>
+						<span class='blue-vin t16'> " . $nombre . "</span>
 						<br>
-						<span class='grisO t14'>" . $nombre . "</span>
-						<br>
-						<span class='t12 grisC'>" .  ($usua->getEstado()) . "</span> &nbsp;&nbsp; <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'> {$r["tota"]}  </span>
+						<span class='t12 grisC'> <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'>{$r["cantLikes"]}</span>
 						<br>
 						<br>
-					</div>
-			</div>
-		";
+					
+					</div>  
+			</div> "; 
 		echo $cadena;
 		if($i==5){
 			break;
 		}	
-	}*/
+	}
 	
 	
-   ?>
-   
-   <div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
-	    		<a href="#" class="text-dec-none"> 	<div class='text-center mar10 ' style='relative;width:70%;'>
-				    	<br>
-				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
-					
-						<img src='galeria/fotos/2016/01/t1.png' class=' img-responsive center-block img-apdp'>
-						</div>
-						<br>
-						<span class='blue-vin t16'> Traki </span> </a>
-						<br>
-						<span class='t12 grisC'> <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'>200 </span>
-						<br>
-						<br>
-					</div>
-			</div>
-		<div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
-	    		<a href="perfil.php?id=850" class="text-dec-none"> <div class='text-center mar10 vendedores' style='relative;width:70%;' >
-				    	<br>
-				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >					
-						<img src='galeria/fotos/2016/01/t2.png' class=' img-responsive center-block img-apdp'>
-						</div>
-						<br>
-						<span class='blue-vin t16'> MacStore</span>				
-						<br>
-						<span class='t12 grisC'> <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'>150 </span>
-						<br>
-						<br>
-					
-					</div> </a> 
-			</div>
-			<div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
-	    			<a href="#" class="text-dec-none"> <div class='text-center mar10 ' style='relative;width:70%;' >
-				    	<br>
-				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
-					
-						<img src='galeria/fotos/2016/01/t3.png' class=' img-responsive center-block img-apdp'>
-						</div>
-						<br>
-						<span class='blue-vin t16'> McDonald</span>	</a>		
-						<br>
-						<span class='t12 grisC'> <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'> 120</span>
-						<br>
-						<br>
-					</div>
-			</div>
-			<div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
-	    		<a href="#" class="text-dec-none">	<div class='text-center mar10 ' style='relative;width:70%;'>
-				    	<br>
-				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >					
-						<img src='galeria/fotos/2016/01/t4.png'class=' img-responsive center-block img-apdp'>
-						</div>
-						<br>
-						<span class='blue-vin t16'> Timberland</span></a>
-						<br>
-						<span class='t12 grisC'> <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'> 112</span>
-						<br>
-						<br>
-					</div>
-			</div>	
-			
-   <div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
-	    		<a href="#" class="text-dec-none">	<div class='text-center mar10 ' style='relative;width:70%;' >
-				    	<br>
-				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
-					
-						<img src='galeria/fotos/2016/01/t5.png' class=' img-responsive center-block img-apdp'>
-						</div>
-						<br>
-						<span class='blue-vin t16'> Tommy Hilfiger</span></a>
-						<br>
-						<span class='t12 grisC'> <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'> 68</span>
-						<br>
-						<br>
-					</div>
-			</div>
-   
-   <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-      <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
-        <br><br>
-        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
-        <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
-         <br>
-        <br>
-        <br>
-        <br>
-      </p>
-    </div>
+   ?>  
     
    </div>
    </div>
+   
+     <?php
+     }
+     ?>
    <!-- Hasta aqui -->
    
    

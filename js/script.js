@@ -176,21 +176,32 @@ $(document ).ready(function() {
 	$( "#radio" ).buttonset();
 	$('#juridico').click(function() {
 		if($('#juridico').is(':checked')){
-			$('#datospersona').hide(500);
-			$('#datosempresa').show('slow');
+			/*$('#datospersona').hide(500);
+			$('#datosempresa').show('slow');*/
+			$('#datospersona').hide();
+			$('#datosempresa').fadeIn('slow');
 			$('#juridico').val("empresa");
 			
-			//$("#p_nombre #p_apellido").prop("disabled",true);	
+			 
+			$("#p_tipo").append('<option value="J">J</option>');
+			$("#p_tipo").append('<option value="G">G</option>');
+			$("#p_tipo").append('<option value="C">C</option>');
+			
 		 }
 	}); 
 	$('#natural').click(function() {
 		if($('#natural').is(':checked')){
-			$('#datosempresa').hide(500);
-			$('#datospersona').show('slow');
+			$('#datosempresa').hide();
+			$('#datospersona').fadeIn('slow');
 			$('#natural').val("persona");
-			//$("#e_razonsocial #e_categoria").prop("disabled",true);	
-		 } 		
+			
+			$("#p_tipo option[value='J']").remove();
+			$("#p_tipo option[value='G']").remove();
+			$("#p_tipo option[value='C']").remove();
+		} 		
 	});
+	
+	
 	
 	
 	$('#usr-reg-form').formValidation({

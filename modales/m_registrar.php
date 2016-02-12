@@ -17,14 +17,16 @@
 			<img class="hidden" src="" id="foto-usuario" name="foto-usuario"></img>
 			
 	<form id="usr-reg-form" action="fcn/f_usuarios.php" method="post" class="form-inline formulario" data-method="new" >
-<div id="radio" class="radio"> 
-    <input type="radio" id="natural" name="tipo" checked="checked" value="persona"><label for="natural">Persona</label>
-    <input type="radio" id="juridico" name="tipo" value="empresa"><label for="juridico">Empresa</label>
- </div>
+
 			<input type="hidden" id="type" name="type"/>
 			
 				<div class="modal-body marL20 marR20 ">
-					<br>
+					
+					<div id="radio" class="radio"> 
+					    <input type="radio" id="natural" name="tipo" checked="checked" value="persona"><label for="natural">Persona</label>
+					    <input type="radio" id="juridico" name="tipo" value="empresa"><label for="juridico">Empresa</label>
+					 </div>  
+					 <br>
 					<section class="form-apdp" 
 						data-title="Informaci&oacute;n Personal" data-step="1" data-type="p" >
 						<div class="row">
@@ -44,20 +46,21 @@
 									placeholder="Ingresa el numero de documento..." name="p_identificacion"
 									class="form-input" id="p_identificacion">
 							</div>
-						<div id="datospersona"> <div class="col-xs-12">
-								<span  class="marL10"><i class="fa fa-user"></i> Nombre y
-									Apellido</span>
+							
+						<div id="datospersona"> 
+							<div class="col-xs-12">
+								<span  class="marL10"><i class="fa fa-user"></i> Nombre y Apellido</span>
 							</div>
-							<div class=" form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 input" >
+							<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 input" >
 								<input type="text" placeholder="Ingresa tu nombre..." name="p_nombre"
 									class=" form-input " id="p_nombre">
 							</div>
-							<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 input" >
+							<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 input " >
 								<input type="text" placeholder="Ingresa tu apellido..." name="p_apellido"
 									class=" form-input " id="p_apellido">
 							</div>
 						</div>		
-					<div id="datosempresa" style="display: none;"> 
+						<div id="datosempresa" style="display: none;"> 
 							<div class="col-xs-12">
 								<span class="marL10"><i class="fa fa-industry"></i> Nombre de la empresa</span>
 							</div>
@@ -66,19 +69,18 @@
 									class=" form-input " id="e_razonsocial">
 							</div>
 							<div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6 input">
-								<select 
-									class="form-select" id="e_categoria" name="e_categoria">
+								<select class="form-select" id="e_categoria" name="e_categoria">
 									<option value="" disabled selected>Area de tu empresa</option>
 									<?php								
 							$estados = new bd ();
 							foreach ( $estados->getDatosBase ( "categorias_juridicos" ) as $area ) :
 									?>
-								<option value="<?php echo $area["id"]; ?>"><?php echo $area["nombre"]; ?></option>
+									<option value="<?php echo $area["id"]; ?>"><?php echo $area["nombre"]; ?></option>
 								<?php endforeach;?>
-									</select>
+								</select>
 							</div>
 							
-					</div>
+						</div>
 							<div class="col-xs-12">
 								<span class="marL10"><i class="fa fa-phone"></i> Telefono</span>
 							</div>

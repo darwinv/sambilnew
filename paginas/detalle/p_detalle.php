@@ -2,6 +2,8 @@
 include_once "clases/publicaciones.php";
 include_once "clases/usuarios.php";
 include_once "clases/fotos.php";
+include_once "clases/amigos.php";
+
 
 //la variable $publicacion es una instancia de la clase publicaciones y se instancia en el archivo padre de este;
 $fotos = $publicacion -> getFotos();
@@ -9,11 +11,19 @@ $publicacion -> updateVisitas();
 $usuario = new usuario($publicacion -> usuarios_id);
 $foto = new fotos();
 $preguntas = $publicacion->getPreguntasPublicacion();
+$amigos = new amigos ();
+
 if (isset($_SESSION["id"])) {
 	$actualUsua = $_SESSION["id"];
 } else {
 	$actualUsua = "";
 }
+if($amigos->verificarBloqueado($_SESSION["id"], $usuario -> id))
+		$estaBloqueado=true;
+	else
+		$estaBloqueado=false;
+
+
  ?>
 
 		
@@ -86,7 +96,10 @@ if (isset($_SESSION["id"])) {
                                         	<div style="display: inline; padding-top: -10px;" ><input type="text" value="1"  style="width:40px; height: 40px; text-align: center;" /></div>
                                         	<?php
 											if ($usuario -> id != $actualUsua) {
-												echo "<button data-toggle='modal' data-target='#info-comprar' type='button' class='btn3 btn-primary2 btn-block center-block' style='width:50%; display: inline; margin-top: 0px;' id='btnComprar' name='btnComprar'>Comprar</button>";
+													if ($estaBloqueado)
+														echo "<button data-toggle='modal' data-target='#info-comprar' type='button' class='btn3 btn-primary2 btn-block center-block' disabled='disabled' style='width:50%; display: inline; margin-top: 0px; opacity: 0.4;' id='btnComprar' name='btnComprar'>Comprar</button>";
+													else
+												       echo "<button data-toggle='modal' data-target='#info-comprar' type='button' class='btn3 btn-primary2 btn-block center-block' style='width:50%; display: inline; margin-top: 0px;' id='btnComprar' name='btnComprar'>Comprar</button>";
 											} else {
 												echo "<button data-toggle='modal' type='button' class='btn3 btn-primary2 btn-block center-block' style='width:50%; display: inline; margin-top: 0px;' id='btnComprar' name='btnComprar'>Comprar</button>";
 											}

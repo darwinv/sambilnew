@@ -64,8 +64,6 @@ switch ($_POST["method"]) {
 	case "admin_reg_user":
 		RegistrarUser();
 		break;		
-		
-		
 	default :
 		echo "error";
 		break;
