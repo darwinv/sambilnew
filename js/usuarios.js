@@ -2,13 +2,13 @@ $(document ).ready(function() {
 	
 
 	
-$("#update_usr-reg-submit").click(function(){ 
+$("#update_usr-reg-submit").click(function(){
 		$("#usr-update-form").data('formValidation').validate();
 });
 
 /* ============================----- Modal Registrar -----=========================*/
   
-	$(".admin-reg-user").click(function(){  
+	$(".admin-reg-user").click(function(){
 		$("#usr-reg-submit-admin").data("step",1);
 		$("#type_admin").val("e");
 		$("section[data-step=2]").fadeOut( "fast", function() {  
@@ -35,8 +35,6 @@ $("#update_usr-reg-submit").click(function(){
 			break;
 		}
 	});
-	
-	
 	$('#usr-reg-form-admin').formValidation({
 		locale: 'es_ES',
 		framework : 'bootstrap',
@@ -293,19 +291,22 @@ $('#usr-update-form').formValidation({
 	/*---======= FORM PARA ELIMINAR USUARIOS ========---*/
     $("body").on('click', '.select-usr-delete', function(e) {
     	//guardamos el ID del usuario que borraremos logicamente   
-    	$('#usr-act-form-delete').data("usuarios_id",$(this).data("usuarios_id"));
-    	 
+    	$('#usr-act-form-delete').data("usuarios_id",$(this).data("usuarios_id"));    	 
+    });
+    $("body").on('click', '.select-usr-active', function(e) {
+    	//guardamos el ID del usuario que borraremos logicamente   
+    	$('#usr-act-form-active').data("usuarios_id",$(this).data("usuarios_id"));    	 
     });
     
     
    /********************ELIMINAR USUARIO **********************/
-	$('#usr-act-form-delete').formValidation({ 
+	$('.usr-act-form-edit').formValidation({ 
 	
 	}).on('success.form.fv', function(e) {   
 		e.preventDefault();
 		var form = $(e.target); 
 		var method = "&method="+$(this).data("method");  
-		var status = "&status_usuarios_id=3";
+		var status = "&status_usuarios_id="+$(this).data("status"); ;
 		var usuario = "&usuarios_id="+$(this).data("usuarios_id");
 		$.ajax({
 			url: form.attr('action'), // la URL para la petición

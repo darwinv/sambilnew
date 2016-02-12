@@ -93,7 +93,7 @@ $obj_sede = new sede();
 							<li class="divider"></li>
 							<li style="padding: 10px;"><p class="t12 text-center">&#191;Eres
 									nuevo en Sambil?</p>
-								<button class="btn2 btn-default btn-group-justified" data-toggle="modal" data-target="#actualizar2">Inscr&iacute;bete</button></li>
+								<button class="btn2 btn-default btn-group-justified" data-toggle="modal" data-target='#insc-red'>Inscr&iacute;bete</button></li>
 						</ul></li>
 					<li>
 					<div class="dropdown ">

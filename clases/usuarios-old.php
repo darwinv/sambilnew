@@ -392,7 +392,7 @@ class usuario {
 		$resultado=$bd->doSingleSelect("estados",$condicion,"nombre");
 		if(!empty($resultado)){
 			if(is_null($formateado)){
-				return utf8_encode($resultado["nombre"]);
+				return  ($resultado["nombre"]);
 			}else{
 				return $resultado["nombre"];
 			}

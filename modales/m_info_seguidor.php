@@ -38,6 +38,7 @@
                     </div>
                     <br>
 				<div class="modal-footer">
+					<button  class="btn btn-danger bloqueo-seguidor" data-user="" data-dismiss="modal">Bloquear</button>
 					<button class="btn btn-primary2" data-dismiss="modal">Continuar</button>
 				</div>
 			</div>

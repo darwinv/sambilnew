@@ -15,13 +15,13 @@
 	 			     <div> <a href="http://www.sambil.com/Mall/9/Sambil-Paraguana">Paraguana </a></div>
 	 			     <div> <a href="http://www.sambil.com.do/12-2/">Santo Domingo</a></div>
 	 			     <div> <a href="http://www.sambil.com/Mall/9/Sambil-Paraguana">Paraguan&aacute;</a></div>
-	 			     <div> <a href="http://www.sambil.cw/curacao/sambil-curacao-welcome/">Curaçao </a></div>
+	 			     <div> <a href="http://www.sambil.cw/curacao/sambil-curacao-welcome/">Cura&ccedil;ao </a></div>
 	 			     <div> <a href="http://www.sambil.com/Madrid">Madrid </a></div>
 	 			      
 	 			</div> 
 			</div>
 			<div class="col-xs-12 col-sm-2 col-md-2  col-lg-2 ">			
-					<div class="text-left show-footer" data-indice='2' >Constructora Sambil</div>
+					<div class="text-left show-footer" data-indice='2'>Constructora Sambil</div>
 
 				 <div class="text-left marT5 t10 link-foot ">
 	 			     <div> <a href="http://www.sambil.com/Constructora/QuienesSomos">Quienes Somos </a></div> 
@@ -74,7 +74,7 @@
 	 			     <div> <a href="http://www.sambil.com/Mall/9/Sambil-Paraguana">Paraguana </a></div>
 	 			     <div> <a href="http://www.sambil.com.do/12-2/">Santo Domingo</a></div>
 	 			     <div> <a href="http://www.sambil.com/Mall/9/Sambil-Paraguana">Paraguan&aacute;</a></div>
-	 			     <div> <a href="http://www.sambil.cw/curacao/sambil-curacao-welcome/">Curaçao </a></div>
+	 			     <div> <a href="http://www.sambil.cw/curacao/sambil-curacao-welcome/">Cura&ccedil;ao </a></div>
 	 			     <div> <a href="http://www.sambil.com/Madrid">Madrid </a></div>
 	 			     <div> <a href="http://www.sambil.com/Constructora/Contacto">Constructora</a></div>		 		
 	 				</div>  

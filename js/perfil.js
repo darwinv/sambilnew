@@ -75,7 +75,8 @@ $(document).ready(function(){
 	 correo=$(this).data("correo");
 	 indice=$(this).data("contador");
 	 ruta=$(this).data("ruta");	
-	 
+	 iduser=$(this).data("iduser");	
+	 $(".bloqueo-seguidor").data('user',iduser)   ;
 	 	$(".fotoperfil").attr("src", ruta); 
 	 	$(".seudonimo").html(alias);
 	 	$(".telefono").html(telefono);
@@ -83,6 +84,73 @@ $(document).ready(function(){
 	 	$(".correo").html(correo);
 	 	
 	});	
+	
+/*********** Bloquear Usuario *************************/
+$("body").on('click', '.bloqueo-seguidor', function(e) {	
+	
+	 $.ajax({
+            url: "paginas/perfil/fcn/f_bloqueados.php",
+            data: { id : getQuerystringValue("id"), action: $(this).data("action"),seguidor:seguidor},
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+            	setTimeout(function(){
+            		if(data.result === "OK"){
+            			$("#btn-megusta").prop("disabled",false);
+            			if($("#btn-megusta").data("action") === "like"){
+            				count++;
+            				$("#btn-megusta").html("<i class='fa fa-thumbs-up'></i> Siguiendo");
+            				$("#btn-megusta").data("action","dislike");
+            				$("#btn-megusta").data("count",count);
+            				$("#megustan").text($("#btn-megusta").data("count"));
+            			}else{
+            				count--;
+            				$("#btn-megusta").html("<i class='fa fa-thumbs-up'></i>  Seguir");
+            				$("#btn-megusta").data("action","like");
+            				$("#btn-megusta").data("count",count);
+            				$("#megustan").text($("#btn-megusta").data("count"));            				
+            			}
+            			
+            			if(($("#seguidores").data("propio") == false)){
+	            			if(count==0){
+	            					$("#megustan").text("");
+	            					$("#seguidores").html("Aun nadie sigue esta tienda");
+	            			}
+	            			if(count==1){
+	            					$("#seguidores").html("persona sigue esta tienda");
+	            			}
+	            			if(count>1){
+	            				$("#seguidores").html("personas siguen esta tienda");
+	            			}		
+            			}
+            			else {
+            				if(count==0){
+	            					$("#megustan").text("");
+	            					$("#seguidores").html("Aun nadie te sigue");
+	            			}
+	            			if(count==1){
+	            					$("#seguidores").html("persona te sigue ");
+	            			}
+	            			if(count>1){
+	            				$("#seguidores").html("personas te siguen");
+	            			}		
+            				
+            			}
+            		}else{
+            			$("#btn-megusta").prop("disabled",false);
+            			$("#btn-megusta").html(html + ":Error");	
+            		}
+            	}, 1000);	
+            },
+            error: function (xhr, status) {
+            	SweetError(status);
+            	$("#btn-megusta").prop("disabled",false);
+        		$("#btn-megusta").html(html + ":Error");
+            }
+        });
+	 	
+	});
+	
 	
 /* ============================----- Me Gusta Perfil -----=========================*/
 	

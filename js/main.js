@@ -30,15 +30,15 @@ $(function() {
 		
 		//#######USUARIO ROL 1#######
 		if(id_rol==1){
-			$(".resumen, .factura, .configurar, .admin-usuarios").removeClass("hidden");
+			$(".resumen, .factura, .fact-cobrar, .configurar, .admin-usuarios").removeClass("hidden");
 		}
 		//#######USUARIO ROL 2#######
 		else if(id_rol==2){
-			$(".resumen, .venta, .factura, .red, .configurar").removeClass("hidden");
+			$(".resumen, .venta, .factura, .fact-pagar, .red, .configurar").removeClass("hidden");
 		}
 		//#######USUARIO ROL 3#######
 		else if(id_rol==3 || id_rol==0){
-			$(".resumen, .compra, .factura, .configurar").removeClass("hidden");
+			$(".resumen, .compra,  .configurar").removeClass("hidden");
 		}
 				
     }else{

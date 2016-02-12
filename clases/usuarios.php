@@ -528,7 +528,7 @@ function comprobarToken($token){
 		$resultado=$bd->doSingleSelect("estados",$condicion,"nombre");
 		if(!empty($resultado)){
 			if(is_null($formateado)){
-				return utf8_encode($resultado["nombre"]);
+				return  ($resultado["nombre"]);
 			}else{
 				return $resultado["nombre"];
 			}
@@ -899,7 +899,7 @@ function comprobarToken($token){
 	public function updateUserGeneral($usuarios_id, $seudonimo=NULL, $email=NULL,$password=NULL){
 		$bd=new bd();		
 		$actualizar=array( 'seudonimo'=>$seudonimo,'email'=>$email,'id_rol'=>2);
-		//si cambiaron la contraseña	
+		//si cambiaron la contraseï¿½a	
 		if(!empty($password)){
 			$password = hash ( "sha256", $password );
 			$actualizar['password']=$password;

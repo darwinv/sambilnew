@@ -28,7 +28,7 @@ foreach ($usr_publicaciones as $up => $valor) {
 		$p_preguntas = $pub ->getPreguntasActivas($id_pub); 
 		if($p_preguntas != null ){ 
 ?>
-	<div class="panel panel-default" style="display:block"  id="panel<?php echo $id_pub; ?>">
+	<div class="panel panel-default" style="display:block"  id="panel<?php echo $id_pub; ?>" data-cant-pregunta="<?php echo sizeof($p_preguntas); ?>" >
 	<!-- data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $id_pub;?>" aria-expanded="true" aria-controls="collapse<?php echo $id_pub; ?> " -->			
 	<div class="panel-heading" role="tab" id="heading<?php echo $id_pub;?>" role="button" >
       <h4 class="panel-title"> 
@@ -39,7 +39,7 @@ foreach ($usr_publicaciones as $up => $valor) {
 				<a href="detalle.php?id=<?php echo $id_pub ?>" >							
 					<span class="marL10" href="detalle.php?id=<?php echo $id_pub ?>" data-id="<?php echo $id_pub; ?>"> <?php echo $valor["titulo"]; ?>  </span> 
         		</a>
-        <span class="red t14 marL10"><b><?php echo $valor["monto"] ?> Bs </b></span> <span class="opacity t12"><?php echo "x ".$valor["stock"]. " Und"; ?></span>
+        <span class="red t14 marL10"><b>Bs <?php echo number_format($valor["monto"],0,',','.');  ?>  </b></span> <span class="opacity t12"><?php echo "x ".$valor["stock"]. " Und"; ?></span>
       </h4>
     </div>
 		<div id="collapse<?php echo $id_pub;?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?php echo $id_pub;?>">
@@ -59,13 +59,13 @@ foreach ($p_preguntas as $pp => $valor2) {
 		}
 		
 		?>
-					<div id="<?php echo $id_pregunta; ?>">
+					<div id="<?php echo $id_pregunta; ?>" >
 		     	 		<br>
-		      					<p class="t14 marL20 marR20 bor <?php if($cont!=1){ $cont++;?>borBD<?php }?>" id="eti-p<?php echo $id_pregunta;?>"  >
+		      					<p data-id="<?php echo $id_pregunta; ?>" class="toggleResponder pointer t14 marL20 marR20 bor <?php if($cont!=1){ $cont++;?>borBD<?php }?>" id="eti-p<?php echo $id_pregunta;?>"  >
 										<i class="fa fa-comment blueO-apdp " style="border-bottom: #ccc 1px dashed;" ></i> 
 										<span class="t12 blueO-apdp comprador" style="z-index:1000; " data-id="<?php echo $id_usr;?>">	<?php echo $valor2["nombre"]; ?> </span>&nbsp;<span class="opacity t12"> Hace <?php echo $valor2["tiempo"]; ?></span>
 										<br>
-										<span class="marL5 point toggleResponder"  data-id="<?php echo $id_pregunta; ?>">
+										<span class="marL5 point"  data-id="<?php echo $id_pregunta; ?>">
 											<?php echo $valor2["pregunta"]; ?></span>
 										<br>
 										<br>
@@ -73,7 +73,7 @@ foreach ($p_preguntas as $pp => $valor2) {
 										<div class="activo" id="responder<?php echo $id_pregunta;?>" name="responder" <?php if($cont==1){ $cont++;?> style="display:block" <?php }else ?>style=" display:none">
 										<textarea id="txtRespuesta<?php echo $id_pregunta;?>" name="txtRespuesta<?php echo $id_pregunta;?>" class="form-textarea respuesta" data-id="<?php echo $id_pregunta;?>"></textarea>
 										<br>
-										<div class="text-right"><a href="#"><i id="eliminar<?php echo $id_pregunta;?>" class="fa fa-trash-o marL5 red eliminar" data-id="<?php echo $id_pregunta; ?>"></i></a><button id="limpiar" class="btn2 btn-default marL10 limpiar" data-id="<?php echo $id_pregunta;?>">Limpiar</button>
+										<div class="text-right"><a href="#"><i id="eliminar<?php echo $id_pregunta;?>" class="fa fa-trash-o marL5 red eliminar" data-id="<?php echo $id_pregunta; ?>"  data-cant="<?php echo $cant_pregunta[$p_cant]; ?>" data-pub_id="<?php echo $id_pub; ?>" ></i></a><button id="limpiar" class="btn2 btn-default marL10 limpiar" data-id="<?php echo $id_pregunta;?>">Limpiar</button>
 											<button id='btnResponder' name='btnResponder'  class="btn2 btn-primary marL10 btnResponder" data-cant="<?php echo $cant_pregunta[$p_cant]; ?>" data-id="<?php echo $id_pregunta; ?>" 
 											data-primero="<?php echo $p_preguntas[0]["id"]; ?>" data-pub_id="<?php echo $id_pub; ?>" data-activar="<?php echo $nextid; ?>" data-id_poster="<?php echo $_SESSION["id"]; ?>" data-usr_id="<?php echo $id_usr; ?>" >Responder</button>
 										</div>

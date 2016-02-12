@@ -89,8 +89,4 @@ endif;
 		<b class="t14">Contrase&ntilde;a: </b> ******** <span class="opacity"> </span> <span class="vin-blue pull-right marR10"><a href="#" data-toggle="modal" data-target="#info-pass">Editar</a></span>
 	</div>
 	<br> <br>
-	<div class="linea-resumen marL30 marR30">
-		<span> <a href="#" data-toggle="modal" data-target="#msj-eliminar">Desactivar Cuenta</a></span>
-	</div>
-	 <br> <br>
 </div>

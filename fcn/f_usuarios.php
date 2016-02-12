@@ -88,7 +88,7 @@ function getUser() {
 	foreach ( $properties as $property ) {
 		$name = $property->getName ();
 		if($name!="a_password" || !isset($_POST["id"])){	
-			 	$valores [$name] = utf8_encode($usuario->$name);			
+			 	$valores [$name] =  ($usuario->$name);			
 		}
 	}	
 	
@@ -184,7 +184,7 @@ function actNat() {
 	$values_nat = array (
 			"tipo" => filter_input ( INPUT_POST, "p_tipo" ),
 			"identificacion" => filter_input ( INPUT_POST, "p_identificacion" ) ,
-			"nombre" => utf8_encode(filter_input ( INPUT_POST, "p_nombre" )),
+			"nombre" =>  (filter_input ( INPUT_POST, "p_nombre" )),
 			"apellido" =>filter_input ( INPUT_POST, "p_apellido" ),
 			
 	);

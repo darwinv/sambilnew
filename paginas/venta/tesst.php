@@ -1,34 +1,161 @@
-	<!DOCTYPE html>
-	<html>
-	<head>
-	</head>
-	<body>
-	<p style="text-align: center;"><span style="font-size: 24pt;"><strong>Vendo Mesa de 5 Patas con 1 Puf incluido</strong></span></p>
-	<p style="text-align: center;">&nbsp;</p>
-	<table style="width: 391px; margin-left: auto; margin-right: auto;">
-	<tbody>
-	<tr>
-	<td style="width: 204.5px;"><span style="font-size: 24pt;"><strong><img src="http://d26lpennugtm8s.cloudfront.net/stores/100/066/products/_dsc0057-357320622a714bd6ab13e11939f0576f-1024-1024.jpg" alt="" width="223" height="223" /></strong></span></td>
-	<td style="width: 190.5px; text-align: justify;">
-	<p><span style="font-size: 24pt;"><strong><img style="float: left;" src="http://www.mobicol.com/imatges/productes/tn1_mesa%20quo%205%20patas.jpg" alt="" width="301" height="306" /></strong></span></p>
-	</td>
-	</tr>
-	</tbody>
-	</table>
-	<p style="text-align: center;"><span style="color: #808080;">Mesa de aluminio innoxidable. con tope de marmol, y pies de silicon, dando confort a los visitantes, adicionalmente le rematamos un puff para utilizar</span> <span style="font-size: 14pt; font-family: georgia,palatino,serif;">con la mesa o lo que quieran.</span><br /><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; color: blue; font-size: 20pt;"><em><em><strong><strong><span style="font-size: large;"><strong><em><em><strong><span style="font-size: medium;"><span style="font-family: Times New Roman;"><strong><span style="font-size: large;"><em><em><strong><span style="font-size: medium;"><span style="font-family: Times New Roman;"><span style="font-size: large;"><span style="font-size: medium;"><span style="font-size: large;"><em><strong><span style="font-size: medium;"><strong><em><span style="color: #800080;"><strong><strong><strong><strong><strong><strong><strong><strong><span style="font-size: medium;"><strong><em><span style="color: #800080;"><strong><strong><strong><strong><strong><strong><strong><strong><span style="font-size: medium;"><span style="font-size: large;"><strong><em><em><strong><span style="font-size: medium;"><span style="font-family: Times New Roman;"><strong><em><strong><em><em><strong><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; color: green; font-size: 13.5pt;"><strong><em><span style="font-size: medium;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; color: purple; font-size: 13.5pt;"><span style="color: #000080;">ofrecemos la posibilidad de resguardar sus compras, <br />hasta consolidar la cantidad necesaria de art&iacute;culos a su elecci&oacute;n, <br />para disminuir su costo operativo en los env&iacute;os<br /></span></span></em></strong></span></em></strong></span></strong></em></em></strong></em></strong></span></span></strong></em></em></strong></span></span></strong></strong></strong></strong></strong></strong></strong></strong></span></em></strong></span></strong></strong></strong></strong></strong></strong></strong></strong></span></em></strong></span></strong></em></span></span></span></span></span></strong></em></em></span></strong></span></span></strong></em></em></strong></span></strong></strong></em></em></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="color: #888888;"><span style="font-size: medium;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">emitido por: banco central de venezuela</span></em></strong></span></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium; color: #888888;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">fabricante: the de la rue company, inglaterra</span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium; color: #888888;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';"><span style="color: #888888;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 20pt;"><span style="font-size: large;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 20pt;"><span style="font-variant: small-caps;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 14pt;"><span style="font-family: 'Comic Sans MS';"><strong><em><span style="font-variant: small-caps; font-family: 'Carolingia (BigfooT)'; font-size: 24pt;"><strong><span style="font-variant: small-caps; font-family: 'Carolingia (BigfooT)'; font-size: 22pt;"><em><em><strong><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 13.5pt;"><span style="font-variant: small-caps;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 14pt;"><span style="font-family: 'Comic Sans MS';"><em><span style="font-variant: small-caps; font-family: 'Carolingia (BigfooT)'; font-size: 24pt;"><span style="font-size: medium;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">cantidad emitida: 6.000.000 de billetes</span></em></strong></span></span></em></span></span></span></span></strong></em></em></span></strong></span></em></strong></span></span></span></span></span></span></span></span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium; color: #888888;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';"><span style="color: #888888;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 20pt;"><span style="font-size: large;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 20pt;"><span style="font-variant: small-caps;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 14pt;"><span style="font-family: 'Comic Sans MS';"><strong><em><span style="font-variant: small-caps; font-family: 'Carolingia (BigfooT)'; font-size: 24pt;"><strong><span style="font-variant: small-caps; font-family: 'Carolingia (BigfooT)'; font-size: 22pt;"><em><em><strong><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 13.5pt;"><span style="font-variant: small-caps;"><span style="font-variant: small-caps; font-family: 'Comic Sans MS'; font-size: 14pt;"><span style="font-family: 'Comic Sans MS';"><em><span style="font-variant: small-caps; font-family: 'Carolingia (BigfooT)'; font-size: 24pt;"><span style="font-size: medium;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">&nbsp;</span></em></strong></span></span></em></span></span></span></span></strong></em></em></span></strong></span></em></strong></span></span></span></span></span></span></span></span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium; color: #888888;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">combinaci&oacute;n de firmas:</span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium; color: #888888;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">presidente / vice-presidente</span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium; color: #888888;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">alfredo lafee / carlos rafael silva<br /></span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';">&nbsp;</span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';"><span style="color: #000080;">condici&oacute;n: FINE-</span><br /><span style="color: #000080;">el billete presenta: dobleces. ondulaciones y manchas acordes al estado de conservaci&oacute;n.</span></span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;" align="center"><span style="font-size: medium;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';"><span style="color: #000080;">regular consistencia de papel.<br /></span></span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;"><span style="color: #808080;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';"><span style="font-size: medium;">&nbsp;</span></span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;"><span style="color: #808080;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';"><span style="font-size: medium;">tipo F, seg&uacute;n clasificaci&oacute;n del libro </span></span></em></strong></span></p>
-	<p style="text-align: center; margin: 0cm 0cm 0pt;"><span style="color: #808080;"><strong><em><span style="font-variant: small-caps; font-family: 'Comic Sans MS';"><span style="font-size: medium;">"los billetes del banco central de venezuela" de sergio sucre castillo</span></span></em></strong></span></p>
-	<p style="text-align: center;">&nbsp;</p>
-	</body>
-	</html>
+<?php
+function buscaPublicaciones(){
+		session_start();
+	    $usua2=new usuario($_SESSION["id"]);
+		if(isset($_POST["pagina"]))
+			$pagina=$_POST["pagina"];
+		else
+			$pagina=1;		
+		if(isset($_POST["order"]))
+			$order=$_POST["order"];
+		else
+			$order='id desc';
+		
+		if(isset($_POST["tipo"]))
+			$tipo=$_POST["tipo"];
+		else
+			$tipo='id desc';
+		$hijos2=$usua2->getPublicaciones($tipo,$pagina, NULL, $order);		
+		$contador=0;
+		$des=$tipo==1?"":"disabled";
+		 
+		foreach ($hijos2 as $key => $valor) {
+			$contador++;
+			$publicacion=new publicaciones($valor["id"]);
+			switch($tipo){
+				case 1:
+					$boton1="<li onclick='javascript:modificarOpciones($publicacion->id,2,1)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='pausar'>Pausar</a></li>";
+					$boton2="<li onclick='javascript:modificarOpciones($publicacion->id,3,1)'><a class='finalizar opciones' id='' href='' data-toggle='modal' value='finalizar'>Finalizar</a></li>";
+					break;
+				case 2:
+					$boton1="<li onclick='javascript:modificarOpciones($publicacion->id,1,2)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='reactivar'>Reactivar</a></li>";
+					$boton2="<li onclick='javascript:modificarOpciones($publicacion->id,3,2)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='reactivar'>Finalizar</a></li>";
+					break;
+				case 3:
+					$boton1="<li onclick='javascript:republicarPublicacion($publicacion->id)'><a class='pausar opciones'  id='' href='' data-toggle='modal' data-target='#info-publicacion' value='republicar'>Republicar</a></li>";			
+					$boton2="<li onclick='javascript:eliminarPublicacion($publicacion->id)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='eliminar'>Eliminar</a></li>";
+					break;
+			}			
+			$cadena="<span id='general" . $valor["id"] . "' name='general" . $valor["id"] . "' class='general' data-titulo={$valor["titulo"]}>
+			<div class='col-xs-12 col-sm-12 col-md-1 col-lg-1  '>			
+					<div class='marco-foto-publicaciones  point ' style='width: 65px; height: 65px;' > <img src='" . $publicacion->getFotoPrincipal() . "' width='100%' height='100%;' 
+					style='border: 1px solid #ccc;' class='img img-responsive center-block imagen' data-id='" . $valor["id"] . "'> </div>				
+			</div>
+			<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 vin-blue t14  '>
+				<span class='detalle.php'> <a href='detalle.php?id={$valor["id"]}'><span id='titulo" . $valor["id"] . "'>" .  ($valor["titulo"]) . "</span> </a>
+				<br>
+				<span class='opacity'># $publicacion->id</span>
+			</div>
+			<div class='col-xs-12 col-sm-12 col-md-2 col-lg-2  text-left '>
+				<span class='red t14' id='monto" . $valor["id"] . "'>" . $publicacion->getMonto(1) . " </span>
+				<span class='t12 opacity' id='stock" . $valor["id"] . "'> x " . $publicacion->stock . " und</span>
+				<br>
+				<span> " . $publicacion->getVisitas() . " Visitas</span>
+				<span class='opacity hidden'> / </span>
+				<span class=' blue-vin hidden'> 30 ventas </span>
+			</div>
+			<div class='col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center t12 '>
+				<div class='btn-group pull-right marR10'>					
+					<button id='b" . $publicacion->id . "' type='button' class='btn2 btn-warning boton' data-toggle='modal' data-target='#info-publicacion' onclick='javascript:pasavalores($publicacion->id)'
+					data-id='$publicacion->id' data-titulo='" .  ($publicacion->titulo) . "' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='{$tipo}' $des>
+						Modificar
+					</button>
+					<textarea  class='hidden' id='descripcion_" . $publicacion->id . "'>
+								$publicacion->descripcion
+					</textarea >
+					<button id='btnReactivar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",1,1)'>
+						Reactivar
+					</button> 
+					<button id='btnPausar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",2,2)'>
+						Pausar
+					</button>						
+					<button id='btnFinalizar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",3,3)'>
+						Finalizar
+					</button>					
+					<button id='btnOpciones" . $publicacion->id . "' type='button' class='btn2 btn-warning dropdown-toggle  ' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' >
+						<span class='glyphicon glyphicon-cog '></span>
+						<span class='caret'></span>
+					</button>
+					<ul  class='  dropdown-menu'  id='opciones'>			
+							$boton1						
+							$boton2						
+					</ul>
+					<div id='menPau" . $publicacion->id . "' class='alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
+						Publicacion pausada
+					</div>
+					<div id='menAct" . $publicacion->id . "' class='  alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
+						Publicacion activa
+					</div>
+					<div id='menFin" . $publicacion->id . "' class='  alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
+						Publicacion finalizada
+					</div>
+					<div id='menRep" . $publicacion->id . "' class='  alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
+						Republicada
+					</div>
+				</div>
+			</div>
+			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10'>
+				<center><hr class=' center-block'></center>
+			</div>
+		</span>";
+			echo $cadena;
+		}
+		echo "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10'>
+			<nav class='text-center'>
+			  <ul class='pagination'>";
+								$ac=$usua2->getCantidadPub($tipo);
+								$totalPaginas=floor($ac/25);
+								$restantes=$ac-($totalPaginas*25);
+								if($restantes>0){
+									$totalPaginas++;
+								}
+								echo"</div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' id='paginas' name='paginas' data-metodo='buscarPublicaciones' data-tipo='" . $tipo . "' data-id='" . $usua2->id . "' > <center><nav><ul class='pagination'>";
+								$contador=0;
+								if($pagina<=10){
+									$inicio=1;
+								}else{
+									$inicio=floor($pagina/10);
+									if($pagina % 10!=0){
+										$inicio=($inicio*10)+1;
+									}else{
+										$inicio=($inicio*10)-9;
+									}									
+								}
+								 								 
+								for($i=$inicio;$i<=$totalPaginas;$i++){
+									$contador++;
+									if($i==$pagina){ 
+										echo "<li class='active' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";
+									}else{
+										echo "<li class='' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";
+									}
+									if($contador==10){
+										break;
+									}
+								}
+				 if($totalPaginas>0){
+				 echo "<li>
+				      <a href='#' aria-label='Next'>
+				        <span aria-hidden='true'>&raquo;</span>
+				      </a>
+				    </li>
+			  </ul>
+			</nav>
+			</div>	";
+		   }
+		   if($contador==0){
+			?>
+			<script>
+				$("#noresultados").removeClass("hidden");
+				$("#publicaciones").addClass("hidden");
+			</script>		  	
+			<?php
+			}else{
+			?>
+			<script>
+			$("#noresultados").addClass("hidden");
+			$("#publicaciones").removeClass("hidden");
+			</script>
+			<?php		  						
+		}
+}

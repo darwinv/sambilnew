@@ -25,9 +25,17 @@ $(document).ready(function(){
 				}
 			});
 		}*/
-	$('#editor').trumbowyg({
-		lang : 'es'
-	});
+	/*tinymce.init({ 
+  	selector:'#editor',
+  	language:'es_MX',
+  	default_link_target: "_blank",
+  	plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
+  	toolbar:[
+  	 'newdocument, bold, italic,underline, strikethrough, alignleft  aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste',
+  	 'charmap, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript, hr, searchreplace, table, link, media, image, visualblocks forecolor backcolor, preview' 	
+  		]
+     });
+     */
 	$("#monto").autoNumeric({aSep: '.', aDec: ','});
 	$("#ven-form-mod").formValidation({
 		locale: 'es_ES',
@@ -81,7 +89,7 @@ $(document).ready(function(){
 					showConfirmButton: true
 					}, function(){
 						$("#info-publicacion").modal('hide');
-						document.location.reload();
+						//document.location.reload();
 					});
 			}
 		});
@@ -130,10 +138,8 @@ $(document).ready(function(){
 			}
 		});
 	});
-	$("#filtro").change(function(){
-	 
+	$("#filtro").change(function(){	 
 		var tipo;
-		
 		if($("#irActivas").hasClass('active')){
 			tipo=1; 
 		}else if($("#irPausadas").hasClass('active')){
@@ -142,10 +148,11 @@ $(document).ready(function(){
 			tipo=3;
 		}  
 		var order= "id "+$("#filtro").val();
+		var pagina=1;
 		loadingAjax(true);
 		$.ajax({
 			url:"paginas/venta/fcn/f_ventas.php",
-			data:{metodo:"buscarPublicaciones",tipo:tipo,order:order},
+			data:{metodo:"buscarPublicaciones",tipo:tipo,order:order,pagina:pagina},
 			type:"POST",
 			dataType:"html",
 			success:function(data){
@@ -177,9 +184,16 @@ $(document).ready(function(){
 				console.log(data);
 				$("#primero").html(data);
 				$("#btn-social-act").data("dismiss","modal");
-				$('#editor').trumbowyg({
-					lang : 'es'
-				});
+				tinymce.init({ 
+  				selector:'#editor',
+  				language:'es_MX',
+  				default_link_target: "_blank",
+  				plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
+  				toolbar:[
+  	 			'newdocument, bold, italic,underline, strikethrough, alignleft  aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste',
+  	 			'charmap, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript, hr, searchreplace, table, link, media, image, visualblocks forecolor backcolor, preview' 	
+  				]
+    			 });
 				$("#txtPrecio").autoNumeric({aSep: '.', aDec: ','});
 				//Validator del formulario
 				$("#pub-form-reg").formValidation({

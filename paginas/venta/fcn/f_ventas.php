@@ -24,14 +24,27 @@ switch($_POST["metodo"]){
 function buscaPublicaciones(){
 		session_start();
 	    $usua2=new usuario($_SESSION["id"]);
-		$hijos2=$usua2->getPublicaciones($_POST["tipo"],$_POST["pagina"], NULL, $_POST["order"]);		
+		if(isset($_POST["pagina"]))
+			$pagina=$_POST["pagina"];
+		else
+			$pagina=1;		
+		if(isset($_POST["order"]))
+			$order=$_POST["order"];
+		else
+			$order='id desc';
+		
+		if(isset($_POST["tipo"]))
+			$tipo=$_POST["tipo"];
+		else
+			$tipo='1';
+		$hijos2=$usua2->getPublicaciones($tipo,$pagina, NULL, $order);		
 		$contador=0;
-		$des=$_POST["tipo"]==1?"":"disabled";
-		$pagina=$_POST["pagina"];
+		$des=$tipo==1?"":"disabled";
+		 
 		foreach ($hijos2 as $key => $valor) {
 			$contador++;
 			$publicacion=new publicaciones($valor["id"]);
-			switch($_POST["tipo"]){
+			switch($tipo){
 				case 1:
 					$boton1="<li onclick='javascript:modificarOpciones($publicacion->id,2,1)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='pausar'>Pausar</a></li>";
 					$boton2="<li onclick='javascript:modificarOpciones($publicacion->id,3,1)'><a class='finalizar opciones' id='' href='' data-toggle='modal' value='finalizar'>Finalizar</a></li>";
@@ -51,7 +64,7 @@ function buscaPublicaciones(){
 					style='border: 1px solid #ccc;' class='img img-responsive center-block imagen' data-id='" . $valor["id"] . "'> </div>				
 			</div>
 			<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 vin-blue t14  '>
-				<span class='detalle.php'> <a href='detalle.php?id={$valor["id"]}'><span id='titulo" . $valor["id"] . "'>" . utf8_encode($valor["titulo"]) . "</span> </a>
+				<span class='detalle.php'> <a href='detalle.php?id={$valor["id"]}'><span id='titulo" . $valor["id"] . "'>" .  ($valor["titulo"]) . "</span> </a>
 				<br>
 				<span class='opacity'># $publicacion->id</span>
 			</div>
@@ -66,9 +79,12 @@ function buscaPublicaciones(){
 			<div class='col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center t12 '>
 				<div class='btn-group pull-right marR10'>					
 					<button id='b" . $publicacion->id . "' type='button' class='btn2 btn-warning boton' data-toggle='modal' data-target='#info-publicacion' onclick='javascript:pasavalores($publicacion->id)'
-					data-id='$publicacion->id' data-titulo='" . utf8_encode($publicacion->titulo) . "' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-descripcion='" . $publicacion->descripcion . "' data-listado='{$_POST["tipo"]}' $des>
+					data-id='$publicacion->id' data-titulo='" .  ($publicacion->titulo) . "' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='{$tipo}' $des>
 						Modificar
-					</button> 					
+					</button>
+					<textarea  class='hidden' id='descripcion_" . $publicacion->id . "'>
+								$publicacion->descripcion
+					</textarea >
 					<button id='btnReactivar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",1,1)'>
 						Reactivar
 					</button> 
@@ -109,13 +125,13 @@ function buscaPublicaciones(){
 		echo "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10'>
 			<nav class='text-center'>
 			  <ul class='pagination'>";
-								$ac=$usua2->getCantidadPub($_POST["tipo"]);
+								$ac=$usua2->getCantidadPub($tipo);
 								$totalPaginas=floor($ac/25);
 								$restantes=$ac-($totalPaginas*25);
 								if($restantes>0){
 									$totalPaginas++;
 								}
-								echo"</div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' id='paginas' name='paginas' data-metodo='buscarPublicaciones' data-tipo='" . $_POST["tipo"] . "' data-id='" . $usua2->id . "' > <center><nav><ul class='pagination'>";
+								echo"</div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' id='paginas' name='paginas' data-metodo='buscarPublicaciones' data-tipo='" . $tipo . "' data-id='" . $usua2->id . "' > <center><nav><ul class='pagination'>";
 								$contador=0;
 								if($pagina<=10){
 									$inicio=1;
@@ -130,7 +146,7 @@ function buscaPublicaciones(){
 								 								 
 								for($i=$inicio;$i<=$totalPaginas;$i++){
 									$contador++;
-									if($i==$_POST["pagina"]){
+									if($i==$pagina){ 
 										echo "<li class='active' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";
 									}else{
 										echo "<li class='' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";

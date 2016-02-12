@@ -30,16 +30,15 @@
 			</ul>
 		</li>
 		<li class="hidden factura">
-			<div class="link " ><i class="fa fa-credit-card"></i>Facturaci&oacute;n<i class="fa fa-chevron-down"></i></div>
-			<ul class="submenu ">
-				<li ><a href="#">Cuentas por pagar</a></li>
-				
-				
-			</ul>
-		</li>
+			<div class="link"><i class="fa fa-credit-card"></i>Facturaci&oacute;n<i class="fa fa-chevron-down"></i></div>
+			<ul class="submenu">
+				<li class="hidden fact-pagar" ><a href="#">Cuentas por pagar</a></li> 
+				<li class="hidden fact-cobrar"><a href="#">Cuentas por cobrar</a></li> 
+			</ul>			 
+		</li> 
 		<li class="hidden red">
 			<div class="link"><i class="fa fa-share-alt"></i>Gesti&oacute;n de Redes<i class="fa fa-chevron-down"></i></div>
-			<ul class="submenu ">
+			<ul class="submenu">
 				<li><a href="redes.php?tipo=1">Vincular Red Social</a></li>
 				<li><a href="redes.php?tipo=2">Publicaciones automatizadas</a></li>
 				<li><a href="redes.php?tipo=3" >Campa&ntilde;as publicitarias</a></li>

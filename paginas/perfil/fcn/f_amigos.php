@@ -40,7 +40,7 @@ if (! empty ( $resultamigos )) :
 		</div>
 		<div class="text-center marT20 marB20">
 			<a class="vin-blue" href="#"><span
-				class="seudonimo"><?php echo $row["seudonimo"];?></span></a> <br> <span
+				class="seud-onimo"><?php echo $row["seudonimo"];?></span></a> <br> <span
 				class="nom-ape"><?php echo $row["nombre"]?></span> <br> <!-- <span
 				class="ventas">50 Ventas</span> --> <br> <br>
 			<div class="btn-group">
@@ -48,20 +48,14 @@ if (! empty ( $resultamigos )) :
 				data-target="#info-seguidor"
 				data-toggle='modal'
 				data-ruta='<?php echo $foto->buscarFotoUsuario($row["numero"]) ?>'
+				data-iduser='<?php echo $row["numero"]?>'
 				data-nombre="<?php echo $row["nombre"]?>"
 				data-alias="<?php echo $row["seudonimo"]; ?>"
 				data-telf="<?php echo $row["telefono"]?>"
 				data-correo="<?php echo $row["email"]?>"
 				 data-contador="<?php echo $c ?>" type="button" class="btn btn-primary2 datos-seguidor">Seguidor</button>
-				<button type="button" class="btn btn-primary2 dropdown-toggle"
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span class="caret"></span> <span class="sr-only">Toggle Dropdown</span>
-				</button>
-				<ul class="dropdown-menu">
-					<li class="hidden"><a class="vin-blue "
-						href="#">Ver Perfil</a></li>
-					<li><a href="#">Bloquear</a></li>
-				</ul>
+			
+				
 			</div>
 		</div>
 	</div>

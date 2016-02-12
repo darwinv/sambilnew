@@ -26,6 +26,7 @@ include ("temas/header.php");
 <?php
 
 include"modales/m_delete.php"; 
+include"modales/m_active.php"; 
 include"modales/m_edif_info_user.php"; 
 include"modales/m_registrar_by_admin.php"; 
 include"modales/m_info_user.php"; 

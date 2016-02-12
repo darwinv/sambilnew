@@ -70,7 +70,7 @@
 						$row=$result->fetch();
 						if($row["totaC"]>0):
 						?>
-							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
+							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
 							<?php
 						endif;
 					endforeach;
@@ -107,8 +107,8 @@
 								$row=$result->fetch();
 								if($row["totaP"]>0):
 								?>
-									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " ({$row["totaP"]})";?></a></span></div></li>
-<!--								<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " (0)";?></a></span></li>-->
+									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " ({$row["totaP"]})";?></a></span></div></li>
+<!--								<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " (0)";?></a></span></li>-->
 								<?php
 								endif;
 							endforeach;
@@ -145,7 +145,7 @@
 		}
 			$total=$condiciones["tota1"] + $condiciones["tota2"] + $condiciones["tota3"];		
 		?>
-			<div id="condicion" data-ruta="<?php echo utf8_encode($ruta);?>" <?php echo $con; ?> style="display:<?php if($total==0){ echo "none"; } else{ echo "block"; }?>">
+			<div id="condicion" data-ruta="<?php echo  ($ruta);?>" <?php echo $con; ?> style="display:<?php if($total==0){ echo "none"; } else{ echo "block"; }?>">
 				<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 				<hr class="marR5">
 			</div>
@@ -194,7 +194,7 @@
 						<a href="index.php" style="color:#000" class="marL5">Inicio </a> 
 						<i class="fa fa-caret-right negro marR5 marL5"></i>
 						<span id="ruta" name="ruta">
-							<?php echo utf8_encode($ruta);?>
+							<?php echo  ($ruta);?>
 						</span>
 					</div>
 				</div>
@@ -234,9 +234,9 @@
 									</div>
 								</div>
 								<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
-							    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo utf8_encode($miTitulo);?></b></a></span>
+							    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo  ($miTitulo);?></b></a></span>
 									<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-									<br><span class='t14 grisO '><?php echo utf8_encode($usua->getNombre());?></span><br>
+									<br><span class='t14 grisO '><?php echo  ($usua->getNombre());?></span><br>
 									<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 									<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 									</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
@@ -398,7 +398,7 @@
 						$row=$result->fetch();
 						if($row["totaC"]>0):
 						?>
-							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
+							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
 							<?php
 						endif;
 					endforeach;
@@ -434,7 +434,7 @@
 				<hr class="marR5">
 				<ul class="nav marR5 t11  marT10 marB20 ">
 					<li class='marB10 t11'><div  class='h-gris'><span ><a class='filtroest' href='#' data-id='100'>TODOS (<?php echo $totalGen2;?>)</a></span></div></li>
-						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $_POST["id"];?>"><?php echo utf8_encode($row2["nombre"]) . "(" . $totalGen . ")";?></a></span></div></li>																						
+						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $_POST["id"];?>"><?php echo  ($row2["nombre"]) . "(" . $totalGen . ")";?></a></span></div></li>																						
 					<?php
 		else:
 			$estados=$bd->doFullSelect("estados");
@@ -466,7 +466,7 @@
 					$ac+=$totalG;				
 					if($totalG > 0):
 					?>
-						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " ($totalG)";?></a></span></div></li>
+						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " ($totalG)";?></a></span></div></li>
 						<?php
 					endif;
 				endforeach;
@@ -519,7 +519,7 @@
 				break;
 		}
 		?>
-			<div id="condicion" data-ruta="<?php echo utf8_encode($ruta);?>" <?php echo $con;?> style="display:<?php if($total==0){ echo "none"; } else{ echo "block"; }?>">
+			<div id="condicion" data-ruta="<?php echo  ($ruta);?>" <?php echo $con;?> style="display:<?php if($total==0){ echo "none"; } else{ echo "block"; }?>">
 				<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 				<hr class="marR5">
 			</div>
@@ -593,7 +593,7 @@
 						<a href="index.php" style="color:#000" class="marL5">Inicio </a> 
 						<i class="fa fa-caret-right negro marR5 marL5"></i>
 						<span id="ruta" name="ruta">
-							<?php echo utf8_encode($ruta);?>
+							<?php echo  ($ruta);?>
 						</span>
 					</div>
 				</div>
@@ -633,16 +633,16 @@
 										</div>
 									</div>
 									<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
-								    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo utf8_encode($miTitulo);?></b></a></span>
+								    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo  ($miTitulo);?></b></a></span>
 										<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-										<br><span class='t14 grisO '><?php echo utf8_encode($usua->getNombre());?></span><br>
+										<br><span class='t14 grisO '><?php echo  ($usua->getNombre());?></span><br>
 										<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 										<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 										</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
 								    </div>
 								    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'>
 								    	<div class='marR20'><span class='red t20'><b> <?php echo $publi->getMonto();?></b></span >
-											<br><span class=' t12'> <?php echo utf8_encode($usua->getEstado());?> </span><br><span class='vin-blue t16'><a href='detalle.php?id=<?php echo $publi->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
+											<br><span class=' t12'> <?php echo  ($usua->getEstado());?> </span><br><span class='vin-blue t16'><a href='detalle.php?id=<?php echo $publi->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
 										</div>
 									</div>
 									<div class='col-xs-12 col-sm-12 col-md-12 col-lg-2'><br></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-10'><hr class='marR10'><br></div>
@@ -670,7 +670,7 @@
 									    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 										<br>
 										<span class=' grisO '> 		
-										<span class="t12"><?php echo utf8_encode($usua->getEstado());?></span>
+										<span class="t12"><?php echo  ($usua->getEstado());?></span>
 										<br>
 										<i class='fa fa-thumbs-o-up opacity '></i>
 										<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>
@@ -783,7 +783,7 @@
 						$row=$result->fetch();
 						if($row["totaC"]>0):
 						?>
-							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
+							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
 							<?php
 						endif;
 					endforeach;
@@ -809,8 +809,8 @@
 								$row=$result->fetch();
 								if($row["totaP"]>0):
 								?>
-									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " ({$row["totaP"]})";?></a></span></div></li>
-<!--								<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " (0)";?></a></span></li>-->
+									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " ({$row["totaP"]})";?></a></span></div></li>
+<!--								<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " (0)";?></a></span></li>-->
 								<?php
 								endif;
 							endforeach;
@@ -860,7 +860,7 @@
 				break;								
 		}
 		?>
-			<div id="condicion" data-ruta="<?php echo utf8_encode($ruta);?>" <?php echo $con;?>>
+			<div id="condicion" data-ruta="<?php echo  ($ruta);?>" <?php echo $con;?>>
 				<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 				<hr class="marR5">
 			</div>
@@ -922,7 +922,7 @@
 						<a href="index.php" style="color:#000" class="marL5">Inicio </a> 
 						<i class="fa fa-caret-right negro marR5 marL5"></i>
 						<span id="ruta" name="ruta">
-							<?php echo utf8_encode($ruta);?>
+							<?php echo  ($ruta);?>
 						</span>
 					</div>
 				</div>
@@ -962,9 +962,9 @@
 									</div>
 								</div>
 								<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
-							    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo utf8_encode($miTitulo);?></b></a></span>
+							    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo  ($miTitulo);?></b></a></span>
 									<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-									<br><span class='t14 grisO '><?php echo utf8_encode($usua->getNombre());?></span><br>
+									<br><span class='t14 grisO '><?php echo  ($usua->getNombre());?></span><br>
 									<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 									<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 									</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
@@ -1170,7 +1170,7 @@
 					    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 						<br>
 						<span class=' grisO '> 		
-						<span class="t12"><?php echo utf8_encode($usua->getEstado());?></span>
+						<span class="t12"><?php echo  ($usua->getEstado());?></span>
 						<br>
 						<i class='fa fa-thumbs-o-up opacity '></i>
 						<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>							
@@ -1199,9 +1199,9 @@
 								</div>
 						</div>
 				<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
-			    <span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo utf8_encode($miTitulo);?></b></a></span>
+			    <span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo  ($miTitulo);?></b></a></span>
 					<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-					<br><span class='t14 grisO '><?php echo utf8_encode($usua->getNombre());?></span><br>
+					<br><span class='t14 grisO '><?php echo  ($usua->getNombre());?></span><br>
 					<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 					<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 					</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
@@ -1252,7 +1252,7 @@
 				</div>
 			</div>
 			<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
-			    <span class=' t15'><a class='negro' href='perfil.php?id=<?php echo $usua->id;?>' class='grisO'><b><?php echo utf8_encode($miTitulo);?></b></a></span>
+			    <span class=' t15'><a class='negro' href='perfil.php?id=<?php echo $usua->id;?>' class='grisO'><b><?php echo  ($miTitulo);?></b></a></span>
 				<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span><span></span>
 				<br>
 				<span class='t12 orange-apdp'><?php echo $usua->getTiempo();?> Vendiendo en Apreciodepana</span><br>						
@@ -1264,7 +1264,7 @@
 		    </div>
 		    <br>
 		    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'><div class='marR20'>
-				<span class=' t12'><?php echo utf8_encode($usua->getEstado());?></span><br><span class='vin-blue t16'><a href='perfil.php?id=<?php echo $usua->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
+				<span class=' t12'><?php echo  ($usua->getEstado());?></span><br><span class='vin-blue t16'><a href='perfil.php?id=<?php echo $usua->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
 			</div></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-2'><br></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-10'><hr class='marR10'><br></div>
 			<?php			
 		}
@@ -1303,9 +1303,9 @@
 					</div>
 				</div>
 			<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
-		    <span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo utf8_encode($miTitulo);?></b></a></span>
+		    <span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo  ($miTitulo);?></b></a></span>
 				<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-				<br><span class='t14 grisO '><?php echo utf8_encode($usua->getNombre());?></span><br>
+				<br><span class='t14 grisO '><?php echo  ($usua->getNombre());?></span><br>
 				<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 				<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 				</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
@@ -1353,7 +1353,7 @@
 						$row=$result->fetch();
 						if($row["totaC"]>0):
 						?>
-							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
+							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
 							<?php
 						endif;
 					endforeach;
@@ -1388,8 +1388,8 @@
 								$row=$result->fetch();
 								if($row["totaP"]>0):
 								?>
-									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " ({$row["totaP"]})";?></a></span></div></li>
-<!--								<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " (0)";?></a></span></li>-->
+									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " ({$row["totaP"]})";?></a></span></div></li>
+<!--								<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " (0)";?></a></span></li>-->
 								<?php
 								endif;
 							endforeach;
@@ -1410,7 +1410,7 @@
 		$con="";		
 		$total=$condiciones["tota1"] + $condiciones["tota2"] + $condiciones["tota3"];		
 		?>
-			<div id="condicion" data-ruta="<?php echo utf8_encode($ruta);?>" style="display:<?php if($total==0){ echo "none"; } else{ echo "block"; }?>">
+			<div id="condicion" data-ruta="<?php echo  ($ruta);?>" style="display:<?php if($total==0){ echo "none"; } else{ echo "block"; }?>">
 				<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 				<hr class="marR5">
 			</div>
@@ -1459,7 +1459,7 @@
 						<a href="index.php" style="color:#000" class="marL5">Inicio </a> 
 						<i class="fa fa-caret-right negro marR5 marL5"></i>
 						<span id="ruta" name="ruta">
-							<?php echo utf8_encode($ruta);?>
+							<?php echo  ($ruta);?>
 						</span>
 					</div>
 				</div>
@@ -1499,9 +1499,9 @@
 									</div>
 								</div>
 								<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
-							    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo utf8_encode($miTitulo);?></b></a></span>
+							    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo  ($miTitulo);?></b></a></span>
 									<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-									<br><span class='t14 grisO '><?php echo utf8_encode($usua->getNombre());?></span><br>
+									<br><span class='t14 grisO '><?php echo  ($usua->getNombre());?></span><br>
 									<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 									<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 									</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
@@ -1610,7 +1610,7 @@
 				<hr class="marR5">
 				<ul class="nav marR5 t11  marT10 marB20 ">
 					<li class='marB10 t11'><div  class='h-gris'><span ><a class='filtroest' href='#' data-id='100'>TODOS (<?php echo $totalGen2;?>)</a></span></div></li>
-						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $_POST["estado"];?>"><?php echo utf8_encode($row2["nombre"]) . "(" . $totalGen . ")";?></a></span></div></li>																						
+						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $_POST["estado"];?>"><?php echo  ($row2["nombre"]) . "(" . $totalGen . ")";?></a></span></div></li>																						
 					<?php
 		else:
 			$estados=$bd->doFullSelect("estados");
@@ -1630,7 +1630,7 @@
 					$totalG=$row2["tota"];			
 					if($totalG > 0):
 					?>
-						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo utf8_encode($valor["nombre"]) . " ($totalG)";?></a></span></div></li>
+						<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtroest' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) . " ($totalG)";?></a></span></div></li>
 						<?php
 					endif;
 				endforeach;
@@ -1671,7 +1671,7 @@
 						<a href="index.php" style="color:#000" class="marL5">Inicio </a> 
 						<i class="fa fa-caret-right negro marR5 marL5"></i>
 						<span id="ruta" name="ruta">
-							<?php echo utf8_encode($ruta);?>
+							<?php echo  ($ruta);?>
 						</span>
 					</div>
 				</div>
@@ -1717,7 +1717,7 @@
 									    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 										<br>
 										<span class=' grisO '> 		
-										<!-- <span class="t12"><?php echo utf8_encode($usua->getEstado());?></span> -->
+										<!-- <span class="t12"><?php echo  ($usua->getEstado());?></span> -->
 										<br>
 										<i class='fa fa-thumbs-o-up opacity '></i>
 										<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>												

@@ -12,6 +12,7 @@ $foto4=$publi->getFotoN(4);
 $foto5=$publi->getFotoN(5);
 $foto6=$publi->getFotoN(6);
 ?>
+
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 "> 
 	<div class="contenedor grisO"
 	style="margin-top: 5px; z-index: 1; padding-top: 20px; padding-bottom: 30px;">
@@ -149,7 +150,7 @@ $foto6=$publi->getFotoN(6);
 						style="width: 80%; margin: 0px; margin-left:0px; margin-bottom:5px; padding: 2px; font-size: 11px;">
 							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendaci&oacute;n: </b> para mejor exposici&oacute;n utiliza mas imagenes que tenxto en el detalle de tu publicaci&oacute;n.</span>
 						</div>
-						<div id="editor" name="editor"><?php echo  ( ($_POST["descripcion"])); ?></div>					
+						<div id="editor" name="editor" style="height: 500px;"><?php echo ( ($_POST["descripcion"])); ?></div>					
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20 marB10">

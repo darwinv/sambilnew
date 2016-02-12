@@ -110,7 +110,7 @@
                                 <th class="text-center">
                                     Direcci&#243;n
                                 </th>
-                                <th colspan="1" class="text-center">
+                                <th colspan="2" class="text-center">
                                     Acciones
                                 </th>
                             </tr>

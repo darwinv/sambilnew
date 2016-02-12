@@ -44,7 +44,7 @@ switch($_POST["metodo"]){
 						<img src='" . $publicacion->getFotoPrincipal() . "'  class=' img-responsive center-block img-apdp'>
 						</div>
 						<br>
-						<span class='negro t16'>" . utf8_encode($publicacion->tituloFormateado(15)) . "</span>
+						<span class='negro t16'>" .  ($publicacion->tituloFormateado(15)) . "</span>
 						<br>
 						<span class='red t14'><b>" . $publicacion->getMonto() . "</b></span>
 						<br>

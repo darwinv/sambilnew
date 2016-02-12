@@ -76,7 +76,7 @@ $pagina=1;
 									foreach($publicaciones as $key => $valor) {
 										$ac++;
 										$publi=new publicaciones($valor["id"]);
-										$estado=$vienedeAjax?utf8_encode($usua->getEstado(1)):$usua->getEstado(1);
+										$estado=$vienedeAjax? ($usua->getEstado(1)):$usua->getEstado(1);
 										$cadena="
 										<div class='general' id='general" . $valor["id"] . "' name='general" . $valor["id"] . "' data-titulo='" . $valor["titulo"] . "'>
 											<div class=' col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20'></div>

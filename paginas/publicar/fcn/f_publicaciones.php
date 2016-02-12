@@ -27,8 +27,8 @@ function traerClasificados(){
        foreach($resultado as $r)  {
     	   $array[] = array(
     			"campos" => array(
-    					"id" => utf8_encode($r['id']),
-    					"nombre" => utf8_encode($r['nombre'])
+    					"id" =>  ($r['id']),
+    					"nombre" =>  ($r['nombre'])
     			)
     	  );
        }

@@ -25,9 +25,17 @@ $(document).ready(function(){
 				}
 			});
 		}*/
-	$('#editor').trumbowyg({
-		lang : 'es'
-	});
+	tinymce.init({ 
+  	selector:'#editor',
+  	language:'es_MX',
+  	default_link_target: "_blank",
+  	plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
+  	toolbar:[
+  	 'newdocument, bold, italic,underline, strikethrough, alignleft  aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste',
+  	 'charmap, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript, hr, searchreplace, table, link, media, image, visualblocks forecolor backcolor, preview' 	
+  		]
+     });
+     
 	$("#monto").autoNumeric({aSep: '.', aDec: ','});
 	$("#ven-form-mod").formValidation({
 		locale: 'es_ES',

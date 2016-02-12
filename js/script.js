@@ -388,7 +388,7 @@ $(document ).ready(function() {
             data.fv.disableSubmitButtons(true);
         }
     }).on('err.form.fv', function(e,data) {
-    	$(".dropdown-toggle").dropdown('toggle');
+    	//$(".dropdown-toggle").dropdown('toggle');
     }).on('success.form.fv', function(e) {
 		e.preventDefault();
 		var form = $(e.target);
@@ -415,7 +415,7 @@ $(document ).ready(function() {
 	        			}, 10);
 	            	}
 	            	 
-	            	$("#dropdown-toggle-login").dropdown('toggle');
+	            	//$("#dropdown-toggle-login").dropdown('toggle');
 	            	
 	            } else if(data.result==="Actualice") {
 					elId=data.id;

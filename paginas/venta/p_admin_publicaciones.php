@@ -347,9 +347,9 @@ switch($tipo){
 						data-id='$publicacion->id' data-titulo='$publicacion->titulo' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='1' >
 						    Modificar
 					    </button>
-					    <textarea class='hidden' id='descripcion_" . $publicacion->id . "'>
+					    <textarea  class='hidden' id='descripcion_" . $publicacion->id . "'>
 								$publicacion->descripcion
-						</textarea>  
+						</textarea >
 						<button id='btnReactivar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",1,1)'>
 							Reactivar
 						</button>

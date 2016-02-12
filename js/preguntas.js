@@ -20,7 +20,7 @@ $(document).ready(function(){
 	$(".btnResponder").click(function(e){
 		e.preventDefault();
 		var cantP = $("#cantP").text();
-		var cant= $(this).data("cant");
+		var cant= parseInt($(this).data("cant"));		
 		var siguiente = $(this).data("activar");
 		var primero = $(this).data("primero");
 		var id_poster = $(this).data("id_poster");
@@ -36,13 +36,19 @@ $(document).ready(function(){
 				dataType: "html",	
 				success:function(data){
 					cantP--;
-					cant--;
+					cant--; 
+					
+					$("#" + id).remove(); 
 					if(cant==0){
-						$("#panel"+pub_id).css("display","none");
+						$("#panel"+pub_id).addClass("hidden");
+						$("div.toggleResponder:first").click();
+					}else{
+						$("#panel"+pub_id+" div.toggleResponder:first").click();						
 					}
+					
 					$("#cantP").text(cantP);
 							if($(".activo").is(":visible")){
-									$("#" + id).css("display","none");	
+										
 								if(primero==id){
 									$(this).data("primero",siguiente);
 									var nuevo = $(this).data("primero");
@@ -115,6 +121,9 @@ $(document).ready(function(){
 		e.preventDefault();
 		var id=$(this).data("id");
 		var cantP = $("#cantP").text();
+		var cant= parseInt($(this).data("cant"));
+		var pub_id= $(this).data("pub_id");
+		
 		$.ajax({
 			url: "paginas/preguntas/fcn/f_pregunta.php",
 			data: {metodo: "eliminarPregunta",id:id},
@@ -122,8 +131,17 @@ $(document).ready(function(){
 			dataType: "html",
 			success:function(data){
 				cantP--;
+				cant--; 
+				$("#" + id).remove(); 
+					if(cant==0){
+						$("#panel"+pub_id).addClass("hidden");
+						$("div.toggleResponder:first").click();
+					}else{
+						$("#panel"+pub_id+" div.toggleResponder:first").click();						
+					}
+					 
 				$("#cantP").text(cantP);
-				$("#" + id).css("display","none");
+				
 				swal({
 					title: "Eliminada", 
 					text: "La pregunta ha sido eliminada.",
@@ -156,11 +174,14 @@ $(document).ready(function(){
 				success:function(e){
 					$(".activo").css("display","none");
 					$(".bor").addClass("borBD");
-					$("#eti-p"+id).removeClass("borBD");
-					$("#responder" + id).css("display","block");			
+					$("#eti-p"+id).removeClass("borBD"); 
+					$("#responder" + id).css("display","block"); 
+					$("#txtRespuesta" + id).focus();
 				}			
 			});				
-			}						
+			}		
+			 		
+			
 	});
 	
 

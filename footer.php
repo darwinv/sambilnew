@@ -3,7 +3,7 @@
  <footer class="anchoC ">
 		<div class="row title-footer"  >			
 			<div class="col-xs-12 col-sm-2 col-md-2  col-lg-2 pad-left40" >			
-					<div class="text-left show-footer" data-indice='1'  >Ciudades</div>
+					<div class="text-left show-footer" data-indice='1'>Ciudades</div>
 					
 				 	<div class="text-left marT5 t10 link-foot">
 	 			     <div> <a href="#">Caracas </a></div> 
@@ -15,7 +15,7 @@
 	 			     <div> <a href="#">Paraguana </a></div>
 	 			     <div> <a href="#">Santo Domingo</a></div>
 	 			     <div> <a href="#">Paraguan&aacute;</a></div>
-	 			     <div> <a href="#">Curaçao </a></div>
+	 			     <div> <a href="#">Curaï¿½ao </a></div>
 	 			     <div> <a href="#">Madrid </a></div>
 	 			      
 	 			</div> 
@@ -74,7 +74,7 @@
 	 			     <div> <a href="#">Paraguana </a></div>
 	 			     <div> <a href="#">Santo Domingo</a></div>
 	 			     <div> <a href="#">Paraguan&aacute;</a></div>
-	 			     <div> <a href="#">Curaçao </a></div>
+	 			     <div> <a href="#">Curaï¿½ao </a></div>
 	 			     <div> <a href="#">Madrid </a></div>
 	 			     <div> <a href="#">Constructora</a></div>		 		
 	 				</div>  

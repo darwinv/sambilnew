@@ -35,10 +35,15 @@
                    <?php if($status=='1'){ ?>  
                         <td><a href="#mod" class="update_user show-select-rol" data-toggle="modal" data-target="#usr-update-info" data-rol-type="select" data-tipo="1" data-method="actualizar" data-usuarios_id="<?php echo $fila['id']; ?>"  ><i class="fa fa-lock" ></i> Modificar</a></td>
                         <td><a href="#del" class="select-usr-delete " data-toggle="modal" data-target='#msj-eliminar' data-status='3'  data-usuarios_id="<?php echo $fila['id']; ?>"   >
-                        		<i class="fa fa-remove"></i> Eliminar
+                        		<i class="fa fa-remove"></i> Suspender
                         	</a> 
                         </td>
-                   <?php } ?>      
+                   <?php }else if($status=='3'){ ?>
+                   		<td><a href="#del" class="select-usr-active" data-toggle="modal" data-target='#msj-activar' data-status='1'  data-usuarios_id="<?php echo $fila['id']; ?>"   >
+                        		<i class="fa fa-check"></i> Activar
+                        	</a>
+                        </td>
+                   	<?php } ?>
                         <td><a href="#del" class="ver-detalle-user" data-toggle="modal" data-target='#info-user-detail' data-usuarios_id="<?php echo $fila['id']; ?>"   >
                         		<i class="fa fa-eye"></i> Ver
                         	</a> 
