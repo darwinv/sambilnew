@@ -18,7 +18,7 @@ if (isset($_SESSION["id"])) {
 } else {
 	$actualUsua = "";
 }
-if($amigos->verificarBloqueado($_SESSION["id"], $usuario -> id))
+if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 		$estaBloqueado=true;
 	else
 		$estaBloqueado=false;
@@ -51,7 +51,9 @@ if($amigos->verificarBloqueado($_SESSION["id"], $usuario -> id))
 			$i++;
 		}
         ?>
-	</ul></div>
+       
+	</ul>
+	</div>
 	<div class="ws_thumbs">
 <div>
         <?php
@@ -131,8 +133,6 @@ if($amigos->verificarBloqueado($_SESSION["id"], $usuario -> id))
                                         <br>
                                         <br>
                                     </div>
-
-
                                 </div>
                                </div>
                               </div>

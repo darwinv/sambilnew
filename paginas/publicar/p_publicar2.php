@@ -111,12 +111,12 @@ $clasificado = new clasificados($_POST["id"]);
 						<div class="t16">
 							<b>Describe tu producto</b>
 						<br>
-						<div class="alert alert-info " role="alert"
+						<div class="alert alert-info" role="alert"
 						style="width: 80%; margin: 0px; margin-left:0px; margin-bottom:5px; padding: 2px; font-size: 11px;">
 							<span class="marL5"><i class="fa fa-info-circle marR5"></i> <b>Recomendaci&oacute;n: </b> para mejor exposici&oacute;n utiliza m&aacute;s im&aacute;genes que texto en el detalle de tu publicaci&oacute;n.</span>
 						</div>
 						</div>
-						<div id="editor" style="height: 500px;"></div>
+						<div id="editor" style="height: 500px;" class="editorhtml"></div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20 marB10">

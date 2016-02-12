@@ -41,9 +41,9 @@ $(document).ready(function(){
 					$("#" + id).remove(); 
 					if(cant==0){
 						$("#panel"+pub_id).addClass("hidden");
-						$("div.toggleResponder:first").click();
+						$("p.toggleResponder:first").click();
 					}else{
-						$("#panel"+pub_id+" div.toggleResponder:first").click();						
+						$("#panel"+pub_id+" p.toggleResponder:first").click();						
 					}
 					
 					$("#cantP").text(cantP);
@@ -135,9 +135,9 @@ $(document).ready(function(){
 				$("#" + id).remove(); 
 					if(cant==0){
 						$("#panel"+pub_id).addClass("hidden");
-						$("div.toggleResponder:first").click();
+						$("p.toggleResponder:first").click();
 					}else{
-						$("#panel"+pub_id+" div.toggleResponder:first").click();						
+						$("#panel"+pub_id+" p.toggleResponder:first").click();						
 					}
 					 
 				$("#cantP").text(cantP);

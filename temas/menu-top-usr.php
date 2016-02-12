@@ -197,6 +197,7 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 					<?php if($alertas!=0){
 						 echo '<span id="alerta" class="badge blanco" style="background: red; position: absolute; top: -2px; left: -1px;">';
 						  echo $alertas; 
+						   echo '</span>';
 					}?>
 
 					
