@@ -17,8 +17,6 @@
 
                     <div class=" marL30 row">
 
-
-
                         <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                             <div class="marco-foto-conf" style="width:150px; height:150px;"<a href="#" ><img class="fotoperfil" width="100%" height="100%;" class="img img-responsive"  ></a></div>
                         </div>
@@ -38,7 +36,7 @@
                     </div>
                     <br>
 				<div class="modal-footer">
-					<button  class="btn btn-danger bloqueo-seguidor" data-userbloq="" data-user="<?php if(isset($_SESSION["id"])) echo $_SESSION ["id"]; ?>" data-dismiss="modal">Bloquear</button>
+					<button class="btn btn-danger bloqueo-seguidor actualiza-follow" data-userbloq="" data-user="<?php if(isset($_SESSION["id"])) echo $_SESSION ["id"]; ?>" data-dismiss="modal">Bloquear</button>
 					<button class="btn btn-primary2" data-dismiss="modal">Continuar</button>
 				</div>
 			</div>

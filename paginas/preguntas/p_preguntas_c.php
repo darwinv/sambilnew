@@ -1,5 +1,6 @@
 <?php
 	$usr = new usuario();										
+	$amigos= new amigos();
 	$usr_publicaciones = $usr -> getPreguntasCompra($_SESSION["id"]);
 	$cant_preg_usr = $usr -> getCantCompras($_SESSION["id"]);	
 ?>
@@ -7,7 +8,7 @@
 <div class="contenedor">
 	<div class="row marL20 marR20 ">
 			<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10   "><!-- inicio titulo   -->	
-				<h4 class="  t20 negro pad10" ><span class="marL10">Preguntas sobre tus Compras</span> (<span id="cantP" class="t20"><?php echo $cant_preg_usr[0]["cant"] ?></span>)</h4>
+				<h4 class="t20 negro pad10" ><span class="marL10">Preguntas sobre tus Compras</span> (<span id="cantP" class="t20"><?php echo $cant_preg_usr[0]["cant"] ?></span>)</h4>
 				<center>
 					<hr class='anchoC'>
 				</center>
@@ -22,6 +23,13 @@
 foreach ($usr_publicaciones as $up => $valor) {
 	$id_pub = $valor["id"];
 	$pub = new publicaciones($id_pub);
+	$usr_pub=$pub->getOwnerPublicacion($id_pub);
+	
+	if($amigos->verificarBloqueado($_SESSION["id"], $usr_pub))
+		$estaBloqueado=true;
+	else
+		$estaBloqueado=false;
+	
 	$p_preguntas = $pub -> getPreguntasCompra($id_pub, $_SESSION["id"]); 
 	if($p_preguntas != null ){ 		
 ?>
@@ -35,7 +43,7 @@ foreach ($usr_publicaciones as $up => $valor) {
 					  	style="width:60px;height:60px; border: 1px solid #CCC; background: #FFF; padding: 5px;" >
 					</a>
 					<a href="detalle.php?id=<?php echo $id_pub; ?>" >							
-						<span class="marL10 "> <?php echo $valor["titulo"]; ?>  </span> 
+						<span class="marL10"> <?php echo $valor["titulo"]; ?>  </span> 
 	        		</a>
 	        			<span class="red t14 marL10"><b> <?php $valor["monto"] ?> </b></span> <span class="opacity t12"><?php echo "x ".$valor["stock"]. " Und"; ?></span>
 	      </h4>
@@ -69,7 +77,7 @@ foreach ($p_preguntas as $pp => $valor2) {
 <?php
 }?>
 			
-			<div class="text-right t14 marL20 marR20 togglePreguntar" data-id="<?php echo $id_pub; ?>"><a id="Preguntar<?php echo $id_pub; ?>" href="#">Hacer Otra Pregunta</a></div>
+		<?php if(!$estaBloqueado) {?>	<div class="text-right t14 marL20 marR20 togglePreguntar" data-id="<?php echo $id_pub; ?>"><a id="Preguntar<?php echo $id_pub; ?>" href="#">Hacer Otra Pregunta</a></div> <?php } ?>
 									
 									
 									<div class="" id="<?php echo $id_pub; ?>" style="background:#D8DFEA; padding:10px; padding: 20px; border:1px solid #ccc; display:none">

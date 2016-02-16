@@ -32,15 +32,30 @@ if (! empty ( $resultamigos )) :
 		
 		?>
 <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3" id="<?php echo $row["numero"]?>">
-	<div class="contenedor sombra-div" style="margin: 10px;">
-		<div class="marco-foto-amigos center-block marT20" style="width: 50%">
-			<a class="vin-blue" href="#"><img src="<?php echo $foto->buscarFotoUsuario($row["numero"])?>"
-				alt="..." style="width: 100%"
-				class=" img img-responsive foto-perfil"></a>
+	<div class="contenedor sombra-div " style="margin: 10px;">
+		<div class="marco-foto-amigos center-block marT20 datos-seguidor" style="width: 50%"
+		data-target="#info-seguidor"
+				data-toggle='modal'
+				data-ruta='<?php echo $foto->buscarFotoUsuario($row["numero"]) ?>'
+				data-iduser='<?php echo $row["numero"]?>'
+				data-nombre="<?php echo $row["nombre"]?>"
+				data-alias="<?php echo $row["seudonimo"]; ?>"
+				data-telf="<?php echo $row["telefono"]?>"
+				data-correo="<?php echo $row["email"]?>"
+		>
+	<img src="<?php echo $foto->buscarFotoUsuario($row["numero"])?>" alt="..." style="width: 100%"
+				class=" img img-responsive foto-perfil">
 		</div>
 		<div class="text-center marT20 marB20">
-			<a class="vin-blue" href="#"><span
-				class="seud-onimo"><?php echo $row["seudonimo"];?></span></a> <br> <span
+			<span 	data-target="#info-seguidor"
+				data-toggle='modal'
+				data-ruta='<?php echo $foto->buscarFotoUsuario($row["numero"]) ?>'
+				data-iduser='<?php echo $row["numero"]?>'
+				data-nombre="<?php echo $row["nombre"]?>"
+				data-alias="<?php echo $row["seudonimo"]; ?>"
+				data-telf="<?php echo $row["telefono"]?>"
+				data-correo="<?php echo $row["email"]?>"
+				class="datos-seguidor btn seud-onimo blue-vin" ><?php echo $row["seudonimo"];?></span><br> <span
 				class="nom-ape"><?php echo $row["nombre"]?></span> <br> <!-- <span
 				class="ventas">50 Ventas</span> --> <br> <br>
 			<div class="btn-group">
@@ -53,8 +68,14 @@ if (! empty ( $resultamigos )) :
 				data-alias="<?php echo $row["seudonimo"]; ?>"
 				data-telf="<?php echo $row["telefono"]?>"
 				data-correo="<?php echo $row["email"]?>"
-				 data-contador="<?php echo $c ?>" type="button" class="btn btn-primary2 datos-seguidor">Seguidor</button>
-			
+				 data-contador="<?php echo $c ?>" type="button" class="btn btn-primary2 datos-seguidor datos-follower">Seguidor</button>
+			<button type="button" class="btn btn-primary2 dropdown-toggle"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="caret"></span> <span class="sr-only">Toggle Dropdown</span>
+			</button>
+				<ul class="dropdown-menu">
+					<li > <button  class="btn bloqueo-seguidor actualiza-follow" style="width: 100%;" data-userbloq="<?php echo $row["numero"]?>" data-user="<?php if(isset($_SESSION["id"])) echo $_SESSION ["id"]; ?>" > Bloquear </button> </li>
+				</ul>
 				
 			</div>
 		</div>

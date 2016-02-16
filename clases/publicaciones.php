@@ -35,6 +35,7 @@ class publicaciones{
 	private $condiciones_publicaciones_id;
 	private $clasificados_id;
 	private $monto;
+	private $url_video;
 	public function publicaciones($id = NULL){
 		if(!is_null($id)){
 			$this->buscarPublicacion($id);
@@ -89,6 +90,8 @@ class publicaciones{
 			$valores["condiciones_publicaciones_id"] = $result["condiciones_publicaciones_id"];
 			$valores["clasificados_id"]=$result["clasificados_id"];
 			$valores["monto"]=$result["monto"];
+			$valores["url_video"]=$result["url_video"];
+			
 			$this->setPublicacion($valores);
 			return true;
 		}else {
@@ -288,6 +291,14 @@ class publicaciones{
 		}	
 	}
 	
+	public function getOwnerPublicacion($idpublicacion){
+		$bd= new bd();
+		$cond="id=$idpublicacion";
+		$result=$bd->doSingleSelect($this->table,$cond,"usuarios_id");
+		return $result['usuarios_id'];
+		
+	}
+	
 	public function getTiempoPublicacion(){
 		$bd=new bd();
 		$strCondicion="publicaciones_id=$this->id";
@@ -378,7 +389,9 @@ class publicaciones{
 		$condicion="publicaciones_id=$id AND preguntas_publicaciones_id IS NULL";
         $result=$bd->query("SELECT * FROM preguntas_publicaciones WHERE preguntas_publicaciones_id IS NULL and publicaciones_id=$id order by fecha desc");	
         foreach ($result as $r){
-        	$preguntas[]=array("id"=>$r["id"],"pregunta"=>$r["contenido"],"pre_pub_id"=>$r["preguntas_publicaciones_id"]);
+        $segundos=strtotime('now') - strtotime($r["fecha"]);
+		$tiempo = $this -> getTiempo($segundos);
+        	$preguntas[]=array("id"=>$r["id"],"pregunta"=>$r["contenido"],"pre_pub_id"=>$r["preguntas_publicaciones_id"],"usuario"=>$r["usuarios_id"],"tiempo"=>$tiempo);
   		}
 		return $preguntas;
 	}
@@ -617,7 +630,6 @@ class publicaciones{
 		if($id_usr==null){
 			$id_usr = $_SESSION["id"];
 		}
-		
 		$tiempo = date("Y-m-d H:i:s",time());
 		$notificacion=array(
 			"fecha"=>$tiempo,

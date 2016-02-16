@@ -665,19 +665,18 @@
 								</div>
 								<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'>
 										<p class='marL10 marT5'>
+											 <br>
 									    <span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
 									    <br>
 									    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 										<br>
 										<span class=' grisO '> 		
-										<span class="t12"><?php echo  ($usua->getEstado());?></span>
-										<br>
+										 
 										<i class='fa fa-thumbs-o-up opacity '></i>
 										<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>
 										 </span>
 										<br>
-										<span class='t12 orange-apdp'><?php echo $usua->getTiempo();?> Vendiendo en Apreciodepana</span>													
-									    <br>							    
+										 							    
 									    </p>
 							    </div>
 							    <br>
@@ -1164,19 +1163,18 @@
 						</div>
 				</div>
 				<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'>
+						<br>
 						<p class='marL10 marT5'>
 					    <span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
 					    <br>
 					    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 						<br>
-						<span class=' grisO '> 		
-						<span class="t12"><?php echo  ($usua->getEstado());?></span>
-						<br>
+						<span class=' grisO '>  
 						<i class='fa fa-thumbs-o-up opacity '></i>
 						<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>							
 	                    </span>
 						<br>
-						<span class='t12 orange-apdp'><?php echo $usua->getTiempo();?> Vendiendo en Apreciodepana</span>													
+						 													
 						<br>
 					    </p>
 			    </div>
@@ -1711,20 +1709,20 @@
 									</div>
 								</div>
 								<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'>
+									
 										<p class='marL10 marT5'>
+											<br>
 									    <span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
 									    <br>
 									    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
 										<br>
-										<span class=' grisO '> 		
-										<!-- <span class="t12"><?php echo  ($usua->getEstado());?></span> -->
-										<br>
+										<span class=' grisO '> 	 
 										<i class='fa fa-thumbs-o-up opacity '></i>
 										<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>												
 									 </span>
 										<br>
-									<span class='t12 orange-apdp'><?php echo $usua->getTiempo();?> Vendiendo en Apreciodepana</span>													
-									    <br>										    
+									<br>	
+									    <br>									    
 									    </p>
 							    </div>
 							    <br>

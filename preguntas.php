@@ -8,6 +8,7 @@ include "clases/publicaciones.php";
 <body>
 <?php
 include ("temas/header.php");
+include_once "clases/amigos.php";
 ?>
 <div class="container">
 	<div class="row pad-top70" >

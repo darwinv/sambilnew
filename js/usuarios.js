@@ -204,18 +204,7 @@ $('#usr-update-form').formValidation({
             	// código a ejecutar si la petición es satisfactoria;	
             	// console.log(data);
 	            if (data.result === 'error') {
-	            	$("#usr-reg-skip").hide();
-            		$("#usr-reg-foto").hide();
-            		$("section").hide();
-            		keys = Object.keys(data.fields);
-            		if(jQuery.inArray("e_rif",keys) !== -1 || jQuery.inArray("p_identificacion",keys) !== -1){
-            			$("#usr-reg-submit").data("step",1);	
-            			$("section[data-type='"+$("#type").val()+"']").show();
-            		}else if(jQuery.inArray("seudonimo",keys) !== -1 || jQuery.inArray("email",keys)!== -1){
-            			$("#usr-reg-submit").data("step",2);	
-            			$("section[data-step='2']").show();
-            		}
-	            	for (var field in data.fields) { 
+	            	for (var field in data.fields) {
 	        			fv
 	                    // Show the custom message
 	                    .updateMessage(field, 'blank', data.fields[field])

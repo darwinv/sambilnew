@@ -24,8 +24,25 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 		$estaBloqueado=false;
 
 
- ?>
 
+
+  $url_video=$publicacion ->url_video;
+  if(!empty($url_video)){
+  	$url_embebida=  preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "//www.youtube.com/embed/$1" , $url_video);  
+  	$url_embebida.='?enablejsapi=1';
+	
+	$iframe='<li><iframe width="100%" height="100%" src="'.$url_embebida.'" frameborder="0" allowfullscreen></iframe></li>';
+	$a_iframe='<a href="#" title="La Inquietante Teoría del Joker de Jared Leto"><img src="data1/tooltips/ndice.jpg" alt="" /></a>';
+	
+  }else{
+  		$iframe='';
+		$a_iframe='';
+  }
+  
+  
+  
+ ?>
+<script src="https://www.youtube.com/iframe_api"></script>
 		
   <div class="row center-block" style="width:100%" data-cantidad="2">
  	<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
@@ -42,7 +59,7 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
  			<div class=" col-xs-12 col-sm-12 col-md-7 col-lg-7 ">   
  				<div style="padding-top: 30px; padding-bottom: 30px; padding-left: 40px;">
  		<!-- Start WOWSlider.com BODY section -->
-<div id="wowslider-container1">
+<div id="wowslider-container1" >
 <div class="ws_images"><ul>        
         <?php
 		$i = 0;
@@ -50,25 +67,27 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 			echo "<li><img src='$fotos[$i]' alt='Img$i' title='Img$i' id='wows1_$i'></li>";
 			$i++;
 		}
+		echo $iframe;
         ?>
-       
-	</ul>
+
+  </ul>
 	</div>
 	<div class="ws_thumbs">
-<div>
+	<div>
         <?php
 		$i = 0;
 		foreach ($fotos as $f) {
 			echo "<a href='#wows1_$i' title='ip6_$i'><img src='$fotos[$i]' alt='' /></a>";
 			$i++;
 		}
+		echo $a_iframe;
         ?>
-	</div>
+      </div>
 </div>
-
+<div class="ws_shadow"></div>
 </div>	
 <script type="text/javascript" src="engine1/wowslider.js"></script>
-<script type="text/javascript" src="engine1/script-apdp1.js"></script>
+<script type="text/javascript" src="engine1/script.js"></script> 
 <!-- End WOWSlider.com BODY section -->
 </div>
 	</div>
@@ -233,7 +252,7 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 
                     </div>
 <!-- seccion de preguntas  --------------------------------------------------------------------------------------------------------------->
-                    <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12  marB10 "   >  
+              <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12  marB10 "   >  
   
                         	<div class="marB10 marT10 text-center"> 
                             <span class="t30 negro">Preguntas sobre la publicaci&oacute;n</span> 
@@ -243,7 +262,7 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12  marB10 "   >  
 
                         <div class=" contenedor pad20  t14 " style="margin: 40px;">
-                        	
+                        	     <?php if(!$estaBloqueado) { ?> 
                         	<div style="background:#D8DFEA; padding:10px; padding: 20px; border:1px solid #ccc">
                         	<div style="background: #FFF">
                         		<textarea lang="5" class="form-textarea-msj2 preguntas "  placeholder="Indica tu duda o pregunta ... " id="txtPregunta" name="txtPregunta"></textarea>            
@@ -260,16 +279,21 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 								 <span class="marL5 t10 grisC">no uses lenguaje vulgar por que sera suspendida tu cuenta.</span>
 								</div>
 						</div>	
+						<?php } ?>
 						<br>
 						<div class="contenedor" id="preguntas" name="preguntas">
 							<div style="background: #FFF; margin-top: -10px; width: 140px;" class="marR20 text-center pull-right"> <span>Ultimas Preguntas</span></div>
 							<div class="alert alert-info hidden" style="padding: 4px; margin: 5px; margin-left: 20px; margin-right:10px;">hola</div>
 							<?php
+							
 							foreach ($preguntas as $key => $valor):
 								$respuesta=$publicacion->getRespuestaPregunta($valor["id"])[0];
+								$usuario->buscarUsuario($valor["usuario"]);
+								
 								$claseR=$respuesta==""?"hidden":"";
 								?>							
 							<p class="t14 marL20 marR20" style="border-bottom: #ccc 1px dashed;">
+							<span class="t12 blueO-apdp comprador" style="z-index:1000;"> <?php echo $usuario->a_seudonimo;?> </span>&nbsp;<span class="opacity t12"> Hace <?php echo $valor["tiempo"];?></span>
 								<br>
 								<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor["pregunta"]; ?></span>
 								<br>

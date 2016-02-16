@@ -514,4 +514,7 @@
   width: 0;
 }
 
+.mce-btn-group .mce-btn {
+    float: left;
+}
         

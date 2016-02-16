@@ -77,6 +77,17 @@ $clasificado = new clasificados($_POST["id"]);
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20">
 					<div class="t16">
+						<b>Col&oacute;cale un video a tu publicac&oacute;n (opcional)</b>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 marT10 marB10 ">
+					<div class="form-group input-group" style="width: 100%; ">
+						<input type="text" placeholder="Url del video" name="url_video" id="url_video" class=" form-control " id="">
+					</div>				
+				</div>
+				
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20">
+					<div class="t16">
 						<b>Col&oacute;cale un t&iacute;tulo a tu producto</b>
 						<br class="hidden">
 						<div class="alert alert-warning hidden" role="alert"

@@ -18,12 +18,13 @@ if (isset ( $_GET ["id"] )) {
 	$usuario = new usuario ( $_GET ["id"] ); // instanciamos la clase usuario(perfil a ver)
 	$foto = new fotos (); // instanciamos la clase fotos
 	$ruta = $foto->buscarFotoUsuario ( $_GET ["id"] ); // asignamos la ruta de la foto de perfil
+	$rutaP = $foto->buscarFotoPort( $_GET ["id"] );
 	$bd = new bd ();
 	$amigos = new amigos();
 	$megustan = $amigos->contarMeGustan( $_GET ["id"] );
 }
 	
-if (isset ( $_SESSION ["id"] )) { 
+if (isset ( $_SESSION ["id"] )) {
 	$usuarioActual = new usuario ( $_SESSION ["id"] );
 	
 	if($amigos->verificarBloqueado($_SESSION ["id"], $_GET ["id"]))
@@ -67,12 +68,21 @@ if (isset ( $_SESSION ["id"] )) {
 			}
 }
 
-
+// Control para modificar fotos de portada o perfil
+ $input_foto = "";
+	  $input_banner = "";
+ if(isset($usuarioActual)):
+	if($usuarioActual->id == $usuario->id): 
+		$input_foto = "subir-foto-perfil";
+		
+		$input_banner = "subir-foto-portada foto-perfil ";
+	endif;
+endif;
 
 if($megustan>1){
 			$seguidores=str_replace("persona", "personas", $seguidores);
 			$seguidores=str_replace("sigue", "siguen", $seguidores);
-			}
+}
 
 
 ?>
@@ -81,22 +91,38 @@ if($megustan>1){
 	if($usuarioActual->id == $usuario->id): 
 		$input_foto = "subir-foto-perfil";
 	endif;
-endif;?>	
+endif;
+
+?>
+<script>
+$(document).ready(function(){
+	$('#open-popup').magnificPopup({
+		closeBtnInside: true,
+    items: [
+      {
+        src: '<?php echo $ruta;?>', 
+      }
+    ],
+    type: 'image' // this is a default type
+	});
+});
+</script>
+<div id="my-popup" class="mfp-hide white-popup "></div>
 <div class="row" style="margin-left: -5px; margin-right: -5px;">
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 		<div class="portada text-center">
-			<?php
-			if($_GET["id"]==850):
-				?>
-			<img alt="" src="galeria/img/fondos/portada.png" class="img img-responsive hidden-xs">
-			<?php
-			else:
-			?>
-				<img alt="" src="galeria/img/fondos/portada2.jpg" class="img img-responsive hidden-xs">
-			<?php
-			endif;
-				?>
-			<div class='rota-img marco-foto-perfil <?php echo $input_foto; ?>'>
+			<div id="" class="">
+			<img id="img-portada" data-foto="por" data-rP="<?php echo $rutaP; ?>" src="<?php echo $rutaP; ?>"
+				class="img img-responsive hidden-xs <?php echo $input_banner;?> ">
+		<!--		<?php if(isset($usuarioActual)):
+					  if($usuarioActual->id == $usuario->id):?>
+						<div class="actualizar " ><i class="fa fa-camera"></i> Actualizar</div>
+		<?php endif; endif; ?>		-->
+			</div>
+				
+			<!--cambio foto de perfil-->
+			<div class='rota-img marco-foto-perfil <?php echo $input_foto; ?>'  id=<?php if(isset($_SESSION["id"])){
+	 			if($usuarioActual->id != $usuario->id):?>"open-popup" <?php endif; }else{ ?>"open-popup" <?php }?>    >
 				<img id='img-perfil' width="200px" height="200px" src='<?php echo $ruta;?>'
 					class='img img-responsive center-block  foto-perfil ' data-id="<?php echo $_GET['id'];?>">
 					<?php if(isset($usuarioActual)):?>
@@ -116,8 +142,10 @@ endif;?>
 						  endif;?>
 					</span>
 					</div>
-			</div>			
-			<?php if(!$estaBloqueado) { ?> <div class="  btn-group  mar-me-gusta  pull-right-me-gusta "
+			</div>
+			 
+			
+			<?php if(isset($estaBloqueado)) if(!$estaBloqueado) { ?> <div class="  btn-group  mar-me-gusta  pull-right-me-gusta "
 				role="group">
 				<button type="button" style="padding-top: 5px; padding-bottom: 5px; font-size: 12px;" data-count="<?php echo isset($contador)?$contador:$megustan;?>"
 					data-usr="<?php if(isset($_SESSION["id"])) echo $_SESSION ["id"]; ?>" class="btn2 btn-default2 <?php echo isset($oculto)?$oculto:'';?>" id="btn-megusta"  <?php echo isset($datamegusta)?$datamegusta:"";?> >

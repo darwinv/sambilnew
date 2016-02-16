@@ -29,10 +29,7 @@ if(isset($_GET["new"])){
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 			<?php include "paginas/perfil/p_perfil_header.php"; ?>
 		</div>
-		
-		
-		
-		
+		 
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="ajaxContainer">			
 			<?php include "paginas/perfil/p_perfil_listado.php"; ?>	
 		</div>

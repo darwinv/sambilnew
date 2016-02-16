@@ -1,7 +1,11 @@
 $(document).ready(function(){
 	$('#txtBuscar').val($("#principal").data("palabra"));
 	$('#txtBuscar').select();
-	$(document).on("change","#filtro",function(e){
+	$(document).on("change","#filtro",function(e){ 
+		var pagina=1; 
+		paginar(pagina);
+	});
+	/*$(document).on("change","#filtro",function(e){ 
 		if($("#ubicacion").data("estado")!=undefined){
 			var estado=$("#ubicacion").data("estado");
 		}else{
@@ -37,7 +41,7 @@ $(document).ready(function(){
 				$('#paginacion').find('[data-pagina=1]').parent().addClass("active");			
 			}
 		});
-	});
+	});*/
 	$(document).on("click",".navegador",function(e){
 		e.preventDefault();
 		var pagina=$("#paginacion").data("paginaactual");

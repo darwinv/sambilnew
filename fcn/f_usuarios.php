@@ -629,23 +629,40 @@ function restablecerPassword(){
 }
 
 function updateUser(){
-		$usuarios_id=	filter_input ( INPUT_POST, "update_usuarios_id" );		 
-		$seudonimo=		filter_input ( INPUT_POST, "update_seudonimo" );
-		$email	=		filter_input ( INPUT_POST, "update_email" );
-		$password= 		filter_input ( INPUT_POST, "update_password" );  
- 
-
-		$usuario = new usuario($usuarios_id);
-		
-		//modificamos el estatus del usuario si ya existe el registro
-		$result = $usuario ->updateUserGeneral($usuarios_id, $seudonimo, $email,$password); 
+	$bd = new bd ();
+	$usuarios_id=	filter_input ( INPUT_POST, "update_usuarios_id" );
+	$seudonimo=		strtoupper(filter_input ( INPUT_POST, "update_seudonimo" ));
+	$email	=		filter_input ( INPUT_POST, "update_email" );
+	$password= 		filter_input ( INPUT_POST, "update_password" );
+	$id_rol=		filter_input ( INPUT_POST, "update_id_rol_select" );
+	$validado=		true;
+	$usuario = new usuario($usuarios_id);
+	
+	if ($bd->valueExist ( "usuarios_accesos", $seudonimo, "seudonimo" ) && $usuario->a_seudonimo != $seudonimo) {
+		$fields ["update_seudonimo"] = "El seudonimo no esta disponible";
+		$validado=false;
+	}
+	if ($bd->valueExist ( "usuarios_accesos", $email, "email" ) && $usuario->a_email != $email) {
+		$fields ["update_email"] = "Este correo electronico ya esta en uso";
+		 $validado=false;
+	}
+	
+	if($validado) {
+			//modificamos el estatus del usuario si ya existe el registro
+			$result = $usuario ->updateUserGeneral($usuarios_id, $seudonimo, $email,$password, $id_rol);
+			 
+				echo json_encode ( array (
+						"result" => "OK" 
+				) );
 		 
-			echo json_encode ( array (
-					"result" => "OK" 
-			) );
-			
-		 
-	}	
+	}else{
+		echo json_encode ( array (		
+					"result" => "error",		
+					"fields" => $fields 		
+			) );		
+			exit ();
+	}
+}	
 function RegistrarUser(){
 	$usuario = new usuario (); 
 	$bd = new bd ();

@@ -61,7 +61,8 @@ function guardarPublicacion(){
 			"publicar_facebook"=>$_POST["fb"],
 			"publicar_twitter"=>$_POST["tt"],
 			"publicar_fanpage"=>$_POST["fp"],
-			"publicar_grupo"=>$_POST["gr"]);
+			"publicar_grupo"=>$_POST["gr"],
+			"url_video"=>$_POST["url_video"]);
 	$monto = $_POST["monto"];
 	$fecha = date("Y-m-d H:i:s",time());;
 	$listaValores["dias_garantia"]=str_replace("gn", "&ntilde;", $listaValores["dias_garantia"]);
@@ -73,9 +74,12 @@ function guardarPublicacion(){
 	$listaValores["titulo"]= ($listaValores["titulo"]);
 	$idPub = $publicacion->nuevaPublicacion($listaValores,$monto,$fecha,$fotos);	
 	$seguidores = $amigos -> getAmigos($_SESSION["id"]);
-	foreach ($seguidores as $p => $value) {
-		$publicacion -> setPanaPublicacion($idPub,4,$value["amigos_id"]);
+	if($seguidores){
+		foreach ($seguidores as $p => $value) {
+			$publicacion -> setPanaPublicacion($idPub,4,$value["amigos_id"]);
+		}
 	}
+	
 	if($idPub){
 		echo json_encode(array("result" => "OK", "id" => $idPub));
 	}else{

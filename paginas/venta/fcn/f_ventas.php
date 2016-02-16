@@ -79,7 +79,7 @@ function buscaPublicaciones(){
 			<div class='col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center t12 '>
 				<div class='btn-group pull-right marR10'>					
 					<button id='b" . $publicacion->id . "' type='button' class='btn2 btn-warning boton' data-toggle='modal' data-target='#info-publicacion' onclick='javascript:pasavalores($publicacion->id)'
-					data-id='$publicacion->id' data-titulo='" .  ($publicacion->titulo) . "' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='{$tipo}' $des>
+					data-id='$publicacion->id' data-titulo='" .  ($publicacion->titulo) . "' data-stock='$publicacion->stock' data-url_video='$publicacion->url_video'  data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='{$tipo}' $des>
 						Modificar
 					</button>
 					<textarea  class='hidden' id='descripcion_" . $publicacion->id . "'>
@@ -206,7 +206,10 @@ function actualizaPub(){
 			"estienda"=>isset($_POST["chkEresTienda"])?'S':'N',
 			"condiciones_publicaciones_id"=>$_POST["cmbCondicion"],
 			"monto"=>$_POST["monto"],
-			"vencimientos_publicaciones_id"=>2);	
+			"vencimientos_publicaciones_id"=>2,	
+			"url_video"=>$_POST["url_video"]);
+			
+			
 	$monto = $_POST["monto"];
 	$fecha=time();
 	for ($i=0; $i < 6 ; $i++) {

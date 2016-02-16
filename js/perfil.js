@@ -48,6 +48,31 @@ $(document).ready(function(){
 		cargarAmigos();
 	});
 	
+	$("body").on('click', '.actualiza-follow', function(e) {
+		ActualizarSeguidores();
+	});
+	/*$(".actualiza-follow").click(function(){
+		ActualizarSeguidores();
+	});*/
+	
+	function ActualizarSeguidores(){
+		count = $("#btn-megusta").data("count");
+		count--;
+			if(count==0){	
+						$("#megustan").text("");
+			            $("#seguidores").html("Aun nadie te sigue");
+	            		}
+	        if(count==1){
+	            		$("#seguidores").html("persona te sigue ");
+	            		}
+	         if(count>1){
+	            		$("#seguidores").html("personas te siguen");
+	         			}	
+	         			
+		$("#btn-megusta").data("count",count);
+        $("#megustan").text($("#btn-megusta").data("count"));
+	} 
+	
 	function cargarAmigos(){
 		loadingAjax(true);
 		$.ajax({
@@ -235,14 +260,64 @@ var userbloq=$(this).data("userbloq");
             }
         });
 	});
+	
+	var tipo ="";
 	/* ============================----- Actualizar foro perfil -----=========================*/
 	$(".subir-foto-perfil").click(function(){
-		 
 		$(".cropit-image-input").click();
+		tipo = $("#img-perfil").data("foto");
+
+	});
+	
+	/* ============================----- Actualizar foro perfil -----=========================*/
+	$(".subir-foto-portada").click(function(){
+		$(".cropit-image-input").click();
+		tipo = $("#img-portada").data("foto");
+
 	});
 	/*
 	 * Captura el cambio del input
 	 */
+	/*
+	 * Captura el cambio del input
+	 */
+		
+	$(document).on("change", ".cropit-image-input", function() {  
+		var file = this.files[0];
+		var imageType = "image";
+		if (file.type.substring(0,5) == imageType) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				// Create a new image.
+				var img = new Image();
+				// Set the img src property using the data URL.
+				img.src = reader.result;
+				// Add the image to the page.
+			
+				$(".cropit-image-input").val("");
+				$('#cropper').modal("show");
+				if(tipo=="por"){		
+					$('#usr-reg-title').html("Edita tu foto de portada");
+					$("#save-foto").addClass("save-portada");
+					$(".cropit-image-preview").addClass("preview-portada");
+					$(".cropit-image-rotate").css("display","none");
+					$('.image-editor').cropit('previewSize',{width:1130,height:300});	
+					$(".modal-dialog").css("width","1350px");		
+				}else{
+					$('#usr-reg-title').html("Edita tu foto de perfil");
+					$(".cropit-image-rotate").css("display","block");
+					$("cropit-image-preview").removeClass("preview-portada");
+					$(".modal-dialog").css("width","600px");
+					$('#save-foto').addClass("save-perfil");
+					$('.image-editor').cropit('previewSize',{width:400,height:400 });
+				}
+			};
+			reader.readAsDataURL(file);			
+		} else {
+			SweetError("Archivo no soportado.");
+		}		
+	});
+	/*
 	$(document).on("change", ".cropit-image-input", function() {
 		var file = this.files[0];
 		var imageType = "image";
@@ -261,32 +336,58 @@ var userbloq=$(this).data("userbloq");
 		} else {
 			SweetError("Archivo no soportado.");
 		}		
-	});
+	});*/
 	$("#save-foto").click(function(){
         id=$("#img-perfil").data("id");
 		loadingAjax(true);
+		if($("#save-foto").hasClass("save-perfil")){
 		$.ajax({
-			url: "fcn/f_usuarios.php", // la URL para la petici&oacute;n
-            data: {ruta: $("#img-perfil").attr("src") ,foto: $('.image-editor').cropit('export'), method: "fot"}, // la informaci&oacute;n a enviar
-            type: 'POST', // especifica si ser&aacute; una petici&oacute;n POST o GET
-            dataType: 'json', // el tipo de informaci&oacute;n que se espera de respuesta
+			url: "fcn/f_usuarios.php", // la URL para la petición
+            data: {ruta: $("#img-perfil").attr("src") ,foto: $('.image-editor').cropit('export'), method: "fot"}, // la información a enviar
+            type: 'POST', // especifica si será una petición POST o GET
+            dataType: 'json', // el tipo de información que se espera de respuesta
             success: function (data) {
-            	// c&oacute;digo a ejecutar si la petici&oacute;n es satisfactoria;
+            	// código a ejecutar si la petición es satisfactoria;
             	console.log(data);
 	            if (data.result !== 'error') {
 	            	//location.reload();
-	            	//window.open("perfil.php?id=" + id + "&new=1","_self");
-	            	location.reload();
+	            	window.open("perfil.php?id=" + id + "&new=1","_self");            	
 	            	loadingAjax(false);
 	            	// $("#img-perfil").attr("src",$('.image-editor').cropit('export'));
 	            	// $("#fotoperfilm").attr("src",$('.image-editor').cropit('export'));
 	            }
-          	},// c&oacute;digo a ejecutar si la petici&oacute;n falla;
+          	},// código a ejecutar si la petición falla;
             error: function (xhr, status) {
             	SweetError(status);
             }
         });
+      }else{
+       $.ajax({
+			url: "fcn/f_usuarios.php", // la URL para la petición
+            data: {ruta: $("#img-portada").attr("src") ,foto: $('.image-editor').cropit('export'), method: "fotP"}, // la información a enviar
+            type: 'POST', // especifica si será una petición POST o GET
+            dataType: 'json', // el tipo de información que se espera de respuesta
+            success: function (data) {
+            	// código a ejecutar si la petición es satisfactoria;
+            	console.log(data);
+	            if (data.result !== 'error') {
+	            	//location.reload();
+	            	$(".modal-dialog").css("width","400px");	
+	            	$('.image-editor').cropit('previewSize',{width:400,height:400 });
+	            	$(".cropit-image-rotate").css("display","block");
+	            	window.open("perfil.php?id=" + id + "&new=1","_self");
+	            	loadingAjax(false);
+	            	// $("#img-perfil").attr("src",$('.image-editor').cropit('export'));
+	            	// $("#fotoperfilm").attr("src",$('.image-editor').cropit('export'));
+	            }
+          	},// código a ejecutar si la petición falla;
+            error: function (xhr, status) {
+            	SweetError(status);
+            }
+        });
+        }
 	});
+	
 	$("#cambiar-foto").click(function(){
 		$("#cropper").modal("hide");
 		$('.cropit-image-input').click();

@@ -21,12 +21,23 @@ class fotos{
 	public function buscarFotoUsuario($id){
 		$bd = new bd();
 		$table = "fotos, fotos_usuarios";
-		$condicion = "usuarios_id = $id AND fotos_id = id";
+		$condicion = "usuarios_id = $id AND fotos_id = id and status = 'A'";
 		$result = $bd->doSingleSelect($table,$condicion);
 		if(!empty($result)){
 			return $result["ruta"].$result["id"].".png";
 		}else{
 			return "galeria/img/logos/silueta-bill.png";
+		}
+	}
+	public function buscarFotoPort($id){
+		$bd = new bd();
+		$table = "fotos , fotos_usuarios ";
+		$condicion = "usuarios_id = $id AND fotos_id = id and status = 'P'";
+		$result = $bd->doSingleSelect($table,$condicion);
+		if(!empty($result)){
+			return $result["ruta"].$result["id"].".png";
+		}else{
+			return "galeria/img/fondos/portada.jpg";
 		}
 	}
 	public function crearFotoPublicacion($id_publicacion, $dataurl)
@@ -71,8 +82,46 @@ class fotos{
 				return false;
 			}	
 			$this->updateSessionFoto($id_usuario);
-//		}else{	///Viene de una url
-//			copy($dataurl,"galeria/prueba.png");
+		}else{	///Viene de una url
+			if($dataurl!=""){
+				$dataurl=str_replace("unampivan","&",$dataurl);
+				$filetype="png";
+				$tama=getimagesize($dataurl);
+				if($tama[0]<200)
+				return;
+	       			$dataurl='data:image/' . $filetype . ';base64,' . base64_encode(file_get_contents($dataurl));
+				$this->ruta = $this->crearRuta();
+				$result = $bd->doInsert($this->table,array("id" => 0, "ruta" => substr($this->ruta, strpos($this->ruta, "/") + 1)));
+				if($result){
+					$this->id = $bd->lastInsertId();
+					$bd->doInsert($this->table_user, array("status" => "A", "usuarios_id" => $id_usuario, "fotos_id" => $this->id));
+					$data_url = str_replace(" ", "+", $dataurl);
+					$filteredData=substr($data_url, strpos($data_url, ",")+1);
+					$unencodedData=base64_decode($filteredData);
+					$ruta = "{$this->ruta}{$this->id}.png";
+					file_put_contents($ruta, $unencodedData);
+					$this->updateSessionFoto($id_usuario);
+				}else{
+					return false;
+				}
+			}
+
+		}
+	}
+	public function crearFotoPort($id_usuario, $dataurl){
+		$bd = new bd();		
+		if(substr ( $dataurl, 0, 4 ) == "data")
+		{
+			$this->ruta = $this->crearRuta();
+			$result = $bd->doInsert($this->table,array("id" => 0, "ruta" => substr($this->ruta, strpos($this->ruta, "/") + 1)));
+			if($result){
+				$this->id = $bd->lastInsertId();
+				$bd->doInsert($this->table_user, array("status" => "P", "usuarios_id" => $id_usuario, "fotos_id" => $this->id)); // fotos de portada se agregan con el estado PA (portada activa)
+				$this->subirFoto($dataurl);
+				return true;
+			}else{
+				return false;
+			}	
 		}
 	}
 	public function subirFoto($dataurl,$ruta = NULL){	
@@ -89,10 +138,35 @@ class fotos{
 		}
 		return file_put_contents($ruta, $unencodedData);
 	}
+	public function subirFotoManager($dataurl,$user){	
+		//Obtener la dataurl de la imagen
+		$ruta = __DIR__ . "/../galeria/manager/$user/";
+		$return_ruta = "galeria/manager/$user/";
+		if(!file_exists($ruta)){
+			mkdir($ruta,0777,true);
+		}
+		$data_url = str_replace(" ", "+", $dataurl);
+		$filteredData=substr($data_url, strpos($data_url, ",")+1);
+		$unencodedData=base64_decode($filteredData);
+		$ruta=$ruta.time().".png";
+		$return_ruta = $return_ruta.time().".png";
+		if(file_put_contents($ruta, $unencodedData))
+			return $return_ruta;
+		else 
+			return false;
+	}
 	public function updateFoto($ruta,$dataurl,$id){
 		if($ruta == "galeria/img/logos/silueta-bill.png")
 		{
 			return $this->crearFotoUsuario($id, $dataurl);
+		}else{
+			return $this->subirFoto($dataurl,$ruta);
+		}
+	}
+	public function updatePort($ruta,$dataurl,$id){
+		if($ruta == "galeria/img/fondos/portada.jpg")
+		{
+			return $this->crearFotoPort($id, $dataurl);
 		}else{
 			return $this->subirFoto($dataurl,$ruta);
 		}

@@ -66,7 +66,7 @@ switch($tipo){
  		 $('#monto').val($("#b" + b).data('monto'));
  		 $('#stock').val($("#b" + b).data('stock'));
  		 $("#btn-social-act").data("id",$("#b" + b).data('id'));
- 		 $("#btn-social-act").data("descripcion",$("#b" + b).data('descripcion'));
+ 		 $("#btn-social-act").data("url_video",$("#b" + b).data('url_video'));alert($("#b" + b).data('url_video'));
  		 $("#btn-social-act").data("metodo","actualizar");
  		 $("#tituloVentana").html("Editar Publicaci&oacute;n");
          $("#masDetalles").css("display","block");
@@ -342,10 +342,10 @@ switch($tipo){
 					<span class=' blue-vin hidden'> 30 ventas </span>
 				</div>
 				<div class='col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center t12 '>
-					<div class='btn-group pull-right marR10'>				
+					<div class='btn-group pull-right marR10'>
 						<button id='b" . $publicacion->id . "' type='button' class='btn2 btn-warning boton' data-toggle='modal' data-target='#info-publicacion' onclick='javascript:pasavalores($publicacion->id)'
-						data-id='$publicacion->id' data-titulo='$publicacion->titulo' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='1' >
-						    Modificar
+						data-id='$publicacion->id' data-url_video='$publicacion->url_video' data-titulo='$publicacion->titulo' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='1' >
+						    Modificar  
 					    </button>
 					    <textarea  class='hidden' id='descripcion_" . $publicacion->id . "'>
 								$publicacion->descripcion

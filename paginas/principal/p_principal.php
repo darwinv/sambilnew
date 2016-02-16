@@ -1,6 +1,35 @@
 <script>
-
 function buscaDerecha(){
+	var elDiv=$("#listaPublicaciones");
+	var laPagina=elDiv.data("pagina");
+	laPagina++;
+	$.ajax({
+		url:"fcn/f_index.php",
+		data:{metodo:"buscarPublicaciones",pagina:laPagina},
+		type:"POST",
+		dataType:"html",
+		success: function(data){
+			elDiv.html(data);
+			elDiv.data("pagina",laPagina);
+		}
+	});
+}
+function buscaIzquierda(){
+	var elDiv=$("#listaPublicaciones");
+	var laPagina=elDiv.data("pagina");
+	laPagina--;
+	$.ajax({
+		url:"fcn/f_index.php",
+		data:{metodo:"buscarPublicaciones",pagina:laPagina},
+		type:"POST",
+		dataType:"html",
+		success: function(data){
+			elDiv.html(data);
+			elDiv.data("pagina",laPagina);
+		}
+	});
+}	
+/*function buscaDerecha(){
 	var Pagina=$("#listaPublicaciones").data("pagina");
 	inicio = (Pagina-1)*5;
 	siguiente = Pagina*5;
@@ -57,23 +86,7 @@ function buscaDerecha(){
 		}
 	});
 }*/
-
-function buscaIzquierda(){
-	var Pagina=$("#listaPublicaciones").data("pagina");
-	fin = ((Pagina-1)*5);
-	inicio = Pagina*5;
-	i=0;
-	while(i<5){
-		i++;
-		$("#"+inicio).hide("swing");
-		$("#"+fin).show("swing");
-		inicio--;
-		fin--;
-	}
-	
-	Pagina--;
-	$("#listaPublicaciones").data("pagina",Pagina);	
-}	
+ 
 function verDetalle(elId){
 	window.open("detalle.php?id=" + elId,"_self");
 }
@@ -108,7 +121,7 @@ $foto=new fotos();
 	usuarios where
 	usuarios.id_sede ='".$_SESSION['id_sede']."' )
 	and
-	id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) order by id desc limit 25";
+	id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) order by id desc limit 5 OFFSET 0";
 	$result=$bd->query($consulta);
 	$total_publicaciones=$result->rowCount();
 	
@@ -116,7 +129,7 @@ $foto=new fotos();
 ?>
 <br>
 <br>
-<div  class="anchoC   marB5 ">
+ <div class="anchoC   marB5 ">
 <div class="row  " style="background:#666;  -webkit-border-top-left-radius: 50px;
 -webkit-border-top-right-radius: 10px;
 -moz-border-radius-topleft: 10px;
@@ -131,7 +144,7 @@ border-top-right-radius: 10px;" >
 <i class="fa fa-caret-down" style="color:#666;  font-size: 60px; margin-top: -30px; "></i>
 
    <div  class="anchoC  center-block " style="margin-top: -35px;"  >
-    <div class="row contenedor sombra-div4  hover-publicaciones" style="-webkit-border-bottom-right-radius: 10px;
+    <div id="listaPublicaciones" data-pagina="1"  class="row contenedor sombra-div4  hover-publicaciones" style="-webkit-border-bottom-right-radius: 10px;
 -webkit-border-bottom-left-radius: 10px;
 -moz-border-radius-bottomright: 10px;
 -moz-border-radius-bottomleft: 10px;
@@ -139,17 +152,7 @@ border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;" >
  
     <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-      <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
-        <br><br>
-        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
-        <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
-         <br>
-        <br>
-        <br>
-        <br>
-      </p>
+       
     </div>
     
 <?php
@@ -162,13 +165,15 @@ border-bottom-left-radius: 10px;" >
 		?>
     	<div id="<?php echo $i; ?>" class='col-xs-12 col-sm-12 col-md-6 col-lg-2' <?php if($i<=5){?> style="display:block;" <?php } else {?> style="display:none"<?php } ?>>
 	    <?php if($i==6 or $i== 11 or $i==16 or $i==21){ ?>
-	    	<i class='fa fa-chevron-circle-left t38 point 'style='color: 	#ccc; position:absolute; top:37%; left:-2%; ' id='izquierda' onClick='javascript:buscaIzquierda();'></i>
+	    	<i class='fa fa-chevron-circle-left t38 point 'style='color: 	#ccc; position:absolute; top:37%; left:-20%; ' id='izquierda' onClick='javascript:buscaIzquierda();'></i>
 	    <?php } ?>	
 	    			<div class='text-center mar10 publicaciones1' style='relative;width:70%;' id='<?php echo $publicacion->id; ?> '>
 				    	<br>
 				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
 						<img src='<?php echo $publicacion->getFotoPrincipal(); ?> '  class=' img-responsive center-block img-apdp'>
-						</div>
+						</div> 
+						<br>
+						<a href="perfil.php?id=<?php echo $usua->id; ?>" ><span class="blue-vin t16" ><?php echo $usua->j_razon_social; ?></span></a>
 						<br>
 						<span class='negro t16'><?php echo $publicacion->tituloFormateado(15); ?> </span>
 						<br>
@@ -178,27 +183,12 @@ border-bottom-left-radius: 10px;" >
 						<br>
 					</div>
 			<?php if($i==5 or $i==10 or $i==15 or $i==20){ ?>
-			<i class='fa fa-chevron-circle-right t38 point derecha'style='color: 	#ccc; position:absolute; float:right; top:37%; right:-15%; ' id='derecha' onClick='javascript:buscaDerecha();'></i>
+			<i class='fa fa-chevron-circle-right t38 point derecha' style='color: 	#ccc; position:absolute; float:right; top:37%; right:-15%; ' id='derecha' onClick='javascript:buscaDerecha();'></i>
 			<?php } ?>
 		</div>
 		<?php
 	}
-?>
-
-	<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-      <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
-        <br><br>
-        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
-        <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
-         <br>
-        <br>
-        <br>
-        <br>
-      </p>
-    </div>
-    
+?> 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     	<div class="text-right ancho95 "> <a href="listado.php">Ver Todas</a> </div>
     	<br>

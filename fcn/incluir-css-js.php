@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="css/default.css">
 <link rel="stylesheet" type="text/css" href="css/default.date.css">
 <link rel="stylesheet" type="text/css" href="css/default.time.css">
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css"/>
 <script type="text/javascript" src="engine1/jquery-apdp1.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
@@ -33,4 +34,5 @@
 <script type="text/javascript" src="js/picker.date.js"></script>
 <script type="text/javascript" src="js/picker.time.js"></script>
 <script "text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.3/legacy.js"></script>
+<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
 </head>

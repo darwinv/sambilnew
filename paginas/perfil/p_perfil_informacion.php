@@ -1,4 +1,4 @@
-<?php 
+<?php  
 if (!headers_sent()) {
     header('Content-Type: text/html; charset=UTF-8');
 } 
@@ -16,6 +16,7 @@ if(file_exists('../../clases/usuarios.php')){
 }
 
 // validamos el session_start
+
 if (! isset ( $_SESSION )) {
 	session_start ();
 }
@@ -31,6 +32,7 @@ if(isset($_SESSION["id"])){
 		$direccion="";
 	}
 }
+	
 ?>
 <div class="contenedor" style="margin-top: 25px">
 	<br class="hidden-xs"> <br>
@@ -89,7 +91,7 @@ if(isset($_SESSION["id"])){
 				</div>
 			</section>
 			<?php if(isset($edit)):?>
-			<div class="text-right marR20 hidden">
+			<div class="text-right marR20">
 				<a href="configuracion.php">Editar</a>
 			</div>
 			<?php endif;?>
@@ -112,8 +114,10 @@ if(isset($_SESSION["id"])){
 					<b class="marR5">Twitter: </b><?php echo is_null($usuario->u_twitter)?"<span class='opacity'>Sin informaci&oacute;n</span>":$usuario->u_twitter;?>
 				</div>
 			</section>
-			<?php if(isset($edit)):?>
-			<div class="text-right marR20 hidden">
+			<?php 
+			//var_dump($edit);
+			if(isset($edit)):?>
+			<div class="text-right marR20 ">
 				<a href="#" data-toggle="modal" data-target="#info-social" id="btn-info-social" name="btn-info-social">Editar</a>
 			</div>
 			<?php endif;?>

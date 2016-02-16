@@ -115,16 +115,19 @@ $(document).ready(function() {
 						lang : 'es',	  
 					});*/
 		//Inicializacion del editor TinyMce HTML			
-	tinymce.init({ 
-  	selector:'#editor',
-  	language:'es_MX',
-  	default_link_target: "_blank",
-  	plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
-  	toolbar:[
-  	 'newdocument, bold, italic,underline, strikethrough, alignleft  aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste',
-  	 'charmap, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript, hr, searchreplace, table, link, media, image, visualblocks forecolor backcolor, preview' 	
-  		]
-     });
+	tinymce.init({
+				  	selector:'div#editor',
+				  	language:'es_MX',
+				  	height: 450,
+				  	statusbar: false,
+				  	menubar: false,
+				  	default_link_target: "_blank",
+				  	plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
+				  	toolbar:[
+				  	 'styleselect, formatselect, fontselect, fontsizeselect, undo, charmap, hr, preview, ',
+				  	 ' bold, italic,underline,alignleft, aligncenter, alignright, alignjustify, bullist, numlist, outdent, indent,  link, media, image, visualblocks, forecolor, backcolor' 	
+				  		]
+				   });	
    				
 										
 								

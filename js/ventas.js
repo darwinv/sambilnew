@@ -175,25 +175,29 @@ $(document).ready(function(){
 		var titulo=$("#titulo").val();
 		//var descripcion=$("#btn-social-act").data("descripcion");
 		var descripcion = $('#descripcion_'+id).val();
+		var url_video=$("#btn-social-act").data("url_video"); 
 		$.ajax({
 			url:"paginas/venta/p_edit_publicaciones.php",
-			data:{id:id,cantidad:cantidad,precio:precio,titulo:titulo,descripcion:descripcion},
+			data:{id:id,cantidad:cantidad,precio:precio,titulo:titulo,descripcion:descripcion,url_video:url_video},
 			type:"POST",
 			dataType:"html",
 			success:function(data){
 				console.log(data);
 				$("#primero").html(data);
 				$("#btn-social-act").data("dismiss","modal");
-				tinymce.init({ 
-  				selector:'#editor',
-  				language:'es_MX',
-  				default_link_target: "_blank",
-  				plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
-  				toolbar:[
-  	 			'newdocument, bold, italic,underline, strikethrough, alignleft  aligncenter, alignright, alignjustify, styleselect, formatselect, fontselect, fontsizeselect, cut, copy, paste',
-  	 			'charmap, bullist, numlist, outdent, indent, blockquote, undo, redo, removeformat, subscript, superscript, hr, searchreplace, table, link, media, image, visualblocks forecolor backcolor, preview' 	
-  				]
-    			 });
+				tinymce.init({
+				  	selector:'div#editor',
+				  	language:'es_MX',
+				  	height: 450,
+				  	statusbar: false,
+				  	menubar: false,
+				  	default_link_target: "_blank",
+				  	plugins: "charmap, hr, lists, preview, searchreplace, table, wordcount, anchor, code, fullpage, image, media, visualblocks, imagetools, fullscreen, link, textcolor",
+				  	toolbar:[
+				  	 'styleselect, formatselect, fontselect, fontsizeselect, undo, charmap, hr, preview, ',
+				  	 ' bold, italic,underline,alignleft, aligncenter, alignright, alignjustify, bullist, numlist, outdent, indent,  link, media, image, visualblocks, forecolor, backcolor' 	
+				  		]
+				   });
 				$("#txtPrecio").autoNumeric({aSep: '.', aDec: ','});
 				//Validator del formulario
 				$("#pub-form-reg").formValidation({
