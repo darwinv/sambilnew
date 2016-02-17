@@ -18,15 +18,15 @@ $(document).ready(function(){
 	});
 	
 	$(".btnResponder").click(function(e){
-		e.preventDefault();
-		var cantP = $("#cantP").text();
-		var cant= parseInt($(this).data("cant"));		
+		e.preventDefault();	
 		var siguiente = $(this).data("activar");
 		var primero = $(this).data("primero");
 		var id_poster = $(this).data("id_poster");
 		var id=$(this).data("id");								// id de la pregunta
 		var pub_id=$(this).data("pub_id");						// id de la publicacion
-		var usr_id = $(this).data("usr_id");					// id del usuario que realizo la pregunta	
+		var usr_id = $(this).data("usr_id");					// id del usuario que realizo la pregunta			
+		var cantP = $("#cantP").text();
+		var cant= parseInt($("#panel"+pub_id).data("cant-pregunta"));		
 		if($("#txtRespuesta" + id).val() != ""){		
 			var respuesta=$("#txtRespuesta" + id).val();
 			$.ajax({											// Primer ajax guarda la respuesta			
@@ -37,16 +37,17 @@ $(document).ready(function(){
 				success:function(data){
 					cantP--;
 					cant--; 
-					
 					$("#" + id).remove(); 
 					if(cant==0){
 						$("#panel"+pub_id).addClass("hidden");
 						$("p.toggleResponder:first").click();
 					}else{
 						$("#panel"+pub_id+" p.toggleResponder:first").click();						
-					}
+					} 
 					
 					$("#cantP").text(cantP);
+					$("#panel"+pub_id).data("cant-pregunta",cant);
+					 
 							if($(".activo").is(":visible")){
 										
 								if(primero==id){
@@ -120,10 +121,9 @@ $(document).ready(function(){
 	$(".eliminar").click(function(e){
 		e.preventDefault();
 		var id=$(this).data("id");
-		var cantP = $("#cantP").text();
-		var cant= parseInt($(this).data("cant"));
 		var pub_id= $(this).data("pub_id");
-		
+		var cantP = $("#cantP").text();
+		var cant= parseInt($("#panel"+pub_id).data("cant-pregunta"));	
 		$.ajax({
 			url: "paginas/preguntas/fcn/f_pregunta.php",
 			data: {metodo: "eliminarPregunta",id:id},
@@ -141,6 +141,7 @@ $(document).ready(function(){
 					}
 					 
 				$("#cantP").text(cantP);
+				$("#panel"+pub_id).data("cant-pregunta",cant);
 				
 				swal({
 					title: "Eliminada", 

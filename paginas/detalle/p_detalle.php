@@ -26,11 +26,10 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 
 
 
-  $url_video=$publicacion ->url_video;
+  $url_video=$publicacion ->url_video; 
   if(!empty($url_video)){
   	$url_embebida=  preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "//www.youtube.com/embed/$1" , $url_video);  
-  	$url_embebida.='?enablejsapi=1';
-	
+   	$url_embebida.='?enablejsapi=1';	
 	$iframe='<li><iframe width="100%" height="100%" src="'.$url_embebida.'" frameborder="0" allowfullscreen></iframe></li>';
 	$a_iframe='<a href="#" title="La Inquietante Teoría del Joker de Jared Leto"><img src="data1/tooltips/ndice.jpg" alt="" /></a>';
 	
@@ -292,7 +291,7 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 								
 								$claseR=$respuesta==""?"hidden":"";
 								?>							
-							<p class="t14 marL20 marR20" style="border-bottom: #ccc 1px dashed;">
+							<p class="t14 marL20 marR20" style="border-bottom: #ccc 1px dashed; margin-top: 15px">
 							<span class="t12 blueO-apdp comprador" style="z-index:1000;"> <?php echo $usuario->a_seudonimo;?> </span>&nbsp;<span class="opacity t12"> Hace <?php echo $valor["tiempo"];?></span>
 								<br>
 								<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor["pregunta"]; ?></span>

@@ -901,8 +901,9 @@ $("#enviar").click(function(e){
 	$("body").on('click', '.ver-noti-seguidor', function(e) {	
 		$("#info-seguidor").modal('show');
 	 	var usuarios_id= $(this).data("id");
-		usuarios_id = parseInt(usuarios_id);
-		  
+		usuarios_id = parseInt(usuarios_id);		   
+		$(".bloqueo-seguidor").data('userbloq',usuarios_id);
+		
 		if(usuarios_id>0){
 			$.ajax({
 				url: "fcn/f_usuarios.php", // la URL para la petici&oacute;n

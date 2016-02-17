@@ -22,6 +22,7 @@
 <?php	
 foreach ($usr_publicaciones as $up => $valor) {
 	$id_pub = $valor["id"];
+	$usr->buscarUsuario($valor["usuarios_id"]);
 	$pub = new publicaciones($id_pub);
 	$usr_pub=$pub->getOwnerPublicacion($id_pub);
 	
@@ -38,15 +39,15 @@ foreach ($usr_publicaciones as $up => $valor) {
  <div class="panel panel-default" >
 		<div class="panel-heading" role="tab" id="heading<?php echo $id_pub;?>" role="button" >
 	      <h4 class="panel-title">  
-	      			<a href="detalle.php?id=<?php echo $id_pub; ?>" >	 	 							 
+	      			<a href="detalle.php?id=<?php echo $id_pub; ?>" > 	 							 
 						<img src= "<?php echo $pub->getFotoPrincipal($id_pub); ?>"
 					  	style="width:60px;height:60px; border: 1px solid #CCC; background: #FFF; padding: 5px;" >
 					</a>
 					<a href="detalle.php?id=<?php echo $id_pub; ?>" >							
 						<span class="marL10"> <?php echo $valor["titulo"]; ?>  </span> 
 	        		</a>
-	        			<span class="red t14 marL10"><b> <?php $valor["monto"] ?> </b></span> <span class="opacity t12"><?php echo "x ".$valor["stock"]. " Und"; ?></span>
-	      </h4>
+	        			<span class="red t14 marL10"><b> <?php $valor["monto"] ?> </b></span> <span class="opacity t12"><?php echo "x ".$valor["stock"]. " Und"; ?></span> <span class="marL10"> <b> <?php echo $usr->a_seudonimo ?> </b> </span>
+	      </h4> 
 	    </div>
 	    <div id="collapse<?php echo $id_pub;?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?php echo $id_pub;?>">
 	        	 <div class="panel-body t14 " id="panel<?php echo $id_pub;?>">	

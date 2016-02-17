@@ -279,7 +279,7 @@ $('#usr-update-form').formValidation({
 	
 	/*---======= FORM PARA ELIMINAR USUARIOS ========---*/
     $("body").on('click', '.select-usr-delete', function(e) {
-    	//guardamos el ID del usuario que borraremos logicamente   
+    	//guardamos el ID del usuario que borraremos logicamente
     	$('#usr-act-form-delete').data("usuarios_id",$(this).data("usuarios_id"));    	 
     });
     $("body").on('click', '.select-usr-active', function(e) {
@@ -289,7 +289,7 @@ $('#usr-update-form').formValidation({
     
     
    /********************ELIMINAR USUARIO **********************/
-	$('.usr-act-form-edit').formValidation({ 
+	$('.usr-act-form-edit').formValidation({
 	
 	}).on('success.form.fv', function(e) {   
 		e.preventDefault();

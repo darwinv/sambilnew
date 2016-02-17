@@ -58,19 +58,20 @@ $(document).ready(function(){
 	function ActualizarSeguidores(){
 		count = $("#btn-megusta").data("count");
 		count--;
-			if(count==0){	
-						$("#megustan").text("");
-			            $("#seguidores").html("Aun nadie te sigue");
-	            		}
-	        if(count==1){
-	            		$("#seguidores").html("persona te sigue ");
-	            		}
-	         if(count>1){
-	            		$("#seguidores").html("personas te siguen");
-	         			}	
-	         			
 		$("#btn-megusta").data("count",count);
         $("#megustan").text($("#btn-megusta").data("count"));
+        
+		if(count<1){
+			$("#megustan").text("");
+            $("#seguidores").html("Aun nadie te sigue");
+            $("#megustan").text('');
+        }
+        if(count==1){
+    		$("#seguidores").html("persona te sigue ");
+       	}
+       	if(count>1){
+    		$("#seguidores").html("personas te siguen");
+       	}	
 	} 
 	
 	function cargarAmigos(){
@@ -122,12 +123,7 @@ var userbloq=$(this).data("userbloq");
             	
             		if(data.result === "OK"){
             			$("#"+userbloq).hide();
-            			console.log(id);
-						//document.getElementById(id).style.display='none';            			
-            			alert("bloqueado");
-            		}else{
-            			console.log(data);
-            			alert("error");	
+						//document.getElementById(id).style.display='none';
             		}
             	
             },

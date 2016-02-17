@@ -73,7 +73,8 @@ foreach ($p_preguntas as $pp => $valor2) {
 										<div class="activo" id="responder<?php echo $id_pregunta;?>" name="responder" <?php if($cont==1){ $cont++;?> style="display:block" <?php }else ?>style=" display:none">
 										<textarea id="txtRespuesta<?php echo $id_pregunta;?>" name="txtRespuesta<?php echo $id_pregunta;?>" class="form-textarea respuesta" data-id="<?php echo $id_pregunta;?>"></textarea>
 										<br>
-										<div class="text-right"><a href="#"><i id="eliminar<?php echo $id_pregunta;?>" class="fa fa-trash-o marL5 red eliminar" data-id="<?php echo $id_pregunta; ?>"  data-cant="<?php echo $cant_pregunta[$p_cant]; ?>" data-pub_id="<?php echo $id_pub; ?>" ></i></a><button id="limpiar" class="btn2 btn-default marL10 limpiar" data-id="<?php echo $id_pregunta;?>">Limpiar</button>
+										<div class="text-right"><a href="#" id="eliminar<?php echo $id_pregunta;?>" class="eliminar" data-id="<?php echo $id_pregunta; ?>"  data-cant="<?php echo $cant_pregunta[$p_cant]; ?>" data-pub_id="<?php echo $id_pub; ?>"  ><i class="fa fa-trash-o marL5 red " ></i></a>
+											<button id="limpiar" class="btn2 btn-default marL10 limpiar" data-id="<?php echo $id_pregunta;?>">Limpiar</button>
 											<button id='btnResponder' name='btnResponder'  class="btn2 btn-primary marL10 btnResponder" data-cant="<?php echo $cant_pregunta[$p_cant]; ?>" data-id="<?php echo $id_pregunta; ?>" 
 											data-primero="<?php echo $p_preguntas[0]["id"]; ?>" data-pub_id="<?php echo $id_pub; ?>" data-activar="<?php echo $nextid; ?>" data-id_poster="<?php echo $_SESSION["id"]; ?>" data-usr_id="<?php echo $id_usr; ?>" >Responder</button>
 										</div>

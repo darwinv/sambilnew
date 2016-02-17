@@ -157,7 +157,13 @@ $(document).ready(function() {
 							between:{min:1,max:300}}},
 						txtPrecio:{validators:{
 							notEmpty:{},
-							numeric:{thousandsSeparator: '.', decimalSeparator: ','}}}
+							numeric:{thousandsSeparator: '.', decimalSeparator: ','}}},
+						url_video:{
+				                validators: {
+				                    uri: {}
+				                }
+				            }
+						
 						}
 				}).on('success.form.fv',function(e){
 					/*

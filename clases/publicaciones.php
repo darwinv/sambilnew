@@ -147,6 +147,14 @@ class publicaciones{
 		$valores=array("fecha"=>$tiempo,"publicaciones_id"=>$this->id,"status_publicaciones_id"=>$sta_nue);
 		$bd->doInsert("publicacionesxstatus", $valores);
 	}
+	public function setStatus2($id_user=NULL,$sta_nue=NULL){ 
+		$bd=new bd();
+		$actualizar = array("fecha_fin"=>$tiempo);
+		$condicion = "publicaciones_id = {$this->id} AND fecha_fin IS NULL";
+		$bd->doUpdate("publicacionesxstatus",$actualizar,$condicion);
+		$valores=array("fecha"=>$tiempo,"publicaciones_id"=>$this->id,"status_publicaciones_id"=>$sta_nue);
+		$bd->doInsert("publicacionesxstatus", $valores);
+	}
 	public function setVisitas(){
 		$bd=new bd();
 		$valores=array("numero"=>0);
@@ -387,7 +395,7 @@ class publicaciones{
 		$bd=new bd();
 		$preguntas=array();
 		$condicion="publicaciones_id=$id AND preguntas_publicaciones_id IS NULL";
-        $result=$bd->query("SELECT * FROM preguntas_publicaciones WHERE preguntas_publicaciones_id IS NULL and publicaciones_id=$id order by fecha desc");	
+        $result=$bd->query("SELECT * FROM preguntas_publicaciones WHERE preguntas_publicaciones_id IS NULL and publicaciones_id=$id and status <> 2 order by fecha desc");	
         foreach ($result as $r){
         $segundos=strtotime('now') - strtotime($r["fecha"]);
 		$tiempo = $this -> getTiempo($segundos);

@@ -66,7 +66,7 @@ switch($tipo){
  		 $('#monto').val($("#b" + b).data('monto'));
  		 $('#stock').val($("#b" + b).data('stock'));
  		 $("#btn-social-act").data("id",$("#b" + b).data('id'));
- 		 $("#btn-social-act").data("url_video",$("#b" + b).data('url_video'));alert($("#b" + b).data('url_video'));
+ 		 $("#btn-social-act").data("url_video",$("#b" + b).data('url_video'));
  		 $("#btn-social-act").data("metodo","actualizar");
  		 $("#tituloVentana").html("Editar Publicaci&oacute;n");
          $("#masDetalles").css("display","block");
