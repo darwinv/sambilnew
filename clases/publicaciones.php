@@ -147,13 +147,17 @@ class publicaciones{
 		$valores=array("fecha"=>$tiempo,"publicaciones_id"=>$this->id,"status_publicaciones_id"=>$sta_nue);
 		$bd->doInsert("publicacionesxstatus", $valores);
 	}
-	public function setStatus2($id_user=NULL,$sta_nue=NULL){ 
-		$bd=new bd();
-		$actualizar = array("fecha_fin"=>$tiempo);
-		$condicion = "publicaciones_id = {$this->id} AND fecha_fin IS NULL";
-		$bd->doUpdate("publicacionesxstatus",$actualizar,$condicion);
-		$valores=array("fecha"=>$tiempo,"publicaciones_id"=>$this->id,"status_publicaciones_id"=>$sta_nue);
-		$bd->doInsert("publicacionesxstatus", $valores);
+	public function setStatusByUser($id_user=NULL,$sta_nue=NULL){
+		$bd=new bd();		
+		$consulta="UPDATE publicacionesxstatus SET status_publicaciones_id='$sta_nue'  WHERE publicaciones_id in (SELECT
+					publicaciones.id
+					FROM
+					publicaciones
+					Inner Join usuarios ON publicaciones.usuarios_id = usuarios.id
+					WHERE
+					usuarios.id =  '$id_user') and status_publicaciones_id='1' ";
+		$result=$bd->query($consulta);
+		return $result;
 	}
 	public function setVisitas(){
 		$bd=new bd();

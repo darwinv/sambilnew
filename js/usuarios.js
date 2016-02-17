@@ -277,7 +277,7 @@ $('#usr-update-form').formValidation({
 	});	
 	
 	
-	/*---======= FORM PARA ELIMINAR USUARIOS ========---*/
+	/*---======= FORM PARA SUSPENDER USUARIOS ========---*/
     $("body").on('click', '.select-usr-delete', function(e) {
     	//guardamos el ID del usuario que borraremos logicamente
     	$('#usr-act-form-delete').data("usuarios_id",$(this).data("usuarios_id"));    	 
@@ -288,10 +288,10 @@ $('#usr-update-form').formValidation({
     });
     
     
-   /********************ELIMINAR USUARIO **********************/
+   /********************SUSPENDER USUARIO **********************/
 	$('.usr-act-form-edit').formValidation({
 	
-	}).on('success.form.fv', function(e) {   
+	}).on('success.form.fv', function(e) {
 		e.preventDefault();
 		var form = $(e.target); 
 		var method = "&method="+$(this).data("method");  
@@ -397,7 +397,7 @@ $('#usr-update-form').formValidation({
 		loadingAjax(true);
 		$.ajax({
 			url:"paginas/adminusr/fcn/f_adminusr.php",
-			data:{metodo:"buscar",pagina:pagina,total:total,orden:" ",status:status},
+			data:{method:"buscar",pagina:pagina,total:total,orden:" ",status:status},
 			type:"POST",
 			dataType:"html",
 			success:function(data){

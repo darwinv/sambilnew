@@ -2,7 +2,7 @@
 aria-labelledby="myLargeModalLabel" id="msj-eliminar">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form id="usr-act-form-delete" action="fcn/f_usuarios.php" method="post" class="usr-act-form-edit form-inline" data-status="3" data-method="updateStatus" >
+			<form id="usr-act-form-delete" action="paginas/adminusr/fcn/f_adminusr.php" method="post" class="usr-act-form-edit form-inline" data-status="3" data-method="updateStatus" >
 				 
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal"

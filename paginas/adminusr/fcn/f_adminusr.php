@@ -1,9 +1,13 @@
 <?php 
 	include_once "../../../clases/usuarios.php";
-	switch($_POST["metodo"]){
+	include_once "../../../clases/publicaciones.php";
+	switch($_POST["method"]){
 		case "buscar": 
 			buscar();			
-			break; 
+			break;		
+		case "updateStatus":
+			updateStatus();
+			break;
 	}
 	 function buscar(){
 	 	if (! isset ( $_SESSION )) {
@@ -53,4 +57,32 @@
                 <?php
 		}
 	}
+	function updateStatus(){
+		 
+		$usuarios_id=		filter_input ( INPUT_POST, "usuarios_id" );
+		$status_usuarios_id=filter_input ( INPUT_POST, "status_usuarios_id" );
+		
+		$usuario = new usuario($usuarios_id);
+		
+		//modificamos el estatus del usuario si ya existe el registro
+		$result = $usuario ->updateStatus($usuarios_id, $status_usuarios_id); 
+		
+		if ($result) {
+			
+			if ($status_usuarios_id=='3') {
+				$publicacion = new publicaciones();
+				$publicacion->setStatusByUser($usuarios_id,'2');
+			}
+			
+			echo json_encode ( array (
+					"result" => "OK" 
+			) );
+			
+		} else {
+			echo json_encode ( array (
+					"result" => "error" 
+			) );
+		}
+		 
+	}	
 ?>

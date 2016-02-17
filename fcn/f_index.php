@@ -5,7 +5,7 @@ include_once "../clases/usuarios.php";
 switch($_POST["metodo"]){
 	case "buscarPublicaciones":
 		buscaPublicaciones();
-		break;
+		break;	
 }
  
  function buscaPublicaciones(){

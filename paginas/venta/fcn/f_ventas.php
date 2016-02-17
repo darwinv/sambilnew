@@ -241,4 +241,5 @@ function buscarCaliente(){
 	}
 	echo $devolver;
 }
+
 ?>
