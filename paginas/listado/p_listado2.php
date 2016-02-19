@@ -1,4 +1,4 @@
-<?php
+<?php  
 include "clases/busqueda.php";
 include_once "clases/bd.php";
 include_once "clases/fotos.php";
@@ -7,18 +7,24 @@ $bd=new bd();
 $foto=new fotos();
 $palabra=isset($_GET["palabra"])?$_GET["palabra"]:"";
 $act_cla=isset($_GET["id_cla"])?$_GET["id_cla"]:"";
+$ver_tiendas=isset($_GET["ver_tiendas"])?1:"";
 $valores=array("palabra"=>$palabra,
-				"clasificados_id"=>$act_cla);
+				"clasificados_id"=>$act_cla,
+				"ver_tiendas"=>$ver_tiendas);
+				
 $busqueda=new busqueda($valores);
-//$publiUsua=$busqueda->listado;
+//$publiUsua=$busqueda->listado;    	no se puede acceder a la variable...
 $publiUsua=$busqueda->getPublicaciones();
-$estados=$busqueda->getEstados();
+ 
+$total=$publiUsua->rowCount();
+ 
+//$estados=$busqueda->getEstados();   no se usaran estados por los momentos para el sambil o el dorado
 $categorias=$busqueda->getCategorias();
 $condiciones=$busqueda->getCondiciones();
 //$tipos=$busqueda->getTipos();
 $ruta=$busqueda->getRuta();
-$total=$publiUsua->rowCount();
-if(isset($_GET["palabra"])){
+
+if(isset($_GET["palabra"]) || isset($_GET["ver_tiendas"])){
 	$lista=array();
 	$c=0;
 	foreach($publiUsua as $p=>$valor){
@@ -45,8 +51,9 @@ if(isset($_GET["palabra"])){
 		}
 		$c++;
 	}
-	array_multisort($lista,SORT_DESC);	
-//	var_dump($lista);
+	array_multisort($lista,SORT_DESC);
+	
+    
 //	ksort($lista);
 }else{
 	$lista=array();
@@ -164,7 +171,7 @@ function buscaRuta(){
 									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin' href='prueba'></a></span></div></li>
 									<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin' href='prueba'></a></span></div></li>
 							</ul>
-						<!--	<div id="ubicacion">
+					<?php /*?>	 	<div id="ubicacion">
 									<h5 class="negro" ><b>Ubicaci&oacute;n</b></h5>							
 									<hr class="marR5">
 									<ul class="nav marR5 t11  marT10 marB20 ">
@@ -178,7 +185,7 @@ function buscaRuta(){
 											endforeach;
 											?>
 									</ul>
-						</div> -->
+						</div>  <?php */  ?>	
 							<div id="condicion" style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
 								<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 								<hr class="marR5">
@@ -205,6 +212,9 @@ function buscaRuta(){
 										endif;
 										?>
 								</ul>
+								
+								<div id="ver_tiendas" data-ver_tiendas='<?php echo $ver_tiendas; ?>'  style="display:none" ></div>
+								
 							</div>						
 							</div>
 							</div>
@@ -241,15 +251,16 @@ function buscaRuta(){
 							<br>
 							</div>
 						<div id="ajaxContainer" border="3" > <!-- ESTE DIV SE UTILIZARA SI SE DECIDI APLICARLE AJAX, POR EL MOMENTO NO SE UTILIZA -->
-									<!--Usuario-->
+								 <!--Usuario-->
 									<?php
 										$i=0;										
 										foreach($lista as $p=>$valor):
 											$i++;
 											if($valor["tipo"]=="U"):
 												$usua=new usuario($valor["id"]);
-												$miTitulo=$usua->getNombre();
-												if(isset($_GET["palabra"])){
+												$miTitulo=$usua->getNombre(); 
+												
+												if(isset($_GET["palabra"]) ){
 													$criterioPal1=explode(" ", $_GET["palabra"]);
 													foreach($criterioPal1 as $c=>$valor){
 														$miTitulo=str_ireplace($valor, "<span style='background:#ccc'>" . $valor . "</span>", $miTitulo);										
@@ -257,32 +268,32 @@ function buscaRuta(){
 												}
 												?>
 												<div class=' col-xs-12 col-sm-6 col-md-2 col-lg-2'>
-											  	  	<div class='marco-foto-conf  point marL20  ' style='height:130px; width: 130px;'  >
-													    <!--<div style='position:absolute; left:40px; top:10px; ' class='f-condicion'> Vendedor </div>-->						 
-													    <img src='<?php echo $foto->buscarFotoUsuario($usua->id);?>' class='img img-responsive center-block img-apdp imagen' style='width:100%;height:100%;' data-id='<?php echo $usua->id;?>' data-tipo='U'>							
-													</div>
-												</div>
-												<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'>
-													<p class='marL10 marT5'>
-													<br>
-												    <span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-												    <br>
-												    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
-													<br>
-													<span class=' grisO '>
-													<i class='fa fa-thumbs-o-up opacity '></i>
-													<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>
-													
-													 </span>
-													<br><br><br>	
-													
-												    
-												    </p>
-											    </div>
-											    <br>
-											    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'><div class='marR20'>
-												<span class='vin-blue t16'><a href='perfil.php?id=<?php echo $usua->id;?>' style='text-decoration:underline;'>Ver M&aacute;s</a></span >
-												</div></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-2'><br></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-10'><hr class='marR10'><br></div>						
+				 	  	<div class='marco-foto-conf  point marL20  ' style='height:130px; width: 130px;'  >
+							    <img src='<?php echo $foto->buscarFotoUsuario($usua->id);?>' class='img img-responsive center-block img-apdp imagen' style='width:100%;height:100%;' data-id='<?php echo $usua->id;?>' data-tipo='U'>							
+						</div>
+				</div>
+				<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'>
+						<br>
+						<p class='marL10 marT5'>
+					    <span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
+					    <br>
+					    <span class='t14 grisO '><?php echo $miTitulo;?></span>													
+						<br>
+						<span class=' grisO '>  
+						<i class='fa fa-thumbs-o-up opacity '></i>
+						<span class='t11 point h-under marL5'><?php echo $usua->countFavoritos();?> Seguidores</span>							
+	                    </span>
+						<br>
+						 													
+						<br>
+					    </p>
+			    </div>
+			    <br>
+			    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'><div class='marR20'>
+					<span class='vin-blue t16'><a href='perfil.php?id=<?php echo $usua->id;?>' style='text-decoration:underline;'>Ver Mas</a></span >
+				</div></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-2'><br></div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-10'><hr class='marR10'><br></div>						
+					
+																	
 											<?php
 											else:
 												$publi=new publicaciones($valor["id"]);
@@ -319,7 +330,7 @@ function buscaRuta(){
 											if($i==25)
 											break;
 										endforeach;
-									?>
+									  ?>
 						</div>
 					    <div id="paginacion" name="paginacion" class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' data-paginaActual='1' data-total="<?php echo $total;?>"><center><nav><ul class='pagination'>
 					    	<!--

@@ -1349,10 +1349,12 @@ select::-webkit-scrollbar-thumb {
 
 .form-group>.form-control-feedback {
 	margin-right: 8px;
-	margin-top: 0.5px;
+	margin-top: 1px;
+	/*margin-top: 0.5px;*/
 	background: #FFF;
 	width: 25px;
-	height: 25px;
+	height: 28px;
+	/*height: 25px;*/
 	line-height: 30px;
 }
 

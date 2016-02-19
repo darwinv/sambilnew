@@ -874,14 +874,17 @@ function comprobarToken($token){
 			$consulta.=" $orden";   
 		}
 		if(!empty($pagina)){
-			$inicio=is_null($pagina)?"":($pagina - 1) * 25;
-			$consulta.=" limit 25 OFFSET $inicio"; 
-		} 
+			$inicio=($pagina - 1) * 25;
+			//$inicio=is_null($pagina)?"":($pagina - 1) * 25;			
+		}else{
+			$inicio=0;
+		}
+		$consulta.=" limit 25 OFFSET $inicio";
 		
 		
-		
- 		// die($consulta);
 		$result=$bd->query($consulta);
+		 
+ 		 
 		if(!empty($result)){
 			return $result;
 		}else{

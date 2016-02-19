@@ -34,7 +34,7 @@
 			 	<hr>
 			 </div>
 			 
-			 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10  "><!-- Espaciador-->
+			 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10 "><!-- Espaciador-->
 			 </div>
 			  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 "><!-- Titulo de Productos -->
 			 	<div class="pad10 pad-left-20  t18  " style="background: #F2F2F2;"> 
@@ -43,7 +43,7 @@
 			 </div ><!-- Fin Titulo de Productos -->
 			 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  ">
 			 	<hr>
-			 	<div class=" pad-left-20  t16"><span class="marL20"><span class="badge badge-publicar "><?php echo $cantidad_preguntas;?></span> <a href="#"><span class="marL10 " >Sobre tus Compras</span></span></a></div>
+			 	<div class="pad-left-20 t16"><span class="marL20"><span class="badge badge-publicar "><?php echo $cantidad_preguntas;?></span> <a href="preguntas.php?tipo=2"><span class="marL10 " >Sobre tus Compras</span></span></a></div>
 			 </div>
 
 		</div>

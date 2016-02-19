@@ -4,23 +4,14 @@ include_once "clases/usuarios.php";
 include_once "clases/fotos.php";
 $bd=new bd();
 $foto=new fotos();
-$result=$bd->doFullSelect("usuarios","certificado=1");
+if (! isset ( $_SESSION )) {
+	session_start ();
+}
+$usua=new usuario();
+$result=$usua->getUsuarios('1','seudonimo asc',null,$_SESSION['id_sede']);
+//$result=$bd->doFullSelect("usuarios","id_sede=".$_SESSION['id_sede'],'id');
 ?>
-<div class="row ">
-	<!-- <div class="categorias2 " id="inicio">
- 		<div class="hidden-md col-lg-3">      
-       		<div class="oculto2"><a href="#"></div>     
-    	</div>
-    	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
-       		<a href="#" ><div id="opcion5"><img src="galeria/img/iconos_cat/verificado.png" width="35" height="35" ><span class="marL5">Tiendas Certificadas </span></div></a>
-	    </div>
-    	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
-      		<a href="#" ><div id="opcion1" class="active-cat"><img src="galeria/img/iconos_cat/autos motos y otros.png" width="10" height="35" class="oculto2" ><span class="marL5">Productos y otros </span></div></a>
-	    </div>
-    	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
-       		<a href="#" ><div id="opcion4"><img src="galeria/img/iconos_cat/servicios.png" width="43" height="35"><span class="marL5">Servicios </span></div></a>
-    	</div>
-	</div> -->
+<div class="row">
 	
 	<div class="categorias " id="productos" style="display:block"> <!-- categorias de productos y otros-->   
     	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">      
@@ -195,37 +186,6 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
       		<a href="listado.php?id_cla=60745"><div ><div>townhouses</div></div></a>
     	</div>   
 	</div>  	
-	<!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 categorias3   contenedor sombra-div" id="tiendas" style="display:none; margin-top:40px;">	
-	  	<div class="row">
-
-		    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2">
-      			<p class="text-left mar20 " style="border-right: 1px solid #ccc;">
-        		<span class="negro t26 ">Tiendas <br> certificadas</span>       		
-        		<br><br>
-        		<span class="vin-blue t18" style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
-         		<br>
-        		<br>
-      			</p>
-    		</div>
-	  		<?php
-	  		if(!empty($result)):
-	  			foreach($result as $r=>$valor):
-	  				$usua=new usuario($valor["id"]);					
-	  			?>
-    				<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">   
-    					<br>  
-      					<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
-	    					<a href="perfil.php?id=<?php echo $usua->id;?>"><img src='<?php echo $foto->buscarFotoUsuario($usua->id);?>' 
-	    						class=' img-responsive center-block img-apdp' style="width: 100%; height: 100%;"></a>
-	  					</div>
-    				</div>
-    			<?php
-				endforeach;
-			endif;
-			?>
-     		
-  		</div>
-  	</div>-->
   	
   	
   	
@@ -236,7 +196,7 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
         <br><br>
         <span>Puedes confiar libremente<br> en estas tiendas.</span>
         <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline;"><a href="#">Ver m&aacute;s...</a></span>
+        <span class="vin-blue t18" style="text-decoration:underline;"><a href="listado.php?ver_tiendas">Ver m&aacute;s...</a></span>
         <br>
       </p>
     </div>
@@ -247,19 +207,24 @@ $result=$bd->doFullSelect("usuarios","certificado=1");
     foreach($result as $r=>$valor):
     	$i++;
 		$usua=new usuario($valor["id"]);
-		?>
-    	<div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
-    			<div class='text-center mar10 vendedores' style='relative;width:70%;'  id='<?php echo $usua->id;?>'>
-			    	<br>
-			    	<br>
-			    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
-					<img src='<?php echo $foto->buscarFotoUsuario($usua->id);?>' class=' img-responsive center-block img-apdp'>
-					</div>
-					<br>
-					<br>
-					<br>
-				</div>
-		</div>
+		$cadena="<div class='col-xs-12 col-sm-12 col-md-6 col-lg-2'>
+	    		 <div class='text-center mar10 vendedores' id='".$valor['id']."' style='relative;width:70%;' >
+				    	<br>
+				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >					
+							<img src='" . $foto->buscarFotoUsuario($valor['id']) . "' class=' img-responsive center-block img-apdp'>
+						</div>
+						<br>
+						<span class='blue-vin t16'> " . $valor['razon_social'] . "</span>
+						<br>
+						 
+						<br>
+					
+					</div>  
+			</div> ";
+			 echo $cadena;
+		?> 
+		
+    	
 		<?php
 	endforeach;
    ?>

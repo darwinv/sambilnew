@@ -142,10 +142,15 @@ $(document).ready(function(){
 		}else{
 			var categoria="";
 		}
+		if($("#ver_tiendas").data("ver_tiendas")!=undefined){
+			var ver_tiendas=$("#ver_tiendas").data("ver_tiendas");
+		}else{
+			var ver_tiendas="";
+		}
 		loadingAjax(true);
 		$.ajax({
 			url:"paginas/listado/fcn/f_listado.php",
-			data:{metodo:"buscar",pagina:pagina,total:total,palabra:palabra,categoria:categoria,condicion:condicion,estado:estado,orden:orden,bandera:bandera},
+			data:{metodo:"buscar",pagina:pagina,total:total,palabra:palabra,categoria:categoria,condicion:condicion,estado:estado,orden:orden,bandera:bandera,ver_tiendas:ver_tiendas},
 			type:"POST",
 			dataType:"html",
 			success:function(data){

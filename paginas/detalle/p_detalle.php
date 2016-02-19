@@ -24,24 +24,25 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
 		$estaBloqueado=false;
 
 
-
-
+  //************SI LA PUBLICACION TIENE VIDEO
+  $scrip_iframe='';
   $url_video=$publicacion ->url_video; 
   if(!empty($url_video)){
   	$url_embebida=  preg_replace("/\s*[a-zA-Z\/\/:\.]*youtube.com\/watch\?v=([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i", "//www.youtube.com/embed/$1" , $url_video);  
+   	
    	$url_embebida.='?enablejsapi=1';	
+   	//$url_embebida.='?autoplay=0&rel=0&enablejsapi=1&playerapiid=ytplayer&wmode=transparent';
 	$iframe='<li><iframe width="100%" height="100%" src="'.$url_embebida.'" frameborder="0" allowfullscreen></iframe></li>';
 	$a_iframe='<a href="#" title="La Inquietante Teoría del Joker de Jared Leto"><img src="data1/tooltips/ndice.jpg" alt="" /></a>';
 	
+	$scrip_iframe='<script src="https://www.youtube.com/iframe_api"></script>';
   }else{
   		$iframe='';
 		$a_iframe='';
-  }
+  }  
   
-  
-  
- ?>
-<script src="https://www.youtube.com/iframe_api"></script>
+  echo $scrip_iframe;
+ ?> 
 		
   <div class="row center-block" style="width:100%" data-cantidad="2">
  	<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 ">

@@ -317,33 +317,9 @@ border-top-right-radius: 10px;" >
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px; " >
 
-<div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-      <p class="text-left mar20 hidden" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Ultimas <br> p&uacute;blicaciones</span>
-        <br><br>
-        <span class="">echale un vistazo a las publicaciones m&aacute;s recientes.</span>
-        <br><br> 
-        <span class="vin-blue t18 " style="text-decoration:underline;"><a href="listado.php">Ver m&aacute;s...</a></span>
-         <br>
-        <br>
-        <br>
-        <br>
-      </p>
+<div class="hidden-xs hidden-sm col-md-1 col-lg-1"> 
     </div>
-
- <!--   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-2">
-      <p class="text-left mar20" style="border-right: 1px solid #ccc;">
-        <span class="negro t26 ">Top 5 <br> Vendedores</span>
-        <br><br>
-        <span>Echale un vistazo a los vendedores m&aacute;s destacados.</span>
-        <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline; visibility: hidden;"><a href="#">Ver m&aacute;s...</a></span>
-        <br>
-        <br>
-        <br>
-      
-      </p>
- </div> -->
+ 
  
     <!-- Desde aqui -->
     <?php

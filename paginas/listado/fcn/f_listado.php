@@ -4,13 +4,14 @@
 	include_once "../../../clases/fotos.php";
 	include_once "../../../clases/clasificados.php";
 	include_once "../../../clases/bd.php";
+	include_once "../../../clases/busqueda.php";
 	switch($_POST["metodo"]){
 		case "buscar":
 			if($_POST["bandera"]==""){
 				busca();
 			}else{
 				busca2();
-			}		
+			}
 			break;
 		case "filtrarCat":
 			filtraCat();
@@ -1014,138 +1015,27 @@
 		<?php		
 	}
 	function busca(){
-		$bd=new bd();
 		$foto=new fotos();
-		/*************COMENTAREMOS ESTE CODIGO Y LO COPIAREMOS ABAJO PARA REALIZAR CAMBIOS TEMPORALES EN LA CONSULTA*****************/
-		/*$consulta="select id,'P' as tipo from publicaciones where id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null)";
-		$soloPub=false;
-		if($_POST["categoria"]!=""){
-			$criterio="I{$_POST["categoria"]}F";
-			$consulta.=" and clasificados_id in (select id from clasificados where ruta like '%$criterio%')";
-			$soloPub=true;
-		}
-		if($_POST["condicion"]){
-			$consulta.=" and condiciones_publicaciones_id = {$_POST["condicion"]}";
-			$soloPub=true;
-		}
-		if($_POST["estado"]!=""){
-			$consulta.=" and usuarios_id in (select id from usuarios where estados_id={$_POST["estado"]})";
-		}
-		switch($_POST["orden"]){
-			case "id_asc":
-				$orden="order by id asc";
-				break;
-			case "id_desc":
-				$orden="order by id desc";
-				break;
-			case "monto_asc":
-				$orden="order by monto asc";
-				break;
-			case "monto_desc":
-				$orden="order by monto desc";
-				break;
-		}
-		if($_POST["palabra"]!=""){
-			$consulta.=" and titulo like '%{$_POST["palabra"]}%'";
-			if(!$soloPub){ //Incluir usuarios			
-				$criterioPal1=explode(" ",$_POST["palabra"]);
-				$criterioPal2="(";
-				$criterioPal3="(";
-				foreach ($criterioPal1 as $c=>$valor) {
-					$criterioPal2.="nombre like '%$valor%' or apellido like '%$valor%' or ";
-					$criterioPal3.="razon_social like '%$valor%' or ";			
-				}
-				$criterioPal2=substr($criterioPal2,0,strlen($criterioPal2)-4) . ")";
-				$criterioPal3=substr($criterioPal3,0,strlen($criterioPal3)-4) . ")";
-				$consultaNat="select usuarios_id as id,'U' as tipo from usuarios_naturales where $criterioPal2";
-				$consultaJur="select usuarios_id as id,'U' as tipo from usuarios_juridicos where $criterioPal3";
-				$consulta="($consultaNat) UNION ($consultaJur) UNION ($consulta)";
-			}
-		}
-		$inicio=($_POST["pagina"] - 1) * 25;
-		$consulta.=" $orden limit 25 OFFSET $inicio"; 	*/
 		
-		/*********************CODIGO COPIADO DE LE SESSION DE ARRIBA PARA FILTRAR POR SEDES*****************/
-		//$consulta="select id,'P' as tipo from publicaciones where id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null)";
+		$categoria=$_POST["categoria"];
+		$condicion=$_POST["condicion"];
+		$estado=$_POST["estado"];
+		$orden=$_POST["orden"];
+		$palabra=$_POST["palabra"];
+		$ver_tiendas=$_POST["ver_tiendas"];
+		$pagina=$_POST["pagina"];
 		
-		if (! isset ( $_SESSION )) {
-			session_start ();
-		}
+		$categoria=$valores=array("palabra"=>$palabra,
+				"ver_tiendas"=>$ver_tiendas,
+				"pagina"=>$pagina,
+				"orden"=>$orden,
+				"estados_id"=>$estado,
+				"clasificados_id"=>$categoria);
 		
-		$id_sede=$_SESSION['id_sede'];
-		$consulta="select publicaciones.id as id,'P' as tipo from publicaciones
-					Inner Join usuarios ON publicaciones.usuarios_id = usuarios.id
- 					where publicaciones.id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null)";
+		$busqueda=new busqueda($valores);
 		
-		$consulta.=" and usuarios.id_sede=$id_sede";
-		$soloPub=false;
-		if($_POST["categoria"]!=""){
-			$criterio="I{$_POST["categoria"]}F";
-			$consulta.=" and clasificados_id in (select id from clasificados where ruta like '%$criterio%')";
-			$soloPub=true;
-		}
-		if($_POST["condicion"]){
-			$consulta.=" and condiciones_publicaciones_id = {$_POST["condicion"]}";
-			$soloPub=true;
-		}
-		if($_POST["estado"]!=""){
-			$consulta.=" and usuarios_id in (select id from usuarios where estados_id={$_POST["estado"]})";
-		}
-		if($_POST["estado"]!=""){
-			$consulta.=" and usuarios_id in (select id from usuarios where estados_id={$_POST["estado"]})";
-		}
-		
-		
-		switch($_POST["orden"]){
-			case "id_asc":
-				$orden="order by id asc";
-				break;
-			case "id_desc":
-				$orden="order by id desc";
-				break;
-			case "monto_asc":
-				$orden="order by monto asc";
-				break;
-			case "monto_desc":
-				$orden="order by monto desc";
-				break;
-		}
-		if($_POST["palabra"]!=""){
-			$consulta.=" and titulo like '%{$_POST["palabra"]}%'";
-			if(!$soloPub){ //Incluir usuarios			
-				$criterioPal1=explode(" ",$_POST["palabra"]);
-				$criterioPal2="(";
-				$criterioPal3="(";
-				foreach ($criterioPal1 as $c=>$valor) {
-					$criterioPal2.="nombre like '%$valor%' or apellido like '%$valor%' or ";
-					$criterioPal3.="razon_social like '%$valor%' or ";			
-				}
-				$criterioPal2=substr($criterioPal2,0,strlen($criterioPal2)-4) . ")";
-				$criterioPal3=substr($criterioPal3,0,strlen($criterioPal3)-4) . ")";
-				//$consultaNat="select usuarios_id as id,'U' as tipo from usuarios_naturales where $criterioPal2";
-				  $consultaNat="select usuarios_id as id,'U' as tipo FROM usuarios_naturales
-								Inner Join usuarios ON usuarios_naturales.usuarios_id = usuarios.id
-								WHERE
-								($criterioPal2) AND	usuarios.id_sede =  '$id_sede'";
-								
-				//$consultaJur="select usuarios_id as id,'U' as tipo from usuarios_juridicos where $criterioPal3";
-				
-				  $consultaJur="SELECT usuarios_id AS id,'U' AS tipo FROM usuarios_juridicos
-				  				Inner Join usuarios ON usuarios.id = usuarios_juridicos.usuarios_id
-								WHERE
-								($criterioPal3) AND	usuarios.id_sede =  '$id_sede'";
-								
-				$consulta="($consultaNat) UNION ($consultaJur) UNION ($consulta)";
-			}
-		}
-		$inicio=($_POST["pagina"] - 1) * 25;
-		$consulta.=" $orden limit 25 OFFSET $inicio";
-		
-		/*******************************************************/
-		if (! isset ( $_SESSION )) {
-			session_start ();
-		}		 
-		$result=$bd->query($consulta);
+		$result=$busqueda->getPublicaciones();
+		  
 		foreach($result as $r=>$valor){
 			if($valor["tipo"]=="U"):
 				$usua=new usuario($valor["id"]);
