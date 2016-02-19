@@ -121,7 +121,7 @@ $foto=new fotos();
 	usuarios where
 	usuarios.id_sede ='".$_SESSION['id_sede']."' )
 	and
-	id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) order by id desc limit 5 OFFSET 0";
+	id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL) order by id desc limit 25 OFFSET 0";
 	$result=$bd->query($consulta);
 	$total_publicaciones=$result->rowCount();
 	
@@ -150,11 +150,8 @@ border-top-right-radius: 10px;" >
 -moz-border-radius-bottomleft: 10px;
 border-bottom-right-radius: 10px;
 border-bottom-left-radius: 10px;" >
- 
-    <div class="hidden-xs hidden-sm col-md-1 col-lg-1">
-       
-    </div>
-    
+  
+  <div id="tiendas_container"   >
 <?php
  
 	$i=0;
@@ -163,32 +160,29 @@ border-bottom-left-radius: 10px;" >
     	$publicacion=new publicaciones($r["id"]);
 		$usua=new usuario($publicacion->usuarios_id);
 		?>
-    	<div id="<?php echo $i; ?>" class='col-xs-12 col-sm-12 col-md-6 col-lg-2' <?php if($i<=5){?> style="display:block;" <?php } else {?> style="display:none"<?php } ?>>
-	    <?php if($i==6 or $i== 11 or $i==16 or $i==21){ ?>
-	    	<i class='fa fa-chevron-circle-left t38 point 'style='color: 	#ccc; position:absolute; top:37%; left:-20%; ' id='izquierda' onClick='javascript:buscaIzquierda();'></i>
-	    <?php } ?>	
+    	<div id="<?php echo $i; ?>" class='col-xs-12 col-sm-12 col-md-6 col-lg-2' >
+	     
 	    			<div class='text-center mar10 publicaciones1' style='relative;width:70%;' id='<?php echo $publicacion->id; ?> '>
 				    	<br>
 				    	<div class='marco-foto-conf  point center-block sombra-div3 ' style='height:120px; width: 120px;'  >
 						<img src='<?php echo $publicacion->getFotoPrincipal(); ?> '  class=' img-responsive center-block img-apdp'>
 						</div> 
 						<br>
-						<a href="perfil.php?id=<?php echo $usua->id; ?>" ><span class="blue-vin t16" ><?php echo $usua->j_razon_social; ?></span></a>
+						<span class='negro point t16'><?php echo $publicacion->tituloFormateado(15); ?> </span>	
 						<br>
-						<span class='negro t16'><?php echo $publicacion->tituloFormateado(15); ?> </span>
+					    <a href="perfil.php?id=<?php echo $usua->id; ?>" ><span class="blue-vin t16" ><?php echo $usua->j_razon_social; ?></span></a>
 						<br>
 						<span class='red t14'><b><?php echo $publicacion->getMonto(); ?> </b></span>
 						<br>
 					    <span class='t12 grisC'><i class='fa fa-clock-o'></i><?php echo $publicacion->getTiempoPublicacion(); ?> </span>
 						<br>
 					</div>
-			<?php if($i==5 or $i==10 or $i==15 or $i==20){ ?>
-			<i class='fa fa-chevron-circle-right t38 point derecha' style='color: 	#ccc; position:absolute; float:right; top:37%; right:-15%; ' id='derecha' onClick='javascript:buscaDerecha();'></i>
-			<?php } ?>
+			 
 		</div>
 		<?php
 	}
 ?> 
+</div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     	<div class="text-right ancho95 "> <a href="listado.php">Ver Todas</a> </div>
     	<br>

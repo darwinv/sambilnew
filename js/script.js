@@ -426,7 +426,7 @@ $(document ).ready(function() {
 	        			}, 10);
 	            	}
 	            	 
-	            	//$("#dropdown-toggle-login").dropdown('toggle');
+	            	$("#dropdown-toggle-login").dropdown('toggle');
 	            	
 	            } else if(data.result==="Actualice") {
 					elId=data.id;
@@ -562,9 +562,15 @@ $(document ).ready(function() {
 			$("#tituloCategoria").css("display","none");			
 		}		
 	});	
-	$(".publicaciones1,.publicaciones2").click(function(e){
+	
+	/*$(".publicaciones1,.publicaciones2").click(function(e){
+		window.open("detalle.php?id=" + $(this).attr("id"),"_self"); 
+	});*/
+	
+	$("body").on('click', '.publicaciones1,.publicaciones2', function(e){
 		window.open("detalle.php?id=" + $(this).attr("id"),"_self"); 
 	});
+	
 	$(".vendedores").click(function(e){
 		window.open("perfil.php?id=" + $(this).attr("id"),"_self");
 	});	
@@ -896,14 +902,58 @@ $("#enviar").click(function(e){
 			}
 		});
 	});
-	 
 	
-	$("body").on('click', '.ver-noti-seguidor', function(e) {	
+	/*********** Bloquear Usuario *************************/
+	$("body").on('click', '.actualiza-follow', function(e) {
+		ActualizarSeguidores();
+	});
+	$("body").on('click', '.bloqueo-seguidor', function(e) {
+		var userbloq=$(this).data("userbloq");
+		 $.ajax({
+	            url: "paginas/perfil/fcn/f_bloqueados.php",
+	            data: { id : $(this).data("user"), action:'bloquear',userbloq: userbloq},
+	            type: 'GET',
+	            dataType: 'json',
+	            success: function (data) {
+	            	
+	            		if(data.result === "OK"){
+	            			$("#"+userbloq).hide();
+							//document.getElementById(id).style.display='none';
+	            		}
+	            	
+	            },
+	            error: function (xhr, status) {
+	            	SweetError(status);
+	            	
+	            }
+	        });
+	 	
+	});
+	function ActualizarSeguidores(){
+		count = $("#btn-megusta").data("count");
+		count--;
+		$("#btn-megusta").data("count",count);
+        $("#megustan").text($("#btn-megusta").data("count"));
+        
+		if(count<1){
+			$("#megustan").text("");
+            $("#seguidores").html("Aun nadie te sigue");
+            $("#megustan").text('');
+        }
+        if(count==1){
+    		$("#seguidores").html("persona te sigue ");
+       	}
+       	if(count>1){
+    		$("#seguidores").html("personas te siguen");
+       	}	
+	} 
+	
+	$("body").on('click', '.ver-noti-seguidor', function(e) {
 		$("#info-seguidor").modal('show');
 	 	var usuarios_id= $(this).data("id");
 		usuarios_id = parseInt(usuarios_id);		   
 		$(".bloqueo-seguidor").data('userbloq',usuarios_id);
-		
+		 
 		if(usuarios_id>0){
 			$.ajax({
 				url: "fcn/f_usuarios.php", // la URL para la petici&oacute;n
@@ -912,6 +962,7 @@ $("#enviar").click(function(e){
 	            dataType: 'json', // el tipo de informaci&oacute;n que se espera de respuesta
 	            success: function (data) {
 	            	// c&oacute;digo a ejecutar si la petici&oacute;n es satisfactoria; 
+	            	 
 	            	if (data.result === 'OK') {  
 	            				$('.modal-info-seguidor .fotoperfil').attr("src", data.campos.ruta);				            	
 				            	$('.modal-info-seguidor .seudonimo').html(data.campos.a_seudonimo);

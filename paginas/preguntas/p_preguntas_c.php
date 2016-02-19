@@ -58,15 +58,16 @@ foreach ($p_preguntas as $pp => $valor2) {
 	$resp = new publicaciones($id_pregunta);
 	$id_usr = $valor2["usr_id"];
 	$r = $resp -> getRespuestaPregunta($id_pregunta);
+	
 ?>
 	
 	     							
 									<p class="t14 marL20 marR20" id="preguntas<?php echo $id_pub;?>" style="border-bottom: #ccc 1px dashed;">
-										<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor2["pregunta"]; ?>&nbsp;&nbsp; <span class="opacity t12"> Hace <?php echo $valor2["tiempo"]; ?></span></span>
+										<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor2["pregunta"]; ?>&nbsp;&nbsp; <span class="opacity t11"> <?php echo $valor2["tiempo"]; ?></span></span>
 										<br>
 										<br>
 									<?php if($r[0] != null) {?>
-										<i class="fa fa-comments-o marL20 blueC-apdp"></i> <span class="marL5"> <?php echo $r[0]; ?> </span> <span class="opacity t12"> - <?php echo $r[1];?> </span>
+										<i class="fa fa-comments-o marL20 blueC-apdp"></i> <span class="marL5"> <?php echo $r[0]; ?> </span> <span class="opacity t11"> - <?php echo $r[1];?> </span>
 										<br>	
 									<?php }?>	
 									<br>												

@@ -62,11 +62,10 @@ foreach ($p_preguntas as $pp => $valor2) {
 					<div id="<?php echo $id_pregunta; ?>" >
 		     	 		<br>
 		      					<p data-id="<?php echo $id_pregunta; ?>" class="toggleResponder pointer t14 marL20 marR20 bor <?php if($cont!=1){ $cont++;?>borBD<?php }?>" id="eti-p<?php echo $id_pregunta;?>"  >
-										<i class="fa fa-comment blueO-apdp " style="border-bottom: #ccc 1px dashed;" ></i> 
-										<span class="t12 blueO-apdp comprador" style="z-index:1000; " data-id="<?php echo $id_usr;?>">	<?php echo $valor2["nombre"]; ?> </span>&nbsp;<span class="opacity t12"> Hace <?php echo $valor2["tiempo"]; ?></span>
-										<br>
+										 
+										<i class="fa fa-comment blueO-apdp " style="border-bottom: #ccc 1px dashed;" ></i>
 										<span class="marL5 point"  data-id="<?php echo $id_pregunta; ?>">
-											<?php echo $valor2["pregunta"]; ?></span>
+											<?php echo $valor2["pregunta"]; ?></span>&nbsp;<span class="opacity t11"><?php echo $valor2["tiempo"]; ?></span>
 										<br>
 										<br>
 								</p>

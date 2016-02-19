@@ -127,7 +127,7 @@ class fotos{
 	public function subirFoto($dataurl,$ruta = NULL){	
 		//Obtener la dataurl de la imagen
 		$data_url = str_replace(" ", "+", $dataurl);
-		$filteredData=substr($data_url, strpos($data_url, ",")+1);			
+		$filteredData=substr($data_url, strpos($data_url, ",")+1);			  
 		//Decodificar la dataurl
 		$unencodedData=base64_decode($filteredData);
 		//subir la imagen
@@ -136,6 +136,7 @@ class fotos{
 		}else{
 			$ruta = "../$ruta";			
 		}
+		clearstatcache();
 		return file_put_contents($ruta, $unencodedData);
 	}
 	public function subirFotoManager($dataurl,$user){	

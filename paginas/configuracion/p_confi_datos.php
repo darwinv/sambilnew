@@ -8,6 +8,7 @@ if (isset ( $_SESSION ["id"] )) :
 	 
 	
 	$foto =$foto_obj->buscarFotoUsuario($_SESSION ["id"]);
+	
 	$usuario = new usuario ( $_SESSION ["id"] );
 	$tipo = is_null($usuario->j_rif)?"N":"J";
 	 

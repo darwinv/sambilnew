@@ -48,9 +48,7 @@ $(document).ready(function(){
 		cargarAmigos();
 	});
 	
-	$("body").on('click', '.actualiza-follow', function(e) {
-		ActualizarSeguidores();
-	});
+	
 	/*$(".actualiza-follow").click(function(){
 		ActualizarSeguidores();
 	});*/
@@ -110,32 +108,7 @@ $(document).ready(function(){
 	 	$(".correo").html(correo);
 	 	
 	});	
-	
-/*********** Bloquear Usuario *************************/
-$("body").on('click', '.bloqueo-seguidor', function(e) {	
-var userbloq=$(this).data("userbloq");
-	 $.ajax({
-            url: "paginas/perfil/fcn/f_bloqueados.php",
-            data: { id : $(this).data("user"), action:'bloquear',userbloq: userbloq},
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-            	
-            		if(data.result === "OK"){
-            			$("#"+userbloq).hide();
-						//document.getElementById(id).style.display='none';
-            		}
-            	
-            },
-            error: function (xhr, status) {
-            	SweetError(status);
-            	
-            }
-        });
-	 	
-	});
-	
-	
+	 
 /* ============================----- Me Gusta Perfil -----=========================*/
 	
 	$("#btn-megusta").click( function(){
@@ -333,6 +306,7 @@ var userbloq=$(this).data("userbloq");
 			SweetError("Archivo no soportado.");
 		}		
 	});*/
+	//FUNCION PARA GUARDAR FOTO PERFIL.PHP CONFIGURACION.PHP
 	$("#save-foto").click(function(){
         id=$("#img-perfil").data("id");
 		loadingAjax(true);
@@ -346,12 +320,13 @@ var userbloq=$(this).data("userbloq");
             	// código a ejecutar si la petición es satisfactoria;
             	console.log(data);
 	            if (data.result !== 'error') {
-	            	//location.reload();
-	            	window.open("perfil.php?id=" + id + "&new=1","_self");            	
+	            	location.reload();
+	            	//window.open("perfil.php?id=" + id + "&new=1","_self");            	
 	            	loadingAjax(false);
 	            	// $("#img-perfil").attr("src",$('.image-editor').cropit('export'));
 	            	// $("#fotoperfilm").attr("src",$('.image-editor').cropit('export'));
 	            }
+	            location.reload();
           	},// código a ejecutar si la petición falla;
             error: function (xhr, status) {
             	SweetError(status);

@@ -32,18 +32,20 @@ class busqueda{
 /************Métodos***********/
 	public function getPublicaciones(){
 		$bd=new bd();
+		
+		#BUSCAMOS LA SEDE ACTUAL
 		if (! isset ( $_SESSION )) {
 			session_start ();
 		}
-		
 		$id_sede=$_SESSION['id_sede'];
 		
-		$condicion="where publicaciones.id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null) ";
-		$condicion.=" and usuarios.id_sede =  '$id_sede'";
+		
+		$condicion="where publicaciones.id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null)
+		 			and usuarios.id_sede =  '$id_sede'";
 		
 		$operador="and";
 		if($this->palabra!=""){
-			$condicion.="$operador titulo like '%{$this->palabra}%'";
+			$condicion.=" $operador titulo like '%{$this->palabra}%'";
 			$operador=" and ";
 		}
 		if($this->clasificados_id!=""){
@@ -51,16 +53,17 @@ class busqueda{
 			$condicion .=$operador . " clasificados_id in (select id from clasificados where ruta like '%$criterio%')";
 			$operador=" and ";			
 		}
-		#SI ENVIARON PALABRA, CREAMOS CRITERIO
+		
+		#SI ENVIARON PALABRA, CREAMOS CRITERIO PARA FILTRAR LA BUSQUEDA
 		if($this->palabra!=""){
 			$criterio=explode(" ",$this->palabra);
-			$criterio2="(";
+			//$criterio2="(";
 			$criterio3="(";
 			foreach ($criterio as $c=>$valor) {
-				$criterio2.="nombre like '%$valor%' or apellido like '%$valor%' or ";
+				//$criterio2.="nombre like '%$valor%' or apellido like '%$valor%' or ";
 				$criterio3.="razon_social like '%$valor%' or ";
 			}
-			$criterio2=substr($criterio2,0,strlen($criterio2)-4) . ")";
+			//$criterio2=substr($criterio2,0,strlen($criterio2)-4) . ")";
 			$criterio3=substr($criterio3,0,strlen($criterio3)-4) . ")";			
 			
 			
@@ -88,7 +91,7 @@ class busqueda{
 		}
 		 
 		
-		#SI SE DESEA SOLO BUSCAR POR TIENDA
+		#SI NO SE DESEA SOLO BUSCAR POR TIENDA
 		if($this->ver_tiendas!='1'){
 			if($condicion=="where ")
 			$condicion="";
@@ -120,18 +123,19 @@ class busqueda{
 		
 		
 		
-		 
+		 #SI EXISTEN LOS DOS QUERYS LOS UNIMOS
 		if(!empty($consultaPubli) && !empty($consultaUsua)){
 			$union='union';
 		}
 		else {
 			$union='';
 		}		
-		 
+		
+		#ARMAMOS EL QUERY
 		$consulta="$consultaPubli $union $consultaUsua";
 
   
-		
+		#PARA PAGINAR
 	 	if(!empty($this->pagina)){
 	 		$this->pagina=$this->pagina?$this->pagina:"1";
 			$inicio=($this->pagina - 1) * 25;
@@ -139,7 +143,7 @@ class busqueda{
 	 	}else{
 	 		$consulta.=" limit 250 OFFSET 0";  //para asegurar no traer mas de 1000productos para un solo listado
 	 	}
-		   
+		   //var_dump($consulta);
 		$publicaciones=$bd->query($consulta);  
 		return $publicaciones;
 	}

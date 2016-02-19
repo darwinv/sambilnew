@@ -37,13 +37,12 @@ function guardaPregunta(){
 		$usuario=new usuario($valor["usuario"]); 
 		$claseR=$respuesta==""?"hidden":"";
 	?>							
-		<p class="t14 marL20 marR20" style="border-bottom: #ccc 1px dashed; margin-top: 15px;">
-		<span class="t12 blueO-apdp comprador" style="z-index:1000; margin-top: 10px;"> <?php echo $usuario->a_seudonimo;?> </span>&nbsp;<span class="opacity t12"> Hace <?php echo $valor["tiempo"];?></span>
-	     <br>
+		<p class="t14 marL20 marR20" style="border-bottom: #ccc 1px dashed;">
+	  <br>
 		<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo  ($valor["pregunta"]); ?></span>
 		<br>
 		<i class="fa fa-comments-o marL20 blueC-apdp <?php echo $claseR;?>" >			
-		</i> <span class="marL5"><?php echo  ($publi->getRespuestaPregunta($valor["id"])[0]); ?> </span> <span class="opacity t12"> - <?php echo $publi->getRespuestaPregunta($valor["id"])[1]; ?> </span>
+		</i> <span class="marL5"><?php echo  ($publi->getRespuestaPregunta($valor["id"])[0]); ?> </span> <span class="opacity t11"> - <?php echo $publi->getRespuestaPregunta($valor["id"])[1]; ?> </span>
 		<br>	
 		<br>						
 		</p>

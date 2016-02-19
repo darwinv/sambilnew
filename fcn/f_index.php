@@ -64,9 +64,9 @@ switch($_POST["metodo"]){
 						<img src='".$publicacion->getFotoPrincipal()."'  class=' img-responsive center-block img-apdp'>
 						</div> 
 						<br>
-						<a href='perfil.php?id=".$usua->id."' ><span class='blue-vin t16' >".$usua->j_razon_social."</span></a>
+						<span class='negro point t16'>".$publicacion->tituloFormateado(15)."</span>
 						<br>
-						<span class='negro t16'>".$publicacion->tituloFormateado(15)."</span>
+						<a href='perfil.php?id=".$usua->id."' ><span class='blue-vin t16' >".$usua->j_razon_social."</span></a>
 						<br>
 						<span class='red t14'><b>".$publicacion->getMonto()."</b></span>
 						<br>

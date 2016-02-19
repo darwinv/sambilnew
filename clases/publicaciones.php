@@ -368,6 +368,22 @@ class publicaciones{
 		}
 		return $devolver;
 	}
+	public function getPreguntaTiempo($id_pregunta){
+		$bd=new bd();
+        $condicion="id=$id_pregunta";
+		$result=$bd->doSingleSelect("preguntas_publicaciones",$condicion,"contenido,fecha");
+		$segundos=strtotime('now') - strtotime($result["fecha"]);
+		$tiempo = $this -> getTiempo($segundos);
+				
+		if(!empty($result)){
+			$devolver[0]=$result["contenido"];
+			$devolver[1]=$tiempo;
+		}else{
+			$devolver[0]="";
+			$devolver[1]="";
+		}
+		return $devolver;
+	}
 	
 	public function getPreguntasUsuario(){
 		$bd=new bd();

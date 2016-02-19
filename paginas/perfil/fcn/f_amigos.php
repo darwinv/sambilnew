@@ -46,7 +46,7 @@ if (! empty ( $resultamigos )) :
 	<img src="<?php echo $foto->buscarFotoUsuario($row["numero"])?>" alt="..." style="width: 100%"
 				class=" img img-responsive foto-perfil">
 		</div>
-		<div class="text-center marT20 marB20">
+		<div class="text-center marT10 marB20">
 			<span 	data-target="#info-seguidor"
 				data-toggle='modal'
 				data-ruta='<?php echo $foto->buscarFotoUsuario($row["numero"]) ?>'
@@ -55,9 +55,7 @@ if (! empty ( $resultamigos )) :
 				data-alias="<?php echo $row["seudonimo"]; ?>"
 				data-telf="<?php echo $row["telefono"]?>"
 				data-correo="<?php echo $row["email"]?>"
-				class="datos-seguidor btn seud-onimo blue-vin" ><?php echo $row["seudonimo"];?></span><br> <span
-				class="nom-ape"><?php echo $row["nombre"]?></span> <br> <!-- <span
-				class="ventas">50 Ventas</span> --> <br> <br>
+				class="datos-seguidor btn seud-onimo blue-vin" ><?php echo $row["seudonimo"];?></span><br> <br>
 			<div class="btn-group">
 				<button 
 				data-target="#info-seguidor"

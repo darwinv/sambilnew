@@ -34,5 +34,9 @@
 		?>
 		<div class="modal-backdrop fade in cargador" style="display:none"></div>
 		</body>
-	
+	<script type="text/javascript" src="js/principal.js"></script>
+	<!--INCLUIREMOS ACA DADO QUE SOLO SE USARA EN PRINCIPAL POR LOS MOMENTOS-->
+	<link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<script type="text/javascript" src="js/slick.min.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
 </html>
