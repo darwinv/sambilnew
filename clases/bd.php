@@ -26,7 +26,7 @@ class bd extends PDO {
 	public function bd() {
 		try {
 			parent::__construct ( "$this->driver: host=$this->host;dbname=$this->bd_name;charset=$this->bd_charset", $this->user, $this->password, $this->options );
-		} catch ( PDOException $ex ) {
+		} catch ( PDOException $ex ) { 
 			return $ex->getMessage ();
 		}
 	}

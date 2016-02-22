@@ -1670,7 +1670,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383869', end
 .hover-publicaciones div > div > div:hover
 {
 	opacity: 1;
-	background: #eeeeee;
+	/*background: #eeeeee;*/
 	cursor: pointer;
 }
 .hover-vendedores > div > div:hover, .hover-vendedores > div > a >div:hover
