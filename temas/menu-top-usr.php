@@ -29,7 +29,7 @@ if(!isset($_SESSION)){
 						$obj_restricciones = new restricciones($_SESSION['id_rol'], $_SERVER['SCRIPT_NAME']);
 						$respuesta=$obj_restricciones->show_page; 
 						if(!$respuesta){
-						   echo '<script>window.location.replace("resumen.php")</script>';
+						   echo '<script>window.location.replace("admin-usr.php")</script>';
 						}
 						
 						
@@ -246,7 +246,7 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 								$link = "detalle";
 							}
 						?>
-						<li data-id="<?php echo $id; ?>"  class="<?php echo $link; ?> noti-hover pointer">
+						<li data-id="<?php echo $id; ?>" data-id_pub="<?php echo $id_pub; ?>"  class="<?php echo $link; ?> noti-hover pointer">
 							<a class="" style="overflow: hidden;">
 								<div style="display: inline-block;   ">
 									<div style="padding-bottom: 5px;"><img src="<?php echo $foto; ?>" width="50px" height="50px"></div>

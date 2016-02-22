@@ -49,7 +49,7 @@
                                 $id_sede        =$usua->u_id_sede;
 
                                 $usuarios_activos=$usua->getUsuarios($status,NULL,NULL,$id_sede);
-
+ 
                                 $total=$usuarios_activos->rowCount();
                                 $totalPaginas=ceil($total/25);
                                 $contador=0;
@@ -61,16 +61,16 @@
                     <div id="paginacion" name="paginacion" class='col-xs-12 col-sm-12 col-md-12 col-lg-12' data-paginaactual='1' data-total="<?php echo $total;?>">
                         <center>
                             <ul class='pagination'>
-                                <li id="anterior2" name="anterior2" class="hidden">
-                                    <a href='#' aria-label='Previous' class='navegador' data-funcion='anterior2'></a>
-                                </li>
-                                <li id="anterior1" name="anterior1" class="hidden">
-                                    <a href='#' aria-label='Previous' class='navegador' data-funcion='anterior1'></a> <?php
+                               	<li id="anterior2" name="anterior2" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-status="1" data-container="#lista-shop-active"  data-funcion='anterior2'><i class='fa fa-angle-double-left'></i> </a>
+								<li id="anterior1" name="anterior1" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-status="1" data-container="#lista-shop-active"  data-funcion='anterior1'><i class='fa fa-angle-left'></i> </a>											
+									
+                                    
+                                     <?php
                                     $oculto="";
                                     $activo="active";
                                     for($i=1;$i<=$totalPaginas;$i++):
                                     ?>
-                                </li>
+                               
                                 <li class="<?php echo $activo; echo $oculto;?>">
                                     <a class="botonPagina" href='#' data-status="1" data-container="#lista-shop-active" data-pagina="<?php echo $i;?>"><?php echo $i;?></a>
                                 </li><?php
@@ -79,19 +79,19 @@
                                 $oculto=" hidden";
                                 endfor;
                                 ?><?php
-                                if($totalPaginas>1):
-                                ?>
-                                <li id="siguiente1" name="siguiente1">
-                                    <a href='#' aria-label='Next' class='navegador' data-funcion='siguiente1'></a> <?php
-                                    endif;
-                                    ?> <?php
-                                    if($totalPaginas>10):
-                                    ?>
-                                </li>
-                                <li id="siguiente2" name="siguiente2">
-                                    <a href='#' aria-label='Next' class='navegador' data-funcion='siguiente2'></a> <?php
-                                    endif;
-                                    ?>
+									if($totalPaginas>1):
+									?>								
+										<li id="siguiente1" name="siguiente1"><a href='#' data-status="1" data-container="#lista-shop-active" aria-label='Next' class='navegador' data-funcion='siguiente1'><i class='fa fa-angle-right'></i> </a>
+									<?php
+									endif;
+									?>
+								<?php
+									if($totalPaginas>10):
+										?>
+										<li id="siguiente2" name="siguiente2"><a href='#' data-status="1" data-container="#lista-shop-active" aria-label='Next' class='navegador' data-funcion='siguiente2'><i class='fa fa-angle-double-right'></i> </a>
+									<?php
+									endif;
+								?>
                                 </li>
                             </ul>
                         </center>
@@ -127,20 +127,19 @@
                                 ?>
                             </tbody>
                         </table>
-                    </div>
+                   
                     <div id="paginacion" name="paginacion" class='col-xs-12 col-sm-12 col-md-12 col-lg-12' data-paginaactual='1' data-total="<?php echo $total;?>">
                         <center>
                             <ul class='pagination'>
-                                <li id="anterior2" name="anterior2" class="hidden">
-                                    <a href='#' aria-label='Previous' class='navegador' data-funcion='anterior2'></a>
-                                </li>
-                                <li id="anterior1" name="anterior1" class="hidden">
-                                    <a href='#' aria-label='Previous' class='navegador' data-funcion='anterior1'></a> <?php
+                                <li id="anterior2" name="anterior2" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-status="3" data-container="#lista-shop-inactive" data-funcion='anterior2'><i class='fa fa-angle-double-left'></i> </a>
+								<li id="anterior1" name="anterior1" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-status="3" data-container="#lista-shop-inactive" data-funcion='anterior1'><i class='fa fa-angle-left'></i> </a>											
+									 
+									 <?php
                                     $oculto="";
                                     $activo="active";
                                     for($i=1;$i<=$totalPaginas;$i++):
                                     ?>
-                                </li>
+                               
                                 <li class="<?php echo $activo; echo $oculto;?>">
                                     <a class="botonPagina" href='#' data-status="3" data-container="#lista-shop-inactive" data-pagina="<?php echo $i;?>"><?php echo $i;?></a>
                                 </li><?php
@@ -148,24 +147,27 @@
                                 if($i==10)
                                 $oculto=" hidden";
                                 endfor;
-                                ?><?php
-                                if($totalPaginas>1):
                                 ?>
-                                <li id="siguiente1" name="siguiente1">
-                                    <a href='#' aria-label='Next' class='navegador' data-funcion='siguiente1'></a> <?php
-                                    endif;
-                                    ?> <?php
-                                    if($totalPaginas>10):
-                                    ?>
-                                </li>
-                                <li id="siguiente2" name="siguiente2">
-                                    <a href='#' aria-label='Next' class='navegador' data-funcion='siguiente2'></a> <?php
-                                    endif;
-                                    ?>
+                                <?php
+									if($totalPaginas>1):
+									?>								
+										<li id="siguiente1" name="siguiente1"><a href='#' aria-label='Next' data-status="3" data-container="#lista-shop-inactive"  class='navegador' data-funcion='siguiente1'><i class='fa fa-angle-right'></i> </a>
+									<?php
+									endif;
+									?>
+								<?php
+									if($totalPaginas>10):
+										?>
+										<li id="siguiente2" name="siguiente2"><a href='#' aria-label='Next' data-status="3" data-container="#lista-shop-inactive"   class='navegador' data-funcion='siguiente2'><i class='fa fa-angle-double-right'></i> </a>
+									<?php
+									endif;
+								?>
                                 </li>
                             </ul>
                         </center>
                     </div>
+                    
+                   </div>
                 </div>
             </div>
         </div>

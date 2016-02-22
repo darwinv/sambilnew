@@ -1,13 +1,18 @@
 <?php
-	$usr = new usuario($_SESSION["id"]);										
-	$usr_publicaciones = $usr -> getAllPublicaciones(1);	
+	$usr = new usuario($_SESSION["id"]);
+	$id_publicacion=isset($_GET["publicacion"])?$_GET["publicacion"]:NULL;
+	$usr_publicaciones = $usr -> getAllPublicaciones(1, NULL, $id_publicacion);	
 	$cant_preg_usr = $usr -> getCantPreguntasActivas(); 
 ?>
 
 <div class="contenedor">
 	<div class="row marL20 marR20 ">
 			<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10   "><!-- inicio titulo   -->	
-				<h4 class="  t20 negro pad10" ><span class="marL10">Preguntas sobre tus Ventas</span> (<span id="cantP" class="t20"><?php echo $cant_preg_usr[0]["cant"] ?></span>)</h4>
+				<h4 class="  t20 negro pad10" ><span class="marL10">Preguntas sobre tus Ventas</span>
+					<?php if(empty($id_publicacion)){ ?>
+					 (<span id="cantP" class="t20"><?php echo $cant_preg_usr[0]["cant"] ?></span>)
+					  <?php } ?>	
+				</h4>
 				<center>
 					<hr class='anchoC'>
 				</center>

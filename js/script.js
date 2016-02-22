@@ -575,11 +575,11 @@ $(document ).ready(function() {
 		window.open("perfil.php?id=" + $(this).attr("id"),"_self");
 	});	
 	$(".pre_pub").click(function(e){
-		window.open("preguntas.php?tipo=1","_self");
+		window.open("preguntas.php?tipo=1&publicacion=" + $(this).data("id_pub"),"_self");  
 	});
 	
 	$(".resp_pub").click(function(e){
-		window.open("preguntas.php?tipo=2","_self");
+		window.open("preguntas.php?tipo=2&publicacion=" + $(this).data("id_pub"),"_self");
 	});
 	
 	$(".detalle").click(function(e){

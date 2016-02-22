@@ -678,13 +678,20 @@ function comprobarToken($token){
 			$result =$bd->query($consulta);
 			return $result;	
 	}
-	public function getAllPublicaciones($status=1,$id=NULL){
+	public function getAllPublicaciones($status=1,$id=NULL, $id_publicacion=NULL){
 		if(is_null($id)){
 			$id=$this->id;
 		}
+		
 		$bd=new bd();
 		$consulta="select * from publicaciones where 
-		usuarios_id=$id and id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=$status and fecha_fin is null) order by id desc";
+		usuarios_id=$id and id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=$status and fecha_fin is null) ";
+				
+		if(!is_null($id_publicacion)){
+			$consulta.=" and id='$id_publicacion'";
+		}
+		
+		$consulta.=" order by id desc";  
 		$result=$bd->query($consulta);
 		if(!empty($result)){
 			return $result;
@@ -789,7 +796,7 @@ function comprobarToken($token){
 			return false;
 		}
 	}
-	public function getPreguntasCompra($id_usr){
+	public function getPreguntasCompra($id_usr, $id_publicacion=NULL){
 		$bd=new bd();
 
 		$consulta="select * from publicaciones where 
@@ -797,12 +804,21 @@ function comprobarToken($token){
 		from preguntas_publicaciones 
 		where usuarios_id=$id_usr and preguntas_publicaciones_id is null) and id in 
 		(select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin IS NULL)";
+		
+		 
+		if(!is_null($id_publicacion)){
+			$consulta.=" and id='$id_publicacion'";
+		}
+		
+		$consulta.=" order by id desc";  
+		
 		$result=$bd->query($consulta);
 		if(!empty($result)){
 			return $result;
 		}else{
 			return false;
 		}
+		
 	}
 	
 	 public function geTables(){
@@ -859,7 +875,7 @@ function comprobarToken($token){
 		inner join usuarios_juridicos ON usuarios.id=usuarios_juridicos.usuarios_id  
 		where 1 ";
 		 
-		$consulta.=" and usuarios_accesos.id_rol=2 ";
+		//$consulta.=" and usuarios_accesos.id_rol=2 ";
 		
 		
 		if(!empty($status)){
@@ -875,12 +891,9 @@ function comprobarToken($token){
 		}
 		if(!empty($pagina)){
 			$inicio=($pagina - 1) * 25;
-			//$inicio=is_null($pagina)?"":($pagina - 1) * 25;			
-		}else{
-			$inicio=0;
+			//$inicio=is_null($pagina)?"":($pagina - 1) * 25;		
+			$consulta.=" limit 25 OFFSET $inicio";	
 		}
-		$consulta.=" limit 25 OFFSET $inicio";
-		
 		
 		$result=$bd->query($consulta);
 		 

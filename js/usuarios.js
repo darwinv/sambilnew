@@ -373,7 +373,6 @@ $('#usr-update-form').formValidation({
 	        });
 	    }
 	});	
-	
 	$(document).on("click",".tab-shop",function(e){ 
 		var status=$(this).data("status");
 		if(status==3){
@@ -389,7 +388,73 @@ $('#usr-update-form').formValidation({
 		var container=$(this).data("container");
 		var status=$(this).data("status");
 		paginar(pagina, container, status);
-	}); 
+	});	
+	$(document).on("click",".navegador",function(e){
+		e.preventDefault();
+		var container=$(this).data("container");
+		var status=$(this).data("status");
+		var pagina=$(container+" #paginacion").data("paginaactual"); 
+		console.log(pagina);
+		switch($(this).data("funcion")){
+			case "anterior1": 
+				pagina--;			 
+				break;
+			case "anterior2":
+				var i=pagina;
+				while(true){
+					$('#paginacion').find('[data-pagina=' + i + ']').parent().addClass("hidden");
+					$('#paginacion').find('[data-pagina=' + (i - 10) + ']').parent().removeClass("hidden");
+					if(i % 10 == 0)
+					break;
+					i++;
+				}
+				i=pagina-1;		
+				while(true){
+					$('#paginacion').find('[data-pagina=' + i + ']').parent().addClass("hidden");
+					$('#paginacion').find('[data-pagina=' + (i - 10) + ']').parent().removeClass("hidden");
+					if(i % 10 == 0)
+					break;
+					i--;
+				}
+				if(((i-10) * 25)<=0)
+				$("#paginacion #anterior2").addClass("hidden");
+				var actual=pagina - 10;
+				pagina-=10;
+				var actual=pagina;
+				//paginar(pagina,actual);
+				$("#paginacion #siguiente2").removeClass("hidden");			
+				break;
+			case "siguiente1": 
+				pagina++;			 
+				break;
+			case "siguiente2":
+				var i=pagina;
+				while(true){
+					$('#paginacion').find('[data-pagina=' + i + ']').parent().addClass("hidden");
+					$('#paginacion').find('[data-pagina=' + (i + 10) + ']').parent().removeClass("hidden");
+					if(i % 10 == 0)
+					break;
+					i--;
+				}
+				i=pagina+1;		
+				while(true){
+					$('#paginacion').find('[data-pagina=' + i + ']').parent().addClass("hidden");
+					$('#paginacion').find('[data-pagina=' + (i + 10) + ']').parent().removeClass("hidden");
+					if(i % 10 == 0)
+					break;
+					i++;	
+				}
+				if(((i+10) * 25)>=$("#paginacion").data("total"))
+				$("#paginacion #siguiente2").addClass("hidden");
+				var actual=pagina + 10;
+				pagina+=10;
+				var actual=pagina;
+				
+				$("#paginacion #anterior2").removeClass("hidden");
+				break;
+		}		
+		paginar(pagina,container,status); 
+	});
 	/********************FUNCIONES REALIZADAS PARA OPTIMIZAR EL LISTADO**************/
 	function paginar(pagina, container, status){ 
 		
@@ -400,8 +465,33 @@ $('#usr-update-form').formValidation({
 			data:{method:"buscar",pagina:pagina,total:total,orden:" ",status:status},
 			type:"POST",
 			dataType:"html",
-			success:function(data){
+			success:function(data){$(container+" #ajaxContainer").html(data);
 				$(container+" #paginacion li").removeClass("active");
+				$(container+" #paginacion").find('[data-pagina=' + pagina + ']').parent().addClass("active");				
+				$(container+" #inicio").text(((pagina-1)*25)+1);
+				if(total<pagina*25){		
+					$(container+" #final").text(total + " de ");
+				}else{
+					$(container+" #final").text(pagina*25 + " de ");
+				}
+				$(container+" html,body").animate({
+    				scrollTop: 0
+				}, 200);
+				if(pagina % 10 == 1){
+					$(container+" #paginacion #anterior1").addClass("hidden");
+				}else{
+					$(container+" #paginacion #anterior1").removeClass("hidden");
+				}			
+				$(container+" #paginacion").data("paginaactual",pagina);
+				if(pagina*25>=total || pagina % 10==0){
+					$(container+" #paginacion #siguiente1").addClass("hidden");
+				}else{
+					$(container+" #paginacion #siguiente1").removeClass("hidden");
+				}
+				loadingAjax(false);
+				
+				
+				/*$(container+" #paginacion li").removeClass("active");
 				$(container+" #paginacion").find('[data-pagina=' + pagina + ']').parent().addClass("active");
 				$(container+" #ajaxContainer").html(data);
 				$(container+" #inicio").text(((pagina-1)*25)+1);
@@ -424,7 +514,7 @@ $('#usr-update-form').formValidation({
 				}else{
 					$(container+" #paginacion #siguiente1").removeClass("hidden");
 				}
-				loadingAjax(false);
+				loadingAjax(false);*/
 			}
 		});
 	}

@@ -1,14 +1,19 @@
 <?php
 	$usr = new usuario();										
 	$amigos= new amigos();
-	$usr_publicaciones = $usr -> getPreguntasCompra($_SESSION["id"]);
+	$id_publicacion=isset($_GET["publicacion"])?$_GET["publicacion"]:NULL;
+	$usr_publicaciones = $usr -> getPreguntasCompra($_SESSION["id"], $id_publicacion);
 	$cant_preg_usr = $usr -> getCantCompras($_SESSION["id"]);	
 ?>
 
 <div class="contenedor">
 	<div class="row marL20 marR20 ">
 			<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10   "><!-- inicio titulo   -->	
-				<h4 class="t20 negro pad10" ><span class="marL10">Preguntas sobre tus Compras</span> (<span id="cantP" class="t20"><?php echo $cant_preg_usr[0]["cant"] ?></span>)</h4>
+				<h4 class="t20 negro pad10" ><span class="marL10">Preguntas sobre tus Compras</span>
+					 <?php if(empty($id_publicacion)){ ?>
+					 	(<span id="cantP" class="t20"><?php echo $cant_preg_usr[0]["cant"] ?></span>)
+					 <?php } ?>	 
+					 </h4>
 				<center>
 					<hr class='anchoC'>
 				</center>
