@@ -29,7 +29,7 @@ if(!isset($_SESSION)){
 						$obj_restricciones = new restricciones($_SESSION['id_rol'], $_SERVER['SCRIPT_NAME']);
 						$respuesta=$obj_restricciones->show_page; 
 						if(!$respuesta){
-						   echo '<script>window.location.replace("resumen.php")</script>';
+						   echo '<script>window.location.replace("admin-usr.php")</script>';
 						}
 						
 						

@@ -15,5 +15,7 @@
 include "modales/m_registrar.php";
 ?>
 <div class="modal-backdrop fade in cargador" style="display:none"></div>
+
+
 </body>
 </html>

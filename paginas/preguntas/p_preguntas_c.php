@@ -6,8 +6,8 @@
 ?>
 
 <div class="contenedor">
-	<div class="row marL20 marR20 ">
-			<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10   "><!-- inicio titulo   -->	
+	<div class="row marL20 marR20">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10"><!-- inicio titulo   -->	
 				<h4 class="t20 negro pad10" ><span class="marL10">Preguntas sobre tus Compras</span> (<span id="cantP" class="t20"><?php echo $cant_preg_usr[0]["cant"] ?></span>)</h4>
 				<center>
 					<hr class='anchoC'>
@@ -63,7 +63,7 @@ foreach ($p_preguntas as $pp => $valor2) {
 	
 	     							
 									<p class="t14 marL20 marR20" id="preguntas<?php echo $id_pub;?>" style="border-bottom: #ccc 1px dashed;">
-										<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor2["pregunta"]; ?>&nbsp;&nbsp; <span class="opacity t11"> <?php echo $valor2["tiempo"]; ?></span></span>
+										<i class="fa fa-comment blueO-apdp marL10"></i> <span class="marL5"><?php echo $valor2["pregunta"]; ?>&nbsp;&nbsp;</span>
 										<br>
 										<br>
 									<?php if($r[0] != null) {?>
@@ -84,7 +84,7 @@ foreach ($p_preguntas as $pp => $valor2) {
 									
 									<div class="" id="<?php echo $id_pub; ?>" style="background:#D8DFEA; padding:10px; padding: 20px; border:1px solid #ccc; display:none">
 			                        	<div style="background: #FFF">
-			                        		<textarea lang="5" class="form-textarea-msj preguntas"  placeholder="Indica tu duda o pregunta ... " id="txtPregunta<?php echo $id_pub; ?>" name="txtPregunta<?php echo $id_pub; ?>" data-id="<?php echo $id_pub; ?>"></textarea>            
+			                        		<textarea lang="5" class="form-textarea-msj2 preguntas"  placeholder="Indica tu duda o pregunta ... " id="txtPregunta<?php echo $id_pub; ?>" name="txtPregunta<?php echo $id_pub; ?>" data-id="<?php echo $id_pub; ?>"></textarea>            
 			                        		<p class="text-right marR10 t10" id="restante<?php echo $id_pub;?>" name="restante<?php echo $id_pub;?>" >240</p>
 			                        	</div>
 										<div style="text-align: left;">
