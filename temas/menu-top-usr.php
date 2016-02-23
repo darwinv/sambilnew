@@ -44,7 +44,8 @@ if(!isset($_SESSION)){
 	 
 
 						//****BUSCAMOS DATOS DE LA SEDE*********
-					  if(isset($_GET['code_sambil'])){
+						
+					 if(isset($_GET['code_sambil']) and $_SESSION['id_rol']!=1){
 								$ciudad_sambil=$_GET['code_sambil'];
 		 						$_SESSION['code_sambil']=$ciudad_sambil;
 						 }elseif(isset($_SESSION['code_sambil'])){
@@ -54,11 +55,11 @@ if(!isset($_SESSION)){
 								$img_banner='galeria/img/apdp-slide/CARACAS.jpg';
 						 }
 						 
-						 $sedes=	$obj_sede->buscarSedes(); 
+						 $sedes=$obj_sede->buscarSedes(); 
 						 
-						 $sedes_show=	$obj_sede->buscarSedes(); 
+						 $sedes_show=$obj_sede->buscarSedes(); 
 						 
-						 $result_sede=	$obj_sede->buscarDetalleSede($sedes_show, $ciudad_sambil);
+						 $result_sede=$obj_sede->buscarDetalleSede($sedes_show, $ciudad_sambil);
 						 
 						 $_SESSION['id_sede']=	$result_sede[0];
 						 $img_banner=			$result_sede[1];
@@ -71,6 +72,7 @@ if(!isset($_SESSION)){
 
 switch ($_SESSION['id_rol']) {
 	case '1':
+	    
 		$rol='admin';
 		$ruta_perfil="configuracion.php";
 		$ruta_micuenta="configuracion.php";
@@ -315,7 +317,7 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 				<?php } else { ?>			
 					<div class="dropdown">
 					  <div class="mayus ciudades dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					  <?php echo $sede_sambil; ?>   
+					  <?php echo $ciudad_sambil ?>   
 					  </div>
 					  	</div>
 					</li>

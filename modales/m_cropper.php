@@ -16,7 +16,7 @@
 					<input type="file" class="cropit-image-input">
 					<!-- .cropit-image-preview-container is needed for background image to work -->
 					<div class="cropit-image-preview-container " style="top:0px; left:100px;">
-						<div class="cropit-image-preview " ></div>
+						<div class="cropit-image-preview " > <div class="error-msg" style="display:none;"></div></div>
 					</div>
 					<br>
 					<br>
