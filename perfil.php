@@ -41,8 +41,8 @@ if(isset($_GET["new"])){
 	</div>
 		
 </div>
-<?php include 'modales/m_cropper.php';?>
-<?php include 'modales/m_info_social.php';
+<?php 
+	  include 'modales/m_info_social.php';
 	  include "modales/m_info_seguidor.php";
 	  include 'modales/m_registrar.php';
 ?>
