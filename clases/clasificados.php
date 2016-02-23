@@ -490,4 +490,10 @@ class clasificados{
     	}
     	return substr($this->ruta,0,3);
     }
+    public function getID(){  
+    	return $this->id;
+    }
+    public function getNombre(){
+		return $this->nombre;
+	}
 }

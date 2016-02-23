@@ -126,6 +126,8 @@ function buscaRuta(){
 				<div class="marL5 marT5 marB5  contenedor">
 					<div class="marL10">
 						<div id="izquierda">
+							
+							<?php /*
 							<div id="tipo">
 							<h5 class="negro" ><b>Clasificado</b></h5>
 							<hr class="marR5">
@@ -148,8 +150,11 @@ function buscaRuta(){
 										endif;
 										?>											
 								</ul>
-								<?php
+								<?php  */
+								
 									$cat=$act_cla!=""?"data-categoria=$act_cla":""; 
+									
+									
 								?>
 							<div id="categoria" name="categoria" <?php echo $cat;?> style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
 								<h5 class="negro"><b>Categoria</b></h5>
@@ -159,7 +164,7 @@ function buscaRuta(){
 											foreach($categorias as $c=>$valor):
 												if($valor["totaC"]>0):
 											?>
-													<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo "{$valor["nombre"]} ({$valor["totaC"]})";?></a></span></div></li>
+													<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>" data-cantidad="<?php echo $valor["totaC"];?>" ><?php echo "{$valor["nombre"]} ({$valor["totaC"]})";?></a></span></div></li>
 													<?php
 												endif;
 											endforeach;
@@ -186,7 +191,7 @@ function buscaRuta(){
 											?>
 									</ul>
 						</div>  <?php */  ?>	
-							<div id="condicion" style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
+							<?php /*?>	 <div id="condicion" style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
 								<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 								<hr class="marR5">
 							</div>
@@ -212,7 +217,7 @@ function buscaRuta(){
 										endif;
 										?>
 								</ul>
-								
+								<?php */ ?>	
 								<div id="ver_tiendas" data-ver_tiendas='<?php echo $ver_tiendas; ?>'  style="display:none" ></div>
 								
 							</div>						

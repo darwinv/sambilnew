@@ -211,6 +211,12 @@ class busqueda{
 		
 	}
 	public function getCategorias(){
+		#BUSCAMOS LA SEDE ACTUAL
+		if (! isset ( $_SESSION )) {
+			session_start ();
+		}
+		$id_sede=$_SESSION['id_sede'];
+		
   		$bd=new bd();
 		if($this->clasificados_id==""){
 		 	$cla=$bd->doFullSelect("clasificados","clasificados_id<=4 and clasificados_id is not null order by nombre");
@@ -226,6 +232,9 @@ class busqueda{
 				$condicion="where id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null)";
 				if($this->palabra!="")
 				$condicion .=" and titulo like '%{$this->palabra}%'";
+				
+				$condicion .=" and usuarios_id in (select id from usuarios where id_sede=$id_sede) ";
+				
 				$consulta="select count(id) as totaC from publicaciones $condicion and clasificados_id in (select id from clasificados where 
 							ruta like '%$criterio%')";
 				$r=$bd->query($consulta);

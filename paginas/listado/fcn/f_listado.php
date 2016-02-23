@@ -30,9 +30,17 @@
 			break;
 		case "filtrarVen":
 			filtraVen();
-			break;			
+			break;
+		case "paginator":
+			paginator();
+			break;		
 	}
 	function filtraCat(){
+		#BUSCAMOS LA SEDE ACTUAL
+		if (! isset ( $_SESSION )) {
+			session_start ();
+		}
+		$id_sede=$_SESSION['id_sede'];
 		$bd=new bd();		
 		$clasificado=new clasificados($_POST["id"]);
 		$palabra=$_POST["palabra"]!=""?" and titulo like '%{$_POST["palabra"]}%'":"";
@@ -47,42 +55,68 @@
 			$strCondicion="";
 		}
 		$ruta=$clasificado->getAdressWithLinks($_POST["palabra"]);
-		?>
+		/*?>
 		<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 resultados" > <!-- ocultar cuando no hay resultados -->
 			<div class="marL5 marT5 marB5  contenedor">
 				<div class="marL10">
 					<div id="izquierda">
-		<?php		
+		<?php		*/
 		/********************INICIO DE LA BUSQUEDA DE CATEGORIAS********************/
 		$hijos=$clasificado->buscarHijos();
+		 
+		 if(!$hijos){
+		 	$hijos[0]['id']=$clasificado->getID();
+			$hijos[0]['nombre']=$clasificado->getNombre();
+		 }
+		 
+		 ob_start();
+		 
 		if($hijos):
+			
+			
 			?>			
-			<div id="categoria" data-categoria="<?php echo $_POST["id"];?>">
+			 
 				<h5 class="negro"><b>Categoria</b></h5>
 				<hr class="marR5">
 				<ul class="nav marR5 t11  marT10 marB20 ">
 					<?php
 					foreach($hijos as $h=>$valor):
 						$criterio="I" . $valor["id"] . "F";
-						$consulta="select count(id) as totaC from publicaciones where id in 
+						$condicion =" and usuarios_id in (select id from usuarios where id_sede=$id_sede) ";
+						
+						$consulta="select count(id) as totaC from publicaciones where id in
 						(select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null) $strEstado $strCondicion
-						and clasificados_id in (select id from clasificados where ruta like '%$criterio%') $palabra";
+						and clasificados_id in (select id from clasificados where ruta like '%$criterio%') $condicion $palabra";
+						
 						$result=$bd->query($consulta);
 						$row=$result->fetch();
 						if($row["totaC"]>0):
 						?>
-							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo  ($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
+							<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>" data-cantidad="<?php echo $row["totaC"];?>"  ><?php echo  ($valor["nombre"]) ." ({$row["totaC"]})";?></a></span></div></li> 
 							<?php
 						endif;
+						 
 					endforeach;
 					?>
 				</ul>			
-			</div>
+			 
 			<?php
 		endif;
+		
+		$categorias = ob_get_clean();
+    	ob_end_clean();
+		
+		 
+		/*ob_start();
+		 PAGINATOR
+		$paginator = ob_get_clean();
+    	ob_end_clean();*/
+		
+		echo (json_encode ( array('categoria'=> $categorias, 'ruta'=>$ruta) ));
+		
 		/******************FIN DE LA BUSQUEDA DE CATEGORIAS********************/
 		/******************INICIO DE LA BUSQUEDA DE UBICACION******************/
-		if($_POST["estado"]!=""){
+		/*if($_POST["estado"]!=""){
 			if($_POST["estado"]<100){
 				$estados=$bd->doFullSelect("estados","id={$_POST["estado"]}");
 				$ruta.=" En {$estados[0]["nombre"]}";
@@ -116,9 +150,10 @@
 							?>
 						</ul>
 			</div>
-		<?php	
+		<?php*/	
 		/******************FIN DE LA BUSQUEDA DE UBICACION*********************/
 		/******************INICIO DE LA BUSQUEDA DE CONDICION******************/
+		/*
 		$criterio="I" . $_POST["id"] . "F";		
 		$condicion=" and clasificados_id in (select id from clasificados where ruta like '%$criterio%') and ";
 		$condicion.="id in (select publicaciones_id from publicacionesxstatus where status_publicaciones_id=1 and fecha_fin is null) $palabra $strCondicion";
@@ -170,14 +205,16 @@
 				<span class='blue-vin'>Servicios (<?php echo $condiciones["tota3"];?>)</a></div></div></li>
 				<?php
 				endif;
-				/******************FIN DE LA BUSQUEDA DE CONDICION (NUEVO, USADO, SERVICIO)********************/
-				?>
-			</ul>
+				  ?>
+			</ul> 
+		 /******************FIN DE LA BUSQUEDA DE CONDICION (NUEVO, USADO, SERVICIO)********************/
+		/* ?>
 			</div> <!--Cierre de Izquierda-->
 			</div>
 			</div>
 		</div>
-		<?php
+		<?php 
+		 
 			$condicion=substr($condicion,5,strlen($condicion));
 			$consulta="select id from publicaciones where $condicion limit 25 OFFSET 0";
 			$result=$bd->query($consulta);
@@ -285,7 +322,8 @@
 					</nav></center></div>
 					</div></div></div>
 					</div>
-					<?php
+					<?php */
+					 
 	}
 		/**************FILTRAR POR ESTADO********************/
 	function filtraEst(){
@@ -1017,13 +1055,14 @@
 	function busca(){
 		$foto=new fotos();
 		
-		$categoria=$_POST["categoria"];
-		$condicion=$_POST["condicion"];
-		$estado=$_POST["estado"];
-		$orden=$_POST["orden"];
-		$palabra=$_POST["palabra"];
-		$ver_tiendas=$_POST["ver_tiendas"];
-		$pagina=$_POST["pagina"];
+		$categoria=isset($_POST["categoria"])?$_POST["categoria"]:"";
+		$condicion=isset($_POST["condicion"])?$_POST["condicion"]:"";
+		$estado=isset($_POST["estado"])?$_POST["estado"]:"";
+		$orden=isset($_POST["orden"])?$_POST["orden"]:"";
+		$palabra=isset($_POST["palabra"])?$_POST["palabra"]:"";
+		$ver_tiendas=isset($_POST["ver_tiendas"])?$_POST["ver_tiendas"]:"0";
+		$pagina=isset($_POST["pagina"])?$_POST["pagina"]:"1";
+		
 		
 		$categoria=$valores=array("palabra"=>$palabra,
 				"ver_tiendas"=>$ver_tiendas,
@@ -1659,5 +1698,45 @@
 					</div></div></div>
 					</div>
 		<?php						
+	}
+	function paginator($total=null){
+		if(empty($total))
+			$total=$_POST['total_row'];
+		$totalPaginas=ceil($total/25);
+		?>
+		<div id="paginacion" name="paginacion" class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' data-paginaActual='1' data-total="<?php echo $total;?>"><center><nav><ul class='pagination'>
+					    	 
+									<li id="anterior2" name="anterior2" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-funcion='anterior2'><i class='fa fa-angle-double-left'></i> </a>
+									<li id="anterior1" name="anterior1" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-funcion='anterior1'><i class='fa fa-angle-left'></i> </a>											
+									<?php
+									$oculto="";
+									$activo="active";									
+									for($i=1;$i<=$totalPaginas;$i++):
+									?>
+										<li class="<?php echo $activo; echo $oculto;?>"><a class="botonPagina" href='#' data-pagina="<?php echo $i;?>"><?php echo $i;?></a></li>
+									<?php
+									$activo="";
+									if($i==10)
+									$oculto=" hidden";
+									endfor;
+								?>
+								<?php
+									if($totalPaginas>1):
+									?>								
+										<li id="siguiente1" name="siguiente1"><a href='#' aria-label='Next' class='navegador' data-funcion='siguiente1'><i class='fa fa-angle-right'></i> </a>
+									<?php
+									endif;
+									?>
+								<?php
+									if($totalPaginas>10):
+										?>
+										<li id="siguiente2" name="siguiente2"><a href='#' aria-label='Next' class='navegador' data-funcion='siguiente2'><i class='fa fa-angle-double-right'></i> </a>
+									<?php
+									endif;
+								?>
+								</li></ul>
+						</nav></center></div>
+		
+		<?php
 	}
 ?>
