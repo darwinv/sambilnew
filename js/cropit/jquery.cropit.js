@@ -380,7 +380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'onPreImageLoaded',
 	    value: function onPreImageLoaded() {
-	      if (this.options.smallImage === 'reject' && (this.preImage.width * this.options.maxZoom < this.previewSize.w * this.options.exportZoom || this.preImage.height * this.options.maxZoom < this.previewSize.h * this.options.exportZoom)) {
+	      if (this.options.smallImage === 'reject' && (this.preImage.width < (this.previewSize.w-250) || this.preImage.height  < (this.previewSize.h-100) )) {
 	        this.onImageError(_constants.ERRORS.SMALL_IMAGE);
 	        if (this.image.src) {
 	          this.setImageLoadedClass();
@@ -863,7 +863,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.minZoom = Math.max(widthRatio, heightRatio);
 	      }
 
-	      if (smallImage === 'allow') {
+	      if (smallImage === 'reject') {
 	        this.minZoom = Math.min(this.minZoom, 1);
 	      }
 

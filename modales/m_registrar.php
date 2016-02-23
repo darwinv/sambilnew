@@ -16,7 +16,7 @@
 			</div>
 			<img class="hidden" src="" id="foto-usuario" name="foto-usuario"></img>
 			
-	<form id="usr-reg-form" action="fcn/f_usuarios.php" method="post" class="form-inline formulario" data-method="new" >
+	<form id="usr-reg-form" action="fcn/f_usuarios.php" method="post" class="form-inline formulario mar10" data-method="new" >
 
 			<input type="hidden" id="type" name="type"/>
 			

@@ -1,15 +1,43 @@
 /**
  * JavaScript: Cropit
  */
-$(document).ready(function(){	
+
+$(document).ready(function(){
+		
+	var rutaP=$("#img-portada").data("rP");	
 	$('.image-editor').cropit({
 		exportZoom: 1,
 		imageBackground: true,
 		imageBackgroundBorderWidth: 25,
-		smallImage: 'allow',
+		smallImage: 'reject',
 		maxZoom: 2,
-		freeMove: true
+		freeMove: false,
+		//imageSrc: 'galeria/img/fondos/portada.png',
+		onImageError: function(e) {
+            if (e.code === 1) {
+                $('.error-msg').text("Por favor selecciona una imagen que tenga un minimo de " + ($('.cropit-image-preview').outerWidth()-250) + "px de ancho * " + ($('.cropit-image-preview').outerHeight()-100) + "px de alto.");
+                $('.error-msg').css("display","block");
+                $('.cropit-image-preview').addClass("has-error");      
+                //$(".image-editor").cropit("imageSrc", 'galeria/img/fondos/portada.png');             
+            }
+        }	
 	});
+		
+	$("#cambiar-foto").click(function(){
+		$('.error-msg').css("display","none");
+         $('.cropit-image-preview').removeClass("has-error");
+	});	
+	
+	$("#cerrar").click(function(){
+		$('.error-msg').css("display","none");
+         $('.cropit-image-preview').removeClass("has-error");
+	});
+	$(".modal").mouseleave(function(){
+		$('.error-msg').css("display","none");
+        $('.cropit-image-preview').removeClass("has-error");
+	});		
+		
+		
 	$('#save-foto').click(function() {
 		var imageData = $('.image-editor').cropit('export');
 		if($("#save-foto").data("nro") === undefined){
