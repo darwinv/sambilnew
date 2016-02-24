@@ -331,7 +331,7 @@ border-bottom-left-radius: 10px; " >
 							<img src='" . $foto->buscarFotoUsuario($usua->id) . "' class=' img-responsive center-block img-apdp'>
 						</div>
 						<br>
-						<span class='blue-vin t16'> " . $nombre . "</span>
+						<span class='blue-vin t16'> " . strtoupper($nombre) . "</span>
 						<br>
 						<span class='t12 grisC'> <i class='fa fa-thumbs-o-up'></i> <span class='t12 grisC'>{$r["cantLikes"]}</span>
 						<br>

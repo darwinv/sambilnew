@@ -218,7 +218,10 @@ $(document ).ready(function() {
 			p_identificacion: {validators : {
 				notEmpty:{},
 				digits:{},	
-				stringLength : { max : 10 },
+				stringLength : { 
+					min:5,
+					max : 10 
+					},
 				blank: {}}},
 			p_nombre : {validators : {
 				notEmpty : {},
@@ -258,7 +261,8 @@ $(document ).ready(function() {
 			seudonimo : {validators : {
 				notEmpty : {},
 				stringLength : {max : 64},
-				regexp: {regexp: /^[a-zA-Z0-9_.-]*$/i},
+				regexp: {regexp: /^[a-z\d_]{4,15}$/i  },
+				/*regexp: {regexp: /^[a-zA-Z0-9_.-]*$/i},*/
 				blank: {}}},
 			email : {validators : {
 				notEmpty : {},
