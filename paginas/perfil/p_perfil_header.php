@@ -131,7 +131,7 @@ $(document).ready(function(){
 						<?php endif;?>
 					<?php endif;?>	
 					<div class="seu-nom-perfil-header center-block" style="width:500px;">
-					<b class="texto-perfil-header"><?php echo strtoupper($usuario->a_seudonimo);?></b>
+					<b class="texto-perfil-header"><?php echo strtoupper($usuario->j_razon_social);?></b>
 					<br>
 					<span class="texto2-perfil-header">
 					<?php if(is_null($usuario->j_rif)):

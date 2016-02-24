@@ -174,9 +174,9 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
                             	<br>
                             	<br>
                             	
-                                <span class="t16  vin-blue"><b><a href="perfil.php?id=<?php echo $usuario -> id; ?>"  > <?php echo $usuario -> a_seudonimo; ?></a></b></span> 
+                                <span class="t16  vin-blue"><b><a href="perfil.php?id=<?php echo $usuario -> id; ?>"  > <?php echo $usuario -> j_razon_social; ?></a></b></span> 
                                 <br> 
-                                <span class="t14" ><?php echo $usuario -> n_nombre . " " . $usuario -> n_apellido . $usuario -> j_razon_social; ?> </span>   
+                                <span class="t14" ><?php echo $usuario -> n_nombre . " " . $usuario -> n_apellido . $usuario -> a_seudonimo; ?> </span>   
                                 <br>
                                                             
                                 <!--<span class="t12 orange-apdp" > <b><?php echo $usuario -> getTiempo(); ?></b> vendiendo en A Precio De Pana </span>   
@@ -191,7 +191,7 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
                                 <div class="marR20 marL5 text-justify pad15" >
                                 <div class="t16  blueO-apdp"><b>Biograf&iacute;a </b></div> 
                                 <br> 
-                                <div class="t12 " ><i class="fa fa-quote-left"></i> <span class="grisC"> Proveedor de servicios autorizado Apple </span> <i class="fa fa-quote-right"></i></div>
+                                <div class="t12 " ><i class="fa fa-quote-left"></i> <span class="grisC"> Proximamente </span> <i class="fa fa-quote-right"></i></div>
 								</div>
                             </div>
                            <!--  <div class="pull-left  col-xs-12 col-sm-12 col-md-5 col-lg-5 marB10">
