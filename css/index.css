@@ -1,6 +1,10 @@
 /* ************ MEDIAS ***************** */
-@media (max-width:100vh){
-	
+/****SI EL ALTO DE LA PANTALLA ES MAYOR A 220PX****/
+@media (min-width:2200px){
+	#imagenroja{
+		position:fixed;
+		bottom: 0px;
+	}
 	
 	
 }
