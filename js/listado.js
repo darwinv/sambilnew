@@ -216,7 +216,7 @@ $(document).ready(function(){
 		
 		$("#categoria").data("categoria",id);
 		paginar(1);
-		create_paginator($(this).data("cantidad"));
+		//create_paginator($(this).data("cantidad"));
 		var cantidad=$(this).data("cantidad");
 		loadingAjax(true);
 		$.ajax({
@@ -228,6 +228,7 @@ $(document).ready(function(){
  				console.log(data);
 				$("#categoria").html(data.categoria); 
 				$("#ruta").html(data.ruta);
+				$('#paginacion').html(data.paginacion);
 				$('html,body').animate({
     				scrollTop: 0
 				}, 200);

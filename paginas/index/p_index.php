@@ -28,7 +28,9 @@
  				
  	
  			</div>
- 			<div id="imagenroja" name="imagenroja"><img id="imgroja" name="imgroja" src="galeria/img/fondos/imagenroja.jpg" width="30%" height="30%"></img></div>
+ 			<div id="imagenroja" name="imagenroja" class="col-xs-7 col-sm-7 col-md-5 col-lg-4">
+ 				<img id="imgroja" name="imgroja" src="galeria/img/fondos/imagenroja.jpg" width="100%" ></img>
+ 			</div>
  				
  		</div>
  		

@@ -105,14 +105,8 @@
 		
 		$categorias = ob_get_clean();
     	ob_end_clean();
-		
 		 
-		/*ob_start();
-		 PAGINATOR
-		$paginator = ob_get_clean();
-    	ob_end_clean();*/
-		
-		echo (json_encode ( array('categoria'=> $categorias, 'ruta'=>$ruta) ));
+		echo (json_encode ( array('categoria'=> $categorias,'paginacion'=> paginator($_POST['cantidad']), 'ruta'=>$ruta) ));
 		
 		/******************FIN DE LA BUSQUEDA DE CATEGORIAS********************/
 		/******************INICIO DE LA BUSQUEDA DE UBICACION******************/
@@ -1127,11 +1121,12 @@
 						</div>
 				<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
 			    <span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo  ($miTitulo);?></b></a></span>
-					<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-					<br><span class='t14 grisO '><?php echo  ($usua->getNombre());?></span><br>
+					<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->getNombre();?></b></a></span>
+					<br>
 					<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 					<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 					</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
+			    	<br>
 			    </div>
 			    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'>
 			    	<div class='marR20'><span class='red t20'><b> <?php echo $publi->getMonto();?></b></span >
@@ -1703,40 +1698,35 @@
 		if(empty($total))
 			$total=$_POST['total_row'];
 		$totalPaginas=ceil($total/25);
-		?>
-		<div id="paginacion" name="paginacion" class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' data-paginaActual='1' data-total="<?php echo $total;?>"><center><nav><ul class='pagination'>
-					    	 
-									<li id="anterior2" name="anterior2" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-funcion='anterior2'><i class='fa fa-angle-double-left'></i> </a>
-									<li id="anterior1" name="anterior1" class="hidden"><a href='#' aria-label='Previous' class='navegador' data-funcion='anterior1'><i class='fa fa-angle-left'></i> </a>											
-									<?php
-									$oculto="";
-									$activo="active";									
-									for($i=1;$i<=$totalPaginas;$i++):
-									?>
-										<li class="<?php echo $activo; echo $oculto;?>"><a class="botonPagina" href='#' data-pagina="<?php echo $i;?>"><?php echo $i;?></a></li>
-									<?php
-									$activo="";
-									if($i==10)
-									$oculto=" hidden";
-									endfor;
-								?>
-								<?php
-									if($totalPaginas>1):
-									?>								
-										<li id="siguiente1" name="siguiente1"><a href='#' aria-label='Next' class='navegador' data-funcion='siguiente1'><i class='fa fa-angle-right'></i> </a>
-									<?php
-									endif;
-									?>
-								<?php
-									if($totalPaginas>10):
-										?>
-										<li id="siguiente2" name="siguiente2"><a href='#' aria-label='Next' class='navegador' data-funcion='siguiente2'><i class='fa fa-angle-double-right'></i> </a>
-									<?php
-									endif;
-								?>
-								</li></ul>
-						</nav></center></div>
 		
-		<?php
+		$oculto="";
+		$activo="active";			
+		$paginador='<div id="paginacion" name="paginacion" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " data-paginaActual="1" data-total="<?php echo $total;?>"><center><nav><ul class="pagination">
+							    	 
+											<li id="anterior2" name="anterior2" class="hidden"><a href="#" aria-label="Previous" class="navegador" data-funcion="anterior2"><i class="fa fa-angle-double-left"></i> </a>
+											<li id="anterior1" name="anterior1" class="hidden"><a href="#" aria-label="Previous" class="navegador" data-funcion="anterior1"><i class="fa fa-angle-left"></i> </a>';									
+									 										
+											for($i=1;$i<=$totalPaginas;$i++):
+											
+												$paginador.='<li class="'.$activo.' '.$oculto.'"><a class="botonPagina" href="#" data-pagina="'.$i.'">'.$i.'</a></li>';
+											
+											$activo="";
+											if($i==10)
+											$oculto=" hidden";
+											endfor;
+										
+											if($totalPaginas>1):
+												$paginador.='<li id="siguiente1" name="siguiente1"><a href="#" aria-label="Next" class="navegador" data-funcion="siguiente1"><i class="fa fa-angle-right"></i> </a>';
+											
+											endif;
+											 
+											if($totalPaginas>10):
+												$paginador.='<li id="siguiente2" name="siguiente2"><a href="#" aria-label="Next" class="navegador" data-funcion="siguiente2"><i class="fa fa-angle-double-right"></i> </a>';
+											 
+											endif;
+									
+										$paginador.='</li></ul>
+								</nav></center></div>';
+		return $paginador;
 	}
 ?>

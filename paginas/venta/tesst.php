@@ -1,161 +1,30 @@
 <?php
-function buscaPublicaciones(){
-		session_start();
-	    $usua2=new usuario($_SESSION["id"]);
-		if(isset($_POST["pagina"]))
-			$pagina=$_POST["pagina"];
-		else
-			$pagina=1;		
-		if(isset($_POST["order"]))
-			$order=$_POST["order"];
-		else
-			$order='id desc';
-		
-		if(isset($_POST["tipo"]))
-			$tipo=$_POST["tipo"];
-		else
-			$tipo='id desc';
-		$hijos2=$usua2->getPublicaciones($tipo,$pagina, NULL, $order);		
-		$contador=0;
-		$des=$tipo==1?"":"disabled";
-		 
-		foreach ($hijos2 as $key => $valor) {
-			$contador++;
-			$publicacion=new publicaciones($valor["id"]);
-			switch($tipo){
-				case 1:
-					$boton1="<li onclick='javascript:modificarOpciones($publicacion->id,2,1)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='pausar'>Pausar</a></li>";
-					$boton2="<li onclick='javascript:modificarOpciones($publicacion->id,3,1)'><a class='finalizar opciones' id='' href='' data-toggle='modal' value='finalizar'>Finalizar</a></li>";
-					break;
-				case 2:
-					$boton1="<li onclick='javascript:modificarOpciones($publicacion->id,1,2)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='reactivar'>Reactivar</a></li>";
-					$boton2="<li onclick='javascript:modificarOpciones($publicacion->id,3,2)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='reactivar'>Finalizar</a></li>";
-					break;
-				case 3:
-					$boton1="<li onclick='javascript:republicarPublicacion($publicacion->id)'><a class='pausar opciones'  id='' href='' data-toggle='modal' data-target='#info-publicacion' value='republicar'>Republicar</a></li>";			
-					$boton2="<li onclick='javascript:eliminarPublicacion($publicacion->id)'><a class='pausar opciones'  id='' href='' data-toggle='modal' value='eliminar'>Eliminar</a></li>";
-					break;
-			}			
-			$cadena="<span id='general" . $valor["id"] . "' name='general" . $valor["id"] . "' class='general' data-titulo={$valor["titulo"]}>
-			<div class='col-xs-12 col-sm-12 col-md-1 col-lg-1  '>			
-					<div class='marco-foto-publicaciones  point ' style='width: 65px; height: 65px;' > <img src='" . $publicacion->getFotoPrincipal() . "' width='100%' height='100%;' 
-					style='border: 1px solid #ccc;' class='img img-responsive center-block imagen' data-id='" . $valor["id"] . "'> </div>				
-			</div>
-			<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 vin-blue t14  '>
-				<span class='detalle.php'> <a href='detalle.php?id={$valor["id"]}'><span id='titulo" . $valor["id"] . "'>" .  ($valor["titulo"]) . "</span> </a>
-				<br>
-				<span class='opacity'># $publicacion->id</span>
-			</div>
-			<div class='col-xs-12 col-sm-12 col-md-2 col-lg-2  text-left '>
-				<span class='red t14' id='monto" . $valor["id"] . "'>" . $publicacion->getMonto(1) . " </span>
-				<span class='t12 opacity' id='stock" . $valor["id"] . "'> x " . $publicacion->stock . " und</span>
-				<br>
-				<span> " . $publicacion->getVisitas() . " Visitas</span>
-				<span class='opacity hidden'> / </span>
-				<span class=' blue-vin hidden'> 30 ventas </span>
-			</div>
-			<div class='col-xs-12 col-sm-12 col-md-3 col-lg-3 text-center t12 '>
-				<div class='btn-group pull-right marR10'>					
-					<button id='b" . $publicacion->id . "' type='button' class='btn2 btn-warning boton' data-toggle='modal' data-target='#info-publicacion' onclick='javascript:pasavalores($publicacion->id)'
-					data-id='$publicacion->id' data-titulo='" .  ($publicacion->titulo) . "' data-stock='$publicacion->stock' data-monto='" . number_format($publicacion->monto,2,',','.') . "' data-id='b" . $publicacion->id . "' data-listado='{$tipo}' $des>
-						Modificar
-					</button>
-					<textarea  class='hidden' id='descripcion_" . $publicacion->id . "'>
-								$publicacion->descripcion
-					</textarea >
-					<button id='btnReactivar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",1,1)'>
-						Reactivar
-					</button> 
-					<button id='btnPausar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",2,2)'>
-						Pausar
-					</button>						
-					<button id='btnFinalizar" . $publicacion->id . "' type='button' class='btn2 btn-warning hidden' data-toggle='modal' onclick='javascript:modificarOpciones(" . $publicacion->id . ",3,3)'>
-						Finalizar
-					</button>					
-					<button id='btnOpciones" . $publicacion->id . "' type='button' class='btn2 btn-warning dropdown-toggle  ' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' >
-						<span class='glyphicon glyphicon-cog '></span>
-						<span class='caret'></span>
-					</button>
-					<ul  class='  dropdown-menu'  id='opciones'>			
-							$boton1						
-							$boton2						
-					</ul>
-					<div id='menPau" . $publicacion->id . "' class='alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
-						Publicacion pausada
-					</div>
-					<div id='menAct" . $publicacion->id . "' class='  alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
-						Publicacion activa
-					</div>
-					<div id='menFin" . $publicacion->id . "' class='  alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
-						Publicacion finalizada
-					</div>
-					<div id='menRep" . $publicacion->id . "' class='  alert alert-success t10 hidden' style='padding:3px;margin-bottom:0px; margin-top:3px;' role='alert'>
-						Republicada
-					</div>
-				</div>
-			</div>
-			<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10'>
-				<center><hr class=' center-block'></center>
-			</div>
-		</span>";
-			echo $cadena;
-		}
-		echo "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10'>
-			<nav class='text-center'>
-			  <ul class='pagination'>";
-								$ac=$usua2->getCantidadPub($tipo);
-								$totalPaginas=floor($ac/25);
-								$restantes=$ac-($totalPaginas*25);
-								if($restantes>0){
-									$totalPaginas++;
-								}
-								echo"</div><div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 ' id='paginas' name='paginas' data-metodo='buscarPublicaciones' data-tipo='" . $tipo . "' data-id='" . $usua2->id . "' > <center><nav><ul class='pagination'>";
-								$contador=0;
-								if($pagina<=10){
-									$inicio=1;
-								}else{
-									$inicio=floor($pagina/10);
-									if($pagina % 10!=0){
-										$inicio=($inicio*10)+1;
-									}else{
-										$inicio=($inicio*10)-9;
-									}									
-								}
-								 								 
-								for($i=$inicio;$i<=$totalPaginas;$i++){
-									$contador++;
-									if($i==$pagina){ 
-										echo "<li class='active' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";
-									}else{
-										echo "<li class='' style='cursor:pointer'><a class='botonPagina' data-pagina='" . $i ."'>$i</a></li>";
-									}
-									if($contador==10){
-										break;
-									}
-								}
-				 if($totalPaginas>0){
-				 echo "<li>
-				      <a href='#' aria-label='Next'>
-				        <span aria-hidden='true'>&raquo;</span>
-				      </a>
-				    </li>
-			  </ul>
-			</nav>
-			</div>	";
-		   }
-		   if($contador==0){
-			?>
-			<script>
-				$("#noresultados").removeClass("hidden");
-				$("#publicaciones").addClass("hidden");
-			</script>		  	
-			<?php
-			}else{
-			?>
-			<script>
-			$("#noresultados").addClass("hidden");
-			$("#publicaciones").removeClass("hidden");
-			</script>
-			<?php		  						
-		}
-}
+$oculto="";
+$activo="active";	
+
+$paginador='<div id="paginacion" name="paginacion" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 " data-paginaActual="1" data-total="<?php echo $total;?>"><center><nav><ul class="pagination">
+					    	 
+									<li id="anterior2" name="anterior2" class="hidden"><a href="#" aria-label="Previous" class="navegador" data-funcion="anterior2"><i class="fa fa-angle-double-left"></i> </a>
+									<li id="anterior1" name="anterior1" class="hidden"><a href="#" aria-label="Previous" class="navegador" data-funcion="anterior1"><i class="fa fa-angle-left"></i> </a>';									
+							 										
+									for($i=1;$i<=$totalPaginas;$i++):
+									
+										$paginador.='<li class="'.$activo.' '.$oculto.'"><a class="botonPagina" href="#" data-pagina="'.$i.'">'.$i.'</a></li>';
+									
+									$activo="";
+									if($i==10)
+									$oculto=" hidden";
+									endfor;
+								
+									if($totalPaginas>1):
+										$paginador.='<li id="siguiente1" name="siguiente1"><a href="#" aria-label="Next" class="navegador" data-funcion="siguiente1"><i class="fa fa-angle-right"></i> </a>';
+									
+									endif;
+									 
+									if($totalPaginas>10):
+										$paginador.='<li id="siguiente2" name="siguiente2"><a href="#" aria-label="Next" class="navegador" data-funcion="siguiente2"><i class="fa fa-angle-double-right"></i> </a>';
+									 
+									endif;
+							
+								$paginador.='</li></ul>
+						</nav></center></div>';
