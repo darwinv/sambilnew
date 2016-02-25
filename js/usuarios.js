@@ -70,7 +70,7 @@ $("#update_usr-reg-submit").click(function(){
 			e_rif_admin: {validators : {
 				notEmpty:{},	
 				digits:{},
-				stringLength : { max :  10},
+				stringLength : { min:5, max :  10},
 				blank: {}}},
 			e_razonsocial_admin : {validators : {
 				notEmpty : {},
@@ -88,7 +88,8 @@ $("#update_usr-reg-submit").click(function(){
 			seudonimo_admin : {validators : {
 				notEmpty : {},
 				stringLength : {max : 64},
-				regexp: {regexp: /^[a-zA-Z0-9_.-]*$/i},
+				regexp: {regexp: /^[a-z\d_]{4,15}$/i },
+				//regexp: {regexp: /^[a-zA-Z0-9_.-]*$/i},
 				blank: {}}},
 			email_admin : {validators : {
 				notEmpty : {},

@@ -368,6 +368,29 @@ function comprobarToken($token){
 		return false;
 }
 
+public function  getEmailAdminBySede($iduser){
+	$bd = new bd();
+	$condicion="id=$iduser";
+	$result=$bd->doSingleSelect($this->u_table,$condicion,"id_sede");
+	if($result){  
+	   $idsede= $result['id_sede'];
+		$consulta="SELECT usuarios_accesos.email 
+					FROM usuarios_accesos 
+					Inner Join usuarios ON usuarios_accesos.usuarios_id = usuarios.id
+						WHERE usuarios_accesos.id_rol = 1 AND usuarios.id_sede =  $idsede";
+		$result2=$bd->query($consulta);
+		if($result2){ 
+		   $row=$result2->fetch();
+		  return $row;
+		 }
+		else { 
+			return false;
+		}
+		
+	}
+	else 
+		return false;
+}
 	/* * * * * * * * * * * * * * * * * * * * * * * * *
 	 * ===========--- Private Methods ---=========== *
 	 * * * * * * * * * * * * * * * * * * * * * * * * */

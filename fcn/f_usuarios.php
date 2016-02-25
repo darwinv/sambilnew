@@ -484,8 +484,12 @@ function newUser() {
 	}
 }*/
 	function sendEmail(){
+		$usuario = new usuario();
+		$result= $usuario->getEmailAdminBySede($_POST["iduser"]);
 		ini_set("sendmail_from",$_POST["email"]);
-		$email_to = "apreciodepanacontacto@gmail.com";
+		//$email_to = "apreciodepanacontacto@gmail.com";
+		$email_to=$result["email"];
+		//var_dump($result);
 
 		$email_subject = $_POST ['nombre']." te ha contactado!";
 		$email_message = $_POST ['mensaje']."\n\n";		

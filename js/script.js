@@ -751,14 +751,16 @@ $("#enviar").click(function(e){
 		email=$("#email").val();
 		nombre=$("#nombre").val();
 		mensaje=$("#mensaje").val();
+		iduser=$("#enviar-email").data("iduser");
 		method="send-email";
 		$.ajax({
-			url:"/fcn/f_usuarios.php",
-			data:{'method':method,'nombre':nombre,'email':email,'mensaje':mensaje},
+			url:"fcn/f_usuarios.php",
+			data:{'method':method,'nombre':nombre,'email':email,'mensaje':mensaje,'iduser':iduser},
 			type:"POST",
 			dataType:"html",
 			success:function(data){
 				//alert(data);
+			console.log(data);
 			},
 			error:function(xhr,status){
 				alert(data);
@@ -770,8 +772,11 @@ $("#enviar").click(function(e){
 						text: "Tu mensaje ha sido enviado.",
 						imageUrl: "galeria/img/logos/bill-ok.png",
 						timer: 2000, 
-						showConfirmButton: true
-				});
+						showConfirmButton: true}, function(){
+							location.reload();
+										
+						});
+				
 		
 	});
 	$(document).on('keyup',"#txtBusqueda",function(e){

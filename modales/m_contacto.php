@@ -15,7 +15,7 @@ if(isset($_SESSION["id"])){
 	aria-labelledby="myLargeModalLabel" id="contacto">
 	<div class="modal-dialog modal-lg">
 		<form method="post" id="enviar-email" name="enviar-email"
-			action="" method="POST">
+			action="" method="POST" data-iduser="<?php echo $_SESSION["id"]?>">
 			<div class="modal-content"
 				style="padding-top: 50px; padding-bottom: 50px;">
 
