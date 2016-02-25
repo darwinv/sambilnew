@@ -126,6 +126,8 @@ function buscaRuta(){
 				<div class="marL5 marT5 marB5  contenedor">
 					<div class="marL10">
 						<div id="izquierda">
+							
+							<?php /*
 							<div id="tipo">
 							<h5 class="negro" ><b>Clasificado</b></h5>
 							<hr class="marR5">
@@ -148,8 +150,11 @@ function buscaRuta(){
 										endif;
 										?>											
 								</ul>
-								<?php
+								<?php  */
+								
 									$cat=$act_cla!=""?"data-categoria=$act_cla":""; 
+									
+									
 								?>
 							<div id="categoria" name="categoria" <?php echo $cat;?> style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
 								<h5 class="negro"><b>Categoria</b></h5>
@@ -159,7 +164,7 @@ function buscaRuta(){
 											foreach($categorias as $c=>$valor):
 												if($valor["totaC"]>0):
 											?>
-													<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>"><?php echo "{$valor["nombre"]} ({$valor["totaC"]})";?></a></span></div></li>
+													<li class='marB10 t11'><div  class='h-gris'><span ><a class='blue-vin filtrocat' href='#' data-id="<?php echo $valor["id"];?>" data-cantidad="<?php echo $valor["totaC"];?>" ><?php echo "{$valor["nombre"]} ({$valor["totaC"]})";?></a></span></div></li>
 													<?php
 												endif;
 											endforeach;
@@ -186,7 +191,7 @@ function buscaRuta(){
 											?>
 									</ul>
 						</div>  <?php */  ?>	
-							<div id="condicion" style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
+							<?php /*?>	 <div id="condicion" style="display:<?php if($totalPub==0){ echo "none"; } else{ echo "block"; }?>">
 								<h5 class="negro" ><b>Condici&oacute;n</b></h5>
 								<hr class="marR5">
 							</div>
@@ -212,7 +217,7 @@ function buscaRuta(){
 										endif;
 										?>
 								</ul>
-								
+								<?php */ ?>	
 								<div id="ver_tiendas" data-ver_tiendas='<?php echo $ver_tiendas; ?>'  style="display:none" ></div>
 								
 							</div>						
@@ -313,11 +318,12 @@ function buscaRuta(){
 												</div>
 												<div class=' col-xs-12 col-sm-6 col-md-7 col-lg-7'><p class='t16 marL10 marT5'>
 											    	<span class=' t15'><a class='negro' href='detalle.php?id=<?php echo $publi->id;?>' class='grisO'><b> <?php echo $miTitulo;?></b></a></span>
-													<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->a_seudonimo;?></b></a></span>
-													<br><span class='t14 grisO '><?php echo $usua->getNombre();?></span><br>
+													<br><span class=' vin-blue t14'><a href='perfil.php?id=<?php echo $usua->id;?>' class=''><b> <?php echo $usua->getNombre();?></b></a></span>
+													<br />
 													<span class='t12 grisO '><i class='glyphicon glyphicon-time t14  opacity'></i><?php echo $publi->getTiempoPublicacion();?></span><br>
 													<span class='t11 grisO'> <span> <i class='fa fa-eye negro opacity'></i></span><span class='marL5'><?php echo $publi->getVisitas();?> Visitas</span><i class='fa fa-heart negro marL5 opacity'>
 													</i><span class=' point h-under marL5'><?php echo $publi->getFavoritos();?> Me gusta</span><i class='fa fa-share-alt negro marL15 opacity hidden'></i> <span class=' point h-under marL5 hidden'> <?php echo $publi->getCompartidos(3);?> Veces compartido</span> </span></p>
+											   		<br />
 											    </div>
 											    <div class=' col-xs-12 col-sm-12 col-md-3 col-lg-3 text-right'>
 											    	<div class='marR20'><span class='red t20'><b> <?php echo $publi->getMonto();?></b></span >

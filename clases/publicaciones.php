@@ -267,7 +267,9 @@ class publicaciones{
 	}
 	
 	public function getTiempo($segundos){
+		
 		$dias=intval($segundos/60/60/24);
+		
 			if($dias<1){
 			$dias = intval($segundos/60/60);
 			if($dias<1){
@@ -295,7 +297,7 @@ class publicaciones{
 					return " $dias h";
 				}
 			}
-		}elseif($dias<=30){//dias
+		}else{//dias
 			if($dias==1)
 				return " Ayer";
 			else

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('#txtBuscar').val($("#principal").data("palabra"));
 	$('#txtBuscar').select();
-	$(document).on("change","#filtro",function(e){ 
+	$(document).on("change","#filtro",function(e){
 		var pagina=1; 
 		paginar(pagina);
 	});
@@ -182,6 +182,17 @@ $(document).ready(function(){
 			}
 		});
 	}
+	function create_paginator(total){
+		$.ajax({
+			url:"paginas/listado/fcn/f_listado.php",
+			data:{metodo:"paginator",total_row:total},
+			type:"POST",
+			dataType:"html",
+			success:function(data){ 
+				$('#paginacion').html(data);
+			}
+		});
+	}
 	$(document).on("click",".botonPagina",function(e){
 		e.preventDefault();
 		var pagina=$(this).data("pagina");
@@ -202,15 +213,22 @@ $(document).ready(function(){
 		}else{
 			var condicion="";
 		}
+		
+		$("#categoria").data("categoria",id);
+		paginar(1);
+		//create_paginator($(this).data("cantidad"));
+		var cantidad=$(this).data("cantidad");
 		loadingAjax(true);
 		$.ajax({
 			url:"paginas/listado/fcn/f_listado.php",
-			data:{metodo:"filtrarCat",id:id,palabra:palabra,estado:estado,condicion:condicion},
+			data:{metodo:"filtrarCat",id:id,palabra:palabra,estado:estado,condicion:condicion,cantidad:cantidad},
 			type:"POST",
-			dataType:"html",
+			dataType:"json",
 			success:function(data){
-//				$("#izquierda").html(data);
-				$("#principal").html(data);
+ 				console.log(data);
+				$("#categoria").html(data.categoria); 
+				$("#ruta").html(data.ruta);
+				$('#paginacion').html(data.paginacion);
 				$('html,body').animate({
     				scrollTop: 0
 				}, 200);

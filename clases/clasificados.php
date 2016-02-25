@@ -53,7 +53,7 @@ class clasificados{
 		$this->clasificados_id = $clasificados_id;
 		$this->ruta = $ruta;
 	}
-	public function getAdressWithLinks($palabra=NULL,$id=NULL){  
+	public function getAdressWithLinks($palabra=NULL,$id=NULL){ 
 		if(is_null($id)){
 			$id=$this->id;
 		}
@@ -62,7 +62,7 @@ class clasificados{
 		}
 		$bd = new bd();
 		$inicioHtml = "<span id='categoriaNombre'>";
-		$finHtml = "</span><i class='fa fa-angle-right' style='color:#000;' ></i>";
+		$finHtml = "</span><i class='fa fa-caret-right negro marR5 marL5' style='color:#000;' ></i>";
         $row = $bd->doSingleSelect("clasificados","id= $id");
 		//var_dump($id);
         $cadena = "";
@@ -80,7 +80,7 @@ class clasificados{
 				break;
 		}
         if($palabra!=""){
-        	$cadena=$cadena .  "'" . $palabra . "'";
+        	$cadena=$cadena .  "<i class='fa fa-caret-right negro marR5 marL5' style='color:#000;' ></i> '" . $palabra . "'";
         }
 //	    $cadena = "{$inicioHtml} <a href='listado.php?id_cla={$row["id"]}'> {$row["nombre"]} </a> {$finHtml}$cadena";	
 		return $cadena;
@@ -490,4 +490,10 @@ class clasificados{
     	}
     	return substr($this->ruta,0,3);
     }
+    public function getID(){  
+    	return $this->id;
+    }
+    public function getNombre(){
+		return $this->nombre;
+	}
 }
