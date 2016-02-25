@@ -196,7 +196,7 @@ $result=$usua->getUsuarios('1','seudonimo asc',null,$_SESSION['id_sede']);
         <br><br>
         <span>Puedes confiar libremente<br> en estas tiendas.</span>
         <br><br>
-        <span class="vin-blue t18" style="text-decoration:underline;"><a href="listado.php?ver_tiendas">Ver m&aacute;s...</a></span>
+        <span class="vin-blue t18" style="text-decoration:underline;"><a href="listado.php?tiendas">Ver m&aacute;s...</a></span>
         <br>
       </p>
     </div>

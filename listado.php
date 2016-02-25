@@ -7,7 +7,13 @@
 <div class="container">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-top25">
 			<?php 
-				include "paginas/listado/p_listado2.php"; 				
+			$ver_tiendas=isset($_GET["tiendas"])?1:"";
+			
+			if(!empty($ver_tiendas))
+				include "paginas/listado/p_listado_tiendas.php";
+			else
+				include "paginas/listado/p_listado2.php";
+				
 			?>
 		</div>
 	</div>

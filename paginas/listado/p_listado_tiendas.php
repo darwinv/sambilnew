@@ -122,8 +122,8 @@ function buscaRuta(){
 				$totalPub=$condiciones["tota1"] + $condiciones["tota2"] + $condiciones["tota3"]
 			?>
 			<!-- Filtros -->
-			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 resultados " > <!-- ocultar cuando no hay resultados -->
-				<div class="marL5 marT5 marB5  contenedor">
+			<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 resultados  " > <!-- ocultar cuando no hay resultados -->
+				<div class="marL5 marT5 marB5  contenedor hidden">
 					<div class="marL10">
 						<div id="izquierda">
 							
@@ -243,7 +243,7 @@ function buscaRuta(){
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 ">
 							<div class=" marR20" style="margin-top:10px;" id="orden">
-							<select id="filtro"  class="form-control  input-sm " style="width:auto;"  >
+							<select id="filtro"  class="form-control  input-sm hidden" style="width:auto;"  >
 							<option value='id_desc' selected>Mas Recientes</option>
 							<option value='id_asc'>Menos Recientes</option>
 							<option value='monto_desc'>Mayor Precio</option>							

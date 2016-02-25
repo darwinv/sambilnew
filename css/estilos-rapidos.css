@@ -344,6 +344,10 @@
 {
 	padding-top: 70px;
 }
+.pad-left20
+{
+	padding-left: 20px;
+}
 .pad-left-20
 {
 	padding-left: -20px;
@@ -355,6 +359,10 @@
 {
 	padding-left: 0px;
 }
+.pad-right20
+{
+	padding-right: 20px;
+}
 .mar-top100
 {
 	margin-top: 100px;
@@ -363,6 +371,7 @@
 {
 	text-align: left;
 }
+
 
 /* **************************************************** */
 .pointer

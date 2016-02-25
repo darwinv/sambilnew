@@ -271,6 +271,10 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 							</a>
 						</li>
 				<?php }?>
+				
+				<div class="AlertsFooter"><a class="seeMore" href="notificaciones.php" accesskey="5"><span>Ver todas</span></a></div>
+				
+				
 						 </ul>
 						 
 						 <?php } ?>
