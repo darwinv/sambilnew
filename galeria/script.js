@@ -104,7 +104,7 @@ $( document ).ready(function() {
 	            } else {
 	            	swal({
 						title: "Bienvenido", 
-						text: "¡Compra y vende lo que quieras!",
+						text: "ï¿½Compra y vende lo que quieras!",
 						imageUrl: "galeria/img/logos/bill-ok.png",
 						timer: 2000, 
 						showConfirmButton: true
@@ -256,7 +256,7 @@ $( document ).ready(function() {
 	            } else {
 	            	swal({
 						title: "Bienvenido", 
-						text: "¡Compra y vende lo que quieras!",
+						text: "ï¿½Compra y vende lo que quieras!",
 						imageUrl: "galeria/img/logos/bill-ok.png",
 						timer: 2000, 
 						showConfirmButton: true
@@ -431,10 +431,11 @@ $( document ).ready(function() {
 		email=$("#email").val();
 		nombre=$("#nombre").val();
 		mensaje=$("#mensaje").val();
+		iduser=$(this).data("iduser");
 		method="send-email";
 		$.ajax({
 			url:"fcn/f_usuarios.php",
-			data:{'method':method,'nombre':nombre,'email':email,'mensaje':mensaje},
+			data:{'method':method,'nombre':nombre,'email':email,'mensaje':mensaje,'user':iduser},
 			type:"POST",
 			dataType:"html",
 			success:function(data){
