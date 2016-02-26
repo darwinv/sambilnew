@@ -28,6 +28,7 @@ function buscaPublicaciones(){
 			$pagina=$_POST["pagina"];
 		else
 			$pagina=1;		
+		
 		if(isset($_POST["order"]))
 			$order=$_POST["order"];
 		else
@@ -37,10 +38,10 @@ function buscaPublicaciones(){
 			$tipo=$_POST["tipo"];
 		else
 			$tipo='1';
+		
 		$hijos2=$usua2->getPublicaciones($tipo,$pagina, NULL, $order);		
 		$contador=0;
-		$des=$tipo==1?"":"disabled";
-		 
+		$des=$tipo==1?"":"disabled";		 
 		foreach ($hijos2 as $key => $valor) {
 			$contador++;
 			$publicacion=new publicaciones($valor["id"]);

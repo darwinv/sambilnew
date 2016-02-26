@@ -62,7 +62,7 @@ foreach ($p_preguntas as $pp => $valor2) {
 		}else{
 			$nextid = $p_preguntas[0]["id"];
 		}
-		
+	
 		?>
 					<div id="<?php echo $id_pregunta; ?>" >
 		     	 		<br>

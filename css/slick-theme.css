@@ -38,8 +38,8 @@
     outline: none;
     background: transparent;
     
-    -webkit-transition: all 0.2s ease-out;
-	-moz-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
 } 
 .slick-prev:hover,
 .slick-next:hover
@@ -48,13 +48,13 @@
     outline: none;
     background: transparent;
     
-    -webkit-transform: scale(1.6);
-    -moz-transform: scale(1.6);
-    -o-transform: scale(1.6);
-    -ms-transform: scale(1.6);
-    transform: scale(1.6);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
     height: 70px;
-    top: 40%;
+    top: 35%;
 }
 .slick-prev:hover:before,
 .slick-prev:focus:before,
