@@ -37,7 +37,7 @@ if(!isset($_POST["pagina"])){
 											<div class=' col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20'></div>
 											<div class=' col-xs-12 col-sm-6 col-md-2 col-lg-2 ' ><!-- inicio del registro de la publicacion-->
 								    		<div class='marco-foto-conf  point marL20  ' style='height:130px; width: 130px;'  >
-									    	<div style='position:absolute; left:40px; top:10px; ' class='f-condicion'>" . $publi->getCondicion() . "</div>							 
+									    	<div style='position:absolute; left:40px; top:10px; ' class=''>" . $publi->getCondicion() . "</div>							 
 									    	<img src='" . $publi->getFotoPrincipal() . "' class='img img-responsive center-block img-apdp imagen' data-id='" . $valor["id"] . "'>						
 											</div>
 											</div>
@@ -101,7 +101,7 @@ if(!isset($_POST["pagina"])){
 											<div class=' col-xs-12 col-sm-12 col-md-12 col-lg-12 marT20'></div>
 											<div class=' col-xs-12 col-sm-6 col-md-2 col-lg-2 ' ><!-- inicio del registro de la publicacion-->
 								    		<div class='marco-foto-conf  point marL20  ' style='height:130px; width: 130px;'  >
-									    	<div style='position:absolute; left:40px; top:10px; ' class='f-condicion'>" . $publi->getCondicion() . "</div>							 
+									    	<div style='position:absolute; left:40px; top:10px; ' class=''>" . $publi->getCondicion() . "</div>							 
 									    	<img src='" . $publi->getFotoPrincipal() . "' class='img img-responsive center-block img-apdp imagen' data-id='" . $valor["id"] . "'>						
 											</div>
 											</div>

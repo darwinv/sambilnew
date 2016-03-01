@@ -117,7 +117,7 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
                                         	<div style="display: inline; padding-top: -10px;" ><input type="text" value="1"  style="width:40px; height: 40px; text-align: center;" /></div>
                                         	<?php
 											if ($usuario -> id != $actualUsua) {
-													if ($estaBloqueado)
+													if ($estaBloqueado or $_SESSION["id_rol"]==1)
 														echo "<button data-toggle='modal' data-target='#info-comprar' type='button' class='btn3 btn-primary2 btn-block center-block' disabled='disabled' style='width:50%; display: inline; margin-top: 0px; opacity: 0.4;' id='btnComprar' name='btnComprar'>Comprar</button>";
 													else
 												       echo "<button data-toggle='modal' data-target='#info-comprar' type='button' class='btn3 btn-primary2 btn-block center-block' style='width:50%; display: inline; margin-top: 0px;' id='btnComprar' name='btnComprar'>Comprar</button>";
@@ -262,7 +262,7 @@ if($amigos->verificarBloqueado($actualUsua, $usuario -> id))
                         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12  marB10 "   >  
 
                         <div class=" contenedor pad20  t14 " style="margin: 40px;">
-                        	     <?php if(!$estaBloqueado) { ?> 
+                        	     <?php if(!$estaBloqueado and $_SESSION["id_rol"]!=1) { ?> 
                         	<div style="background:#D8DFEA; padding:10px; padding: 20px; border:1px solid #ccc">
                         	<div style="background: #FFF">
                         		<textarea lang="5" class="form-textarea-msj2 preguntas "  placeholder="Indica tu duda o pregunta ... " id="txtPregunta" name="txtPregunta"></textarea>            
