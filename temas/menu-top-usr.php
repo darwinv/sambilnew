@@ -243,7 +243,7 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 							if($tipo==4){//Publicacion
 								$foto = $pub -> getFotoPrincipal();
 								$title= $pub -> tituloFormateado();
-								$tema = "Nuevos Articulos";
+								$tema = "Nueva Publicacion";
 								$id   = $id_pub;
 								$link = "detalle";
 							}

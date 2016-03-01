@@ -691,13 +691,21 @@ public function  getEmailAdminBySede($iduser){
   		}
 		return $panas;
 	}
-	public function getAllNotificaciones($id=null){
+	public function getAllNotificaciones($id=null, $pagina=null){
 		if(is_null($id)){
 			$id=$this->id;
 		}
 			$bd = new bd();
 			$consulta = "select fecha, tipos_notificaciones_id tipo, usuarios_id usr, publicaciones_id pub, preguntas_publicaciones_id pregunta, 
-			pana_id pana from notificaciones where usuarios_id=$id ORDER BY `notificaciones`.`fecha`  DESC limit 25";
+			pana_id pana from notificaciones where usuarios_id=$id ORDER BY `notificaciones`.`fecha`  DESC ";
+			
+			if(empty($pagina)){
+				$consulta.= " limit 25";
+			}else{
+				$start=($pagina - 1) * 25;
+				$consulta.=" LIMIT 25 OFFSET $start";
+			}			 
+		
 			$result =$bd->query($consulta);
 			return $result;	
 	}
