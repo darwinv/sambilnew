@@ -25,6 +25,14 @@ img.foto-max-80{
 	max-width: 80px;
 	height: auto;
 }
+div.resultados div.ver-mas-footer a{
+	display: block;
+	background-color: rgb(237, 239, 244);
+	border: 1px solid rgb(216, 223, 234);
+	padding: 10px;
+} 
+padding-bottom: 10px;
+padding-top: 10px;
 
 /*------------MEDIAS RESOLUCION CONTAINER ADAPTADAS AL FOOTER----------*/
 @media (max-width: 768px) { 

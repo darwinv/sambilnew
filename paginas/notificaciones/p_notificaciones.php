@@ -22,12 +22,12 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 			<!-- Listado -->
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 resultados">
 				<div class="mar5 contenedor row line-botton pad-right20 pad-left20">				
-					<div class="head-list t12 " >
+					<div class="col-xs-12 head-list t12 " >
 						<div>
 							<h2 class="t14">Tus Notificaciones</h2>
 						</div>						
 					</div>					
-					<div class="list-notif" >
+					<div class="col-xs-12  list-notif" >
 						
 							<div class="col-xs-12">
 								<div class="row">
@@ -96,11 +96,8 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 							</div>
 							
 					</div>
-					<div class="ver-mas-footer pad10 pad-left20 pad-right20 ">
-						<div class="center-block ">
-							<a>  Ver M&aacute;s</a>
-						</div>
-						
+					<div class="col-xs-12 ver-mas-footer text-center ver-mas-footer pad-top10 pad-bot10">
+							<a>Ver M&aacute;s</a>
 					</div>
 			 	</div>
 		 	</div>
