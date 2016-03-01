@@ -443,7 +443,13 @@ $(document ).ready(function() {
 						timer: 20000, 
 						showConfirmButton: true
 						}, function(){
-							location.reload();
+							if(data.rol==="1"){
+								window.open("admin-usr.php","_self");
+							}else{
+								location.reload();
+							}
+							
+							
 						});
                 } 
           	},// código a ejecutar si la petición falla;

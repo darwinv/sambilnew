@@ -2,7 +2,7 @@
 class restricciones{ 
 
 	/**LO QUE NO PUEDE VER**/
-	private $rol_a=array('principal.php','actualizaciones.php','detalle.php', 'estadisticas.php', 'favoritos.php', 'listado.php', 'perfil.php','publicar.php');
+	private $rol_a=array('publicar.php');
 	private $rol_b=array();
 	private $rol_c=array('publicar.php');
 	/**LO QUE PUEDE VER**/

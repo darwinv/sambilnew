@@ -294,7 +294,7 @@ function fotUser() {
 
 function logUser() {
 	
-	$usuario = new usuario ();
+	$usuario = new usuario();
 	$bd = new bd ();
 	$login = filter_input ( INPUT_POST, "log_usuario" );
 	$password = filter_input ( INPUT_POST, "log_password" );
@@ -326,10 +326,16 @@ function logUser() {
 		$fields ["log_usuario"] = "El usuario o el correo no estan registrados";
 		$id[0]=0;
 	}
-		
+	
+	
+	if (! isset ( $_SESSION )) {
+		session_start ();
+	}
+	
 	if ( $id[0] == 1) {
 		echo json_encode ( array (
-				"result" => "OK"
+				"result" => "OK",
+				"rol" => $_SESSION["id_rol"]?$_SESSION["id_rol"]:"3"
 		) );
 		exit ();
 	}elseif ( $id[0] == 3){

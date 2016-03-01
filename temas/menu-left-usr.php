@@ -1,6 +1,6 @@
 	<ul id="accordion" class="accordion vin-listados show-menu-left" data-id_rol="<?php echo $_SESSION["id_rol"]; ?>">
 		<li class="hidden resumen">
-			<a href="resumen.php"><div class="link"  ><i class="fa fa-list-ul" ></i><b>Resumen</b></div></a>
+			<a <?php if($_SESSION["id_rol"]!='1') echo 'href="resumen.php"'; ?> ><div class="link"  ><i class="fa fa-list-ul" ></i><b>Resumen</b></div></a>
 			
 		</li>
 		<!--<li class="hidden reputacion">

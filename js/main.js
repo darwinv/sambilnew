@@ -41,12 +41,6 @@ $(function() {
 			$(".resumen, .compra,  .configurar").removeClass("hidden");
 		}
 				
-    }else{
-    	var id_rol=parseInt($('.nosequedatadequediv').data("id_rol"));
-    	//#######USUARIO ROL 1#######
-    	if(id_rol==1){
-			window.open("resumen.php","_self");
-		}
     }
 });
 /*FUNCIONES*/

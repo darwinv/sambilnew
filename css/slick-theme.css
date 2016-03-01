@@ -38,8 +38,8 @@
     outline: none;
     background: transparent;
     
-    -webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.1s ease-out;
+	-moz-transition: all 0.1s ease-out;
 } 
 .slick-prev:hover,
 .slick-next:hover

@@ -45,7 +45,7 @@ if(!isset($_SESSION)){
 
 						//****BUSCAMOS DATOS DE LA SEDE*********
 						
-					 if(isset($_GET['code_sambil']) and $_SESSION['id_rol']!=1){
+					 	if(isset($_GET['code_sambil'])){
 								$ciudad_sambil=$_GET['code_sambil'];
 		 						$_SESSION['code_sambil']=$ciudad_sambil;
 						 }elseif(isset($_SESSION['code_sambil'])){
@@ -138,7 +138,7 @@ switch ($_SESSION['id_rol']) {
 		</div>
 		<div class="collapse navbar-collapse " id="menuP">
 			
-		<?php if($rol=='tienda' or $rol=='comprador'){?>
+		
 			<div class="navbar-form navbar-left  mar-buscador " style="margin-top: 17px;">
 				<div class="input-group">
 					 <input id="txtBuscar" name="txtBuscar"
@@ -152,7 +152,7 @@ switch ($_SESSION['id_rol']) {
 				</span>
 				</div>
 			</div>
-		<?php } ?>
+		
 			 	
 			 	
 				<ul class="nav navbar-nav navbar-right t16">
@@ -298,7 +298,7 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 						
 						<li> &nbsp;&nbsp;&nbsp;</li>
 					<li>
-					<?php if($rol!='admin'){ ?>
+					
  					
 					<div class="dropdown">
 					  <button class="mayus ciudades dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -318,14 +318,7 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 					   
 					  </ul>
 					</div>
-				<?php } else { ?>			
-					<div class="dropdown">
-					  <div class="mayus ciudades dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					  <?php echo $ciudad_sambil ?>   
-					  </div>
-					  	</div>
-					</li>
-					<?php } ?>	
+					
 					 
 				</ul>
 			</div>

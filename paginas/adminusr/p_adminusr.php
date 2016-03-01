@@ -7,7 +7,7 @@
                 <br>
                 <div class="pull-right">
                    <a class="admin-reg-user" href="#" data-toggle='modal' data-target='#usr-reg-admin' data-rol-type='select'  data-tipo='1' >
-						<button class="btn2 btn-default t16" style="">Agregar Usuario</button>
+						<button class="btn2 btn-default t16" style="">Agregar Tiendas</button>
 					</a>
                 </div>
             </div>
