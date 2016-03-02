@@ -78,7 +78,7 @@ $obj_sede = new sede();
 							<li style="padding: 10px;"><div class="form-group"><input type="password"
 								placeholder=" Contrase&#241;a" name="log_password" class=" form-input" id="log_password"></div>
 								<p class="text-right t10 marR5 vin-blue">
-									<a>&#191;Olvidaste la Contrase&#241;a?</a>
+									<a href="#" data-toggle="modal" data-target="#recover">&#191;Olvidaste la Contrase&#241;a?</a>
 								</p></li>
 							<li style="padding: 10px; margin-top: -20px"><button id="usr-log-submit" type="submit" 
 									class="btn2 btn-primary2 btn-group-justified">Ingresar</button>

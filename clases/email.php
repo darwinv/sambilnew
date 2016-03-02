@@ -6,14 +6,14 @@ class email {
 	private $fecha;
 	private $usuarios_id;
 	private $amigos_id;*/
-	private $subject='vogueseshop.com';
+	private $subject='sambilonline.com';
 		
 	
 	function __construct(){
       
     }
 	function sendEmail($destinatario,$txt){
-		$headers = 'From: Vogues Eshop <no-responder@vogueseshop.com> '  . "\r\n" . 'Reply-To: '  . "no-responder@vogueseshop.com" . "\r\n" . 'X-Mailer: PHP/' . phpversion ();
+		$headers = 'From: Sambil Online <no-responder@sambilonline.com> '  . "\r\n" . 'Reply-To: '  . "no-responder@sambilonline.com" . "\r\n" . 'X-Mailer: PHP/' . phpversion ();
 		$headers .= "MIME-Version: 1.0\r\n";		
 		$headers .= "Content-type: text/html; charset=UTF-8.";
 			
@@ -32,7 +32,7 @@ class email {
 	function Footer($version='1'){
 				
 		$txt = ' <br></div><div style="font-size: 12px; text-align:left; margin-left:10px; color:#999;  margin-top:5px;">
-			Vistete a la moda con la mejor tecnologia </div></div></div></body></html> ';
+			Todo lo que deseas lo consigues en el sambil </div></div></div></body></html> ';
 		
 		return $txt;
 	}	
@@ -68,7 +68,7 @@ class email {
 		</div>
 		
 		<div style='font-size: 12px; text-align:left; margin-left:10px; color:#999;  margin-top:5px;'>
-		Vistete a la moda con la mejor tecnologia 
+		Todo lo que deseas lo consigues en el sambil  
 		</div>
 		
 		</div>
