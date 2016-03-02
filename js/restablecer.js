@@ -140,7 +140,7 @@ $('#recover-password').formValidation({
 						timer: 2000, 
 						showConfirmButton: true
 						}, function(){
-							window.location.href = "index.php";
+							window.location.href = "principal.php";
 										
 						});
                 } 
