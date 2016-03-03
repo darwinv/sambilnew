@@ -261,7 +261,7 @@ switch($tipo){
 
 			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 marB10 marT15" >
 				<div class=" btn-group marL30 ">
-					<button type="button" class="btn btn-default">
+					<button type="button" class="btn btn-default ">
 						Filtrar
 					</button>
 					<button type="button" class="btn btn-default dropdown-toggle hidden" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -287,8 +287,20 @@ switch($tipo){
 
 					<table width="100%" class="alto50" border="0" cellspacing="0" cellpadding="0" >
 						<tr>
+							 <?php
+							 $hijos=$usua->getPublicaciones($tipo);
+							 $total=$hijos->rowCount(); 
+							 $ac=$usua->getCantidadPub(1);
 							 
-							<td  width="75%"  align="right"><span class="marR10">Publicaciones 1 - 50 de <b>100</b></span></td>
+							 
+							 ?>
+							<td  width="75%"  align="right">
+								<span class="marR5"> Publicaciones </span> <span id="inicio" name="inicio">1</span> - <span id="final" name="final"><?php if($total>=25){ echo "25"; }else{ echo $total;}?>  de </span>
+								<span><b><?php echo $ac;?></b></span> 
+								
+							</td>
+									
+							
 							<td   width="15%"  align="right" height="40px;" >
 							<select id="filtro" class="form-control  input-sm " style="width:auto; margin-right:20px;">
 								<option value="desc" >Mas Recientes</option>
@@ -317,7 +329,8 @@ switch($tipo){
 	        </div>				
 			<div id="publicaciones">
 				<?php
-				$hijos=$usua->getPublicaciones($tipo);
+				
+				
 				$contador=0;
 				foreach ($hijos as $key => $valor) {
 					$contador++;
@@ -395,7 +408,7 @@ switch($tipo){
 				echo "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12 marB10 marT10'>
 				<nav class='text-center'>
 				  <ul class='pagination'>";
-								$ac=$usua->getCantidadPub(1);
+								
 								$totalPaginas=floor($ac/25);
 								$restantes=$ac-($totalPaginas*25);
 								if($restantes>0){
