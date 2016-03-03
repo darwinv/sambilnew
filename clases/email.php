@@ -14,7 +14,7 @@ class email {
     }
 	function sendEmail($destinatario,$txt){
 		$headers = 'From: Vogues Eshop <no-responder@vogueseshop.com> '  . "\r\n" . 'Reply-To: '  . "no-responder@vogueseshop.com" . "\r\n" . 'X-Mailer: PHP/' . phpversion ();
-		$headers .= "MIME-Version: 1.0\r\n";		
+		$headers .= "MIME-Version: 1.0\r\n";
 		$headers .= "Content-type: text/html; charset=UTF-8.";
 			
 		mail($destinatario,$this->subject,$txt,$headers);
@@ -100,11 +100,7 @@ class email {
 		               </a> ";	
 		
 			$txt=$this->Header().$txt.$this->Footer();
-			
-			 
-	 
 			$this->sendEmail($destinatario,$txt);
-			 
 		 		
 	}
 	
