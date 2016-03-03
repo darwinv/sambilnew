@@ -309,33 +309,32 @@ class usuario {
 
 
 public function recuperaClave($login){
-	$bd= new bd();
-	$correo=new email();
-	if(isset($login["seudonimo"])){
+		$bd= new bd();
+		$correo=new email();
+		if(isset($login["seudonimo"])){
 			$condicion = "seudonimo = '{$login["seudonimo"]}'";
 		}else{
 			$condicion = "email = '{$login["email"]}'";
 		}
-	$result = $bd->doSingleSelect($this->a_table,$condicion);
+		$result = $bd->doSingleSelect($this->a_table,$condicion);
 		if(!empty($result)){
 			//if($result["status_usuarios_id"]=='1'){ 
-					$email=$result["email"];
-	 $link=$this->generaLinkTemporal($result["usuarios_id"],$result["seudonimo"]);
+			$email=$result["email"];
+			 $link=$this->generaLinkTemporal($result["usuarios_id"],$result["seudonimo"]);
 			 if($link){
-				  		$correo->sendEmail($email,$link);
-				 		return array(1,$result["usuarios_id"]);	
-				 }
+				$correo->sendRecuperarPass($email,$link);
+				return array(1,$result["usuarios_id"]);	
+			}
 			 else{
-				 	return array(2,"");
-				 }
+			 	return array(2,"");
+			 }
 			
-				//}
+			//}
 		}
-	else{
+		else{
 			return array(2,"");
-		}	
-		
-}
+		}		
+	}
 
 function generaLinkTemporal($iduser,$seudonimo){
 	$bd= new bd();
