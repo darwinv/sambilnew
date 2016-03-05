@@ -145,7 +145,7 @@ $(document).ready(function(){
 			</div>
 			 
 			
-			<?php if(isset($estaBloqueado)) if(!$estaBloqueado and $_SESSION["id_rol"]!=1) { ?> <div class="  btn-group  mar-me-gusta  pull-right-me-gusta "
+			<?php if(isset($estaBloqueado)) if(!$estaBloqueado and $_SESSION["id_rol"]==3) { ?> <div class="  btn-group  mar-me-gusta  pull-right-me-gusta "
 				role="group">
 				<button type="button" style="padding-top: 5px; padding-bottom: 5px; font-size: 12px;" data-count="<?php echo isset($contador)?$contador:$megustan;?>"
 					data-usr="<?php if(isset($_SESSION["id"])) echo $_SESSION ["id"]; ?>" class="btn2 btn-default2 <?php echo isset($oculto)?$oculto:'';?>" id="btn-megusta"  <?php echo isset($datamegusta)?$datamegusta:"";?> >
