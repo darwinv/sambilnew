@@ -1,9 +1,0 @@
-<!DOCTYPE html>
-<html lang="es">
-	<?php include "fcn/incluir_estilos.php"; ?>
- 	<body>
-<?php include "paginas/index/p_index.php"; ?> 
- 		
- 		</div>	
-  </body>
-</html>
