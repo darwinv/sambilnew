@@ -284,6 +284,8 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
 				<?php if($rol=='comprador'){  ?>						
 				<li><a href="favoritos.php" data-toggle="" data-target="" class="marT15"><i
 						class="fa fa-heart"></i> </a></li>
+				<li><a href="#" data-toggle="modal" data-target="#contacto-comprador" class="marT15"><i
+						class="fa fa-envelope"></i> </a></li>		
 				<?php } ?>
 					
 			<?php if($rol=='admin'){  ?>						

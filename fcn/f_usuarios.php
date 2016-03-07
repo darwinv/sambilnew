@@ -1,6 +1,7 @@
 ﻿<?php
 include_once '../clases/fotos.php';
 include_once '../clases/usuarios.php';
+include_once '../clases/email.php';
 include_once '../clases/bd.php';
 
 switch ($_POST["method"]) {
@@ -37,6 +38,9 @@ switch ($_POST["method"]) {
 	case "send-email":
 		sendEmail();
 		break;
+	case "send-email-comprador":
+		sendEmailComprador();
+		break;	
 	case "getUsuario":
 		getUsuario();
 		break;
@@ -504,6 +508,20 @@ function newUser() {
 		mail ( $email_to, $email_subject, $email_message, $headers );//
 		echo json_encode(array("estado"=>"OK"));		
 	}
+	
+	
+	function sendEmailComprador(){
+		$objEmail = new email();	
+	    $destinatario=$_POST["emailsede"];
+		$nombre= filter_input ( INPUT_POST, "nombre" );
+		$mensaje= filter_input ( INPUT_POST, "mensaje" );
+		$remitente= filter_input ( INPUT_POST, "email" );	
+		$objEmail->sendContacto($nombre, $mensaje, $remitente, $destinatario);
+		echo json_encode(array("estado"=>"OK"));	
+		
+	}
+	
+	
 	function getUsuario(){
 		$usua=new usuario($_POST["id"]);
 		echo json_encode(array("rif"=>$usua->j_rif,"razon"=>$usua->j_razon_social));

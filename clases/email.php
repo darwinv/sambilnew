@@ -99,5 +99,17 @@ class email {
 		 		
 	}
 	
+	function sendContacto($nombre,$mensaje,$remitente,$destinatario){
+		$txt = " Te han contactado, ".$mensaje." 
+		<br>
+		<br>
+		nombre: ".$nombre."
+		<br>
+		remitente: ".$remitente."
+		 ";	
+		 
+		$txt=$this->Header().$txt.$this->Footer();
+		$this->sendEmail($destinatario, $txt);
+	}
 	
 }

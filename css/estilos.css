@@ -1995,7 +1995,12 @@ opacity: 1;
 }
 /******Modal**************/
 #radio{
-   margin-left: 35%;
+    margin-left: 35%;
+    margin-right: auto;
+}
+
+#radio_sede{
+    margin-left: 17%;
     margin-right: auto;
 }
 

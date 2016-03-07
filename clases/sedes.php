@@ -59,12 +59,14 @@ class sede {
 							if($ciudad_sambil==('Caracas')){
 								$img_banner='galeria/img/apdp-slide/CARACAS.jpg';
 								$telf_sambil='58 (212) 263.93.23';
-								$email_sambil='info.cscs@sambil.com';								
+								$email_sambil='cdodesarrollo4@gmail.com';
+							//$email_sambil='info.cscs@sambil.com';								
 							}
 							if($ciudad_sambil==('San Cristobal')){
 								$img_banner='galeria/img/apdp-slide/SAN_CRISTOBAL.jpg';
 								$telf_sambil='58 (276) 340.35.28 - 340.35.30';
-								$email_sambil='info.cssc@sambil.com';
+								$email_sambil='darwin_vasqz@hotmail.com';
+								//$email_sambil='info.cssc@sambil.com';
 								$texto_ciudad='San Crist&oacute;bal';							
 							}
 							if($ciudad_sambil==('Valencia')){

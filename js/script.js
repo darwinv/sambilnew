@@ -782,6 +782,78 @@ $("#enviar").click(function(e){
 				
 		
 	});
+	
+/*********** Enviar Email de Contacto a la sede del sambil  ******/
+	//$( "#radio_sede" ).buttonset();
+	
+	$("#enviar-email-sede").formValidation({
+		locale: 'es_ES',
+		excluded: ':disabled',
+		framework : 'bootstrap',
+		icon : {
+			valid : 'glyphicon glyphicon-ok',
+			invalid : 'glyphicon glyphicon-remove',
+			validating : 'glyphicon glyphicon-refresh'
+		},
+		addOns: { i18n: {} },
+		err: { container: 'tooltip' },
+		fields : {			
+			nombre_comprador : {validators : {
+				notEmpty : {},
+				stringLength : {max : 512},
+				regexp: {regexp: /^[\u00F1a-z\s]+$/i}}},
+			email_comprador : {validators : {
+				notEmpty : {},
+				emailAddress : {}}},			
+			mensaje_comprador : {validators : {
+				notEmpty:{}}				
+			}
+		}
+	}).on('success.field.fv', function(e) {		
+		 email=$("#email_comprador").val();
+		nombre=$("#nombre_comprador").val();
+		mensaje=$("#mensaje_comprador").val();
+		emailsede=$("#enviar-email-sede").data("email");
+		method="send-email-comprador";
+		
+        });	
+        
+        
+   $("#enviar-emailto").click(function(e){     
+        e.preventDefault();  
+        email=$("#email_comprador").val();
+		nombre=$("#nombre_comprador").val();
+		mensaje=$("#mensaje_comprador").val();
+		emailsede=$("#enviar-email-sede").data("email");
+		method="send-email-comprador";
+		$.ajax({
+			url:"fcn/f_usuarios.php",
+			data:{'method':method,'nombre':nombre,'email':email,'mensaje':mensaje,'emailsede':emailsede},
+			type:"POST",
+			dataType:"html",
+			success:function(data){
+				//alert(data);
+			console.log(data);
+			},
+			error:function(xhr,status){
+				alert(data);
+				SweetError(status);
+			}
+		});
+			swal({
+						title: "Exito", 
+						text: "Tu mensaje ha sido enviado.",
+						imageUrl: "galeria/img/logos/bill-ok.png",
+						timer: 2000, 
+						showConfirmButton: true}, function(){
+							location.reload();
+										
+						}); 	
+});
+
+
+
+	
 	$(document).on('keyup',"#txtBusqueda",function(e){
 		if($(this).val()!=""){
 			var c=0;
