@@ -65,19 +65,15 @@
 					<div class="text-left show-footer" data-indice='5' >Contacto</div>
 					
 				 	<div class="text-left marT5 t10 link-foot ">
-	 			    <div> <a href="http://www.sambil.com/Mall/1/Sambil-Caracas">Caracas </a></div> 
-	 			     <div> <a href="http://www.sambil.com/Mall/2/Sambil-Valencia">Valencia</a></div> 
-	 			     <div> <a href="http://www.sambil.com/Mall/4/Sambil-Margarita">Margarita </a></div> 
-	 			     <div> <a href="http://www.sambil.com/Mall/5/Sambil-Maracaibo">Maracaibo </a></div>
-	 			     <div> <a href="http://www.sambil.com/Mall/6/Sambil-San-Cristobal">San Crist&oacute;bal </a></div>
-	 			     <div> <a href="http://www.sambil.com/Mall/8/Sambil-Barquisimeto">Barquisimeto</a></div>
-	 			     <div> <a href="http://www.sambil.com/Mall/9/Sambil-Paraguana">Paraguana </a></div>
-	 			     <div> <a href="http://www.sambil.com.do/12-2/">Santo Domingo</a></div>
-	 			     <div> <a href="http://www.sambil.com/Mall/9/Sambil-Paraguana">Paraguan&aacute;</a></div>
-	 			     <div> <a href="http://www.sambil.cw/curacao/sambil-curacao-welcome/">Cura&ccedil;ao </a></div>
-	 			     <div> <a href="http://www.sambil.com/Madrid">Madrid </a></div>
-	 			     <div> <a href="http://www.sambil.com/Constructora/Contacto">Constructora</a></div>		 		
-	 				</div>  
+				 		
+	 			    <div> <a href="#" class="contac-footer"  data-toggle="modal" data-target="#contacto-comprador-2" data-email="mail@mail.com" >Barquisimeto </a> </div> 
+	 			    <div> <a href="#" class="contac-footer" data-toggle="modal" data-target="#contacto-comprador-2" data-email="cdodesarrollo4@gmail.com" >Caracas</a></div>
+	 			    <div> <a href="#" class="contac-footer" data-toggle="modal" data-target="#contacto-comprador-2" data-email="mail@mail.com" >Maracaibo </a> </div>
+	 			     <div> <a href="#" class="contac-footer" data-toggle="modal" data-target="#contacto-comprador-2" data-email="mail@mail.com" >Margarita </a> </div>
+	 			     <div> <a href="#" class="contac-footer" data-toggle="modal" data-target="#contacto-comprador-2" data-email="mail@mail.com" >Paraguan&aacute; </a> </div>
+	 			     <div> <a href="#" class="contac-footer" data-toggle="modal" data-target="#contacto-comprador-2" data-email="darwin_vasqz@hotmail.com" >San Crist&oacute;bal </a> </div>
+	 			     <div> <a href="#" class="contac-footer" data-toggle="modal" data-target="#contacto-comprador-2" data-email="mail@mail.com" > Valencia </a> </div>     	 		
+	 			</div>  
 			</div>
 			
 		</div>

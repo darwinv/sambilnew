@@ -674,22 +674,7 @@ $('#recover-password').formValidation({
         });
 	});		
  
-/*	$(".izquierda").click(function(){
-		var elDiv=$("#listaPublicaciones");
-		var laPagina=elDiv.data("pagina");
-		laPagina--;
-		$.ajax({
-			url:"fcn/f_index.php",
-			data:{metodo:"buscarPublicaciones",pagina:laPagina},
-			type:"POST",
-			dataType:"html",
-			success: function(data){
-				console.log(data);
-				elDiv.html(data);
-				elDiv.data("pagina",laPagina);
-			}
-		});
-	});*/
+
 	
 	
 // Tooltip ------------------------------------
@@ -784,7 +769,7 @@ $("#enviar").click(function(e){
 	});
 	
 /*********** Enviar Email de Contacto a la sede del sambil  ******/
-	//$( "#radio_sede" ).buttonset();
+	
 	
 	$("#enviar-email-sede").formValidation({
 		locale: 'es_ES',
@@ -850,8 +835,77 @@ $("#enviar").click(function(e){
 										
 						}); 	
 });
+/* ------------ 2do modal ----------- */
+  $(".contac-footer").click(function(e){   	
+  email=$(this).data('email');
+  $("#enviar-email-sede-2").data('email',email); 
+  $( "#email_contacto" ).html( email );
+});  
 
-
+$("#enviar-email-sede-2").formValidation({
+		locale: 'es_ES',
+		excluded: ':disabled',
+		framework : 'bootstrap',
+		icon : {
+			valid : 'glyphicon glyphicon-ok',
+			invalid : 'glyphicon glyphicon-remove',
+			validating : 'glyphicon glyphicon-refresh'
+		},
+		addOns: { i18n: {} },
+		err: { container: 'tooltip' },
+		fields : {			
+			nombre_comprador : {validators : {
+				notEmpty : {},
+				stringLength : {max : 512},
+				regexp: {regexp: /^[\u00F1a-z\s]+$/i}}},
+			email_comprador : {validators : {
+				notEmpty : {},
+				emailAddress : {}}},			
+			mensaje_comprador : {validators : {
+				notEmpty:{}}				
+			}
+		}
+	}).on('success.field.fv', function(e) {		
+		 email=$("#email_comprador").val();
+		nombre=$("#nombre_comprador").val();
+		mensaje=$("#mensaje_comprador").val();
+		emailsede=$("#enviar-email-sede-2").data("email");
+		method="send-email-comprador";
+		
+        });
+  
+  $("#enviar-emailto-2").click(function(e){     
+        e.preventDefault();  
+        email=$("#email_comprador").val();
+		nombre=$("#nombre_comprador").val();
+		mensaje=$("#mensaje_comprador").val();
+		emailsede=$("#enviar-email-sede-2").data("email");
+		method="send-email-comprador";
+		$.ajax({
+			url:"fcn/f_usuarios.php",
+			data:{'method':method,'nombre':nombre,'email':email,'mensaje':mensaje,'emailsede':emailsede},
+			type:"POST",
+			dataType:"html",
+			success:function(data){
+				//alert(data);
+			console.log(data);
+			},
+			error:function(xhr,status){
+				alert(data);
+				SweetError(status);
+			}
+		});
+			swal({
+						title: "Exito", 
+						text: "Tu mensaje ha sido enviado.",
+						imageUrl: "galeria/img/logos/bill-ok.png",
+						timer: 2000, 
+						showConfirmButton: true}, function(){
+							location.reload();
+										
+						}); 	
+});       
+/******************* 2do modal de contacto *****************/
 
 	
 	$(document).on('keyup',"#txtBusqueda",function(e){
@@ -1071,42 +1125,6 @@ $("#enviar").click(function(e){
 	 	
 	});	
  
-	/* $(".show-footer").click(function(){
-		var id=$(this).data("indice");
-		var estado=$('.link-foot').attr('data-active');
-		var pasajero=$('.link-foot');
-		var arrow=$('.downarrow');
-		var flag_footer=$('#flag-footer').val();
-		var ejecutar=false;
-		
-		 if(id!=''){
-				if(estado == 'inactive' || estado==undefined)
-				{		
-					ejecutar=true;
-					$('#flag-footer').val(id);
-				}
-				else if(id==flag_footer){
-					ejecutar=true;
-				}
-		}else{	 
-				$('#flag-footer').val('0');
-				ejecutar=true;
-		    }
-		if(ejecutar){	
-			if(estado == 'inactive' || estado==undefined){
-				pasajero.removeClass('alt').slideDown().attr('data-active','active');
-				arrow.addClass('active');
-				$('#show_footer').html('Ocultar').hide().fadeIn();
-			}
-			
-		else{	
-			pasajero.slideUp().attr('data-active','inactive');
-			arrow.removeClass('active');
-			$('#show_footer').html('Ver Mas').hide().fadeIn();
-			}
-		}
-	
-	});*/
 	
 	$('#divID').click(function(){
 		var fondo=$("#changefondo").val();

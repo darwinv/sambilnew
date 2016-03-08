@@ -12,10 +12,10 @@ if(isset($_SESSION["id"])){
 }
 ?>
 <div class="modal fade" tabindex="-1" role="dialog"
-	aria-labelledby="myLargeModalLabel" id="contacto-comprador">
+	aria-labelledby="myLargeModalLabel" id="contacto-comprador-2">
 	<div class="modal-dialog modal-lg">
-		<form method="post" id="enviar-email-sede" name="enviar-email-sede" class="formulario"
-			action="" method="POST" data-email="<?php echo $email_sambil; ?>">
+		<form method="post" id="enviar-email-sede-2" name="enviar-email-sede-2" class="formulario"
+			action="" method="POST" data-email="">
 			<div class="modal-content"
 				style="padding-top: 50px; padding-bottom: 50px;">
 
@@ -28,16 +28,7 @@ if(isset($_SESSION["id"])){
 					class="center-block img-responsive">
 				<h1 class="text-center me-p_contenido" style="color: #000;">Cont&aacute;ctanos</h1>
 				<br>				
-			<!-- <div id="radio_sede" class="radio"> 
-					    <input type="radio" id="sede_barq" name="sede"  value="1"><label for="sede_barq">Barquisimeto</label>
-					    <input type="radio" id="sede_ccs" name="sede"  value="2"><label for="sede_ccs"> Caracas</label>
-					    <input type="radio" id="sede_mcbo" name="sede" value="3"><label for="sede_mcbo">Maracaibo</label>
-					    <input type="radio" id="sede_marg" name="sede" value="4"><label for="sede_marg"> Margarita</label>
-					    <input type="radio" id="sede_parag" name="sede" value="5"><label for="sede_parag">Paraguan&aacute;</label>
-					    <input type="radio" id="sede_sancrist" name="sede" value="6"><label for="sede_sancrist">San Crist&oacute;bal</label>
-					    <input type="radio" id="sede_val" name="sede" value="7"><label for="sede_val">Valencia</label>
-					 </div> 
-					-->
+		
 				<br>
 				<div class="center-block" style="width: 50%">
 					<div class="form-group center-block text-left">
@@ -56,7 +47,7 @@ if(isset($_SESSION["id"])){
 					</div>
 					<div class="text-center">
 						<button class="btn btn-default" type="reset">Limpiar</button>
-						<button type="submit" id="enviar-emailto" data-dismiss="modal"
+						<button type="submit" id="enviar-emailto-2" data-dismiss="modal"
 					aria-label="Close" class="btn btn-primary2">Enviar</button>
 					</div>
 				</div>
@@ -65,8 +56,8 @@ if(isset($_SESSION["id"])){
 					Constructora Sambil C.A - Venezuela <br>
 					
 					<!-- CADA SAMBIL TIENE DIFERENTES DIRECCIONES -->
-					Telefonos: <?php echo $telf_sambil; ?> &nbsp;/&nbsp;
-					Email:	<?php echo $email_sambil; ?> 
+					Telefonos: <?php echo $telf_sambil; ?> &nbsp;/&nbsp;Email: 
+				<span id="email_contacto"> </span>	
 				</div>
 			</div>
 		</form>

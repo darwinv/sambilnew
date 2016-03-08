@@ -72,27 +72,27 @@ class sede {
 							if($ciudad_sambil==('Valencia')){
 								$img_banner='galeria/img/apdp-slide/VALENCIA1.jpg';
 								$telf_sambil='58 (241) 841.17.26';
-								$email_sambil='info.csva@sambil.com';
+								$email_sambil='mail@sambil.com';
 							}
 							if($ciudad_sambil==('Maracaibo')){
 								$img_banner='galeria/img/apdp-slide/MARACAIBO.jpg';
 								$telf_sambil='58 (0261)-740.00.18';
-								$email_sambil='info.csmb@sambil.com';
+								$email_sambil='mail@sambil.com';
 							}
 							if($ciudad_sambil==('Barquisimeto')){
 								$img_banner='galeria/img/apdp-slide/BARQUISIMETO.jpg';
 								$telf_sambil='58 (0251) - 713.79.05';
-								$email_sambil='info.csbq@sambil.com';
+								$email_sambil='mail@sambil.com';
 							}
 							if($ciudad_sambil==('Margarita')){
 								$img_banner='galeria/img/apdp-slide/MARGARITA.jpg';
 								$telf_sambil='58 (0295) 260.27.26';
-								$email_sambil='info.csma@sambil.com';
+								$email_sambil='mail@sambil.com';
 							}
 							if($ciudad_sambil==('Paraguana')){
 								$img_banner='galeria/img/apdp-slide/PARAGUANA.jpg';
 								$telf_sambil='58 (0269)-410.33.00';
-								$email_sambil='info.cspa@sambil.com';
+								$email_sambil='mail@sambil.com';
 								$texto_ciudad='Paraguan&aacute;';
 							}							
 							
@@ -100,7 +100,7 @@ class sede {
 								$img_banner='galeria/img/apdp-slide/CARACAS.jpg';
 								$texto_ciudad='Caracas';
 								$telf_sambil='58 (212) 263.93.23';
-								$email_sambil='info.cscs@sambil.com';
+								$email_sambil='cdodesarrollo4@gmail.com';
 								$ciudad_sambil='Caracas';
 							}
 						
