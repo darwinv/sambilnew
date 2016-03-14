@@ -775,14 +775,11 @@ public function  getEmailAdminBySede($iduser){
 	}
 	
 	public function getCantNotificacionPregunta($id = NULL){
-		if(is_null($id)){
-			$id=$this->id;
-		}
 		$bd=new bd();
 		$preguntas=array();
 		$consulta=" select count(*) as cant from preguntas_publicaciones where id in (select preguntas_publicaciones_id from notificaciones 
-		where leida=0 and usuarios_id=$id) and preguntas_publicaciones_id is null "; 
-        $result=$bd->query($consulta);	 
+		where leida=0) and preguntas_publicaciones_id is null "; 
+        $result=$bd->query($consulta);
         foreach ($result as $r){
         	$preguntas[]=array("cant"=>$r["cant"]);
   		}

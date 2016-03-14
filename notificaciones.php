@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include "fcn/incluir-css-js.php";?>
+<?php include 'fcn/varlogin.php';
+include "fcn/incluir-css-js.php";?>
+
 <body>
 <script type="text/javascript" src="js/notificaciones.js"></script>
 <link href="css/notificaciones.css" rel="stylesheet">
