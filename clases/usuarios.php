@@ -349,7 +349,7 @@ function generaLinkTemporal($iduser,$seudonimo){
 	
 	 if($result==true){
      		 // Se devuelve el link que se enviara al usuario
-      $enlace = $_SERVER["SERVER_NAME"].'/restablecer.php?idusuario='.$iduser.'&token='.$token;
+      $enlace = 'http://'.$_SERVER["SERVER_NAME"].'/restablecer.php?idusuario='.$iduser.'&token='.$token;
       return $enlace;
    }
    	else {

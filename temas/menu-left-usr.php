@@ -14,8 +14,8 @@
 		<li class="hidden venta">
 			<div class="link"><i class="fa fa-tags" ></i>Ventas<i class="fa fa-chevron-down"></i></div>
 			<ul class="submenu submenu-active" id="ventas" name="ventas">
-				<li  ><a href="ventas.php" class="" id="uno1"> Publicaciones</a></li>
-				<li><a href="#" >Ventas</a></li>
+				<li  ><a href="ventas.php?type=1" class="" id="uno1"> Publicaciones</a></li>
+				<li><a href="ventas.php?type=2" >Ventas</a></li>
 				<li ><a href="preguntas.php?tipo=1">Preguntas</a></li>
                 <li> <a href="#">Reclamos</a></li>
 			</ul>
@@ -25,7 +25,7 @@
 			<ul class="submenu ">
 				<li class="" ><a href="favoritos.php">Favoritos</a></li>
 				<li class=""><a href="preguntas.php?tipo=2">Preguntas</a></li>
-				<li class="" ><a href="#">Compras</a></li>
+				<li class="" ><a href="compras.php">Compras</a></li>
 				
 			</ul>
 		</li>

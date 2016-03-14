@@ -261,7 +261,7 @@ switch($tipo){
 
 			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 marB10 marT15" >
 				<div class=" btn-group marL30 ">
-					<button type="button" class="btn btn-default ">
+					<button type="button" class="btn btn-default hidden ">
 						Filtrar
 					</button>
 					<button type="button" class="btn btn-default dropdown-toggle hidden" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -295,10 +295,13 @@ switch($tipo){
 							 
 							 ?>
 							<td  width="75%"  align="right">
-								<span class="marR5"> Publicaciones </span> <span id="inicio" name="inicio">1</span> - <span id="final" name="final"><?php if($total>=25){ echo "25"; }else{ echo $total;}?>  de </span>
+								<span class="marR5 "> Publicaciones</span> <span id="inicio" name="inicio">1</span> - <span id="final" name="final"><?php if($total>=25){ echo "25"; }else{ echo $total;}?>  de </span>
 								<span><b><?php echo $ac;?></b></span> 
 								
 							</td>
+							
+							
+									
 									
 							
 							<td   width="15%"  align="right" height="40px;" >
