@@ -33,6 +33,7 @@ if (!isset ( $_GET ["id"] )) {
 
 include "modales/m_registrar.php";
 include "modales/m_comprar.php";
+include "modales/m_selec_envio.php";
 ?>
 <div class="modal-backdrop fade in cargador" style="display:none"></div>
 

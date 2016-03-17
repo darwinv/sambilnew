@@ -34,7 +34,7 @@
 								<div class="marL10"><i class="fa fa-list-alt"></i>
 									Identificaci&oacute;n</div>
 							</div>
-							<div  class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3 input" >
+							<div class="form-group col-xs-12 col-sm-12 col-md-3 col-lg-3 input" >
 								<select class="form-select" id="p_tipo" name="p_tipo">
 									<option>V</option>
 									<option>E</option>

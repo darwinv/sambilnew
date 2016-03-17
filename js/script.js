@@ -836,13 +836,13 @@ $("#enviar").click(function(e){
 						}); 	
 });
 /* ------------ 2do modal ----------- */
-  $(".contac-footer").click(function(e){   	
+ $(".contac-footer").click(function(e){   	
   email=$(this).data('email');
-  $("#enviar-email-sede-2").data('email',email); 
+  $("#enviar-email-sede_2").data('email',email); 
   $( "#email_contacto" ).html( email );
 });  
 
-$("#enviar-email-sede-2").formValidation({
+$("#enviar-email-sede_2").formValidation({
 		locale: 'es_ES',
 		excluded: ':disabled',
 		framework : 'bootstrap',
@@ -854,33 +854,34 @@ $("#enviar-email-sede-2").formValidation({
 		addOns: { i18n: {} },
 		err: { container: 'tooltip' },
 		fields : {			
-			nombre_comprador : {validators : {
+			nombre_comprador_2 : {validators : {
 				notEmpty : {},
 				stringLength : {max : 512},
 				regexp: {regexp: /^[\u00F1a-z\s]+$/i}}},
-			email_comprador : {validators : {
+			email_comprador_2 : {validators : {
 				notEmpty : {},
 				emailAddress : {}}},			
-			mensaje_comprador : {validators : {
+			mensaje_comprador_2 : {validators : {
 				notEmpty:{}}				
 			}
 		}
 	}).on('success.field.fv', function(e) {		
-		 email=$("#email_comprador").val();
-		nombre=$("#nombre_comprador").val();
-		mensaje=$("#mensaje_comprador").val();
-		emailsede=$("#enviar-email-sede-2").data("email");
+		 email=$("#email_comprador_2").val();
+		nombre=$("#nombre_comprador_2").val();
+		mensaje=$("#mensaje_comprador_2").val();
+		emailsede=$("#enviar-email-sede_2").data("email");
 		method="send-email-comprador";
 		
         });
   
   $("#enviar-emailto-2").click(function(e){     
         e.preventDefault();  
-        email=$("#email_comprador").val();
-		nombre=$("#nombre_comprador").val();
-		mensaje=$("#mensaje_comprador").val();
-		emailsede=$("#enviar-email-sede-2").data("email");
+        email=$("#email_comprador_2").val();
+		nombre=$("#nombre_comprador_2").val();
+		mensaje=$("#mensaje_comprador_2").val();
+		emailsede=$("#enviar-email-sede_2").data("email");
 		method="send-email-comprador";
+		//alert(emailsede+"esa");
 		$.ajax({
 			url:"fcn/f_usuarios.php",
 			data:{'method':method,'nombre':nombre,'email':email,'mensaje':mensaje,'emailsede':emailsede},
@@ -888,13 +889,7 @@ $("#enviar-email-sede-2").formValidation({
 			dataType:"html",
 			success:function(data){
 				//alert(data);
-			console.log(data);
-			},
-			error:function(xhr,status){
-				alert(data);
-				SweetError(status);
-			}
-		});
+			console.log(emailsede+mensaje);
 			swal({
 						title: "Exito", 
 						text: "Tu mensaje ha sido enviado.",
@@ -903,8 +898,15 @@ $("#enviar-email-sede-2").formValidation({
 						showConfirmButton: true}, function(){
 							location.reload();
 										
-						}); 	
-});       
+						}); 
+			},
+			error:function(xhr,status){
+				alert(data);
+				SweetError(status);
+			}
+		});
+				
+});        
 /******************* 2do modal de contacto *****************/
 
 	

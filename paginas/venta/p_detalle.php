@@ -30,7 +30,7 @@
 						<br>
 						<a href="detalle.php?id=<?php echo $publicacion->id;?>"><?php echo $publicacion->titulo;?></a>
 						<br>
-						<span class="red">Bs <?php echo $publicacion->getMonto();?></span> x <span class="grisO"><?php echo $venta->getAtributo("cantidad");?> und</span>
+						<span class="red"> <?php echo $publicacion->getMonto();?></span> x <span class="grisO"><?php echo $venta->getAtributo("cantidad");?> und</span>
 						<br>
 						<span class="grisC">Fecha de compra: <?php echo date("d-m-Y",strtotime($venta->getAtributo("fecha")));?></span>
 						<br>
@@ -178,7 +178,7 @@
 										<td style="border-bottom: 1px solid #ccc; padding-bottom: 5px;" align="right"><?php echo number_format($ac,2);?></td>								
 									</tr>
 									<tr>
-										<td style=" padding-top: 5px;"><b>Monto Restante Para Cancelar</b></td>
+										<td style=" padding-top: 5px;"><b>Monto Restante a Cancelar</b></td>
 										<td style=" padding-top: 5px;">Bs</td>
 										<td style=" padding-top: 5px;" align="right">
 											<?php

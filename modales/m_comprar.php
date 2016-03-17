@@ -9,13 +9,23 @@
 				</button>
 				<h3 class="modal-title ">
 					<img src="galeria/img/logos/mascota.png" ><span
-						id="" class="marL15">Tienda</span>
+						id="" class="marL15">Confirmar</span>
 				</h3>
 			</div>
-			
-				<div class="modal-body">
-
-                    <div class=" marL30 row">
+			<div class="modal-body">
+					<div class="text-center">
+					<h3>¿Estas seguro de tu compra?</h3>	
+				   </div>
+			 </div>
+			 
+	<div class="text-center">
+			 <button class="btn btn-primary2" data-toggle="modal" data-dismiss="modal" data-backdrop="static" data-target="#selec_envio">Continuar</button>
+			 <button class="btn btn-primary2" data-dismiss="modal">Cancelar</button>	
+	</div>
+	<div class="modal-footer ">
+		
+	</div>
+                <!--    <div class=" marL30 row">
 
 
 
@@ -34,12 +44,11 @@
                             <span class="t14"><?php echo $usuario->a_email;?> </span>
 
                         </div>            			
-                    </div>
+                    </div> -->
+                    
                     <br>
-                    <div class="alert alert-info t12">  Gracias por utilizar nuestro portal web y recuerda !Todo lo que necesitas esta en <span class="orange-apdp">SAMBIL</span>!</div>
-				<div class="modal-footer">
-					<button class="btn btn-primary2" data-dismiss="modal">Continuar</button>
-				</div>
+                   <!-- <div class="alert alert-info t12">  Gracias por utilizar nuestro portal web y recuerda !Todo lo que necesitas esta en <span class="orange-apdp">SAMBIL</span>!</div> -->
+				
 			
 		</div>
 		<!-- /.modal-content -->

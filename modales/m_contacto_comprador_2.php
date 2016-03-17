@@ -14,7 +14,7 @@ if(isset($_SESSION["id"])){
 <div class="modal fade" tabindex="-1" role="dialog"
 	aria-labelledby="myLargeModalLabel" id="contacto-comprador-2">
 	<div class="modal-dialog modal-lg">
-		<form method="post" id="enviar-email-sede-2" name="enviar-email-sede-2" class="formulario"
+		<form method="post" id="enviar-email-sede_2" name="enviar-email-sede_2" class="formulario"
 			action="" method="POST" data-email="">
 			<div class="modal-content"
 				style="padding-top: 50px; padding-bottom: 50px;">
@@ -33,17 +33,17 @@ if(isset($_SESSION["id"])){
 				<div class="center-block" style="width: 50%">
 					<div class="form-group center-block text-left">
 						<input type="text" class="form-control  marT5 text-left"
-							id="nombre_comprador" name="nombre_comprador" placeholder="Nombre" <?php echo $habilitado; ?> value="<?php echo $nombre ;?>">
+							id="nombre_comprador_2" name="nombre_comprador_2" placeholder="Nombre">
 					</div>
 
 					<div class="form-group center-block text-left">
 						<input type="text" class="form-control  marT5 text-left"
-							id="email_comprador" name="email_comprador" placeholder="Email" <?php echo $habilitado; ?> value="<?php echo $correo;?>">
+							id="email_comprador_2" name="email_comprador_2" placeholder="Email">
 					</div>
 					<div class="form-group center-block text-left">
 
-						<textarea class="form-control marT5 text-left" id="mensaje_comprador"
-							rows="6" name="mensaje_comprador" placeholder="Mensaje"></textarea>
+						<textarea class="form-control marT5 text-left" id="mensaje_comprador_2"
+							rows="6" name="mensaje_comprador_2" placeholder="Mensaje"></textarea>
 					</div>
 					<div class="text-center">
 						<button class="btn btn-default" type="reset">Limpiar</button>
