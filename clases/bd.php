@@ -12,10 +12,10 @@
 class bd extends PDO {
 	private $driver = "mysql";
 	private $host = "localhost";
-	private $bd_name = "sambilnew";
+	private $bd_name = DB_NAME;
 	private $bd_charset = "utf8";
-	private $user = "root";
-	private $password = "";
+	private $user = DB_USER;
+	private $password = DB_PASS;
 	private $options = array (
 			PDO::ATTR_EMULATE_PREPARES => true,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -26,7 +26,8 @@ class bd extends PDO {
 	public function bd() {
 		try {
 			parent::__construct ( "$this->driver: host=$this->host;dbname=$this->bd_name;charset=$this->bd_charset", $this->user, $this->password, $this->options );
-		} catch ( PDOException $ex ) { 
+		} catch ( PDOException $ex ) {
+			
 			return $ex->getMessage ();
 		}
 	}

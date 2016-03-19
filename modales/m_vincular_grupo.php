@@ -14,9 +14,9 @@ aria-labelledby="myLargeModalLabel" id="grupo">
 			<div class="modal-body marL20 marR20 ">		
 				<br>
 				
-				<div class="t14 contenedor pad10"> <i class="fa fa-users"></i> Nombre del grupo del Sambil </div>
+				<div class="t14 contenedor pad10"> <i class="fa fa-users"></i> Nombre del grupo del <?php echo COMPANY;?> </div>
 				<br>
-				<div class="alert alert-info"> Si vinculas tu cuenta al grupo podras compartir en el grupo de Facebook de <span class='orange-apdp'>Sambil.com</span></div>	
+				<div class="alert alert-info"> Si vinculas tu cuenta al grupo podras compartir en el grupo de Facebook de <span class='orange-apdp'><?php echo WEBPAGE;?></span></div>	
 			</div>
 			
 			<div class="modal-footer">

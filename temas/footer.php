@@ -83,7 +83,7 @@
 
 	<div class="text-center pad10 grisC">
 		<span>
-		&copy; 2016 Constructora Sambil C.A. Todos los Derechos Reservados. 
+		&copy; 2016 <?php echo COMPANY_NAME;?> Todos los Derechos Reservados. 
 		<br>
 		Desarrollado por: CDO Enterprise 
 	   </span></div>

@@ -1,3 +1,4 @@
+<?php include 'config/core.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 	<?php // include "fcn/incluir_estilos.php"; ?>

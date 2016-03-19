@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 /***CODIGO PARA NOTIFICACIONES****/
 if(!isset($_SESSION)){
     session_start();	
@@ -17,9 +16,6 @@ if(!isset($_SESSION)){
 	include_once "clases/publicaciones.php";
  
 /***FIN*****/
- 
- 
-						include_once 'clases/bd.php';
 						include_once 'clases/fotos.php';
 						include_once 'clases/sedes.php';
 						include_once 'clases/restricciones.php';
@@ -45,13 +41,13 @@ if(!isset($_SESSION)){
 
 						//****BUSCAMOS DATOS DE LA SEDE*********
 						
-					 	if(isset($_GET['code_sambil'])){
-								$ciudad_sambil=$_GET['code_sambil'];
-		 						$_SESSION['code_sambil']=$ciudad_sambil;
-						 }elseif(isset($_SESSION['code_sambil'])){
-								$ciudad_sambil=$_SESSION['code_sambil'];
+					 	if(isset($_GET['code_sede'])){
+								$ciudad_sede=$_GET['code_sede'];
+		 						$_SESSION['code_sede']=$ciudad_sede;
+						 }elseif(isset($_SESSION['code_sede'])){
+								$ciudad_sede=$_SESSION['code_sede'];
 					     }else{
-					     	    $ciudad_sambil="Caracas";
+					     	    $ciudad_sede="Caracas";
 								$img_banner='galeria/img/apdp-slide/CARACAS.jpg';
 						 }
 						 
@@ -59,13 +55,13 @@ if(!isset($_SESSION)){
 						 
 						 $sedes_show=$obj_sede->buscarSedes(); 
 						 
-						 $result_sede=$obj_sede->buscarDetalleSede($sedes_show, $ciudad_sambil);
+						 $result_sede=$obj_sede->buscarDetalleSede($sedes_show, $ciudad_sede);
 						 
 						 $_SESSION['id_sede']=	$result_sede[0];
 						 $img_banner=			$result_sede[1];
-						 $telf_sambil=			$result_sede[2];
-						 $email_sambil=			$result_sede[3];
-						 $sede_sambil=			$result_sede[4];
+						 $telf_sede=			$result_sede[2];
+						 $email_sede=			$result_sede[3];
+						 $sede_site=			$result_sede[4];
 				
 						 
 //*****Codigo para Visualizacion de las opciones del menu ******
@@ -118,7 +114,7 @@ switch ($_SESSION['id_rol']) {
 		<input type="hidden" value="1" id="changefondo"/>
 			 	
 	<div style="display: inline-flex; padding-top: 0px;" class="pull-right">
-			<a href="https://www.facebook.com/tusambil" target="_blank"><img src="galeria/img/iconos/facebook2.png" height="25" width="auto" class="marL20"></a><a href="https://twitter.com/tusambil" target="_blank"><img src="galeria/img/iconos/twitter2.png" height="25" width="auto" class="marL20"></a><a href="https://www.youtube.com/user/tusambil"><img src="galeria/img/iconos/youtube2.png" height="25" width="auto" class="marL20"></a>
+			<a href="https://www.facebook.com/<?php echo FACEBOOK;?>" target="_blank"><img src="galeria/img/iconos/facebook2.png" height="25" width="auto" class="marL20"></a><a href="https://twitter.com/<?php echo TWITTER;?>" target="_blank"><img src="galeria/img/iconos/twitter2.png" height="25" width="auto" class="marL20"></a><a href="https://www.youtube.com/user/<?php echo YOUTUBE;?>"><img src="galeria/img/iconos/youtube2.png" height="25" width="auto" class="marL20"></a>
 		</div> 
 		</div>
 </div>
@@ -132,7 +128,7 @@ switch ($_SESSION['id_rol']) {
 					class="icon-bar"></span>
 			</button>
 			<a href="principal.php" class="navbar-brand"> <img style=""
-				class="marT10 marB10 marL5" src="galeria/img/logo-header.png"
+				class="marT10 marB10 marL5" src="galeria/img/logos/logo-header.png"
 				width="147px;" height="50px">
 			</a>
 		</div>
@@ -304,14 +300,14 @@ $alertas = $cant_compras[0]["cant"] + $cant_ventas[0]["cant"] + $cant_panas[0]["
  					
 					<div class="dropdown">
 					  <button class="mayus ciudades dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-					  <?php echo $sede_sambil; ?>
+					  <?php echo $sede_site; ?>
 					    <span class="caret"></span>
 					  </button>
 					   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
 					   	<?php  
 					   	/**mostramos las sedes, en el codigo previo se define dependiendo del diseñde la APP */ 
 						   	foreach ($sedes as $key => $value) {  ?>
-								<li><a href="principal.php?code_sambil=<?php echo $value['codigo'] ?>"> <?php echo $value['nombre'] ?></a></li>
+								<li><a href="principal.php?code_sede=<?php echo $value['codigo'] ?>"> <?php echo $value['nombre'] ?></a></li>
 						    	<li role="separator" class="divider"></li>	   
 							<?php
 							   }

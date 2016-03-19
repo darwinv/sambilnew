@@ -1,6 +1,5 @@
 <?php
-	include_once "bd.php";
-	class ventas{
+class ventas extends bd{
 /*******Atributos de la tabla compras_publicaciones los cuales inician con el sufijo 'c'*****/
 		private $table="compras_publicaciones";
 		private $id;
@@ -13,13 +12,14 @@
 
 /**********POR EL MOMENTO EL CONSTRUCTOR SOLO CARGA LOS ATRIBUTOS DE LA TABLA compras_publicaciones************/		
 		public function ventas($id=NULL){
+			parent::__construct();
 			if(!is_null($id)){
 				$this->buscarCompra($id);
 			}
 		}
 		public function buscarCompra($id){
-			$bd=new bd();
-			$result=$bd->doSingleSelect($this->table,"id=$id");
+			
+			$result=$this->doSingleSelect($this->table,"id=$id");
 			if($result){
 				$this->id=$result["id"];
 				$this->fecha=$result["fecha"];
@@ -32,15 +32,15 @@
 		}
 /*********************************SETTERS************************************************/
 		public function setCompra($id_pub){
-			$bd=new bd();
+			
 			$tiempo = date("Y-m-d H:i:s",time());
 			$params=array("fecha"=>$tiempo,
 						  "publicaciones_id"=>$id_pub,
 						  "usuarios_id"=>$_POST["id"]
 						  );
-			$result=$bd->doInsert($table,$params);
+			$result=$this->doInsert($table,$params);
 			if($result){
-				return $bd->lastInsertId();
+				return $this->lastInsertId();
 			}else{
 				return false;
 			}
@@ -49,7 +49,7 @@
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
+			
 			$params=array("referencia"=>$referencia,
 						  "monto"=>$monto,
 						  "fecha"=>$fecha,
@@ -58,14 +58,14 @@
 						  "formas_pagos_id"=>$fp,
 						  "compras_publicaciones_id"=>$id
 						 );
-			$result=$bd->doInsert("pagosxcompras",$params);
+			$result=$this->doInsert("pagosxcompras",$params);
 			return $result;
 		}
 		public function setEnvios($fecha,$nro_guia,$cantidad,$direccion,$agencia,$monto=0,$status=1,$id=NULL){
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
+			
 			$params=array("fecha"=>$fecha,
 						  "nro_guia"=>$nro_guia,
 						  "cantidad"=>$cantidad,
@@ -75,7 +75,7 @@
 						  "compras_publicaciones_id"=>$id,
 						  "costo"=>$monto
 						 );
-			$result=$bd->doInsert("compras_envios",$params);
+			$result=$this->doInsert("compras_envios",$params);
 			return $result;			
 		}
 		public function setCalificacion($comentario,$calificacion,$usuarios_id=NULL,$id){
@@ -85,21 +85,21 @@
 			if(is_null($usuarios_id)){
 				$usuarios_id=$this->usuarios_id;
 			}
-			$bd=new bd();
+			
 			$params=array("comentario"=>$comentario,
 						  "calificacion"=>$calificacion,
 						  "compras_publicaciones_id"=>$id,
 						  "usuarios_id"=>$usuarios_id
 						  );
-			$result=$bd->doInsert("calificaciones_compras",$params);
+			$result=$this->doInsert("calificaciones_compras",$params);
 			return $result;
 		}
 		public function setDescuento($monto,$id=NULL){
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
-			$result=$bd->doUpdate($this->table,array("descuento"=>$monto),"id=$id");
+			
+			$result=$this->doUpdate($this->table,array("descuento"=>$monto),"id=$id");
 			if($result){
 				$this->descuento=$monto;
 				return $this->getStatusPago();
@@ -109,8 +109,8 @@
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
-			$result=$bd->doUpdate($this->table,array("nota"=>$nota),"id=$id");
+			
+			$result=$this->doUpdate($this->table,array("nota"=>$nota),"id=$id");
 			if($result){
 				$this->nota=$nota;
 				return "Ok.";
@@ -124,33 +124,33 @@
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
+			
 			if($status==0){
 				$condicion="p.compras_publicaciones_id=$id";
 			}else{
 				$condicion="p.compras_publicaciones_id=$id and p.status_pago=$status";
 			}
 			$consulta="select p.*,b.nombre,b.siglas,f.nombre as fp from pagosxcompras as p,bancos as b,formas_pagos as f where p.bancos_id=b.id and $condicion and p.formas_pagos_id=f.id";
-			//$result=$bd->doFullSelect("pagosxcompras",$condicion);
-			$result=$bd->query($consulta);
+			//$result=$this->doFullSelect("pagosxcompras",$condicion);
+			$result=$this->query($consulta);
 			return $result;
 		}
 		public function getEnvios($id=NULL){
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
-			//$result=$bd->doFullSelect("compras_envios","compras_publicaciones_id=$id");
+			
+			//$result=$this->doFullSelect("compras_envios","compras_publicaciones_id=$id");
 			$consulta="select compras_envios.*,agencias_envios.nombre from compras_envios,agencias_envios where agencias_envios_id=agencias_envios.id and compras_publicaciones_id=$id";
-			$result=$bd->query($consulta);
+			$result=$this->query($consulta);
 			return $result;
 		}
 		public function getCalificaciones($id=NULL){
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
-			$result=$bd->doFullSelect("calificaciones_compras","compras_publicaciones_id=$id");
+			
+			$result=$this->doFullSelect("calificaciones_compras","compras_publicaciones_id=$id");
 			return $result;
 		}
 		public function getMonto($formato=0,$id=NULL){
@@ -195,7 +195,7 @@
 					session_start();
 				$usuario=$_SESSION["id"];
 			}
-			$bd=new bd();
+			
 			if($tipo==1){    //Las ventas sin concretar
 				$condicion="publicaciones_id in (select id from publicaciones where usuarios_id=$usuario) and c.publicaciones_id=p.id and (c.cantidad- (select COALESCE(sum(cantidad),0) from compras_envios where compras_publicaciones_id=c.id))<>0";
 			}elseif($tipo==2){ //Las compras sin concretadas 
@@ -207,7 +207,7 @@
 			}
 			$inicio=($pagina - 1) * 25;
 			$consulta="select c.*,p.titulo,p.monto,p.usuarios_id as vendedor, c.cantidad- (select sum(cantidad) from compras_envios where compras_publicaciones_id=c.id) as maximo from compras_publicaciones as c,publicaciones as p where $condicion order by $orden limit 25 OFFSET $inicio";
-			$result=$bd->query($consulta);
+			$result=$this->query($consulta);
 			return $result;
 		}
 		public function contar($tipo=1,$usuario=NULL){
@@ -216,7 +216,7 @@
 					session_start();
 				$usuario=$_SESSION["id"];
 			}
-			$bd=new bd();
+			
 			if($tipo==1){    //Las ventas sin concretar
 				$condicion="publicaciones_id in (select id from publicaciones where usuarios_id=$usuario) and c.publicaciones_id=p.id and (c.cantidad- (select COALESCE(sum(cantidad),0) from compras_envios where compras_publicaciones_id=c.id))<>0";
 			}elseif($tipo==2){ //Las compras sin concretadas 
@@ -227,20 +227,20 @@
 				$condicion="c.usuarios_id = $usuario and c.publicaciones_id=p.id and (c.cantidad- (select COALESCE(sum(cantidad),0) from compras_envios where compras_publicaciones_id=c.id))=0";
 			}
 			$consulta="select count(c.id) as tota from compras_publicaciones as c,publicaciones as p WHERE $condicion";			
-			$result=$bd->query($consulta);
+			$result=$this->query($consulta);
 			$row=$result->fetch();
 			return $row["tota"];	
 		}
 		public function getStatusPago($id=NULL,$monto=NULL){
-			$bd=new bd();			
+						
 			if(is_null($id)){
 				$id=$this->id;
 			}
 			if(is_null($monto)){
-				$res=$bd->doSingleSelect("publicaciones","id=$this->publicaciones_id","monto");
+				$res=$this->doSingleSelect("publicaciones","id=$this->publicaciones_id","monto");
 				$monto=$res["monto"];
 			}
-			$result=$bd->query("select (select COALESCE(sum(monto),0) from pagosxcompras where compras_publicaciones_id=$id and status_pago=2) as tota2,
+			$result=$this->query("select (select COALESCE(sum(monto),0) from pagosxcompras where compras_publicaciones_id=$id and status_pago=2) as tota2,
 									   (select COALESCE(sum(monto),0) from pagosxcompras where compras_publicaciones_id=$id and status_pago=3) as tota3");
 			if($result){
 				$row=$result->fetch();
@@ -263,9 +263,9 @@
 			if(is_null($id)){
 				$id=$this->id;
 			}
-			$bd=new bd();
+			
 			$consulta="select COALESCE(sum(cantidad),0) as tota from compras_envios where compras_publicaciones_id=$id";
-			$result=$bd->query($consulta);
+			$result=$this->query($consulta);
 			$row=$result->fetch();
 			if($row["tota"]<=0){
 				return "Envio pendiente";
@@ -288,8 +288,8 @@
 			if($tipo==1){
 				$segundos=strtotime('now')-strtotime($this->fecha);
 			}else{
-				$bd=new bd();
-				$result=$bd->query("select fecha from compras_envios where compras_publicaciones_id=$id order by fecha desc limit 1");
+				
+				$result=$this->query("select fecha from compras_envios where compras_publicaciones_id=$id order by fecha desc limit 1");
 				$row=$result->fetch();
 				$segundos=strtotime($row["fecha"]) - strtotime($this->fecha);
 			}

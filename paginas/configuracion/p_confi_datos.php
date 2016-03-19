@@ -1,6 +1,5 @@
 <?php
 include_once 'clases/usuarios.php';
-include_once 'clases/bd.php';
 if (isset ( $_SESSION ["id"] )) :
 	$foto = $_SESSION ["fotoperfil"]; 
 	

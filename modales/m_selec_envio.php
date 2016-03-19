@@ -18,7 +18,7 @@
 	        
 	        <form id="form-pago-envio" role='form' class="form-pago-envio">	
 	        	<h4 > Forma de envio</h4>
-	        <div id="retiro-modo" class="radio radio-sambil" > 
+	        <div id="retiro-modo" class="radio radio-site" > 
 				<input type="radio" id="agencia" name="modo-retiro" checked="checked" value="agencia"><label for="agencia"> Agencias de Envio</label>
 				 <input type="radio" id="presencial" name="modo-retiro" value="presencial"><label for="presencial">Retirar en Tienda Fisica</label>
 			</div>  

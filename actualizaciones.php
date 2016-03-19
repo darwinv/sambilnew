@@ -1,6 +1,6 @@
 <?php
+include 'config/core.php';
 include_once "clases/publicaciones.php";
-include_once "clases/bd.php";
 $bd=new bd();
 $publicaciones=$bd->query("select publicaciones_id from publicacionesxstatus where status_publicaciones_id<4 and fecha_fin IS NULL and fecha<=DATE_SUB(CURDATE(), INTERVAL 30 DAY)");
 $tiempo = date("Y-m-d H:i:s",time());

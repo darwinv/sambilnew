@@ -1,6 +1,5 @@
 <?php
-include_once 'bd.php';
-class amigos {
+class amigos extends bd{
 	// Amigos (f)
 	protected $table = "usuarios_amigos";
 	protected $table_fav = "usuarios_favoritos";
@@ -11,8 +10,8 @@ class amigos {
 	private $result;
 	
 	public function contarMeGustan($id){
-		$bd = new bd();
-		$sql = $bd->query("SELECT COUNT(*) total FROM {$this->table} WHERE usuarios_id = $id "); 
+		
+		$sql = $this->query("SELECT COUNT(*) total FROM {$this->table} WHERE usuarios_id = $id "); 
 		if($sql->rowCount()>0){
 			$row = $sql->fetch();			
 			return $row["total"];
@@ -21,8 +20,8 @@ class amigos {
 		}		
 	}
 	public function yamegusta($useract,$userper){
-		$bd = new bd();
-		$sql = $bd->query("SELECT * FROM {$this->table} WHERE usuarios_id =$useract AND amigos_id = $userper");
+		
+		$sql = $this->query("SELECT * FROM {$this->table} WHERE usuarios_id =$useract AND amigos_id = $userper");
 		if($sql->rowCount()>0){			
 			return true;
 		}else{
@@ -30,8 +29,8 @@ class amigos {
 		}		
 	}
 	public function borrarFavorito($favoritos_id,$usuarios_id){
-		$bd = new bd();
-		$sql = $bd->query("DELETE FROM usuarios_favoritos WHERE usuarios_id = $usuarios_id AND favoritos_id = $favoritos_id");
+		
+		$sql = $this->query("DELETE FROM usuarios_favoritos WHERE usuarios_id = $usuarios_id AND favoritos_id = $favoritos_id");
 		if($sql->rowCount()>0){
 			return true;
 		}else{
@@ -39,9 +38,9 @@ class amigos {
 		}
 	}
 	public function borrarSeguidor($amigos_id , $usuarios_id){  
-		$bd = new bd();
+		
 		//$ques="DELETE FROM usuarios_amigos WHERE usuarios_id = $usuarios_id AND amigos_id = $amigos_id";
-	    $sql = $bd->query("DELETE FROM usuarios_amigos WHERE usuarios_id = $usuarios_id AND amigos_id = $amigos_id");
+	    $sql = $this->query("DELETE FROM usuarios_amigos WHERE usuarios_id = $usuarios_id AND amigos_id = $amigos_id");
 		if($sql->rowCount()>0){
 			return true;
 		}else{
@@ -50,10 +49,10 @@ class amigos {
 		}
 	}
 	public function getAmigos($id) {
-		$bd = new bd ();
+		
 		$query= "SELECT amigos_id FROM usuarios_amigos WHERE usuarios_id = $id ";
 		try {
-			$sql = $bd->prepare ( $query );
+			$sql = $this->prepare ( $query );
 			$sql->execute ( array (
 					$id 
 			) );
@@ -63,11 +62,11 @@ class amigos {
 				return false;
 			}			 
 		} catch ( PDOException $ex ) {
-			return $bd->showError ( $ex );
+			return $this->showError ( $ex );
 		}
 	}
 	public function buscarAmigos($id,$tipo = NULL, $busqueda = NULL) {
-		$bd = new bd ();
+		
 		$querynatural = "SELECT ua.usuarios_id numero, seudonimo, CONCAT(nombre,' ', apellido) nombre, email, telefono, estados_id estado
 						  FROM usuarios_naturales un, usuarios_accesos ua, usuarios u 
 						  WHERE u.id = un.usuarios_id AND u.id = ua.usuarios_id ";
@@ -101,7 +100,7 @@ class amigos {
 						  $queryjuridico) tabla, usuarios_amigos 
 					  WHERE amigos_id = numero $estado $search AND usuarios_id = ?";
 		try {
-			$sql = $bd->prepare ( $statement );
+			$sql = $this->prepare ( $statement );
 			$sql->execute ( array (
 					$id 
 			) );
@@ -111,20 +110,20 @@ class amigos {
 				return false;
 			}			 
 		} catch ( PDOException $ex ) {
-			return $bd->showError ( $ex );
+			return $this->showError ( $ex );
 		}
 	}
 	public function nuevoAmigo($fecha, $usuarios_id, $amigos_id) {
-		$bd = new bd ();
-		$bd->doInsert ( $this->table, array (
+		
+		$this->doInsert ( $this->table, array (
 				"fecha" => $fecha,
 				"usuarios_id" => $usuarios_id,
 				"amigos_id" => $amigos_id 
 		) );
 	}
 	public function nuevoFavorito($fecha, $usuarios_id, $favoritos_id) {
-		$bd = new bd ();
-		$bd->doInsert ( $this->table_fav, array (
+		
+		$this->doInsert ( $this->table_fav, array (
 				"fecha" => $fecha,
 				"usuarios_id" => $usuarios_id,
 				"favoritos_id" => $favoritos_id
@@ -132,15 +131,15 @@ class amigos {
 	}
 	
 	public function nuevoSeguidor($fecha, $amigos_id, $usuarios_id) {
-		$bd = new bd ();
-		$bd->doInsert ( $this->table, array (
+		
+		$this->doInsert ( $this->table, array (
 				"fecha" => $fecha,
 				"usuarios_id" => $usuarios_id,
 				"amigos_id" => $amigos_id
 		) );
 	}
 	public function setNotificacion($tipo=NULL,$id_usr=NULL,$seguidor=NULL){  
-		$bd=new bd();
+		
 		
 		$tiempo = date("Y-m-d H:i:s",time());
 		$notificacion=array(
@@ -149,10 +148,10 @@ class amigos {
 			"usuarios_id"=>$id_usr,
 			"pana_id"=>$seguidor
 		);
-		$not = $bd->doInsert("notificaciones",$notificacion);		
+		$not = $this->doInsert("notificaciones",$notificacion);		
 	}
 	public function buscarAmigos2($id,$tipo = NULL, $busqueda = NULL) {
-		$bd = new bd ();
+		
 		$querynatural = "SELECT ua.usuarios_id numero, seudonimo, CONCAT(nombre,' ', apellido) nombre, estados_id estado
 						  FROM usuarios_naturales un, usuarios_accesos ua, usuarios u 
 						  WHERE u.id = un.usuarios_id AND u.id = ua.usuarios_id ";
@@ -186,7 +185,7 @@ class amigos {
 						  $queryjuridico) tabla, usuarios_amigos 
 					  WHERE usuarios_id = numero $estado $search  ";  die($statement);
 		try {
-			$sql = $bd->prepare ( $statement );
+			$sql = $this->prepare ( $statement );
 			$sql->execute ( array (
 					$id 
 			) );
@@ -196,14 +195,14 @@ class amigos {
 				return false;
 			}			 
 		} catch ( PDOException $ex ) {
-			return $bd->showError ( $ex );
+			return $this->showError ( $ex );
 		}
 	}
 
 	public function nuevoBloqueo($usuario,$usuario_bloqueado){
 		$fecha=date("Y-m-d",time());	
-		$bd = new bd ();
-		$result=$bd->doInsert ( $this->table_bloq, array (
+		
+		$result=$this->doInsert ( $this->table_bloq, array (
 				"fecha" => $fecha,
 				"usuarios_id" => $usuario,
 				"bloqueados_id" => $usuario_bloqueado
@@ -212,9 +211,9 @@ class amigos {
 	}
 
 	public function verificarBloqueado($bloqueado,$usuario_bloqueador){
-		$sql = new bd();
+		
 		$condicion="usuarios_id=$usuario_bloqueador and bloqueados_id=$bloqueado";
-	    $result=$sql->doSingleSelect($this->table_bloq,$condicion);
+	    $result=$this->doSingleSelect($this->table_bloq,$condicion);
 	    if($result)
 	    return true;
 	}

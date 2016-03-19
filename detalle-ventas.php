@@ -1,4 +1,4 @@
-<?php
+<?php include 'config/core.php'; 
 // Incluimos las clases a usar.
 //require 'config/core.php';
 include_once "fcn/varlogin.php";

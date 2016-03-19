@@ -12,7 +12,7 @@
 				</button>
 				<br>
 				<br>
-				<img alt="" src="galeria/img/logo-sambil.png"
+				<img alt="" src="galeria/img/logos/logo.png"
 					class="center-block img-responsive" width="200px" height="200px">
 				<h2 class="text-center me-p_contenido" style="color: #000;">&iexcl;Cu&eacute;ntanos</h2>
 				<br>

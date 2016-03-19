@@ -1,6 +1,7 @@
+<?php include 'config/core.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
-<?php //require 'config/core.php';
+ 
 include_once "fcn/varlogin.php";
 ?>
 

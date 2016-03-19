@@ -1,5 +1,4 @@
 <?php
-	include_once "clases/bd.php";
 	$bd=new bd();
 	$agencias=$bd->doFullSelect("agencias_envios");
 	$maximo=3;	

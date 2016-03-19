@@ -908,97 +908,97 @@ fieldset[disabled] a.btn-square  {
   pointer-events: none;
 }
 
-.btn-sambil {
+.brn-site {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
   margin-bottom: 10px;
 }
-.btn-sambil:focus,
-.btn-sambil.focus {
+.brn-site:focus,
+.brn-site.focus {
   color: #333;
   background-color: #e6e6e6;
   border-color: #8c8c8c;
 }
-.btn-sambil:hover {
+.brn-site:hover {
   color: #fff;
   background-color: #B52465;
   border-color: #adadad;
 }
-.btn-sambil:active,
-.btn-sambil.active,
-.open > .dropdown-toggle.btn-sambil {
+.brn-site:active,
+.brn-site.active,
+.open > .dropdown-toggle.brn-site {
   color: #333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
-.btn-sambil:active:hover,
-.btn-sambil.active:hover,
-.open > .dropdown-toggle.btn-sambil:hover,
-.btn-sambil:active:focus,
-.btn-sambil.active:focus,
-.open > .dropdown-toggle.btn-sambil:focus,
-.btn-sambil:active.focus,
-.btn-sambil.active.focus,
-.open > .dropdown-toggle.btn-sambil.focus {
+.brn-site:active:hover,
+.brn-site.active:hover,
+.open > .dropdown-toggle.brn-site:hover,
+.brn-site:active:focus,
+.brn-site.active:focus,
+.open > .dropdown-toggle.brn-site:focus,
+.brn-site:active.focus,
+.brn-site.active.focus,
+.open > .dropdown-toggle.brn-site.focus {
   color: #333;
   background-color: #d4d4d4;
   border-color: #8c8c8c;
 }
-.btn-sambil:active,
-.btn-sambil.active,
-.open > .dropdown-toggle.btn-sambil {
+.brn-site:active,
+.brn-site.active,
+.open > .dropdown-toggle.brn-site {
   background-image: none;
 }
-.btn-sambil.disabled:hover,
-.btn-sambil[disabled]:hover,
-fieldset[disabled] .btn-sambil:hover,
-.btn-sambil.disabled:focus,
-.btn-sambil[disabled]:focus,
-fieldset[disabled] .btn-sambil:focus,
-.btn-sambil.disabled.focus,
-.btn-sambil[disabled].focus,
-fieldset[disabled] .btn-sambil.focus {
+.brn-site.disabled:hover,
+.brn-site[disabled]:hover,
+fieldset[disabled] .brn-site:hover,
+.brn-site.disabled:focus,
+.brn-site[disabled]:focus,
+fieldset[disabled] .brn-site:focus,
+.brn-site.disabled.focus,
+.brn-site[disabled].focus,
+fieldset[disabled] .brn-site.focus {
   background-color: #fff;
   border-color: #ccc;
 }
-.btn-sambil1:hover {
+.brn-site1:hover {
   color: #fff;
   background-color: #B52465;
   border-color: #6F133C;
 } 
  
-.btn-sambil2:hover {
+.brn-site2:hover {
   color: #fff;
   background-color: #692266;
   border-color: #480445;
 } 
-.btn-sambil3:hover {
+.brn-site3:hover {
   color: #fff;
   background-color: #5051A1;
   border-color: #2B2C65;
 } 
 
-.btn-sambil4:hover {
+.brn-site4:hover {
   color: #fff;
   background-color: #FDB628;
   border-color: #AF7D1A;
 }  
 
-.btn-sambil5:hover {
+.brn-site5:hover {
   color: #fff;
   background-color: #0E9ED7;
   border-color: #08749E;
 } 
  
-.btn-sambil6:hover {
+.brn-site6:hover {
   color: #fff;
   background-color: #F47B20;
   border-color: #AB5514;
 } 
 
   
-.btn-sambil7:hover {
+.brn-site7:hover {
   color: #fff;
   background-color: #EA2225;
   border-color: #860002;
@@ -1427,20 +1427,20 @@ select::-webkit-scrollbar-thumb {
 }
 
 
-.radio-sambil input[type="radio"] {
+.radio-site input[type="radio"] {
   display: none;
 }
-.radio-sambil input[type="radio"]:checked + label:before {
+.radio-site input[type="radio"]:checked + label:before {
   display: none;
 }
-.radio-sambil input[type="radio"]:checked + label {
+.radio-site input[type="radio"]:checked + label {
   padding: 5px 15px;
   background: #5051A1 none repeat scroll 0% 0%;
   border-radius: 2px;
   color: #fff;
 }
 
-.radio-sambil label {
+.radio-site label {
   display: inline-block;
   cursor: pointer;
   color: #0074D9;
@@ -1452,10 +1452,10 @@ select::-webkit-scrollbar-thumb {
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.radio-sambil label:hover {
+.radio-site label:hover {
   background: rgba(0, 116, 217, 0.1);
 }
-.radio-sambil label:before {
+.radio-site label:before {
   content: "";
   display: inline-block;
   width: 17px;

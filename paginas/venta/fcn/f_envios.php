@@ -1,5 +1,5 @@
 <?php
-	//require_once "../../../config/core.php";
+	include '../../../config/core.php';
 	include_once "../../../clases/ventas.php";
 	$venta=new ventas($_POST["id"]);
 	$maximo=$venta->getCantFaltante();

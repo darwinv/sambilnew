@@ -1,6 +1,5 @@
 <?php  
 include "clases/busqueda.php";
-include_once "clases/bd.php";
 include_once "clases/fotos.php";
 include_once "clases/publicaciones.php";
 $bd=new bd();
@@ -18,7 +17,7 @@ $publiUsua=$busqueda->getPublicaciones();
  
 $total=$publiUsua->rowCount();
  
-//$estados=$busqueda->getEstados();   no se usaran estados por los momentos para el sambil o el dorado
+//$estados=$busqueda->getEstados();   no se usaran estados por los momentos para el sistema
 $categorias=$busqueda->getCategorias();
 $condiciones=$busqueda->getCondiciones();
 //$tipos=$busqueda->getTipos();

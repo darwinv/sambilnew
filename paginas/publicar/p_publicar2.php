@@ -2,9 +2,9 @@
 if (!headers_sent()) {
 	header('Content-Type: text/html; charset=UTF-8');
 }
-include_once "../../clases/clasificados.php";
+include '../../../config/core.php';
+include_once "../../../clases/clasificados.php";
 $clasificado = new clasificados($_POST["id"]);
-
 ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 	<div class="contenedor "
