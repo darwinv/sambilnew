@@ -1,4 +1,4 @@
-<?php
+<?php include 'config/core.php'; 
 if(!isset($_SESSION)){
 	session_start();
 }
@@ -9,7 +9,6 @@ if($_SESSION["nivel"]<1){
 	header ( "Location: index.php" );
 }
 include "fcn/incluir-css-js.php";
-include "clases/bd.php";
 $bd=new bd();
 
 $sql=$bd->query("select count(*) as tota from publicaciones where id in

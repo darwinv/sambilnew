@@ -1,8 +1,9 @@
 ﻿<?php
+include '../config/core.php';
 include_once '../clases/fotos.php';
 include_once '../clases/usuarios.php';
 include_once '../clases/email.php';
-include_once '../clases/bd.php';
+
 
 switch ($_POST["method"]) {
 	case "new" :

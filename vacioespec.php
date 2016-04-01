@@ -3,7 +3,7 @@ if(!isset($_SESSION)){
 	session_start();
 }
 
-include_once "clases/bd.php";
+include 'config/core.php';
 $bd=new bd();
 if(isset($_GET["usuario"])){
 	$id_usuario=$_GET["usuario"];

@@ -1,6 +1,5 @@
 <header class="header">
 <?php
-
 if (! isset ( $_SESSION )) {
 	session_start ();
 }
@@ -21,7 +20,7 @@ if (isset ( $_SESSION ["id"] )) {
 ?>
 </header>
 <?php
-
+include ('js/script.php');
 include"modales/m_contacto_comprador.php";
 include"modales/m_contacto_comprador_2.php";
 include"modales/m_contacto.php";

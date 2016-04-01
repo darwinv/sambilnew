@@ -1,5 +1,5 @@
 <?php
-include "clases/bd.php";
+include 'config/core.php';
 $bd=new bd();
 $tablas=array();
 

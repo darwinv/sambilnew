@@ -1,4 +1,5 @@
 <?php
+include '../../../config/core.php';
 include_once "../../../clases/amigos.php";
 session_start();
 $amigos = new amigos();

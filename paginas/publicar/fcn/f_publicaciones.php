@@ -2,8 +2,8 @@
 if (!headers_sent()) {
 	header('Content-Type: text/html; charset=UTF-8');
 }
+include '../../../config/core.php';
 include_once "../../../clases/clasificados.php";
-include_once "../../../clases/bd.php";
 include_once "../../../clases/publicaciones.php";
 include_once "../../../clases/amigos.php";
 switch($_POST["metodo"]){

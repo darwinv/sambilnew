@@ -1,5 +1,5 @@
 <head>
-	<title>Sambil Venezuela</title>
+	<title><?php echo COMPANY_NAME_TITLE; ?></title>
 	<link rel="shortcut icon" href="favicon.ico">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

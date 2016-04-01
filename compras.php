@@ -1,4 +1,5 @@
-<?php //require "config/core.php";
+<?php
+include 'config/core.php'; 
 if(isset($_GET["tipo2"])){
 	if($_GET["tipo2"]==1){   
 		$clase1="";

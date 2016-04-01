@@ -47,7 +47,7 @@
                     </div> -->
                     
                     <br>
-                   <!-- <div class="alert alert-info t12">  Gracias por utilizar nuestro portal web y recuerda !Todo lo que necesitas esta en <span class="orange-apdp">SAMBIL</span>!</div> -->
+                   <!-- <div class="alert alert-info t12">  Gracias por utilizar nuestro portal web y recuerda !Todo lo que necesitas esta en <span class="orange-apdp"></span>!</div> -->
 				
 			
 		</div>

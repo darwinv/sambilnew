@@ -1,5 +1,4 @@
 <?php
-	include_once "clases/bd.php";
 	$bancos=$bd->doFullSelect("bancos");
 	$fp=$bd->doFullSelect("formas_pagos");
 ?>

@@ -1,3 +1,4 @@
+<script>
 $(document ).ready(function() {
 /* Considerar borrar este c&oacute;digo y llamar a configuracion-js*>*/
 
@@ -312,7 +313,7 @@ $(document ).ready(function() {
 	            }else{  	
 		        	swal({
 						title: "Bienvenido", 
-						text: "&iexcl;Todo lo que quieres esta en Sambil!",
+						text: "<?php echo SLOGAN;?>",
 						imageUrl: "galeria/img/logos/bill-ok.png",
 						timer: 2000, 
 						showConfirmButton: true
@@ -438,7 +439,7 @@ $(document ).ready(function() {
 	            } else{
 	            	swal({
 						title: "Bienvenido", 
-						text: "&iexcl;Todo lo que quieres esta en Sambil!",
+						text: "<?php echo SLOGAN;?>",
 						imageUrl: "galeria/img/logos/bill-ok.png",
 						timer: 20000, 
 						showConfirmButton: true
@@ -768,7 +769,7 @@ $("#enviar").click(function(e){
 		
 	});
 	
-/*********** Enviar Email de Contacto a la sede del sambil  ******/
+/*********** Enviar Email de Contacto a la sede  ******/
 	
 	
 	$("#enviar-email-sede").formValidation({
@@ -1152,6 +1153,4 @@ $("#enviar-email-sede_2").formValidation({
  			$("#changefondo").val(fondo);
 		});
 });
-
-	
-
+</script>

@@ -1,4 +1,4 @@
-<?php 
+<?php include 'config/core.php';
 if (!isset ( $_GET ["id"] )) {
 	header ( "Location: index.php" );
 }

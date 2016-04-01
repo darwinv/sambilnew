@@ -1,4 +1,5 @@
 <?php
+	include '../../../config/core.php';
 	include_once "../../../clases/ventas.php";
 	switch($_POST["metodo"]){
 		case "guardarPago":

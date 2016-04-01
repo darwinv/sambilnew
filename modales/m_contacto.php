@@ -52,11 +52,11 @@ if(isset($_SESSION["id"])){
 				</div>
 				<br>
 				<div class="center-block text-center" style="width: 80%">
-					Constructora Sambil C.A - Venezuela <br>
+					<?php echo COMPANY_NAME;?> - Venezuela <br>
 					
-					<!-- CADA SAMBIL TIENE DIFERENTES DIRECCIONES -->
-					Telefonos: <?php echo $telf_sambil; ?> &nbsp;/&nbsp;
-					Email:	<?php echo $email_sambil; ?> 
+					<!-- CADA SEDE TIENE DIFERENTES DIRECCIONES -->
+					Telefonos: <?php echo $telf_sede; ?> &nbsp;/&nbsp;
+					Email:	<?php echo $email_sede; ?> 
 				</div>
 			</div>
 		</form>

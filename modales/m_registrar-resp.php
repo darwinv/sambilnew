@@ -1,4 +1,3 @@
-<?php include_once 'clases/bd.php';?>
 <?php include 'modales/m_cropper.php';?>
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog"
 	aria-labelledby="myLargeModalLabel" id="usr-reg">
@@ -134,11 +133,11 @@
 							</div>
 							<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 input">
 								<select class=" form-select " id="e_estado" name="e_estado">
-									<option value="" disabled selected>Seleccione Sambil</option>
+									<option value="" disabled selected>Seleccione Sede</option>
 								<?php								
 								$estados = new bd ();
-								foreach ( $estados->getDatosBase ( "ciudades_sambil", 1 ,"ORDER BY
-ciudades_sambil.nombre ASC") as $estado ) :
+								foreach ( $estados->getDatosBase ( "ciudades_sede", 1 ,"ORDER BY
+ciudades_sedes.nombre ASC") as $estado ) :
 									?>
 								<option value="<?php echo $estado["id"]; ?>"><?php echo $estado["nombre"]; ?></option>
 								<?php endforeach;?>

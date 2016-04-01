@@ -1,4 +1,3 @@
-<?php include_once 'clases/bd.php';?>
 <?php include 'modales/m_cropper.php';?>
 <div class="modal fade bs-example-modal-lg modal-conf-user" tabindex="-1" role="dialog"
 	aria-labelledby="myLargeModalLabel" id="usr-reg-admin">
@@ -72,7 +71,7 @@
 							</div>
 							<div class="col-xs-12">
 								<span class="marL10"><i class="fa fa-map-marker"></i>
-									Sambil</span>
+									<?php echo COMPANY;?></span>
 							</div>
 							<div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 input" >
 								<select disabled="disabled" class="error-select form-select " id="e_estado_admin" >									 

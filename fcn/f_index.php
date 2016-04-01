@@ -1,6 +1,6 @@
 <?php
+include '../config/core.php';
 include_once "../clases/publicaciones.php";
-include_once "../clases/bd.php";
 include_once "../clases/usuarios.php";
 switch($_POST["metodo"]){
 	case "buscarPublicaciones":

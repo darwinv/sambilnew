@@ -14,14 +14,12 @@ $obj_sede = new sede();
 			<a href="http://www.sambil.com/ResponsabilidadSocial" class="inherit-a"><span>Responsabilidad Social </span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a href="http://www.sambil.com/Revista" class="inherit-a"><span>Revista Sambil </span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<a href="http://www.sambil.com/Model" class="inherit-a"><span>Sambil Model </span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			
-			</div>
+		</div>
 			<!-- Solo para el demo -->
 	<input type="hidden" value="1" id="changefondo"/>
 			
 		<div style="display: inline-flex; padding-top: 0px;" class="pull-right">
-			<a href="https://www.facebook.com/tusambil" target="_blank"><img src="galeria/img/iconos/facebook2.png" height="25" width="auto" class="marL20"></a><a href="https://twitter.com/tusambil" target="_blank"><img src="galeria/img/iconos/twitter2.png" height="25" width="auto" class="marL20"></a><a href="https://www.youtube.com/user/tusambil"><img src="galeria/img/iconos/youtube2.png" height="25" width="auto" class="marL20"></a>
+			<a href="https://www.facebook.com/<?php echo FACEBOOK;?>" target="_blank"><img src="galeria/img/iconos/facebook2.png" height="25" width="auto" class="marL20"></a><a href="https://twitter.com/<?php echo TWITTER;?>" target="_blank"><img src="galeria/img/iconos/twitter2.png" height="25" width="auto" class="marL20"></a><a href="https://www.youtube.com/user/<?php echo YOUTUBE;?>"><img src="galeria/img/iconos/youtube2.png" height="25" width="auto" class="marL20"></a>
 		</div> 
 		</div>
 </div>
@@ -35,7 +33,7 @@ $obj_sede = new sede();
 					class="icon-bar"></span>
 			</button>
 			<a href="principal.php" class="navbar-brand"> <img style=""
-				class="marT10 marB10 marL5" src="galeria/img/logo-header.png"
+				class="marT10 marB10 marL5" src="galeria/img/logos/logo-header.png"
 				width="147px;" height="50px">
 			</a>
 		</div>
@@ -92,7 +90,7 @@ $obj_sede = new sede();
 									</li>
 							<li class="divider"></li>
 							<li style="padding: 10px;"><p class="t12 text-center">&#191;Eres
-									nuevo en Sambil?</p>
+									nuevo en <?php echo COMPANY;?>?</p>
 								<button class="btn2 btn-default btn-group-justified" data-toggle="modal" data-target='#insc-red'>Inscr&iacute;bete</button></li>
 						</ul></li>
 					<li>
@@ -104,13 +102,13 @@ $obj_sede = new sede();
 					    
 					     <?php
 					   
-					     if(isset($_GET['code_sambil'])){
-								$ciudad_sambil=$_GET['code_sambil'];
-		 						$_SESSION['code_sambil']=$ciudad_sambil;
-						 }elseif(isset($_SESSION['code_sambil'])){
-								$ciudad_sambil=$_SESSION['code_sambil'];
+					     if(isset($_GET['code_sede'])){
+								$ciudad_sede=$_GET['code_sede'];
+		 						$_SESSION['code_sede']=$ciudad_sede;
+						 }elseif(isset($_SESSION['code_sede'])){
+								$ciudad_sede=$_SESSION['code_sede'];
 					     }else{
-					     	    $ciudad_sambil="Caracas";
+					     	    $ciudad_sede="Caracas";
 								$img_banner='galeria/img/apdp-slide/CARACAS.jpg';
 						 }
 						 
@@ -119,7 +117,7 @@ $obj_sede = new sede();
 						 
 						 $sedes_show=	$obj_sede->buscarSedes(); 
 						 
-						 $result_sede=	$obj_sede->buscarDetalleSede($sedes_show, $ciudad_sambil);
+						 $result_sede=	$obj_sede->buscarDetalleSede($sedes_show, $ciudad_sede);
 						 
 						 
 						 
@@ -127,8 +125,8 @@ $obj_sede = new sede();
 						 
 						 $_SESSION['id_sede']=	$result_sede[0];
 						 $img_banner=			$result_sede[1];
-						 $telf_sambil=			$result_sede[2];
-						 $email_sambil=			$result_sede[3];
+						 $telf_sede=			$result_sede[2];
+						 $email_sede=			$result_sede[3];
 						 echo $result_sede[4];
 						 
 						// print_r($result_sede);
@@ -140,7 +138,7 @@ $obj_sede = new sede();
 					   	/**mostramos las sedes, en el codigo previo se define dependiendo del dise&ntilde;o de la APP */
 					   	
 					   	foreach ($sedes as $key => $value) {  ?>
-							<li><a href="principal.php?code_sambil=<?php echo $value['codigo'] ?>"> <?php echo $value['nombre'] ?></a></li>
+							<li><a href="principal.php?code_sede=<?php echo $value['codigo'] ?>"> <?php echo $value['nombre'] ?></a></li>
 					    	<li role="separator" class="divider"></li>	   
 						<?php
 						   }

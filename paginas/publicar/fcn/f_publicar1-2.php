@@ -2,6 +2,8 @@
 if (!headers_sent()) {
 	header('Content-Type: text/html; charset=UTF-8');
 }
+include '../../../config/core.php';
+include_once "../../../clases/clasificados.php";
 ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
 	<div class="contenedor " style="margin-top: 5px; z-index: 1">
@@ -27,12 +29,11 @@ if (!headers_sent()) {
 	box-shadow: -1px 2px 57px -7px rgba(0,0,0,0.5);">1</div>-->
 						<select class="form-select-publicar center-block" size="15">
 							<?php 
-							include_once "../../clases/clasificados.php";
+							
 							$clasificado = new clasificados();
 							$resultado=$clasificado->buscarHijos($_POST["id_clasificados"]);
 							foreach ($resultado as $r):?>
-								<option value="<?php echo $r["id"];?>"><?php echo $r["nombre"];?></option>
-								 
+								<option value="<?php echo $r["id"];?>"><?php echo $r["nombre"];?></option>								 
 							<?php endforeach;?>
 						</select>
 					</div>
