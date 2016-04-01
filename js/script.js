@@ -907,7 +907,7 @@ $("#enviar-email-sede_2").formValidation({
 		});
 				
 });        
-/******************* 2do modal de contacto *****************/
+/******************* fin del modal de contacto *****************/
 
 	
 	$(document).on('keyup',"#txtBusqueda",function(e){
